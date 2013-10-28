@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BBN by nabab</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/nabab/bbn">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/nabab/bbn/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/nabab/bbn/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>BBN</h1>
+          <p>Another PHP framework (in development)</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/nabab">nabab</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="bbn" class="anchor" href="#bbn"><span class="octicon octicon-link"></span></a>bbn</h1>
+
+<p>A simple PHP framework targeted at Single Page Application.</p>
+
+<p>Check out the <a href="http://doc.babna.com">Documentation</a>.</p>
+
+<p>This library includes:</p>
+
+<ul>
+<li>a Database class, working with mySQL and SQLite: supports database analysis and plenty of return methods</li>
+<li>a History class allowing to store each change done in the database and revert them</li>
+<li>files, images, and PDF files manipulation classes</li>
+<li>HTML generation classes</li>
+<li>various string classes</li>
+<li>users management classes</li>
+<li>an MVC framework</li>
+<li>various tools</li>
+</ul><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>A quick example:</p>
+
+<div class="highlight highlight-php"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nv">$db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\bbn\db\connection</span><span class="p">(</span><span class="nv">$cfg</span><span class="p">);</span>
+
+<span class="nx">\bbn\tools</span><span class="o">::</span><span class="na">hdump</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">modelize</span><span class="p">(</span><span class="s2">"my_table_name"</span><span class="p">));</span>
+
+<span class="nx">\bbn\tools</span><span class="o">::</span><span class="na">dump</span><span class="p">((</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_rows</span><span class="p">(</span><span class="s2">"SELECT * FROM my_table_name WHERE status = ?"</span><span class="p">,</span> <span class="nv">$var</span><span class="p">));</span>
+
+<span class="nx">\bbn\tools</span><span class="o">::</span><span class="na">hdump</span><span class="p">((</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span>
+  <span class="s2">"my_table_name"</span><span class="p">,</span> <span class="c1">// table</span>
+  <span class="p">[</span><span class="s2">"field1"</span><span class="p">,</span> <span class="s2">"field2"</span><span class="p">],</span> <span class="c1">// columns</span>
+  <span class="p">[</span><span class="s2">"id"</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">]</span> <span class="c1">// WHERE</span>
+  <span class="p">));</span>
+<span class="p">));</span>
+
+<span class="nx">\bbn\tools</span><span class="o">::</span><span class="na">dump</span><span class="p">((</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">rselect_all</span><span class="p">(</span>
+  <span class="s2">"my_table_name"</span><span class="p">,</span> <span class="c1">// table</span>
+  <span class="p">[],</span> <span class="c1">// all columns</span>
+  <span class="p">[[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"&lt;"</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"LIKE"</span><span class="p">,</span> <span class="s2">"tri%"</span><span class="p">]],</span> <span class="c1">// WHERE</span>
+  <span class="p">[</span><span class="s2">"date"</span> <span class="o">=&gt;</span> <span class="nx">DESC</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">],</span> <span class="c1">// ORDER</span>
+  <span class="mi">50</span><span class="p">,</span> <span class="c1">// LIMIT</span>
+  <span class="mi">20</span> <span class="c1">// START </span>
+<span class="p">));</span>
+
+<span class="nx">\bbn\tools</span><span class="o">::</span><span class="na">hdump</span><span class="p">((</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_col_array</span><span class="p">(</span><span class="s2">"SELECT id FROM mytable WHERE name LIKE ?"</span><span class="p">,</span> <span class="s2">"tri%"</span><span class="p">));</span>
+</pre></div>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
