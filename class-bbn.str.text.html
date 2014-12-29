@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class bbn\str\text | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li class="active"><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-bbn.str.hash.html">hash</a></li>
+				<li class="active"><a href="class-bbn.str.text.html">text</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.str.html" title="Summary of bbn\str"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class text</h1>
+
+
+	<div class="description">
+	
+<p>String manipulation class</p>
+
+<p>This class only uses static methods and has lots of alias for the escaping
+methods</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.str.html">str</a><br />
+		
+
+				<b>Category:</b>
+				Strings<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89<br />
+				<b>Since:</b>
+				Apr 4, 2011, 23:23:55 +0000<br />
+		<b>Located at</b> <a href="source-class-bbn.str.text.html#6-973" title="Go to source code">str/text.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="cast" id="_cast">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cast">#</a>
+		<code><a href="source-class-bbn.str.text.html#22-40" title="Go to source code">cast</a>( <span>mixed <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Converts any type of variable to a string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts any type of variable to a string.</p>
+
+<pre>
+\bbn\str\text::cast(<span
+class="php-num">1</span>);
+\bbn\str\text::cast([<span
+class="php-num">1</span>, <span class="php-quote">'test'</span>, <span
+class="php-num">2</span>, <span class="php-quote">'text'</span>]);
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>mixed</code><br>$st The item to cast.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="change_case" id="_change_case">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_change_case">#</a>
+		<code><a href="source-class-bbn.str.text.html#42-74" title="Go to source code">change_case</a>( <span>mixed <var>$st</var></span>, <span>mixed <var>$case</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Converts the case of a string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts the case of a string.</p>
+
+<pre>
+\bbn\str\text::change_case(<span
+class="php-quote">'TEST CASE'</span>, <span
+class="php-quote">'lower'</span>)); <span
+class="php-comment">//Returns &quot;test case&quot;</span>
+\bbn\str\text::change_case(<span
+class="php-quote">'test case'</span>, <span
+class="php-quote">'upper'</span>)); <span
+class="php-comment">//Returns &quot;TEST CASE&quot;</span>
+\bbn\str\text::change_case(<span
+class="php-quote">'test case'</span>)); <span
+class="php-comment">//Returns &quot;Test Case&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>mixed</code><br>$st The item to convert.</dd>
+					<dt><var>$case</var></dt>
+					<dd><code>mixed</code><br>$case The case to convert to ("lower" or "upper"), default being title case.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_dquotes" id="_escape_dquotes">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_dquotes">#</a>
+		<code><a href="source-class-bbn.str.text.html#76-90" title="Go to source code">escape_dquotes</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Escape string in double quotes.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Escape string in double quotes.</p>
+
+<pre>
+\bbn\str\text::escape_dquotes(<span
+class="php-quote">'L\'infanzia di &quot;Maria&quot;'</span>); <span
+class="php-comment">//Returns &quot;L'infanzia di \&quot;Maria\&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_dquote" id="_escape_dquote">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_dquote">#</a>
+		<code><a href="source-class-bbn.str.text.html#92-106" title="Go to source code">escape_dquote</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Synonym of "escape_dquotes".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Synonym of "escape_dquotes".</p>
+
+<pre>
+\bbn\str\text::escape_dquote(<span
+class="php-quote">'L\'infanzia di &quot;Maria&quot;'</span>); <span
+class="php-comment">//Returns &quot;L'infanzia di \&quot;Maria\&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_quote" id="_escape_quote">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_quote">#</a>
+		<code><a href="source-class-bbn.str.text.html#108-122" title="Go to source code">escape_quote</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Synonym of "escape_dquotes".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Synonym of "escape_dquotes".</p>
+
+<pre>
+\bbn\str\text::escape_quote(<span
+class="php-quote">'L\'infanzia di &quot;Maria&quot;'</span>); <span
+class="php-comment">//Returns &quot;L'infanzia di \&quot;Maria\&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_quotes" id="_escape_quotes">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_quotes">#</a>
+		<code><a href="source-class-bbn.str.text.html#124-138" title="Go to source code">escape_quotes</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Synonym of "escape_dquotes".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Synonym of "escape_dquotes".</p>
+
+<pre>
+\bbn\str\text::escape_quotes(<span
+class="php-quote">'L\'infanzia di &quot;Maria&quot;'</span>); <span
+class="php-comment">//Returns &quot;L'infanzia di \&quot;Maria\&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_squotes" id="_escape_squotes">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_squotes">#</a>
+		<code><a href="source-class-bbn.str.text.html#140-154" title="Go to source code">escape_squotes</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Escape string in quotes.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Escape string in quotes.</p>
+
+<pre>
+\bbn\str\text::escape_squotes(<span
+class="php-quote">&quot;L'infanzia di \&quot;maria\&quot;&quot;</span>); <span
+class="php-comment">//Returns &quot;L\'infanzia di &quot;maria&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape" id="_escape">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape">#</a>
+		<code><a href="source-class-bbn.str.text.html#156-170" title="Go to source code">escape</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Synonym of "escape_squotes".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Synonym of "escape_squotes".</p>
+
+<pre>
+\bbn\str\text::escape(<span
+class="php-quote">&quot;L'infanzia di \&quot;maria\&quot;&quot;</span>); <span
+class="php-comment">//Returns &quot;L\'infanzia di &quot;maria&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_apo" id="_escape_apo">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_apo">#</a>
+		<code><a href="source-class-bbn.str.text.html#172-186" title="Go to source code">escape_apo</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Synonym of "escape_squotes".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Synonym of "escape_squotes".</p>
+
+<pre>
+\bbn\str\text::escape_apo(<span
+class="php-quote">&quot;L'infanzia di \&quot;maria\&quot;&quot;</span>); <span
+class="php-comment">//Returns &quot;L\'infanzia di &quot;maria&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape_squote" id="_escape_squote">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape_squote">#</a>
+		<code><a href="source-class-bbn.str.text.html#188-202" title="Go to source code">escape_squote</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Synonym of "escape_squotes".</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Synonym of "escape_squotes".</p>
+
+<pre>
+\bbn\str\text::escape_squote(<span
+class="php-quote">&quot;L'infanzia di \&quot;maria\&quot;&quot;</span>); <span
+class="php-comment">//Returns &quot;L\'infanzia di &quot;maria&quot;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to escape.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clean" id="_clean">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clean">#</a>
+		<code><a href="source-class-bbn.str.text.html#204-273" title="Go to source code">clean</a>( <span>mixed <var>$st</var></span>, <span>string <var>$mode</var> = <span class="php-quote">'all'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a string expunged of several types of character depending of
+configuration.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a string expunged of several types of character depending of
+configuration.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>mixed</code><br>$st The item to be.</dd>
+					<dt><var>$mode</var></dt>
+					<dd><code>string</code><br>$mode A selection of configuration: "all" (default), "2n1", "html", "code".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="cut" id="_cut">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_cut">#</a>
+		<code><a href="source-class-bbn.str.text.html#275-309" title="Go to source code">cut</a>( <span>string <var>$st</var></span>, <span>integer <var>$max</var> = <span class="php-num">15</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Cut a string (HTML and PHP tags stripped) to maximum lenght inserted.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Cut a string (HTML and PHP tags stripped) to maximum lenght inserted.</p>
+
+<pre>
+\bbn\str\text::cut(<span
+class="php-quote">&quot;&lt;!-- HTML Document --&gt; Example text&quot;</span>, <span
+class="php-num">7</span>); <span
+class="php-comment">//Returns &quot;Example...&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string to be cut.</dd>
+					<dt><var>$max</var></dt>
+					<dd><code>integer</code><br>$max The maximum string lenght.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encode_filename" id="_encode_filename">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encode_filename">#</a>
+		<code><a href="source-class-bbn.str.text.html#311-374" title="Go to source code">encode_filename</a>( <span>string <var>$st</var></span>, <span>integer <var>$maxlength</var> = <span class="php-num">50</span></span>, <span>string <var>$extension</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a cross-platform filename for file.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a cross-platform filename for file.</p>
+
+<pre>
+\bbn\str\text::encode_filename(<span
+class="php-quote">'test file/,1'</span>, <span class="php-num">15</span>, <span
+class="php-quote">'txt'</span>); <span
+class="php-comment">//Returns</span>
+<span
+class="php-quote">&quot;test_file_1.txt&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The name as string.</dd>
+					<dt><var>$maxlength</var></dt>
+					<dd><code>integer</code><br>$maxlength The maximum filename length (without extension), default: "50".</dd>
+					<dt><var>$extension</var></dt>
+					<dd><code>string</code><br>$extension The extension of file.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encode_dbname" id="_encode_dbname">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encode_dbname">#</a>
+		<code><a href="source-class-bbn.str.text.html#376-411" title="Go to source code">encode_dbname</a>( <span>string <var>$st</var></span>, <span>integer <var>$maxlength</var> = <span class="php-num">50</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a corrected string for database naming.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a corrected string for database naming.</p>
+
+<pre>
+\bbn\str\text::encode_dbname(<span
+class="php-quote">'my.database_name ? test  :,; !plus'</span>); <span
+class="php-comment">//Returns  &quot;my_database_name_test_plus&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The name as string.</dd>
+					<dt><var>$maxlength</var></dt>
+					<dd><code>integer</code><br>$maxlength The maximum length, default: "50".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="file_ext" id="_file_ext">
+
+		<td class="attributes"><code>
+			 public static
+			string|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_file_ext">#</a>
+		<code><a href="source-class-bbn.str.text.html#413-445" title="Go to source code">file_ext</a>( <span>string <var>$file</var></span>, <span>boolean <var>$ar</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the file extension.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the file extension.</p>
+
+<pre>
+\bbn\str\text::file_ext(<span
+class="php-quote">'d:\test.txt'</span>); <span
+class="php-comment">//Returns &quot;txt&quot;</span>
+\bbn\str\text::file_ext(<span
+class="php-quote">'d:\test.txt'</span>, <span class="php-num">1</span>); <span
+class="php-comment">//Returns ['d:\\a', 'txt']</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd><code>string</code><br>$file The file path.</dd>
+					<dt><var>$ar</var></dt>
+					<dd><code>boolean</code><br>$ar If "true" returns also the file path, default: "false".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="genpwd" id="_genpwd">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_genpwd">#</a>
+		<code><a href="source-class-bbn.str.text.html#447-491" title="Go to source code">genpwd</a>( <span>integer <var>$int_max</var> = <span class="php-num">12</span></span>, <span>integer <var>$int_min</var> = <span class="php-num">6</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a random password.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a random password.</p>
+
+<pre>
+\bbn\str\text::genpwd(); <span
+class="php-comment">//Returns &quot;khc9P871w&quot;</span>
+\bbn\str\text::genpwd(<span
+class="php-num">6</span>, <span class="php-num">4</span>); <span
+class="php-comment">//Returns &quot;dDEtxY&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$int_max</var></dt>
+					<dd><code>integer</code><br>$int_max Maximum characters of password, default: "12".</dd>
+					<dt><var>$int_min</var></dt>
+					<dd><code>integer</code><br>$int_min Minimum characters of password, default: "6".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_json" id="_is_json">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_json">#</a>
+		<code><a href="source-class-bbn.str.text.html#493-511" title="Go to source code">is_json</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Checks if the string is a json string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if the string is a json string.</p>
+
+<pre>
+\bbn\str\text::is_json(<span
+class="php-quote">'{&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Smith&quot;, &quot;age&quot;: 25}'</span>); <span
+class="php-comment">//Returns true</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_number" id="_is_number">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_number">#</a>
+		<code><a href="source-class-bbn.str.text.html#513-541" title="Go to source code">is_number</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks if the item is a number. Can take as many arguments and will return
+false if one of them is not a number.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if the item is a number. Can take as many arguments and will return
+false if one of them is not a number.</p>
+
+<pre>
+\bbn\str\text::is_number([<span class="php-num">1</span>, <span
+class="php-num">2</span>]); <span
+class="php-comment">//Returns false</span>
+\bbn\str\text::is_number(<span
+class="php-num">150</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::is_number(<span
+class="php-quote">'150'</span>); <span
+class="php-comment">//Returns true</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_integer" id="_is_integer">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_integer">#</a>
+		<code><a href="source-class-bbn.str.text.html#543-571" title="Go to source code">is_integer</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks if the item is a integer. Can take as many arguments and will return
+false if one of them is not an integer or the string of an integer.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if the item is a integer. Can take as many arguments and will return
+false if one of them is not an integer or the string of an integer.</p>
+
+<pre>
+\bbn\str\text::<span class="php-keyword2">is_integer</span>(<span
+class="php-num">13.2</span>); <span
+class="php-comment">//Returns false</span>
+\bbn\str\text::<span
+class="php-keyword2">is_integer</span>(<span class="php-num">14</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::<span
+class="php-keyword2">is_integer</span>(<span
+class="php-quote">'14'</span>); <span
+class="php-comment">//Returns true</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_decimal" id="_is_decimal">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_decimal">#</a>
+		<code><a href="source-class-bbn.str.text.html#573-601" title="Go to source code">is_decimal</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks if the item is a decimal. Can take as many arguments and will return
+false if one of them is not a decimal or the string of a decimal (float).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if the item is a decimal. Can take as many arguments and will return
+false if one of them is not a decimal or the string of a decimal (float).</p>
+
+<pre>
+\bbn\str\text::is_decimal(<span class="php-num">13.2</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::is_decimal(<span
+class="php-quote">'13.2'</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::is_decimal(<span
+class="php-num">14</span>); <span
+class="php-comment">//Returns false</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="correct_types" id="_correct_types">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_correct_types">#</a>
+		<code><a href="source-class-bbn.str.text.html#603-642" title="Go to source code">correct_types</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Converts string variable into int or float if it looks like it and returns
+the argument anyway.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts string variable into int or float if it looks like it and returns
+the argument anyway.</p>
+
+<pre>
+\bbn\str\text::correct_types(<span class="php-quote">'1230'</span>); <span
+class="php-comment">//Returns 1230</span>
+\bbn\str\text::correct_types(<span
+class="php-num">12.30</span>); <span
+class="php-comment">//Returns 12.3</span>
+\bbn\str\text::correct_types([<span
+class="php-num">1230</span>]); <span
+class="php-comment">//Returns [1230]</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_email" id="_is_email">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_email">#</a>
+		<code><a href="source-class-bbn.str.text.html#644-706" title="Go to source code">is_email</a>( <span>string <var>$email</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Checks if the string is a correct type of e-mail address.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if the string is a correct type of e-mail address.</p>
+
+<pre>
+\bbn\str\text::is_email(<span
+class="php-quote">'test@email.com'</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::is_email(<span
+class="php-quote">'test@email'</span>); <span
+class="php-comment">//Returns false</span>
+\bbn\str\text::is_email(<span
+class="php-quote">'test@.com'</span>); <span
+class="php-comment">//Returns false</span>
+\bbn\str\text::is_email(<span
+class="php-quote">'testemail.com'</span>); <span
+class="php-comment">//Returns false</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$email</var></dt>
+					<dd><code>string</code><br>$email E-mail address.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse_url" id="_parse_url">
+
+		<td class="attributes"><code>
+			 public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse_url">#</a>
+		<code><a href="source-class-bbn.str.text.html#708-750" title="Go to source code">parse_url</a>( <span>string <var>$url</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an array containing any of the various components of the URL that are
+present.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an array containing any of the various components of the URL that are
+present.</p>
+
+<pre>
+\bbn\str\text::<span class="php-keyword2">parse_url</span>(<span
+class="php-quote">'http://localhost/phpmyadmin/?db=test&amp;table=users&amp;server=1&amp;target=&amp;token=e45a102c5672b2b4fe84ae75d9148981'</span>);
+<span
+class="php-comment">/*Returns [
+    'scheme' =&gt; 'http',
+    'host' =&gt; 'localhost',
+    'path' =&gt; '/phpmyadmin/',
+    'query' =&gt; 'db=test&amp;table=users&amp;server=1&amp;target=&amp;token=e45a102c5672b2b4fe84ae75d9148981',
+    'url' =&gt; 'http://localhost/phpmyadmin/',
+    'params' =&gt; [
+        'db' =&gt; 'test',
+        'table' =&gt; 'users',
+        'server' =&gt; '1',
+        'target' =&gt; '',
+        'token' =&gt; 'e45a102c5672b2b4fe84ae75d9148981',
+    ],
+] *
+</span></pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd><code>string</code><br>$url The url.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse_path" id="_parse_path">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse_path">#</a>
+		<code><a href="source-class-bbn.str.text.html#752-770" title="Go to source code">parse_path</a>( <span>string <var>$path</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Replace backslash with slash in a path string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Replace backslash with slash in a path string.</p>
+
+<pre>
+\bbn\str\text::parse_path(<span
+class="php-quote">'C:\TedstDir\New\New folder'</span>); <span
+class="php-comment">//Returns &quot;C:/TedstDir/New/New folder&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd><code>string</code><br>$path The path.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="remove_accents" id="_remove_accents">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_remove_accents">#</a>
+		<code><a href="source-class-bbn.str.text.html#772-791" title="Go to source code">remove_accents</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Replaces accented characters with their character without accent.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Replaces accented characters with their character without accent.</p>
+
+<pre>
+\bbn\str\text::remove_accents(<span
+class="php-quote">&quot;TÃ¨st FÃ¬lÃ¨ Ã²Ã¨Ã Ã¹&quot;</span>); <span
+class="php-comment">//Returns &quot;Test File oeau&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="check_name" id="_check_name">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_check_name">#</a>
+		<code><a href="source-class-bbn.str.text.html#793-816" title="Go to source code">check_name</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks if a string comply with SQL naming convention.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if a string comply with SQL naming convention.</p>
+
+<pre>
+\bbn\str\text::check_name(<span
+class="php-quote">&quot;Paul&quot;</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::check_name(<span
+class="php-quote">&quot;PÃ ul&quot;</span>); <span
+class="php-comment">//Returns false</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="check_filename" id="_check_filename">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_check_filename">#</a>
+		<code><a href="source-class-bbn.str.text.html#817-837" title="Go to source code">check_filename</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks if a string doesn't contain a filesystem path</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if a string doesn't contain a filesystem path</p>
+
+<pre>
+\bbn\str\text::check_name(<span
+class="php-quote">&quot;Paul&quot;</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::check_name(<span
+class="php-quote">&quot;PA/ul&quot;</span>); <span
+class="php-comment">//Returns false</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has_slash" id="_has_slash">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has_slash">#</a>
+		<code><a href="source-class-bbn.str.text.html#840-863" title="Go to source code">has_slash</a>( )</code>
+
+		<div class="description short">
+			
+<p>Checks if a string comply with SQL naming convention. Returns "true" if slash
+or backslash are present.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Checks if a string comply with SQL naming convention. Returns "true" if slash
+or backslash are present.</p>
+
+<pre>
+\bbn\str\text::has_slash(<span
+class="php-quote">&quot;Paul&quot;</span>); <span
+class="php-comment">//Returns false</span>
+\bbn\str\text::has_slash(<span
+class="php-quote">&quot;Paul/&quot;</span>); <span
+class="php-comment">//Returns true</span>
+\bbn\str\text::has_slash(<span
+class="php-quote">&quot;Paul\\&quot;</span>); <span
+class="php-comment">//Returns true</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_numbers" id="_get_numbers">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_numbers">#</a>
+		<code><a href="source-class-bbn.str.text.html#865-878" title="Go to source code">get_numbers</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Extracts all digits from a string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Extracts all digits from a string.</p>
+
+<pre>
+\bbn\str\text::get_numbers(<span
+class="php-quote">&quot;test 13 example 24&quot;</span>); <span
+class="php-comment">//Returns 1324</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The string.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="make_readable" id="_make_readable">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_make_readable">#</a>
+		<code><a href="source-class-bbn.str.text.html#880-907" title="Go to source code">make_readable</a>( <span>mixed <var>$o</var></span> )</code>
+
+		<div class="description short">
+			
+<p>returns the argumented value, replacing non standard objects (not stdClass)
+by their class name.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>returns the argumented value, replacing non standard objects (not stdClass)
+by their class name.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$o</var></dt>
+					<dd><code>mixed</code><br>$o The item.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="export" id="_export">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_export">#</a>
+		<code><a href="source-class-bbn.str.text.html#909-971" title="Go to source code">export</a>( <span>mixed <var>$o</var></span>, <span>boolean <var>$remove_empty</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$lev</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a variable in a fashion that is directly usable by PHP.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a variable in a fashion that is directly usable by PHP.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$o</var></dt>
+					<dd><code>mixed</code><br>$o The item to be.</dd>
+					<dt><var>$remove_empty</var></dt>
+					<dd><code>boolean</code><br>$remove_empty Default: "false".</dd>
+					<dt><var>$lev</var></dt>
+					<dd><code>integer</code><br>$lev Default: "1".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

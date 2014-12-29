@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class bbn\file\image | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-bbn.file.dir.html">dir</a></li>
+				<li><a href="class-bbn.file.file.html">file</a></li>
+				<li><a href="class-bbn.file.ftp.html">ftp</a></li>
+				<li class="active"><a href="class-bbn.file.image.html">image</a></li>
+				<li><a href="class-bbn.file.pdf.html">pdf</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.file.html" title="Summary of bbn\file"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class image</h1>
+
+
+	<div class="description">
+	
+<p>Image Class</p>
+
+<p>This class is used to upload, delete and transform images, and create
+thumbnails.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-bbn.obj.html"><span>bbn\obj</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-bbn.file.file.html"><span>bbn\file\file</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>bbn\file\image</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.file.html">file</a><br />
+		
+
+				<b>Category:</b>
+				Files ressources<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89<br />
+				<b>Since:</b>
+				Apr 4, 2011, 23:23:55 +0000<br />
+				<b>Todo:</b>
+				Deal specifically with SVG<br />
+				<b>Todo:</b>
+				Add a static function and var to check for available libraries (Imagick/GD)<br />
+		<b>Located at</b> <a href="source-class-bbn.file.image.html#6-819" title="Go to source code">file/image.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="pdf2jpg" id="_pdf2jpg">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_pdf2jpg">#</a>
+		<code><a href="source-class-bbn.file.image.html#55-91" title="Go to source code">pdf2jpg</a>( <span>mixed <var>$pdf</var></span>, <span>mixed <var>$jpg</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$num</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Converts pdf file to jpg image(s).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts pdf file to jpg image(s).</p>
+
+<pre>
+\bbn\<span class="php-keyword2">file</span>\image::pdf2jpg(<span
+class="php-quote">&quot;C:\test\file.pdf&quot;</span>); <span
+class="php-comment">//Converts the first page of pdf to &quot;C:\test\file.jpg&quot;</span>
+\bbn\<span
+class="php-keyword2">file</span>\image::pdf2jpg(<span
+class="php-quote">&quot;C:\test\file.pdf&quot;</span>, <span
+class="php-quote">''</span>, <span class="php-quote">'all'</span>); <span
+class="php-comment">//Converts all pages of pdf to &quot;C:\test&quot; with filename &quot;file-0.jpg&quot;, &quot;file-1.jpg&quot;, &quot;file-2.jpg&quot;, ecc</span>
+\bbn\<span
+class="php-keyword2">file</span>\image::pdf2jpg(<span
+class="php-quote">&quot;C:\test\file.pdf&quot;</span>, <span
+class="php-quote">&quot;C:\test2\file.jpg&quot;</span>, <span
+class="php-num">2</span>); <span
+class="php-comment">//Converts the third page of pdf to &quot;C:\test2\file.jpg&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$pdf</var></dt>
+					<dd><code>mixed</code><br>$pdf The path of pdf file to convert</dd>
+					<dt><var>$jpg</var></dt>
+					<dd><code>mixed</code><br>$jpg The destination filename. If empty is used the same path of pdf. Default:
+empty.</dd>
+					<dt><var>$num</var></dt>
+					<dd><code>mixed</code><br>$num The index page of pdf file to convert. If set 'all' all pages to convert.
+Default: 0(first page).</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-bbn.file.image.html#93-108" title="Go to source code">__construct</a>( <span>mixed <var>$file</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd><code>mixed</code></dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-bbn.file.file.html#___construct">bbn\file\file::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_extension" id="_get_extension">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_extension">#</a>
+		<code><a href="source-class-bbn.file.image.html#110-146" title="Go to source code">get_extension</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the file image extension.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the file image extension.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;get_extension(); <span
+class="php-comment">//Returns &quot;jpg&quot;</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-bbn.file.file.html#_get_extension">bbn\file\file::get_extension()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="test" id="_test">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_test">#</a>
+		<code><a href="source-class-bbn.file.image.html#148-168" title="Go to source code">test</a>( )</code>
+
+		<div class="description short">
+			
+<p>Tests if the object is a image.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Tests if the object is a image.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;test(); <span
+class="php-comment">//Returns &quot;true&quot;</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-bbn.obj.html#_test">bbn\obj::test()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="make" id="_make">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_make">#</a>
+		<code><a href="source-class-bbn.file.image.html#170-225" title="Go to source code">make</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-bbn.file.file.html#_make">bbn\file\file::make()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="display" id="_display">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_display">#</a>
+		<code><a href="source-class-bbn.file.image.html#227-248" title="Go to source code">display</a>( )</code>
+
+		<div class="description short">
+			
+<p>Sends the image with Content-Type.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Sends the image with Content-Type.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="save" id="_save">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-bbn.file.image.html#250-273" title="Go to source code">save</a>( <span>mixed <var>$dest</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-bbn.file.file.html#_save">bbn\file\file::save()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_width" id="_get_width">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_width">#</a>
+		<code><a href="source-class-bbn.file.image.html#275-293" title="Go to source code">get_width</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the file image width.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the file image width.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;get_width(); <span
+class="php-comment">//Returns &quot;512&quot;</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_height" id="_get_height">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_height">#</a>
+		<code><a href="source-class-bbn.file.image.html#295-313" title="Go to source code">get_height</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the file image height.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the file image height.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;get_height(); <span
+class="php-comment">//Returns &quot;512&quot;</span>
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="resize" id="_resize">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_resize">#</a>
+		<code><a href="source-class-bbn.file.image.html#315-445" title="Go to source code">resize</a>( <span>integer <var>$w</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$h</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$crop</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$max_w</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$max_h</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Resize the image.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Resize the image.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;resize(<span class="php-num">150</span>, <span
+class="php-num">150</span>); <span
+class="php-comment">//Resizes image  150x150px</span>
+<span
+class="php-var">$img</span>-&gt;resize(<span class="php-num">0</span>, <span
+class="php-num">150</span>, <span class="php-num">1</span>); <span
+class="php-comment">//Resizes and cuts the image</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$w</var></dt>
+					<dd><code>integer</code><br>$w The new width.</dd>
+					<dt><var>$h</var></dt>
+					<dd><code>integer</code><br>$h The new height.</dd>
+					<dt><var>$crop</var></dt>
+					<dd><code>boolean</code><br>$crop If cropping the image.</dd>
+					<dt><var>$max_w</var></dt>
+					<dd><code>integer</code><br>$max_w The maximum value for new width.</dd>
+					<dt><var>$max_h</var></dt>
+					<dd><code>integer</code><br>$max_h The maximum valure for new height.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="autoresize" id="_autoresize">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_autoresize">#</a>
+		<code><a href="source-class-bbn.file.image.html#447-476" title="Go to source code">autoresize</a>( <span>integer <var>$w</var> = BBN_MAX_WIDTH</span>, <span>integer <var>$h</var> = BBN_MAX_HEIGHT</span> )</code>
+
+		<div class="description short">
+			
+<p>Resizes the image with constant values.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Resizes the image with constant values.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$w</var></dt>
+					<dd><code>integer</code><br>$w BBN_MAX_WIDTH</dd>
+					<dt><var>$h</var></dt>
+					<dd><code>integer</code><br>$h BBN_MAX_HEIGHT</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+				<h4>Todo</h4>
+				<div class="list">
+						BBN_MAX_WIDTH and BBN_MAX_HEIGHT<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="crop" id="_crop">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_crop">#</a>
+		<code><a href="source-class-bbn.file.image.html#478-533" title="Go to source code">crop</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var></span>, <span>integer <var>$x</var></span>, <span>integer <var>$y</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a crop of the image.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a crop of the image.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;crop(<span class="php-num">150</span>, <span
+class="php-num">150</span>, <span class="php-num">300</span>, <span
+class="php-num">300</span>)<span class="php-quote">';
+</span></pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$w</var></dt>
+					<dd><code>integer</code><br>$w Width</dd>
+					<dt><var>$h</var></dt>
+					<dd><code>integer</code><br>$h Height</dd>
+					<dt><var>$x</var></dt>
+					<dd><code>integer</code><br>$x X coordinate</dd>
+					<dt><var>$y</var></dt>
+					<dd><code>integer</code><br>$y Y coordinate</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rotate" id="_rotate">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rotate">#</a>
+		<code><a href="source-class-bbn.file.image.html#535-579" title="Go to source code">rotate</a>( <span>integer <var>$angle</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Rotates the image.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Rotates the image.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;rotate(<span class="php-num">90</span>); <span
+class="php-comment">//Rotates the image 90°</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$angle</var></dt>
+					<dd><code>integer</code><br>$angle The angle of rotation.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="flip" id="_flip">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_flip">#</a>
+		<code><a href="source-class-bbn.file.image.html#581-625" title="Go to source code">flip</a>( <span>string <var>$mode</var> = <span class="php-quote">'v'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Flips the image.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Flips the image.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;flip(); <span
+class="php-comment">//Vertical flipping</span>
+<span
+class="php-var">$img</span>-&gt;flip(); <span
+class="php-comment">//Horizontal flipping</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mode</var></dt>
+					<dd><code>string</code><br>$mode Vertical ("v") or Horizontal ("h") flip, default: "v".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="brightness" id="_brightness">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_brightness">#</a>
+		<code><a href="source-class-bbn.file.image.html#627-662" title="Go to source code">brightness</a>( <span>string <var>$val</var> = <span class="php-quote">'+'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Adjusts the image brightness.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Adjusts the image brightness.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;brightness(); <span
+class="php-comment">//Increases the brightness</span>
+<span
+class="php-var">$img</span>-&gt;brightness(<span
+class="php-quote">&quot;-&quot;</span>); <span
+class="php-comment">//Reduces the brightness</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$val</var></dt>
+					<dd><code>string</code><br>$val The value "+" (default) increases the brightness, the value ("-") reduces
+it.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="contrast" id="_contrast">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_contrast">#</a>
+		<code><a href="source-class-bbn.file.image.html#664-699" title="Go to source code">contrast</a>( <span>string <var>$val</var> = <span class="php-quote">'+'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Adjusts the image contrast.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Adjusts the image contrast.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;contrast(); <span
+class="php-comment">//Increases the contrast</span>
+<span
+class="php-var">$img</span>-&gt;contrast(); <span
+class="php-comment">//Reduces the contrast</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$val</var></dt>
+					<dd><code>string</code><br>$val The value "+" (default), increases the contrast, the value ("-") reduces
+it.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="grayscale" id="_grayscale">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_grayscale">#</a>
+		<code><a href="source-class-bbn.file.image.html#701-731" title="Go to source code">grayscale</a>( )</code>
+
+		<div class="description short">
+			
+<p>Converts the color image to grayscale.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts the color image to grayscale.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;grayscale();
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="negate" id="_negate">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_negate">#</a>
+		<code><a href="source-class-bbn.file.image.html#733-763" title="Go to source code">negate</a>( )</code>
+
+		<div class="description short">
+			
+<p>Converts the color image to negative.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts the color image to negative.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;negate();
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="polaroid" id="_polaroid">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-bbn.file.image.html">bbn\file\image</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_polaroid">#</a>
+		<code><a href="source-class-bbn.file.image.html#765-790" title="Go to source code">polaroid</a>( )</code>
+
+		<div class="description short">
+			
+<p>Converts the color image to polaroid filter.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts the color image to polaroid filter.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;polaroid();
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.file.image.html">bbn\file\image</a></code></code><br />
+				</div>
+
+
+				<h4>Todo</h4>
+				<div class="list">
+						Transparency of png files.<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="toString" id="_toString">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toString">#</a>
+		<code><a href="source-class-bbn.file.image.html#792-817" title="Go to source code">toString</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the image as string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the image as string.</p>
+
+<pre>
+<span class="php-var">$img</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\image(<span
+class="php-quote">&quot;C:\test\img.jpg&quot;</span>);
+<span
+class="php-var">$img</span>-&gt;toString();
+</pre>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-bbn.file.file.html#methods">bbn\file\file</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-bbn.file.file.html#_delete">delete()</a>, 
+			<a href="class-bbn.file.file.html#_download">download()</a>, 
+			<a href="class-bbn.file.file.html#_get_hash">get_hash()</a>, 
+			<a href="class-bbn.file.file.html#_get_size">get_size()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-bbn.obj.html#methods">bbn\obj</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-bbn.obj.html#___call">__call()</a>, 
+			<a href="class-bbn.obj.html#_log">log()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="allowed_extensions" id="$allowed_extensions">
+		<td class="attributes"><code>
+			protected static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#23-27" title="Go to source code"><var>$allowed_extensions</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-quote">'jpg'</span>,<span class="php-quote">'gif'</span>,<span class="php-quote">'jpeg'</span>,<span class="php-quote">'png'</span>,<span class="php-quote">'svg'</span>)</code></td>
+		<td class="description"><div>
+			<a href="#$allowed_extensions" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="max_width" id="$max_width">
+		<td class="attributes"><code>
+			protected static 
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#28" title="Go to source code"><var>$max_width</var></a>
+		</td>
+		<td class="value"><code><span class="php-num">5000</span></code></td>
+		<td class="description"><div>
+			<a href="#$max_width" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="exif" id="$exif">
+		<td class="attributes"><code>
+			protected static 
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#30-33" title="Go to source code"><var>$exif</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$exif" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="ext2" id="$ext2">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#35-38" title="Go to source code"><var>$ext2</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$ext2" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="w" id="$w">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#40-43" title="Go to source code"><var>$w</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$w" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="h" id="$h">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#45-48" title="Go to source code"><var>$h</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$h" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="img" id="$img">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.file.image.html#50-53" title="Go to source code"><var>$img</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$img" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-bbn.file.file.html#properties">bbn\file\file</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-bbn.file.file.html#$ext"><var>$ext</var></a>, 
+			<a href="class-bbn.file.file.html#$file"><var>$file</var></a>, 
+			<a href="class-bbn.file.file.html#$hash"><var>$hash</var></a>, 
+			<a href="class-bbn.file.file.html#$name"><var>$name</var></a>, 
+			<a href="class-bbn.file.file.html#$path"><var>$path</var></a>, 
+			<a href="class-bbn.file.file.html#$size"><var>$size</var></a>, 
+			<a href="class-bbn.file.file.html#$title"><var>$title</var></a>, 
+			<a href="class-bbn.file.file.html#$uploaded"><var>$uploaded</var></a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-bbn.obj.html#properties">bbn\obj</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-bbn.obj.html#$error"><var>$error</var></a>, 
+			<a href="class-bbn.obj.html#$log"><var>$log</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

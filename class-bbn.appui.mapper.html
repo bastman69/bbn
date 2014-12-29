@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class bbn\appui\mapper | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li class="active"><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-bbn.appui.cron.html">cron</a></li>
+				<li><a href="class-bbn.appui.dbsync.html">dbsync</a></li>
+				<li><a href="class-bbn.appui.grid.html">grid</a></li>
+				<li><a href="class-bbn.appui.history.html">history</a></li>
+				<li class="active"><a href="class-bbn.appui.mapper.html">mapper</a></li>
+				<li><a href="class-bbn.appui.square.html">square</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.appui.html" title="Summary of bbn\appui"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class mapper</h1>
+
+
+	<div class="description">
+	This class builds special tables and defines databases' structure and according
+forms in them. The built tables all have the same prefix (bbn in this example),
+and are called:
+<ul>
+	<li>bbn_clients</li>
+
+	<li>bbn_projects</li>
+
+	<li>bbn_dbs</li>
+
+	<li>bbn_tables</li>
+
+	<li>bbn_columns</li>
+
+	<li>bbn_keys</li>
+
+	<li>bbn_forms</li>
+
+	<li>bbn_fields</li>
+</ul>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.appui.html">appui</a><br />
+		
+
+				<b>Category:</b>
+				Appui<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89<br />
+				<b>Since:</b>
+				Dec 14, 2012, 04:23:55 +0000<br />
+		<b>Located at</b> <a href="source-class-bbn.appui.mapper.html#8-1023" title="Go to source code">appui/mapper.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="table_id" id="_table_id">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_table_id">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#81-100" title="Go to source code">table_id</a>( <span>string <var>$table</var></span>, <span>boolean|string <var>$db</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the ID of a table (db.table)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the ID of a table (db.table)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The database table</dd>
+					<dt><var>$db</var></dt>
+					<dd><code>boolean|string</code><br>$db The database</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="col_id" id="_col_id">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_col_id">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#102-125" title="Go to source code">col_id</a>( <span>string <var>$col</var></span>, <span>type <var>$table</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the ID of a column (db.table.column)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the ID of a column (db.table.column)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$col</var></dt>
+					<dd><code>string</code><br>$col The table's column (can include the table)</dd>
+					<dt><var>$table</var></dt>
+					<dd><code>type</code><br>$table The table</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="simple_name" id="_simple_name">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_simple_name">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#127-136" title="Go to source code">simple_name</a>( <span>string <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the simplest name of a DB item (table/column/key)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the simplest name of a DB item (table/column/key)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd><code>string</code><br>$item</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#138-166" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span>, <span>string <var>$database</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$prefix</var> = <span class="php-quote">'bbn'</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$db</var></dt>
+					<dd><code><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code></code><br>$db A valid database connection</dd>
+					<dt><var>$database</var></dt>
+					<dd><code>string</code><br>$prefix</dd>
+					<dt><var>$prefix</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="save_config" id="_save_config">
+
+		<td class="attributes"><code>
+			 public 
+			integer|false
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_save_config">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#168-222" title="Go to source code">save_config</a>( <span>array <var>$cfg</var></span>, <span>string <var>$description</var></span>, <span>mixed <var>$class</var> = <span class="php-quote">'grid'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Saves the given configuration in the database and returns the new ID</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Saves the given configuration in the database and returns the new ID</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cfg</var></dt>
+					<dd><code>array</code><br>$cfg</dd>
+					<dt><var>$description</var></dt>
+					<dd><code>string</code><br>$class</dd>
+					<dt><var>$class</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer|false</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="load_config" id="_load_config">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_load_config">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#224-313" title="Go to source code">load_config</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$class</var> = <span class="php-quote">'grid'</span></span>, <span>mixed <var>$params</var> = []</span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_default_grid_config" id="_get_default_grid_config">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_default_grid_config">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#315-378" title="Go to source code">get_default_grid_config</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$params</var> = []</span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_default_col_config" id="_get_default_col_config">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_default_col_config">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#381-546" title="Go to source code">get_default_col_config</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span>, <span>mixed <var>$where</var> = []</span>, <span>mixed <var>$params</var> = []</span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_default_form_config" id="_get_default_form_config">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_default_form_config">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#548-598" title="Go to source code">get_default_form_config</a>( <span>mixed <var>$table</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_default_field_config" id="_get_default_field_config">
+
+		<td class="attributes"><code>
+			 private 
+			<code><a href="class-bbn.html.input.html">bbn\html\input</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_default_field_config">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#600-725" title="Go to source code">get_default_field_config</a>( <span>string <var>$table</var></span>, <span>string <var>$column</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Creates an array for configuring an instance of input for a given field in a
+given table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Creates an array for configuring an instance of input for a given field in a
+given table</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The database's table</dd>
+					<dt><var>$column</var></dt>
+					<dd><code>string</code><br>$table The table's column</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.html.input.html">bbn\html\input</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#727-877" title="Go to source code">update</a>( <span>string <var>$db</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Empties the structure tables for a given database and refill them with the
+current structure</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Empties the structure tables for a given database and refill them with the
+current structure</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$db</var></dt>
+					<dd><code>string</code><br>$db</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create_tables" id="_create_tables">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create_tables">#</a>
+		<code><a href="source-class-bbn.appui.mapper.html#879-1022" title="Go to source code">create_tables</a>( )</code>
+
+		<div class="description short">
+			
+<p>Creates the empty appui tables</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Creates the empty appui tables</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="types" id="$types">
+		<td class="attributes"><code>
+			public static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#32-70" title="Go to source code"><var>$types</var></a>
+		</td>
+		<td class="value"><code>[
+          <span class="php-quote">'date'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'date'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'date'</span>
+          ],
+          <span class="php-quote">'datetime'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'datetime'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'date'</span>
+          ],
+          <span class="php-quote">'decimal'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'numeric'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'number'</span>
+          ],
+          <span class="php-quote">'enum'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'dropdown'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'string'</span>
+          ],
+          <span class="php-quote">'float'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'numeric'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'number'</span>
+          ],
+          <span class="php-quote">'int'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'numeric'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'number'</span>
+          ],
+          <span class="php-quote">'text'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'editor'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'string'</span>
+          ],
+          <span class="php-quote">'time'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'time'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'date'</span>
+          ],
+          <span class="php-quote">'varchar'</span> =&gt; [
+              <span class="php-quote">'field'</span> =&gt; <span class="php-quote">'text'</span>,
+              <span class="php-quote">'type'</span> =&gt; <span class="php-quote">'string'</span>
+          ],
+      ]</code></td>
+		<td class="description"><div>
+			<a href="#$types" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="db" id="$db">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#72-73" title="Go to source code"><var>$db</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$db" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="prefix" id="$prefix">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#74" title="Go to source code"><var>$prefix</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$prefix" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="admin_db" id="$admin_db">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#75" title="Go to source code"><var>$admin_db</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$admin_db" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="client_db" id="$client_db">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#76" title="Go to source code"><var>$client_db</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$client_db" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="schema" id="$schema">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#77-78" title="Go to source code"><var>$schema</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$schema" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="auto_update" id="$auto_update">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.mapper.html#79" title="Go to source code"><var>$auto_update</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$auto_update" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

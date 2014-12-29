@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Interface bbn\db\api | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li class="active"><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-bbn.db.connection.html">connection</a></li>
+				<li><a href="class-bbn.db.query.html">query</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-bbn.db.actions.html">actions</a></li>
+				<li class="active"><a href="class-bbn.db.api.html">api</a></li>
+				<li><a href="class-bbn.db.engines.html">engines</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.db.html" title="Summary of bbn\db"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface api</h1>
+
+
+	<div class="description">
+	
+<p>DB API</p>
+
+<p>These methods have to be implemented on the database and another class . Most
+methods usable on query should be also usable directly through database, which
+will create the query apply its method.</p>
+
+	</div>
+
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-bbn.db.connection.html">bbn\db\connection</a>, 
+			<a href="class-bbn.db.languages.json.html">bbn\db\languages\json</a>
+	</div>
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.db.html">db</a><br />
+		
+
+				<b>Category:</b>
+				Database<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89<br />
+				<b>Since:</b>
+				Apr 4, 2011, 23:23:55 +0000<br />
+		<b>Located at</b> <a href="source-class-bbn.db.api.html#6-107" title="Go to source code">db/api.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="select" id="_select">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_select">#</a>
+		<code><a href="source-class-bbn.db.api.html#23-29" title="Go to source code">select</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$fields</var></span>, <span>mixed <var>$where</var></span>, <span>mixed <var>$order</var></span>, <span>mixed <var>$start</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="select_all" id="_select_all">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_select_all">#</a>
+		<code><a href="source-class-bbn.db.api.html#31-37" title="Go to source code">select_all</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$fields</var></span>, <span>mixed <var>$where</var></span>, <span>mixed <var>$order</var></span>, <span>mixed <var>$start</var></span>, <span>mixed <var>$limit</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rselect" id="_rselect">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rselect">#</a>
+		<code><a href="source-class-bbn.db.api.html#39-45" title="Go to source code">rselect</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$fields</var></span>, <span>mixed <var>$where</var></span>, <span>mixed <var>$order</var></span>, <span>mixed <var>$start</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rselect_all" id="_rselect_all">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rselect_all">#</a>
+		<code><a href="source-class-bbn.db.api.html#47-53" title="Go to source code">rselect_all</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$fields</var></span>, <span>mixed <var>$where</var></span>, <span>mixed <var>$order</var></span>, <span>mixed <var>$start</var></span>, <span>mixed <var>$limit</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="select_one" id="_select_one">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_select_one">#</a>
+		<code><a href="source-class-bbn.db.api.html#55-65" title="Go to source code">select_one</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var></span>, <span>string|array <var>$order</var></span>, <span>integer <var>$start</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches a given table and returns an array of a single row text-indexed</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The table name.</dd>
+					<dt><var>$field</var></dt>
+					<dd><code>string</code><br>$field The fields name.</dd>
+					<dt><var>$where</var></dt>
+					<dd><code>array</code><br>$where The "where" condition.</dd>
+					<dt><var>$order</var></dt>
+					<dd><code>string|array</code><br>$order The "order" condition, default: false.</dd>
+					<dt><var>$start</var></dt>
+					<dd><code>integer</code><br>$start The "start" condition, default: 0.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insert" id="_insert">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insert">#</a>
+		<code><a href="source-class-bbn.db.api.html#67-72" title="Go to source code">insert</a>( <span>mixed <var>$table</var></span>, <span>array <var>$values</var></span>, <span>mixed <var>$ignore</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Inserts/Updates rows in the a given table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Inserts/Updates rows in the a given table</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insert_update" id="_insert_update">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insert_update">#</a>
+		<code><a href="source-class-bbn.db.api.html#74-79" title="Go to source code">insert_update</a>( <span>mixed <var>$table</var></span>, <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Inserts/Updates rows in the a given table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Inserts/Updates rows in the a given table</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-bbn.db.api.html#81-86" title="Go to source code">update</a>( <span>mixed <var>$table</var></span>, <span>array <var>$values</var></span>, <span>array <var>$where</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Updates rows in the a given table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Updates rows in the a given table</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-bbn.db.api.html#88-93" title="Go to source code">delete</a>( <span>mixed <var>$table</var></span>, <span>array <var>$where</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Deletes rows in the a given table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Deletes rows in the a given table</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insert_ignore" id="_insert_ignore">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insert_ignore">#</a>
+		<code><a href="source-class-bbn.db.api.html#95-100" title="Go to source code">insert_ignore</a>( <span>mixed <var>$table</var></span>, <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Inserts ignore rows in the a given table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Inserts ignore rows in the a given table</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

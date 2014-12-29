@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class bbn\util\code_parser | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li class="active"><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-bbn.util.code_parser.html">code_parser</a></li>
+				<li><a href="class-bbn.util.enc.html">enc</a></li>
+				<li><a href="class-bbn.util.pparser.html">pparser</a></li>
+				<li><a href="class-bbn.util.timer.html">timer</a></li>
+			</ul>
+
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-bbn.util.info.html">info</a></li>
+				<li><a href="class-bbn.util.logger.html">logger</a></li>
+			</ul>
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.util.html" title="Summary of bbn\util"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class code_parser</h1>
+
+
+	<div class="description">
+	
+<p>A tool for parsing code.</p>
+
+<p>This class will work with PHP, Javascript, and CSS</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.util.html">util</a><br />
+		
+
+				<b>Category:</b>
+				Utilities<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89 &amp; @todo Change make_love_with_me to \bbn\str\text::clean<br />
+				<b>Since:</b>
+				Apr 4, 2011, 23:23:55 +0000<br />
+		<b>Located at</b> <a href="source-class-bbn.util.code_parser.html#6-247" title="Go to source code">util/code_parser.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-bbn.util.code_parser.html#40-183" title="Go to source code">__construct</a>( <span>mixed <var>$string</var></span>, <span>mixed <var>$type</var> = <span class="php-quote">'js'</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="make_love_with_me" id="_make_love_with_me">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_make_love_with_me">#</a>
+		<code><a href="source-class-bbn.util.code_parser.html#185-207" title="Go to source code">make_love_with_me</a>( <span>mixed <var>$s</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_sequences" id="_get_sequences">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_sequences">#</a>
+		<code><a href="source-class-bbn.util.code_parser.html#209-215" title="Go to source code">get_sequences</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_code" id="_get_code">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_code">#</a>
+		<code><a href="source-class-bbn.util.code_parser.html#217-229" title="Go to source code">get_code</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_minified" id="_get_minified">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_minified">#</a>
+		<code><a href="source-class-bbn.util.code_parser.html#231-245" title="Go to source code">get_minified</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="type" id="$type">
+		<td class="attributes"><code>
+			public  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.util.code_parser.html#22-25" title="Go to source code"><var>$type</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$type" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="sequences" id="$sequences">
+		<td class="attributes"><code>
+			private  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.util.code_parser.html#27-31" title="Go to source code"><var>$sequences</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-keyword1">array</span>(<span class="php-quote">'kind'</span>=&gt;<span class="php-quote">'code'</span>,<span class="php-quote">'content'</span>=&gt;<span class="php-quote">''</span>))</code></td>
+		<td class="description"><div>
+			<a href="#$sequences" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>will be the resulting array of the string, divided in sequences, having a
+kind and a content</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>will be the resulting array of the string, divided in sequences, having a
+kind and a content</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="specials" id="$specials">
+		<td class="attributes"><code>
+			private static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.util.code_parser.html#33-37" title="Go to source code"><var>$specials</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-quote">';'</span>,<span class="php-quote">'='</span>,<span class="php-quote">'+'</span>,<span class="php-quote">'-'</span>,<span class="php-quote">'@'</span>,<span class="php-quote">'('</span>,<span class="php-quote">')'</span>,<span class="php-quote">'{'</span>,<span class="php-quote">'}'</span>,<span class="php-quote">'['</span>,<span class="php-quote">']'</span>,<span class="php-quote">','</span>,<span class="php-quote">':'</span>)</code></td>
+		<td class="description"><div>
+			<a href="#$specials" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Special chars we know don't need space around in the code - no / * or \ on
+purpose</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Special chars we know don't need space around in the code - no / * or \ on
+purpose</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

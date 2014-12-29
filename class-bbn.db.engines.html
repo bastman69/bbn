@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Interface bbn\db\engines | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li class="active"><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-bbn.db.connection.html">connection</a></li>
+				<li><a href="class-bbn.db.query.html">query</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-bbn.db.actions.html">actions</a></li>
+				<li><a href="class-bbn.db.api.html">api</a></li>
+				<li class="active"><a href="class-bbn.db.engines.html">engines</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.db.html" title="Summary of bbn\db"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface engines</h1>
+
+
+	<div class="description">
+	
+<p>DB Interface</p>
+
+<p>These methods have to be implemented on both database and query. Most methods
+usable on query should be also usable directly through database, which will
+create the query apply its method.</p>
+
+	</div>
+
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-bbn.db.connection.html">bbn\db\connection</a>, 
+			<a href="class-bbn.db.languages.mysql.html">bbn\db\languages\mysql</a>, 
+			<a href="class-bbn.db.languages.sqlite.html">bbn\db\languages\sqlite</a>
+	</div>
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.db.html">db</a><br />
+		
+
+				<b>Category:</b>
+				Database<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89<br />
+				<b>Since:</b>
+				Apr 4, 2011, 23:23:55 +0000<br />
+		<b>Located at</b> <a href="source-class-bbn.db.engines.html#6-214" title="Go to source code">db/engines.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="change" id="_change">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_change">#</a>
+		<code><a href="source-class-bbn.db.engines.html#22-28" title="Go to source code">change</a>( <span>mixed <var>$db</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of several arrays of rows
+text-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of several arrays of rows
+text-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>$this<br />
+				</div>
+
+
+				<h4>Params</h4>
+				<div class="list">
+						string<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escape" id="_escape">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escape">#</a>
+		<code><a href="source-class-bbn.db.engines.html#30-36" title="Go to source code">escape</a>( <span>string <var>$item</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a database item expression escaped like database, table, column, key
+names</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a database item expression escaped like database, table, column, key
+names</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$item</var></dt>
+					<dd><code>string</code><br>$item The item's name (escaped or not)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>| false<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="table_full_name" id="_table_full_name">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_table_full_name">#</a>
+		<code><a href="source-class-bbn.db.engines.html#38-45" title="Go to source code">table_full_name</a>( <span>string <var>$table</var></span>, <span>boolean <var>$escaped</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a table's full name i.e. database.table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a table's full name i.e. database.table</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The table's name (escaped or not)</dd>
+					<dt><var>$escaped</var></dt>
+					<dd><code>boolean</code><br>$escaped If set to true the returned string will be escaped</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>| false<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="table_simple_name" id="_table_simple_name">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_table_simple_name">#</a>
+		<code><a href="source-class-bbn.db.engines.html#47-54" title="Go to source code">table_simple_name</a>( <span>string <var>$table</var></span>, <span>boolean <var>$escaped</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a table's simple name i.e. table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a table's simple name i.e. table</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The table's name (escaped or not)</dd>
+					<dt><var>$escaped</var></dt>
+					<dd><code>boolean</code><br>$escaped If set to true the returned string will be escaped</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>| false<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="col_full_name" id="_col_full_name">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_col_full_name">#</a>
+		<code><a href="source-class-bbn.db.engines.html#56-64" title="Go to source code">col_full_name</a>( <span>string <var>$col</var></span>, <span>string <var>$table</var> = <span class="php-quote">''</span></span>, <span>boolean <var>$escaped</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a column's full name i.e. table.column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a column's full name i.e. table.column</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$col</var></dt>
+					<dd><code>string</code><br>$col The column's name (escaped or not)</dd>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The table's name (escaped or not)</dd>
+					<dt><var>$escaped</var></dt>
+					<dd><code>boolean</code><br>$escaped If set to true the returned string will be escaped</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>| false<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="col_simple_name" id="_col_simple_name">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_col_simple_name">#</a>
+		<code><a href="source-class-bbn.db.engines.html#66-73" title="Go to source code">col_simple_name</a>( <span>string <var>$col</var></span>, <span>boolean <var>$escaped</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns a column's simple name i.e. column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a column's simple name i.e. column</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$col</var></dt>
+					<dd><code>string</code><br>$col The column's name (escaped or not)</dd>
+					<dt><var>$escaped</var></dt>
+					<dd><code>boolean</code><br>$escaped If set to true the returned string will be escaped</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>| false<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="disable_keys" id="_disable_keys">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_disable_keys">#</a>
+		<code><a href="source-class-bbn.db.engines.html#75-80" title="Go to source code">disable_keys</a>( )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of a single row num-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of a single row num-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="enable_keys" id="_enable_keys">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_enable_keys">#</a>
+		<code><a href="source-class-bbn.db.engines.html#82-87" title="Go to source code">enable_keys</a>( )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of several arrays of rows
+num-indexed</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of several arrays of rows
+num-indexed</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_databases" id="_get_databases">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_databases">#</a>
+		<code><a href="source-class-bbn.db.engines.html#89-94" title="Go to source code">get_databases</a>( )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of arrays, one per column, each
+having each column's values</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of arrays, one per column, each
+having each column's values</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_tables" id="_get_tables">
+
+		<td class="attributes"><code>
+			 public 
+			false|object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_tables">#</a>
+		<code><a href="source-class-bbn.db.engines.html#96-101" title="Go to source code">get_tables</a>( )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an object of a single row, alias of
+get_object</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an object of a single row, alias of
+get_object</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|object</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_columns" id="_get_columns">
+
+		<td class="attributes"><code>
+			 public 
+			false|object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_columns">#</a>
+		<code><a href="source-class-bbn.db.engines.html#103-108" title="Go to source code">get_columns</a>( <span>mixed <var>$table</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an object of a single row</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an object of a single row</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|object</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_keys" id="_get_keys">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_keys">#</a>
+		<code><a href="source-class-bbn.db.engines.html#110-115" title="Go to source code">get_keys</a>( <span>mixed <var>$table</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_order" id="_get_order">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_order">#</a>
+		<code><a href="source-class-bbn.db.engines.html#117-122" title="Go to source code">get_order</a>( <span>mixed <var>$order</var></span>, <span>mixed <var>$table</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a string starting with ORDER BY with corresponding parameters to
+$order</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a string starting with ORDER BY with corresponding parameters to
+$order</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_limit" id="_get_limit">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_limit">#</a>
+		<code><a href="source-class-bbn.db.engines.html#124-129" title="Go to source code">get_limit</a>( <span>mixed <var>$limit</var></span>, <span>mixed <var>$start</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Get a string starting with LIMIT with corresponding parameters to $where</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Get a string starting with LIMIT with corresponding parameters to $where</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_create" id="_get_create">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_create">#</a>
+		<code><a href="source-class-bbn.db.engines.html#131-136" title="Go to source code">get_create</a>( <span>mixed <var>$table</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_delete" id="_get_delete">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_delete">#</a>
+		<code><a href="source-class-bbn.db.engines.html#138-143" title="Go to source code">get_delete</a>( <span>mixed <var>$table</var></span>, <span>array <var>$where</var></span>, <span>mixed <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_select" id="_get_select">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_select">#</a>
+		<code><a href="source-class-bbn.db.engines.html#145-150" title="Go to source code">get_select</a>( <span>mixed <var>$table</var></span>, <span>array <var>$fields</var> = <span class="php-keyword1">array</span>()</span>, <span>array <var>$where</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$order</var></span>, <span>mixed <var>$limit</var></span>, <span>mixed <var>$start</var></span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_insert" id="_get_insert">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_insert">#</a>
+		<code><a href="source-class-bbn.db.engines.html#152-157" title="Go to source code">get_insert</a>( <span>mixed <var>$table</var></span>, <span>array <var>$fields</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_update" id="_get_update">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_update">#</a>
+		<code><a href="source-class-bbn.db.engines.html#159-164" title="Go to source code">get_update</a>( <span>mixed <var>$table</var></span>, <span>array <var>$fields</var> = <span class="php-keyword1">array</span>()</span>, <span>array <var>$where</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_column_values" id="_get_column_values">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_column_values">#</a>
+		<code><a href="source-class-bbn.db.engines.html#166-171" title="Go to source code">get_column_values</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$field</var></span>, <span>array <var>$where</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$limit</var></span>, <span>mixed <var>$start</var></span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Return an array of each values of the field $field in the table $table</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return an array of each values of the field $field in the table $table</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_values_count" id="_get_values_count">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_values_count">#</a>
+		<code><a href="source-class-bbn.db.engines.html#173-178" title="Go to source code">get_values_count</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$field</var></span>, <span>array <var>$where</var> = <span class="php-keyword1">array</span>()</span>, <span>mixed <var>$limit</var></span>, <span>mixed <var>$start</var></span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Return an array of double values arrays: each value of the field $field in
+the table $table and the number of instances</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return an array of double values arrays: each value of the field $field in
+the table $table and the number of instances</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create_db_index" id="_create_db_index">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create_db_index">#</a>
+		<code><a href="source-class-bbn.db.engines.html#180-185" title="Go to source code">create_db_index</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span>, <span>mixed <var>$unique</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$length</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete_db_index" id="_delete_db_index">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete_db_index">#</a>
+		<code><a href="source-class-bbn.db.engines.html#187-192" title="Go to source code">delete_db_index</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fetches the database and returns an array of objects</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create_db_user" id="_create_db_user">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create_db_user">#</a>
+		<code><a href="source-class-bbn.db.engines.html#194-199" title="Go to source code">create_db_user</a>( <span>mixed <var>$user</var></span>, <span>mixed <var>$pass</var></span>, <span>mixed <var>$db</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Creates a database user</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Creates a database user</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete_db_user" id="_delete_db_user">
+
+		<td class="attributes"><code>
+			 public 
+			false|array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete_db_user">#</a>
+		<code><a href="source-class-bbn.db.engines.html#201-206" title="Go to source code">delete_db_user</a>( <span>mixed <var>$user</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Deletes a database user</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Deletes a database user</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_users" id="_get_users">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_users">#</a>
+		<code><a href="source-class-bbn.db.engines.html#208-213" title="Go to source code">get_users</a>( <span>mixed <var>$user</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$host</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an array of queries to recreate the user(s)</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an array of queries to recreate the user(s)</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

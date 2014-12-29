@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://nabab.github.io/bbn/sitemap.xml

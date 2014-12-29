@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class bbn\tools | nabab/bbn</title>
+
+	<script type="text/javascript" src="resources/combined.js?823466903"></script>
+	<script type="text/javascript" src="elementlist.js?2786233414"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
+						</li>
+							</ul></li></ul></li>
+				<li><a href="namespace-bbn.appui.html">appui</a>
+						</li>
+				<li><a href="namespace-bbn.db.html">db<span></span></a>
+						<ul>
+				<li><a href="namespace-bbn.db.languages.html">languages</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-bbn.file.html">file</a>
+						</li>
+				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
+						</li>
+				<li><a href="namespace-bbn.str.html">str</a>
+						</li>
+				<li><a href="namespace-bbn.time.html">time</a>
+						</li>
+				<li><a href="namespace-bbn.user.html">user</a>
+						</li>
+				<li><a href="namespace-bbn.util.html">util</a>
+						</li>
+				<li><a href="namespace-bbn.vars.html">vars</a>
+						</li>
+				<li><a href="namespace-bbn.version.html">version</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-bbn.decorator.html">decorator</a></li>
+				<li><a href="class-bbn.environment.html">environment</a></li>
+				<li><a href="class-bbn.mvc.html">mvc</a></li>
+				<li><a href="class-bbn.new_mvc.html">new_mvc</a></li>
+				<li><a href="class-bbn.obj.html">obj</a></li>
+				<li class="active"><a href="class-bbn.tools.html">tools</a></li>
+				<li><a href="class-bbn.tpl.html">tpl</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-bbn.html" title="Summary of bbn"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+			<li>
+				<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+			</li>
+			<li>
+				<a href="todo.html" title="Todo list"><span>Todo</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class tools</h1>
+
+
+	<div class="description">
+	
+<p>Model View Controller Class</p>
+
+<p>This class will route a request to the according model and/or view through
+its controller. A model and a view can be automatically associated if located in
+the same directory branch with the same name than the controller in their
+respective locations A view can be directly imported in the controller through
+this very class</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a><br />
+		
+
+				<b>Category:</b>
+				MVC<br />
+				<b>Copyright:</b>
+				BBN Solutions<br />
+				<b>License:</b>
+				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<b>Author:</b>
+				Thomas Nabet &lt;<a
+href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				0.2r89<br />
+				<b>Since:</b>
+				Apr 4, 2011, 23:23:55 +0000<br />
+				<b>Todo:</b>
+				Merge the output objects and combine JS strings.<br />
+				<b>Todo:</b>
+				Stop to rely only on sqlite and offer file-based or any db-based solution.<br />
+				<b>Todo:</b>
+				Look into the check function and divide it<br />
+		<b>Located at</b> <a href="source-class-bbn.tools.html#4-679" title="Go to source code">tools.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="report" id="_report">
+
+		<td class="attributes"><code>
+			 public static
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_report">#</a>
+		<code><a href="source-class-bbn.tools.html#24-53" title="Go to source code">report</a>( <span>string <var>$st</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Add information to the $info array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Add information to the $info array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st The information to be added.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="log" id="_log">
+
+		<td class="attributes"><code>
+			 public static
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_log">#</a>
+		<code><a href="source-class-bbn.tools.html#55-91" title="Go to source code">log</a>( <span>string <var>$st</var></span>, <span>string <var>$file</var> = <span class="php-quote">'misc'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Save the logs to a file.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Save the logs to a file.</p>
+
+<pre>
+\bbn\tools::<span class="php-keyword2">log</span>(<span
+class="php-quote">'My text'</span>,<span
+class="php-quote">'FileName'</span>);
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$st</var></dt>
+					<dd><code>string</code><br>$st Text to save.</dd>
+					<dt><var>$file</var></dt>
+					<dd><code>string</code><br>$file Filename, , default: "misc".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="merge_objects" id="_merge_objects">
+
+		<td class="attributes"><code>
+			 public static
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_merge_objects">#</a>
+		<code><a href="source-class-bbn.tools.html#93-130" title="Go to source code">merge_objects</a>( <span>object <var>$o1</var></span>, <span>object <var>$o2</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an object as merge of two objects.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an object as merge of two objects.</p>
+
+<pre>
+<span class="php-keyword1">class</span> A {
+ <span
+class="php-keyword1">public</span> <span class="php-var">$a</span> = <span
+class="php-num">10</span>;
+ <span class="php-keyword1">public</span> <span
+class="php-var">$b</span> = <span class="php-num">20</span>;
+};
+
+<span
+class="php-keyword1">class</span> B {
+ <span
+class="php-keyword1">public</span> <span class="php-var">$c</span> = <span
+class="php-num">30</span>;
+ <span class="php-keyword1">public</span> <span
+class="php-var">$d</span> = <span class="php-num">40</span>;
+};
+
+<span
+class="php-var">$obj1</span> = <span class="php-keyword1">new</span> A;
+<span
+class="php-var">$obj2</span> = <span
+class="php-keyword1">new</span> B;
+
+\bbn\tools::merge_objects(<span
+class="php-var">$obj1</span>, <span class="php-var">$obj2</span>); <span
+class="php-comment">//Returns {'a': 10, 'b': 20, 'c': 30, 'd': 40}</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$o1</var></dt>
+					<dd><code>object</code><br>$o1 The first object to merge.</dd>
+					<dt><var>$o2</var></dt>
+					<dd><code>object</code><br>$o2 The second object to merge.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>The merged object.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="merge_arrays" id="_merge_arrays">
+
+		<td class="attributes"><code>
+			 public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_merge_arrays">#</a>
+		<code><a href="source-class-bbn.tools.html#131-173" title="Go to source code">merge_arrays</a>( <span>array <var>$a1</var></span>, <span>array <var>$a2</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an array as merge of two arrays.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an array as merge of two arrays.</p>
+
+<pre>
+\bbn\tools::merge_arrays([<span class="php-num">1</span>, <span
+class="php-quote">'Test'</span>], [<span class="php-num">2</span>, <span
+class="php-quote">'Example'</span>]); <span
+class="php-comment">//Returns [1, 'Test', 2, 'Example']</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$a1</var></dt>
+					<dd><code>array</code><br>$a1 The first array to merge.</dd>
+					<dt><var>$a2</var></dt>
+					<dd><code>array</code><br>$a2 The second array to merge.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>The merged array.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="to_object" id="_to_object">
+
+		<td class="attributes"><code>
+			 public static
+			false|object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_to_object">#</a>
+		<code><a href="source-class-bbn.tools.html#175-200" title="Go to source code">to_object</a>( <span>array <var>$ar</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Makes an object of an array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Makes an object of an array.</p>
+
+<pre>
+\bbn\tools::to_object([[<span class="php-num">1</span>, <span
+class="php-quote">'Test'</span>], [<span class="php-num">2</span>, <span
+class="php-quote">'Example'</span>]]); <span
+class="php-comment">//Returns {[1, 'Test'], [2, 'Example']}</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ar</var></dt>
+					<dd><code>array</code><br>$ar The array to trasform.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|object</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="to_array" id="_to_array">
+
+		<td class="attributes"><code>
+			 public static
+			false|object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_to_array">#</a>
+		<code><a href="source-class-bbn.tools.html#202-244" title="Go to source code">to_array</a>( <span>object <var>$obj</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Makes an array of an object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Makes an array of an object.</p>
+
+<pre>
+<span class="php-var">$file</span> = <span
+class="php-keyword1">new</span> \bbn\<span
+class="php-keyword2">file</span>\<span class="php-keyword2">file</span>(<span
+class="php-quote">&quot;C:/logs/test.log&quot;</span>);
+<span
+class="php-keyword1">echo</span> \bbn\tools::to_array(<span
+class="php-var">$file</span>);
+<span
+class="php-comment">//Returns [</span>
+    <span
+class="php-quote">'*size'</span> =&gt; <span class="php-num">0</span>,
+    <span
+class="php-quote">'*ext'</span> =&gt; <span
+class="php-quote">'log'</span>,
+    <span
+class="php-quote">'*hash'</span> =&gt; <span
+class="php-keyword1">null</span>,
+    <span
+class="php-quote">'path'</span> =&gt; <span
+class="php-quote">'C:/logs/'</span>,
+    <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test.log'</span>,
+    <span
+class="php-quote">'file'</span> =&gt; <span
+class="php-quote">'C:/logs/test.log'</span>,
+    <span
+class="php-quote">'title'</span> =&gt; <span
+class="php-quote">'test'</span>,
+    <span
+class="php-quote">'uploaded'</span> =&gt; <span
+class="php-num">0</span>,
+    <span
+class="php-quote">'*error'</span> =&gt; <span
+class="php-keyword1">null</span>,
+    <span
+class="php-quote">'*log'</span> =&gt; [
+    ],
+]
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$obj</var></dt>
+					<dd><code>object</code><br>$obj The object to trasform.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>false|object</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="indent_json" id="_indent_json">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_indent_json">#</a>
+		<code><a href="source-class-bbn.tools.html#246-307" title="Go to source code">indent_json</a>( <span>string <var>$json</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Indents a flat JSON string to make it more human-readable.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Indents a flat JSON string to make it more human-readable.</p>
+
+<pre>
+\bbn\tools::indent_json(<span
+class="php-quote">'{&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Smith&quot;, &quot;age&quot;: 25}'</span>);
+<span
+class="php-comment">//Returns {&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Smith&quot;, &quot;isAlive&quot;: true, &quot;age&quot;: 25}</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$json</var></dt>
+					<dd><code>string</code><br>$json The original JSON string to process.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Indented version of the original JSON string.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="remove_empty" id="_remove_empty">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_remove_empty">#</a>
+		<code><a href="source-class-bbn.tools.html#309-345" title="Go to source code">remove_empty</a>( <span>array|object <var>$arr</var></span>, <span>boolean <var>$remove_space</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an object or an array cleaned up from all empty values.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an object or an array cleaned up from all empty values.</p>
+
+<pre>
+\bbn\tools::remove_empty([<span class="php-quote">'Pippo'</span>, <span
+class="php-quote">'Pluto'</span>, <span class="php-quote">''</span>, <span
+class="php-quote">'Paperino'</span>, <span class="php-quote">' '</span>]); <span
+class="php-comment">//Returns [0 =&gt; 'Pippo', 1 =&gt; 'Pluto', 3 =&gt; 'Paperino', 4 =&gt; ' ']</span>
+\bbn\tools::remove_empty([<span
+class="php-quote">'Pippo'</span>, <span class="php-quote">'Pluto'</span>, <span
+class="php-quote">''</span>, <span class="php-quote">'Paperino'</span>, <span
+class="php-quote">' '</span>], <span class="php-num">1</span>)); <span
+class="php-comment">//Returns [0 =&gt; 'Pippo', 1 =&gt; 'Pluto', 3 =&gt; 'Paperino']</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$arr</var></dt>
+					<dd><code>array|object</code><br>$arr An object or array to clean.</dd>
+					<dt><var>$remove_space</var></dt>
+					<dd><code>boolean</code><br>$remove_space If "true" the spaces are removed, default: "false".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The clean result.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="to_groups" id="_to_groups">
+
+		<td class="attributes"><code>
+			 public static
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_to_groups">#</a>
+		<code><a href="source-class-bbn.tools.html#347-367" title="Go to source code">to_groups</a>( <span>array <var>$arr</var></span>, <span>string <var>$keyname</var> = <span class="php-quote">'value'</span></span>, <span>string <var>$valname</var> = <span class="php-quote">'text'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns an array containing an array for each element highlighting the index
+with an alias (keyname) and the value with an alias (valname).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns an array containing an array for each element highlighting the index
+with an alias (keyname) and the value with an alias (valname).</p>
+
+<pre>
+\bbn\tools::to_groups([<span class="php-quote">'Pippo'</span>, <span
+class="php-quote">'Pluto'</span>, <span
+class="php-quote">'Paperino'</span>]);
+<span
+class="php-comment">//Returns [['value' =&gt; 0, 'text' =&gt; 'Pippo'], ['value' =&gt; 1, 'text' =&gt; 'Pluto'], ['value' =&gt; 2, 'text' =&gt; 'Paperino']]</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$arr</var></dt>
+					<dd><code>array</code><br>$arr The original array.</dd>
+					<dt><var>$keyname</var></dt>
+					<dd><code>string</code><br>$keyname Alias for index, default: "value".</dd>
+					<dt><var>$valname</var></dt>
+					<dd><code>string</code><br>$valname Alias for value, default: "text".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>Groups array.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_assoc" id="_is_assoc">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_assoc">#</a>
+		<code><a href="source-class-bbn.tools.html#369-384" title="Go to source code">is_assoc</a>( <span>array <var>$r</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Exports variable in fashion immediately re-importable in PHP.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Exports variable in fashion immediately re-importable in PHP.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$r</var></dt>
+					<dd><code>array</code><br>$r The array to be.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_dump" id="_get_dump">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_dump">#</a>
+		<code><a href="source-class-bbn.tools.html#386-421" title="Go to source code">get_dump</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_hdump" id="_get_hdump">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_hdump">#</a>
+		<code><a href="source-class-bbn.tools.html#423-428" title="Go to source code">get_hdump</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="dump" id="_dump">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_dump">#</a>
+		<code><a href="source-class-bbn.tools.html#430-437" title="Go to source code">dump</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hdump" id="_hdump">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hdump">#</a>
+		<code><a href="source-class-bbn.tools.html#439-445" title="Go to source code">hdump</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="build_options" id="_build_options">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_build_options">#</a>
+		<code><a href="source-class-bbn.tools.html#447-493" title="Go to source code">build_options</a>( <span>array <var>$values</var></span>, <span>string <var>$selected</var> = <span class="php-quote">''</span></span>, <span>string <var>$empty_label</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns HTML code for creating the &lt;option&gt; tag.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns HTML code for creating the &lt;option&gt; tag.</p>
+
+<pre>
+\bbn\tools::build_options([<span class="php-quote">'yes'</span>, <span
+class="php-quote">'no'</span>]); <span
+class="php-comment">//Returns &quot;&lt;option value=&quot;yes&quot;&gt;yes&lt;/option&gt;&lt;option value=&quot;no&quot;&gt;no&lt;/option&gt;&quot;</span>
+\bbn\tools::build_options([<span
+class="php-quote">'yes'</span>, <span class="php-quote">'no'</span>], <span
+class="php-quote">'no'</span>); <span
+class="php-comment">//Returns &quot;&lt;option value=&quot;yes&quot;&gt;yes&lt;/option&gt;&lt;option value=&quot;no&quot; selected=&quot;selected&quot;&gt;no&lt;/option&gt;&quot;</span>
+\bbn\tools::build_options([<span
+class="php-quote">'yes'</span>, <span class="php-quote">'no'</span>], <span
+class="php-quote">'no'</span>, <span
+class="php-quote">'LabelForEmpty'</span>); <span
+class="php-comment">//Returns &quot;&lt;option value=&quot;&quot;&gt;LabelForEmpty&lt;/option&gt;&lt;option value=&quot;yes&quot;&gt;yes&lt;/option&gt;&lt;option value=&quot;no&quot; selected=&quot;selected&quot;&gt;no&lt;/option&gt;&quot;</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>array</code><br>$values An array with one or plus values.</dd>
+					<dt><var>$selected</var></dt>
+					<dd><code>string</code><br>$select The value to indicate how selected, default: "".</dd>
+					<dt><var>$empty_label</var></dt>
+					<dd><code>string</code><br>$empty_label Label for empty value, default: "false".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The HTML code.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="to_keypair" id="_to_keypair">
+
+		<td class="attributes"><code>
+			 public static
+			array|false
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_to_keypair">#</a>
+		<code><a href="source-class-bbn.tools.html#495-521" title="Go to source code">to_keypair</a>( <span>array <var>$arr</var></span>, <span>boolean <var>$protected</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Converts a numeric array to an associative one, using the values
+alternatively as key or value.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Converts a numeric array to an associative one, using the values
+alternatively as key or value.</p>
+
+<pre>
+\bbn\tools::to_keypair([<span class="php-quote">'Test'</span>, <span
+class="php-quote">'TestFile'</span>, <span
+class="php-quote">'Example'</span>, <span
+class="php-quote">'ExampleFile'</span>]); <span
+class="php-comment">//Returns ['Test' =&gt; 'TestFile', 'Example' =&gt; 'ExampleFile']</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$arr</var></dt>
+					<dd><code>array</code><br>$arr must contain an even number of values.</dd>
+					<dt><var>$protected</var></dt>
+					<dd><code>boolean</code><br>$protected if false no index protection will be performed, default: "1".</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array|false</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="max_with_key" id="_max_with_key">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_max_with_key">#</a>
+		<code><a href="source-class-bbn.tools.html#523-549" title="Go to source code">max_with_key</a>( <span>array <var>$array</var></span>, <span>mixed <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the maximum value of an index of a multidimensional array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the maximum value of an index of a multidimensional array.</p>
+
+<pre>
+\bbn\tools::max_with_key([
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">1</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test1'</span>],
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">8</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test2'</span>],
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">45</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test3'</span>],
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">2</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test4'</span>]
+], <span class="php-quote">'v'</span>); <span
+class="php-comment">//Returns 45</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$arr A multidimensional array.</dd>
+					<dt><var>$key</var></dt>
+					<dd><code>mixed</code><br>$key The index where to search.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="min_with_key" id="_min_with_key">
+
+		<td class="attributes"><code>
+			 public static
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_min_with_key">#</a>
+		<code><a href="source-class-bbn.tools.html#551-577" title="Go to source code">min_with_key</a>( <span>array <var>$array</var></span>, <span>mixed <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the minimum value of an index of a multidimensional array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the minimum value of an index of a multidimensional array.</p>
+
+<pre>
+\bbn\tools::max_with_key([
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">1</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test1'</span>],
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">8</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test2'</span>],
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">45</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test3'</span>],
+ [<span
+class="php-quote">'v'</span> =&gt; <span class="php-num">2</span>, <span
+class="php-quote">'name'</span> =&gt; <span
+class="php-quote">'test4'</span>]
+], <span class="php-quote">'v'</span>); <span
+class="php-comment">//Returns  1</span>
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd><code>array</code><br>$arr A multidimensional array.</dd>
+					<dt><var>$key</var></dt>
+					<dd><code>mixed</code><br>$key The index where to search.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="debug" id="_debug">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_debug">#</a>
+		<code><a href="source-class-bbn.tools.html#579-596" title="Go to source code">debug</a>( <span>mixed <var>$file</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sort" id="_sort">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sort">#</a>
+		<code><a href="source-class-bbn.tools.html#598-617" title="Go to source code">sort</a>( <span>mixed <var>&amp; $ar</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sort_by" id="_sort_by">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sort_by">#</a>
+		<code><a href="source-class-bbn.tools.html#619-641" title="Go to source code">sort_by</a>( <span>mixed <var>&amp; $ar</var></span>, <span>mixed <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_windows" id="_is_windows">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_windows">#</a>
+		<code><a href="source-class-bbn.tools.html#644-652" title="Go to source code">is_windows</a>( )</code>
+
+		<div class="description short">
+			
+<p>Tells whether the current system from which PHP is executed is Windows or
+not</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Tells whether the current system from which PHP is executed is Windows or
+not</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="curl" id="_curl">
+
+		<td class="attributes"><code>
+			 public static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_curl">#</a>
+		<code><a href="source-class-bbn.tools.html#654-678" title="Go to source code">curl</a>( <span>mixed <var>$url</var></span>, <span>mixed <var>$param</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$method</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
