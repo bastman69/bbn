@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\api\kendo\template | nabab/bbn</title>
+	<title>Interface bbn\mvc\api | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?2855017884"></script>
@@ -23,9 +23,9 @@
 			<ul>
 				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
 						<ul>
-				<li class="active"><a href="namespace-bbn.api.html">api<span></span></a>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
 						<ul>
-				<li class="active"><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
+				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
 						<ul>
 				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
 						</li>
@@ -41,7 +41,7 @@
 						</li>
 				<li><a href="namespace-bbn.html.html">html</a>
 						</li>
-				<li><a href="namespace-bbn.mvc.html">mvc</a>
+				<li class="active"><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
 				<li><a href="namespace-bbn.str.html">str</a>
 						</li>
@@ -65,14 +65,20 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-bbn.api.kendo.grid.html" class="invalid">grid</a></li>
-				<li><a href="class-bbn.api.kendo.grid_old.html">grid_old</a></li>
-				<li><a href="class-bbn.api.kendo.object.html">object</a></li>
-				<li class="active"><a href="class-bbn.api.kendo.template.html">template</a></li>
-				<li><a href="class-bbn.api.kendo.tree.html">tree</a></li>
+				<li><a href="class-bbn.mvc.controller.html">controller</a></li>
+				<li><a href="class-bbn.mvc.model.html">model</a></li>
+				<li><a href="class-bbn.mvc.view.html">view</a></li>
 			</ul>
 
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-bbn.mvc.api.html">api</a></li>
+			</ul>
 
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.common.html">common</a></li>
+			</ul>
 
 
 
@@ -97,7 +103,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.api.kendo.html" title="Summary of bbn\api\kendo"><span>Namespace</span></a>
+				<a href="namespace-bbn.mvc.html" title="Summary of bbn\mvc"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -118,7 +124,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class template</h1>
+	<h1>Interface api</h1>
 
 
 
@@ -126,6 +132,11 @@
 
 
 
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-bbn.mvc.controller.html">bbn\mvc\controller</a>, 
+			<a href="class-bbn.mvcv2.html">bbn\mvcv2</a>
+	</div>
 
 
 
@@ -133,17 +144,17 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.api.html">api</a>\<a href="namespace-bbn.api.kendo.html">kendo</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.api.kendo.template.html#7-20" title="Go to source code">api/kendo/template.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvc.api.html#12-22" title="Go to source code">mvc/api.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
+	<tr data-order="reroute" id="_reroute">
 
 		<td class="attributes"><code>
 			 public 
@@ -153,8 +164,8 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.api.kendo.template.html#11-13" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.mvc.html">bbn\mvc</a></code> <var>$mvc</var></span> )</code>
+		<a class="anchor" href="#_reroute">#</a>
+		<code><a href="source-class-bbn.mvc.api.html#14" title="Go to source code">reroute</a>( <span>mixed <var>$path</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$check</var> = <span class="php-num">1</span></span> )</code>
 
 		<div class="description short">
 			
@@ -172,7 +183,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get" id="_get">
+	<tr data-order="get_model" id="_get_model">
 
 		<td class="attributes"><code>
 			 public 
@@ -182,8 +193,66 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-bbn.api.kendo.template.html#15-19" title="Go to source code">get</a>( <span>mixed <var>$id</var></span> )</code>
+		<a class="anchor" href="#_get_model">#</a>
+		<code><a href="source-class-bbn.mvc.api.html#16" title="Go to source code">get_model</a>( <span>mixed <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_view" id="_get_view">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_view">#</a>
+		<code><a href="source-class-bbn.mvc.api.html#18" title="Go to source code">get_view</a>( <span>mixed <var>$path</var></span>, <span>mixed <var>$data</var> = []</span>, <span>mixed <var>$mode</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="is_cli" id="_is_cli">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_is_cli">#</a>
+		<code><a href="source-class-bbn.mvc.api.html#20" title="Go to source code">is_cli</a>( )</code>
 
 		<div class="description short">
 			
@@ -214,32 +283,6 @@
 
 
 
-	<table class="summary" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="mvc" id="$mvc">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.kendo.template.html#9" title="Go to source code"><var>$mvc</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$mvc" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 

@@ -8,7 +8,7 @@
 	<title>File mvc.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1956655620"></script>
+	<script type="text/javascript" src="elementlist.js?2855017884"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -68,7 +68,6 @@
 			<ul>
 				<li><a href="class-bbn.decorator.html">decorator</a></li>
 				<li><a href="class-bbn.environment.html">environment</a></li>
-				<li><a href="class-bbn.model.html">model</a></li>
 				<li class="active"><a href="class-bbn.mvc.html">mvc</a></li>
 				<li><a href="class-bbn.mvcv2.html">mvcv2</a></li>
 				<li><a href="class-bbn.obj.html">obj</a></li>
@@ -145,7 +144,7 @@
 </span><span id="21" class="l"><a class="l" href="#21">  21: </a>
 </span><span id="22" class="l"><a class="l" href="#22">  22: </a><span class="php-keyword1">class</span> <a id="mvc" href="#mvc">mvc</a> <span class="php-keyword1">extends</span> obj
 </span><span id="23" class="l"><a class="l" href="#23">  23: </a>{
-</span><span id="24" class="l"><a class="l" href="#24">  24: </a>  
+</span><span id="24" class="l"><a class="l" href="#24">  24: </a>
 </span><span id="25" class="l"><a class="l" href="#25">  25: </a>    <span class="php-keyword1">private</span>
 </span><span id="26" class="l"><a class="l" href="#26">  26: </a>    <span class="php-comment">/**
 </span></span><span id="27" class="l"><a class="l" href="#27">  27: </a><span class="php-comment">     * Is set to null while not routed, then 1 if routing was sucessful, and false otherwise.
@@ -193,7 +192,7 @@
 </span></span><span id="69" class="l"><a class="l" href="#69">  69: </a><span class="php-comment">     * @var boolean
 </span></span><span id="70" class="l"><a class="l" href="#70">  70: </a><span class="php-comment">     */</span>
 </span><span id="71" class="l"><a class="l" href="#71">  71: </a>        <span class="php-var">$cli</span>;
-</span><span id="72" class="l"><a class="l" href="#72">  72: </a>  
+</span><span id="72" class="l"><a class="l" href="#72">  72: </a>
 </span><span id="73" class="l"><a class="l" href="#73">  73: </a>    <span class="php-keyword1">public</span>
 </span><span id="74" class="l"><a class="l" href="#74">  74: </a>    <span class="php-comment">/**
 </span></span><span id="75" class="l"><a class="l" href="#75">  75: </a><span class="php-comment">     * An external object that can be filled after the object creation and can be used as a global with the function add_inc
@@ -268,7 +267,7 @@
 </span><span id="144" class="l"><a class="l" href="#144"> 144: </a>        <span class="php-var">$outputs</span> = [<span class="php-quote">'dom'</span>=&gt;<span class="php-quote">'html'</span>,<span class="php-quote">'html'</span>=&gt;<span class="php-quote">'html'</span>,<span class="php-quote">'image'</span>=&gt;<span class="php-quote">'jpg,jpeg,gif,png,svg'</span>,<span class="php-quote">'json'</span>=&gt;<span class="php-quote">'json'</span>,<span class="php-quote">'text'</span>=&gt;<span class="php-quote">'txt'</span>,<span class="php-quote">'xml'</span>=&gt;<span class="php-quote">'xml'</span>,<span class="php-quote">'js'</span>=&gt;<span class="php-quote">'js'</span>,<span class="php-quote">'css'</span>=&gt;<span class="php-quote">'css'</span>,<span class="php-quote">'less'</span>=&gt;<span class="php-quote">'less'</span>],
 </span><span id="145" class="l"><a class="l" href="#145"> 145: </a>
 </span><span id="146" class="l"><a class="l" href="#146"> 146: </a>    <span class="php-comment">/**
-</span></span><span id="147" class="l"><a class="l" href="#147"> 147: </a><span class="php-comment">     * List of possible and existing universal controller. 
+</span></span><span id="147" class="l"><a class="l" href="#147"> 147: </a><span class="php-comment">     * List of possible and existing universal controller.
 </span></span><span id="148" class="l"><a class="l" href="#148"> 148: </a><span class="php-comment">     * First every item is set to one, then if a universal controller is needed, self::universal_controller() will look for it and sets the according array element to the file name if it's found and to false otherwise.
 </span></span><span id="149" class="l"><a class="l" href="#149"> 149: </a><span class="php-comment">     * @var array
 </span></span><span id="150" class="l"><a class="l" href="#150"> 150: </a><span class="php-comment">     */</span>
@@ -315,10 +314,10 @@
 </span><span id="191" class="l"><a class="l" href="#191"> 191: </a>            }
 </span><span id="192" class="l"><a class="l" href="#192"> 192: </a>            <span class="php-var">$this</span>-&gt;inc = <span class="php-keyword1">new</span> \stdClass();
 </span><span id="193" class="l"><a class="l" href="#193"> 193: </a>            <span class="php-var">$this</span>-&gt;routes = <span class="php-var">$parent</span>;
-</span><span id="194" class="l"><a class="l" href="#194"> 194: </a>      <span class="php-var">$this</span>-&gt;cli = (<span class="php-keyword2">php_sapi_name</span>() === <span class="php-quote">'cli'</span>);
+</span><span id="194" class="l"><a class="l" href="#194"> 194: </a>      <span class="php-var">$this</span>-&gt;is_cli = (<span class="php-keyword2">php_sapi_name</span>() === <span class="php-quote">'cli'</span>);
 </span><span id="195" class="l"><a class="l" href="#195"> 195: </a>      <span class="php-comment">// When using CLI a first parameter can be used as route,</span>
 </span><span id="196" class="l"><a class="l" href="#196"> 196: </a>      <span class="php-comment">// a second JSON encoded can be used as $this-&gt;post</span>
-</span><span id="197" class="l"><a class="l" href="#197"> 197: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="197" class="l"><a class="l" href="#197"> 197: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="198" class="l"><a class="l" href="#198"> 198: </a>        <span class="php-keyword1">global</span> <span class="php-var">$argv</span>;
 </span><span id="199" class="l"><a class="l" href="#199"> 199: </a>        <span class="php-comment">// Controller called with CLI through arguments</span>
 </span><span id="200" class="l"><a class="l" href="#200"> 200: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$argv</span>[<span class="php-num">1</span>]) ){
@@ -360,7 +359,7 @@
 </span><span id="236" class="l"><a class="l" href="#236"> 236: </a>            }
 </span><span id="237" class="l"><a class="l" href="#237"> 237: </a>          }
 </span><span id="238" class="l"><a class="l" href="#238"> 238: </a>        }
-</span><span id="239" class="l"><a class="l" href="#239"> 239: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'REQUEST_URI'</span>]) &amp;&amp; 
+</span><span id="239" class="l"><a class="l" href="#239"> 239: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'REQUEST_URI'</span>]) &amp;&amp;
 </span><span id="240" class="l"><a class="l" href="#240"> 240: </a>        ( BBN_CUR_PATH === <span class="php-quote">''</span> || <span class="php-keyword2">strpos</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'REQUEST_URI'</span>],BBN_CUR_PATH) !== <span class="php-keyword1">false</span> ) ){
 </span><span id="241" class="l"><a class="l" href="#241"> 241: </a>          <span class="php-var">$url</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot;?&quot;</span>, <span class="php-keyword2">urldecode</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'REQUEST_URI'</span>]))[<span class="php-num">0</span>];
 </span><span id="242" class="l"><a class="l" href="#242"> 242: </a>          <span class="php-var">$this</span>-&gt;set_params(<span class="php-keyword2">substr</span>(<span class="php-var">$url</span>, <span class="php-keyword2">strlen</span>(BBN_CUR_PATH)));
@@ -386,7 +385,7 @@
 </span><span id="262" class="l"><a class="l" href="#262"> 262: </a>            <span class="php-keyword1">else</span>{
 </span><span id="263" class="l"><a class="l" href="#263"> 263: </a>                <span class="php-var">$this</span>-&gt;original_mode = <span class="php-quote">'dom'</span>;
 </span><span id="264" class="l"><a class="l" href="#264"> 264: </a>            }
-</span><span id="265" class="l"><a class="l" href="#265"> 265: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="265" class="l"><a class="l" href="#265"> 265: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="266" class="l"><a class="l" href="#266"> 266: </a>        <span class="php-var">$this</span>-&gt;original_mode = <span class="php-quote">'cli'</span>;
 </span><span id="267" class="l"><a class="l" href="#267"> 267: </a>      }
 </span><span id="268" class="l"><a class="l" href="#268"> 268: </a>            <span class="php-var">$this</span>-&gt;url = <span class="php-keyword2">implode</span>(<span class="php-quote">'/'</span>,<span class="php-var">$this</span>-&gt;params);
@@ -397,7 +396,7 @@
 </span><span id="273" class="l"><a class="l" href="#273"> 273: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_string</span>(<span class="php-var">$db</span>) &amp;&amp; <span class="php-keyword2">is_object</span>(<span class="php-var">$parent</span>) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$parent</span>-&gt;url, <span class="php-var">$parent</span>-&gt;original_controller) ){
 </span><span id="274" class="l"><a class="l" href="#274"> 274: </a>            <span class="php-var">$this</span>-&gt;inc =&amp; <span class="php-var">$parent</span>-&gt;inc;
 </span><span id="275" class="l"><a class="l" href="#275"> 275: </a>            <span class="php-var">$this</span>-&gt;routes =&amp; <span class="php-var">$parent</span>-&gt;routes;
-</span><span id="276" class="l"><a class="l" href="#276"> 276: </a>            <span class="php-var">$this</span>-&gt;cli =&amp; <span class="php-var">$parent</span>-&gt;cli;
+</span><span id="276" class="l"><a class="l" href="#276"> 276: </a>            <span class="php-var">$this</span>-&gt;is_cli =&amp; <span class="php-var">$parent</span>-&gt;cli;
 </span><span id="277" class="l"><a class="l" href="#277"> 277: </a>            <span class="php-var">$this</span>-&gt;db =&amp; <span class="php-var">$parent</span>-&gt;db;
 </span><span id="278" class="l"><a class="l" href="#278"> 278: </a>            <span class="php-var">$this</span>-&gt;post =&amp; <span class="php-var">$parent</span>-&gt;post;
 </span><span id="279" class="l"><a class="l" href="#279"> 279: </a>            <span class="php-var">$this</span>-&gt;get =&amp; <span class="php-var">$parent</span>-&gt;get;
@@ -421,7 +420,7 @@
 </span><span id="297" class="l"><a class="l" href="#297"> 297: </a>                <span class="php-var">$path</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$path</span>, <span class="php-num">0</span>, -<span class="php-num">1</span>);
 </span><span id="298" class="l"><a class="l" href="#298"> 298: </a>            }
 </span><span id="299" class="l"><a class="l" href="#299"> 299: </a>            <span class="php-var">$params</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">'/'</span>, <span class="php-var">$path</span>);
-</span><span id="300" class="l"><a class="l" href="#300"> 300: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="300" class="l"><a class="l" href="#300"> 300: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="301" class="l"><a class="l" href="#301"> 301: </a>        <span class="php-var">$this</span>-&gt;mode = <span class="php-quote">'cron'</span>;
 </span><span id="302" class="l"><a class="l" href="#302"> 302: </a>      }
 </span><span id="303" class="l"><a class="l" href="#303"> 303: </a>            <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$params</span>[<span class="php-num">0</span>]) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;outputs[<span class="php-var">$params</span>[<span class="php-num">0</span>]]) ){
@@ -439,7 +438,7 @@
 </span><span id="315" class="l"><a class="l" href="#315"> 315: </a>            <span class="php-var">$this</span>-&gt;route(<span class="php-var">$path</span>);
 </span><span id="316" class="l"><a class="l" href="#316"> 316: </a>        }
 </span><span id="317" class="l"><a class="l" href="#317"> 317: </a>    }
-</span><span id="318" class="l"><a class="l" href="#318"> 318: </a>  
+</span><span id="318" class="l"><a class="l" href="#318"> 318: </a>
 </span><span id="319" class="l"><a class="l" href="#319"> 319: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_set_params" href="#_set_params">set_params</a>(<span class="php-var">$path</span>)
 </span><span id="320" class="l"><a class="l" href="#320"> 320: </a>  {
 </span><span id="321" class="l"><a class="l" href="#321"> 321: </a>    <span class="php-var">$this</span>-&gt;params = [];
@@ -509,7 +508,7 @@
 </span></span><span id="385" class="l"><a class="l" href="#385"> 385: </a><span class="php-comment">     * This fetches the universal controller for the according mode if it exists.
 </span></span><span id="386" class="l"><a class="l" href="#386"> 386: </a><span class="php-comment">     *
 </span></span><span id="387" class="l"><a class="l" href="#387"> 387: </a><span class="php-comment">     * @param string $c The mode (dom, html, json, txt, xml...)
-</span></span><span id="388" class="l"><a class="l" href="#388"> 388: </a><span class="php-comment">     * @return string controller full name 
+</span></span><span id="388" class="l"><a class="l" href="#388"> 388: </a><span class="php-comment">     * @return string controller full name
 </span></span><span id="389" class="l"><a class="l" href="#389"> 389: </a><span class="php-comment">     */</span>
 </span><span id="390" class="l"><a class="l" href="#390"> 390: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_universal_controller" href="#_universal_controller">universal_controller</a>(<span class="php-var">$c</span>)
 </span><span id="391" class="l"><a class="l" href="#391"> 391: </a>    {
@@ -525,9 +524,9 @@
 </span><span id="401" class="l"><a class="l" href="#401"> 401: </a>    <span class="php-comment">/**
 </span></span><span id="402" class="l"><a class="l" href="#402"> 402: </a><span class="php-comment">     * Adds the newly found controller to the known controllers array, and sets the original controller if it has not been set yet
 </span></span><span id="403" class="l"><a class="l" href="#403"> 403: </a><span class="php-comment">     *
-</span></span><span id="404" class="l"><a class="l" href="#404"> 404: </a><span class="php-comment">     * @param string $c The name of the request or how set by the controller 
+</span></span><span id="404" class="l"><a class="l" href="#404"> 404: </a><span class="php-comment">     * @param string $c The name of the request or how set by the controller
 </span></span><span id="405" class="l"><a class="l" href="#405"> 405: </a><span class="php-comment">     * @param file $f The actual controller file ($this-&gt;controller)
-</span></span><span id="406" class="l"><a class="l" href="#406"> 406: </a><span class="php-comment">     * @return void 
+</span></span><span id="406" class="l"><a class="l" href="#406"> 406: </a><span class="php-comment">     * @return void
 </span></span><span id="407" class="l"><a class="l" href="#407"> 407: </a><span class="php-comment">     */</span>
 </span><span id="408" class="l"><a class="l" href="#408"> 408: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_set_controller" href="#_set_controller">set_controller</a>(<span class="php-var">$c</span>)
 </span><span id="409" class="l"><a class="l" href="#409"> 409: </a>    {
@@ -547,49 +546,49 @@
 </span><span id="423" class="l"><a class="l" href="#423"> 423: </a>    <span class="php-comment">/**
 </span></span><span id="424" class="l"><a class="l" href="#424"> 424: </a><span class="php-comment">     * Returns the current controller's file's name.
 </span></span><span id="425" class="l"><a class="l" href="#425"> 425: </a><span class="php-comment">     *
-</span></span><span id="426" class="l"><a class="l" href="#426"> 426: </a><span class="php-comment">     * @return string 
+</span></span><span id="426" class="l"><a class="l" href="#426"> 426: </a><span class="php-comment">     * @return string
 </span></span><span id="427" class="l"><a class="l" href="#427"> 427: </a><span class="php-comment">     */</span>
 </span><span id="428" class="l"><a class="l" href="#428"> 428: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_say_controller" href="#_say_controller">say_controller</a>()
 </span><span id="429" class="l"><a class="l" href="#429"> 429: </a>    {
 </span><span id="430" class="l"><a class="l" href="#430"> 430: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;controller ? <span class="php-var">$this</span>-&gt;controller : <span class="php-keyword1">false</span>;
 </span><span id="431" class="l"><a class="l" href="#431"> 431: </a>  }
-</span><span id="432" class="l"><a class="l" href="#432"> 432: </a>  
+</span><span id="432" class="l"><a class="l" href="#432"> 432: </a>
 </span><span id="433" class="l"><a class="l" href="#433"> 433: </a>    <span class="php-comment">/**
 </span></span><span id="434" class="l"><a class="l" href="#434"> 434: </a><span class="php-comment">     * Returns the current controller's path.
 </span></span><span id="435" class="l"><a class="l" href="#435"> 435: </a><span class="php-comment">     *
-</span></span><span id="436" class="l"><a class="l" href="#436"> 436: </a><span class="php-comment">     * @return string 
+</span></span><span id="436" class="l"><a class="l" href="#436"> 436: </a><span class="php-comment">     * @return string
 </span></span><span id="437" class="l"><a class="l" href="#437"> 437: </a><span class="php-comment">     */</span>
 </span><span id="438" class="l"><a class="l" href="#438"> 438: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_say_path" href="#_say_path">say_path</a>()
 </span><span id="439" class="l"><a class="l" href="#439"> 439: </a>    {
 </span><span id="440" class="l"><a class="l" href="#440"> 440: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;controller ? <span class="php-keyword2">substr</span>(<span class="php-var">$this</span>-&gt;controller, <span class="php-keyword2">strlen</span>(self::cpath.<span class="php-var">$this</span>-&gt;mode.<span class="php-quote">'/'</span>), -<span class="php-num">4</span>) : <span class="php-keyword1">false</span>;
 </span><span id="441" class="l"><a class="l" href="#441"> 441: </a>  }
-</span><span id="442" class="l"><a class="l" href="#442"> 442: </a>  
+</span><span id="442" class="l"><a class="l" href="#442"> 442: </a>
 </span><span id="443" class="l"><a class="l" href="#443"> 443: </a>    <span class="php-comment">/**
 </span></span><span id="444" class="l"><a class="l" href="#444"> 444: </a><span class="php-comment">     * Returns the current controller's route, i.e as demanded by the client.
 </span></span><span id="445" class="l"><a class="l" href="#445"> 445: </a><span class="php-comment">     *
-</span></span><span id="446" class="l"><a class="l" href="#446"> 446: </a><span class="php-comment">     * @return string 
+</span></span><span id="446" class="l"><a class="l" href="#446"> 446: </a><span class="php-comment">     * @return string
 </span></span><span id="447" class="l"><a class="l" href="#447"> 447: </a><span class="php-comment">     */</span>
 </span><span id="448" class="l"><a class="l" href="#448"> 448: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_say_route" href="#_say_route">say_route</a>()
 </span><span id="449" class="l"><a class="l" href="#449"> 449: </a>    {
 </span><span id="450" class="l"><a class="l" href="#450"> 450: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;path;
 </span><span id="451" class="l"><a class="l" href="#451"> 451: </a>  }
-</span><span id="452" class="l"><a class="l" href="#452"> 452: </a>  
+</span><span id="452" class="l"><a class="l" href="#452"> 452: </a>
 </span><span id="453" class="l"><a class="l" href="#453"> 453: </a>    <span class="php-comment">/**
 </span></span><span id="454" class="l"><a class="l" href="#454"> 454: </a><span class="php-comment">     * Returns the current controller's file's name.
 </span></span><span id="455" class="l"><a class="l" href="#455"> 455: </a><span class="php-comment">     *
-</span></span><span id="456" class="l"><a class="l" href="#456"> 456: </a><span class="php-comment">     * @return string 
+</span></span><span id="456" class="l"><a class="l" href="#456"> 456: </a><span class="php-comment">     * @return string
 </span></span><span id="457" class="l"><a class="l" href="#457"> 457: </a><span class="php-comment">     */</span>
 </span><span id="458" class="l"><a class="l" href="#458"> 458: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_say_dir" href="#_say_dir">say_dir</a>()
 </span><span id="459" class="l"><a class="l" href="#459"> 459: </a>    {
 </span><span id="460" class="l"><a class="l" href="#460"> 460: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;controller ? <span class="php-keyword2">dirname</span>(<span class="php-var">$this</span>-&gt;controller) : <span class="php-keyword1">false</span>;
 </span><span id="461" class="l"><a class="l" href="#461"> 461: </a>  }
-</span><span id="462" class="l"><a class="l" href="#462"> 462: </a>  
+</span><span id="462" class="l"><a class="l" href="#462"> 462: </a>
 </span><span id="463" class="l"><a class="l" href="#463"> 463: </a>    <span class="php-comment">/**
 </span></span><span id="464" class="l"><a class="l" href="#464"> 464: </a><span class="php-comment">     * This directly renders content with arbitrary values using the existing Mustache engine.
 </span></span><span id="465" class="l"><a class="l" href="#465"> 465: </a><span class="php-comment">     *
 </span></span><span id="466" class="l"><a class="l" href="#466"> 466: </a><span class="php-comment">     * @param string $view The view to be rendered
 </span></span><span id="467" class="l"><a class="l" href="#467"> 467: </a><span class="php-comment">     * @param array $model The data model to fill the view with
-</span></span><span id="468" class="l"><a class="l" href="#468"> 468: </a><span class="php-comment">     * @return void 
+</span></span><span id="468" class="l"><a class="l" href="#468"> 468: </a><span class="php-comment">     * @return void
 </span></span><span id="469" class="l"><a class="l" href="#469"> 469: </a><span class="php-comment">     */</span>
 </span><span id="470" class="l"><a class="l" href="#470"> 470: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_render" href="#_render">render</a>(<span class="php-var">$view</span>, <span class="php-var">$model</span>=<span class="php-quote">''</span>)
 </span><span id="471" class="l"><a class="l" href="#471"> 471: </a>    {
@@ -608,18 +607,18 @@
 </span><span id="484" class="l"><a class="l" href="#484"> 484: </a>    <span class="php-comment">/**
 </span></span><span id="485" class="l"><a class="l" href="#485"> 485: </a><span class="php-comment">     * Returns true if called from CLI/Cron, false otherwise
 </span></span><span id="486" class="l"><a class="l" href="#486"> 486: </a><span class="php-comment">     *
-</span></span><span id="487" class="l"><a class="l" href="#487"> 487: </a><span class="php-comment">     * @return boolean 
+</span></span><span id="487" class="l"><a class="l" href="#487"> 487: </a><span class="php-comment">     * @return boolean
 </span></span><span id="488" class="l"><a class="l" href="#488"> 488: </a><span class="php-comment">     */</span>
 </span><span id="489" class="l"><a class="l" href="#489"> 489: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_is_cli" href="#_is_cli">is_cli</a>()
 </span><span id="490" class="l"><a class="l" href="#490"> 490: </a>  {
-</span><span id="491" class="l"><a class="l" href="#491"> 491: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;cli;
+</span><span id="491" class="l"><a class="l" href="#491"> 491: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;is_cli;
 </span><span id="492" class="l"><a class="l" href="#492"> 492: </a>  }
-</span><span id="493" class="l"><a class="l" href="#493"> 493: </a>  
+</span><span id="493" class="l"><a class="l" href="#493"> 493: </a>
 </span><span id="494" class="l"><a class="l" href="#494"> 494: </a>    <span class="php-comment">/**
 </span></span><span id="495" class="l"><a class="l" href="#495"> 495: </a><span class="php-comment">     * This looks for a given controller in the file system if it has not been already done and returns it if it finds it, false otherwise.
 </span></span><span id="496" class="l"><a class="l" href="#496"> 496: </a><span class="php-comment">     *
 </span></span><span id="497" class="l"><a class="l" href="#497"> 497: </a><span class="php-comment">     * @param string $p
-</span></span><span id="498" class="l"><a class="l" href="#498"> 498: </a><span class="php-comment">     * @return void 
+</span></span><span id="498" class="l"><a class="l" href="#498"> 498: </a><span class="php-comment">     * @return void
 </span></span><span id="499" class="l"><a class="l" href="#499"> 499: </a><span class="php-comment">     */</span>
 </span><span id="500" class="l"><a class="l" href="#500"> 500: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_get_controller" href="#_get_controller">get_controller</a>(<span class="php-var">$p</span>)
 </span><span id="501" class="l"><a class="l" href="#501"> 501: </a>    {
@@ -679,7 +678,7 @@
 </span></span><span id="555" class="l"><a class="l" href="#555"> 555: </a><span class="php-comment">     * This will fetch the route to the controller for a given path. Chainable
 </span></span><span id="556" class="l"><a class="l" href="#556"> 556: </a><span class="php-comment">     *
 </span></span><span id="557" class="l"><a class="l" href="#557"> 557: </a><span class="php-comment">     * @param string $path The request path &lt;em&gt;(e.g books/466565 or xml/books/48465)&lt;/em&gt;
-</span></span><span id="558" class="l"><a class="l" href="#558"> 558: </a><span class="php-comment">     * @return void 
+</span></span><span id="558" class="l"><a class="l" href="#558"> 558: </a><span class="php-comment">     * @return void
 </span></span><span id="559" class="l"><a class="l" href="#559"> 559: </a><span class="php-comment">     */</span>
 </span><span id="560" class="l"><a class="l" href="#560"> 560: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_route" href="#_route">route</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>)
 </span><span id="561" class="l"><a class="l" href="#561"> 561: </a>    {
@@ -688,7 +687,7 @@
 </span><span id="564" class="l"><a class="l" href="#564"> 564: </a>            <span class="php-var">$this</span>-&gt;is_routed = <span class="php-num">1</span>;
 </span><span id="565" class="l"><a class="l" href="#565"> 565: </a>            <span class="php-var">$this</span>-&gt;path = <span class="php-var">$path</span>;
 </span><span id="566" class="l"><a class="l" href="#566"> 566: </a>            <span class="php-var">$fpath</span> = <span class="php-var">$path</span>;
-</span><span id="567" class="l"><a class="l" href="#567"> 567: </a>      
+</span><span id="567" class="l"><a class="l" href="#567"> 567: </a>
 </span><span id="568" class="l"><a class="l" href="#568"> 568: </a>      <span class="php-comment">// We go through each path, starting by the longest until it's empty</span>
 </span><span id="569" class="l"><a class="l" href="#569"> 569: </a>            <span class="php-keyword1">while</span> ( <span class="php-keyword2">strlen</span>(<span class="php-var">$fpath</span>) &gt; <span class="php-num">0</span> ){
 </span><span id="570" class="l"><a class="l" href="#570"> 570: </a>                <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;get_controller(<span class="php-var">$fpath</span>) ){
@@ -728,7 +727,7 @@
 </span></span><span id="604" class="l"><a class="l" href="#604"> 604: </a><span class="php-comment">     * This will reroute a controller to another one seemlessly. Chainable
 </span></span><span id="605" class="l"><a class="l" href="#605"> 605: </a><span class="php-comment">     *
 </span></span><span id="606" class="l"><a class="l" href="#606"> 606: </a><span class="php-comment">     * @param string $path The request path &lt;em&gt;(e.g books/466565 or xml/books/48465)&lt;/em&gt;
-</span></span><span id="607" class="l"><a class="l" href="#607"> 607: </a><span class="php-comment">     * @return void 
+</span></span><span id="607" class="l"><a class="l" href="#607"> 607: </a><span class="php-comment">     * @return void
 </span></span><span id="608" class="l"><a class="l" href="#608"> 608: </a><span class="php-comment">     */</span>
 </span><span id="609" class="l"><a class="l" href="#609"> 609: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_reroute" href="#_reroute">reroute</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>, <span class="php-var">$check</span> = <span class="php-num">1</span>)
 </span><span id="610" class="l"><a class="l" href="#610"> 610: </a>    {
@@ -746,7 +745,7 @@
 </span></span><span id="622" class="l"><a class="l" href="#622"> 622: </a><span class="php-comment">     * This will include a file from within the controller's path. Chainable
 </span></span><span id="623" class="l"><a class="l" href="#623"> 623: </a><span class="php-comment">     *
 </span></span><span id="624" class="l"><a class="l" href="#624"> 624: </a><span class="php-comment">     * @param string $file_name If .php is ommited it will be added
-</span></span><span id="625" class="l"><a class="l" href="#625"> 625: </a><span class="php-comment">     * @return void 
+</span></span><span id="625" class="l"><a class="l" href="#625"> 625: </a><span class="php-comment">     * @return void
 </span></span><span id="626" class="l"><a class="l" href="#626"> 626: </a><span class="php-comment">     */</span>
 </span><span id="627" class="l"><a class="l" href="#627"> 627: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_incl" href="#_incl">incl</a>(<span class="php-var">$file_name</span>)
 </span><span id="628" class="l"><a class="l" href="#628"> 628: </a>    {
@@ -767,7 +766,7 @@
 </span></span><span id="643" class="l"><a class="l" href="#643"> 643: </a><span class="php-comment">     * This will add the given string to the script property, and create it if needed. Chainable
 </span></span><span id="644" class="l"><a class="l" href="#644"> 644: </a><span class="php-comment">     *
 </span></span><span id="645" class="l"><a class="l" href="#645"> 645: </a><span class="php-comment">     * @param string $script The javascript chain to add
-</span></span><span id="646" class="l"><a class="l" href="#646"> 646: </a><span class="php-comment">     * @return void 
+</span></span><span id="646" class="l"><a class="l" href="#646"> 646: </a><span class="php-comment">     * @return void
 </span></span><span id="647" class="l"><a class="l" href="#647"> 647: </a><span class="php-comment">     */</span>
 </span><span id="648" class="l"><a class="l" href="#648"> 648: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add_script" href="#_add_script">add_script</a>(<span class="php-var">$script</span>)
 </span><span id="649" class="l"><a class="l" href="#649"> 649: </a>    {
@@ -784,7 +783,7 @@
 </span></span><span id="660" class="l"><a class="l" href="#660"> 660: </a><span class="php-comment">     * This will enclose the controller's inclusion
 </span></span><span id="661" class="l"><a class="l" href="#661"> 661: </a><span class="php-comment">     * It can be publicly launched through check()
 </span></span><span id="662" class="l"><a class="l" href="#662"> 662: </a><span class="php-comment">     *
-</span></span><span id="663" class="l"><a class="l" href="#663"> 663: </a><span class="php-comment">     * @return void 
+</span></span><span id="663" class="l"><a class="l" href="#663"> 663: </a><span class="php-comment">     * @return void
 </span></span><span id="664" class="l"><a class="l" href="#664"> 664: </a><span class="php-comment">     */</span>
 </span><span id="665" class="l"><a class="l" href="#665"> 665: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_control" href="#_control">control</a>()
 </span><span id="666" class="l"><a class="l" href="#666"> 666: </a>    {
@@ -800,12 +799,12 @@
 </span><span id="676" class="l"><a class="l" href="#676"> 676: </a>        }
 </span><span id="677" class="l"><a class="l" href="#677"> 677: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="678" class="l"><a class="l" href="#678"> 678: </a>    }
-</span><span id="679" class="l"><a class="l" href="#679"> 679: </a>  
+</span><span id="679" class="l"><a class="l" href="#679"> 679: </a>
 </span><span id="680" class="l"><a class="l" href="#680"> 680: </a>    <span class="php-comment">/**
 </span></span><span id="681" class="l"><a class="l" href="#681"> 681: </a><span class="php-comment">     * This will launch the controller in a new function.
 </span></span><span id="682" class="l"><a class="l" href="#682"> 682: </a><span class="php-comment">     * It is publicly launched through check().
 </span></span><span id="683" class="l"><a class="l" href="#683"> 683: </a><span class="php-comment">     *
-</span></span><span id="684" class="l"><a class="l" href="#684"> 684: </a><span class="php-comment">     * @return void 
+</span></span><span id="684" class="l"><a class="l" href="#684"> 684: </a><span class="php-comment">     * @return void
 </span></span><span id="685" class="l"><a class="l" href="#685"> 685: </a><span class="php-comment">     */</span>
 </span><span id="686" class="l"><a class="l" href="#686"> 686: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_process" href="#_process">process</a>()
 </span><span id="687" class="l"><a class="l" href="#687"> 687: </a>    {
@@ -823,7 +822,7 @@
 </span></span><span id="699" class="l"><a class="l" href="#699"> 699: </a><span class="php-comment">     * This will get a javascript view encapsulated in an anonymous function for embedding in HTML.
 </span></span><span id="700" class="l"><a class="l" href="#700"> 700: </a><span class="php-comment">     *
 </span></span><span id="701" class="l"><a class="l" href="#701"> 701: </a><span class="php-comment">     * @param string $path
-</span></span><span id="702" class="l"><a class="l" href="#702"> 702: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="702" class="l"><a class="l" href="#702"> 702: </a><span class="php-comment">     * @return string|false
 </span></span><span id="703" class="l"><a class="l" href="#703"> 703: </a><span class="php-comment">     */</span>
 </span><span id="704" class="l"><a class="l" href="#704"> 704: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_js" href="#_get_js">get_js</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>)
 </span><span id="705" class="l"><a class="l" href="#705"> 705: </a>    {
@@ -842,7 +841,7 @@
 </span></span><span id="718" class="l"><a class="l" href="#718"> 718: </a><span class="php-comment">     * This will get a CSS view encapsulated in a scoped style tag.
 </span></span><span id="719" class="l"><a class="l" href="#719"> 719: </a><span class="php-comment">     *
 </span></span><span id="720" class="l"><a class="l" href="#720"> 720: </a><span class="php-comment">     * @param string $path
-</span></span><span id="721" class="l"><a class="l" href="#721"> 721: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="721" class="l"><a class="l" href="#721"> 721: </a><span class="php-comment">     * @return string|false
 </span></span><span id="722" class="l"><a class="l" href="#722"> 722: </a><span class="php-comment">     */</span>
 </span><span id="723" class="l"><a class="l" href="#723"> 723: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_css" href="#_get_css">get_css</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>)
 </span><span id="724" class="l"><a class="l" href="#724"> 724: </a>    {
@@ -856,7 +855,7 @@
 </span></span><span id="732" class="l"><a class="l" href="#732"> 732: </a><span class="php-comment">     * This will get and compile a LESS view encapsulated in a scoped style tag.
 </span></span><span id="733" class="l"><a class="l" href="#733"> 733: </a><span class="php-comment">     *
 </span></span><span id="734" class="l"><a class="l" href="#734"> 734: </a><span class="php-comment">     * @param string $path
-</span></span><span id="735" class="l"><a class="l" href="#735"> 735: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="735" class="l"><a class="l" href="#735"> 735: </a><span class="php-comment">     * @return string|false
 </span></span><span id="736" class="l"><a class="l" href="#736"> 736: </a><span class="php-comment">     */</span>
 </span><span id="737" class="l"><a class="l" href="#737"> 737: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_less" href="#_get_less">get_less</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>)
 </span><span id="738" class="l"><a class="l" href="#738"> 738: </a>    {
@@ -878,7 +877,7 @@
 </span></span><span id="754" class="l"><a class="l" href="#754"> 754: </a><span class="php-comment">     *
 </span></span><span id="755" class="l"><a class="l" href="#755"> 755: </a><span class="php-comment">     * @param string $path
 </span></span><span id="756" class="l"><a class="l" href="#756"> 756: </a><span class="php-comment">     * @param string $mode
-</span></span><span id="757" class="l"><a class="l" href="#757"> 757: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="757" class="l"><a class="l" href="#757"> 757: </a><span class="php-comment">     * @return string|false
 </span></span><span id="758" class="l"><a class="l" href="#758"> 758: </a><span class="php-comment">     */</span>
 </span><span id="759" class="l"><a class="l" href="#759"> 759: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add_js" href="#_add_js">add_js</a>()
 </span><span id="760" class="l"><a class="l" href="#760"> 760: </a>    {
@@ -902,7 +901,7 @@
 </span></span><span id="778" class="l"><a class="l" href="#778"> 778: </a><span class="php-comment">     *
 </span></span><span id="779" class="l"><a class="l" href="#779"> 779: </a><span class="php-comment">     * @param string $path
 </span></span><span id="780" class="l"><a class="l" href="#780"> 780: </a><span class="php-comment">     * @param string $mode
-</span></span><span id="781" class="l"><a class="l" href="#781"> 781: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="781" class="l"><a class="l" href="#781"> 781: </a><span class="php-comment">     * @return string|false
 </span></span><span id="782" class="l"><a class="l" href="#782"> 782: </a><span class="php-comment">     */</span>
 </span><span id="783" class="l"><a class="l" href="#783"> 783: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_view" href="#_get_view">get_view</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>, <span class="php-var">$mode</span>=<span class="php-quote">''</span>)
 </span><span id="784" class="l"><a class="l" href="#784"> 784: </a>    {
@@ -942,7 +941,7 @@
 </span></span><span id="818" class="l"><a class="l" href="#818"> 818: </a><span class="php-comment">     * This will get a the content of a file located within the data path
 </span></span><span id="819" class="l"><a class="l" href="#819"> 819: </a><span class="php-comment">     *
 </span></span><span id="820" class="l"><a class="l" href="#820"> 820: </a><span class="php-comment">     * @param string $file_name
-</span></span><span id="821" class="l"><a class="l" href="#821"> 821: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="821" class="l"><a class="l" href="#821"> 821: </a><span class="php-comment">     * @return string|false
 </span></span><span id="822" class="l"><a class="l" href="#822"> 822: </a><span class="php-comment">     */</span>
 </span><span id="823" class="l"><a class="l" href="#823"> 823: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_content" href="#_get_content">get_content</a>(<span class="php-var">$file_name</span>)
 </span><span id="824" class="l"><a class="l" href="#824"> 824: </a>    {
@@ -957,7 +956,7 @@
 </span></span><span id="833" class="l"><a class="l" href="#833"> 833: </a><span class="php-comment">     *
 </span></span><span id="834" class="l"><a class="l" href="#834"> 834: </a><span class="php-comment">     * @param string $path
 </span></span><span id="835" class="l"><a class="l" href="#835"> 835: </a><span class="php-comment">     * @param string $mode
-</span></span><span id="836" class="l"><a class="l" href="#836"> 836: </a><span class="php-comment">     * @return string|false 
+</span></span><span id="836" class="l"><a class="l" href="#836"> 836: </a><span class="php-comment">     * @return string|false
 </span></span><span id="837" class="l"><a class="l" href="#837"> 837: </a><span class="php-comment">     */</span>
 </span><span id="838" class="l"><a class="l" href="#838"> 838: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_get_php" href="#_get_php">get_php</a>(<span class="php-var">$path</span>=<span class="php-quote">''</span>, <span class="php-var">$mode</span>=<span class="php-quote">''</span>)
 </span><span id="839" class="l"><a class="l" href="#839"> 839: </a>    {
@@ -996,7 +995,7 @@
 </span></span><span id="872" class="l"><a class="l" href="#872"> 872: </a><span class="php-comment">     *
 </span></span><span id="873" class="l"><a class="l" href="#873"> 873: </a><span class="php-comment">     * @params string path to the model
 </span></span><span id="874" class="l"><a class="l" href="#874"> 874: </a><span class="php-comment">     * @params array data to send to the model
-</span></span><span id="875" class="l"><a class="l" href="#875"> 875: </a><span class="php-comment">     * @return array|false A data model 
+</span></span><span id="875" class="l"><a class="l" href="#875"> 875: </a><span class="php-comment">     * @return array|false A data model
 </span></span><span id="876" class="l"><a class="l" href="#876"> 876: </a><span class="php-comment">     */</span>
 </span><span id="877" class="l"><a class="l" href="#877"> 877: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_get_model" href="#_get_model">get_model</a>()
 </span><span id="878" class="l"><a class="l" href="#878"> 878: </a>    {
@@ -1029,11 +1028,11 @@
 </span><span id="905" class="l"><a class="l" href="#905"> 905: </a>        }
 </span><span id="906" class="l"><a class="l" href="#906"> 906: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="907" class="l"><a class="l" href="#907"> 907: </a>    }
-</span><span id="908" class="l"><a class="l" href="#908"> 908: </a>    
+</span><span id="908" class="l"><a class="l" href="#908"> 908: </a>
 </span><span id="909" class="l"><a class="l" href="#909"> 909: </a>    <span class="php-comment">/**
 </span></span><span id="910" class="l"><a class="l" href="#910"> 910: </a><span class="php-comment">     * Adds a property to the MVC object inc if it has not been declared.
 </span></span><span id="911" class="l"><a class="l" href="#911"> 911: </a><span class="php-comment">     *
-</span></span><span id="912" class="l"><a class="l" href="#912"> 912: </a><span class="php-comment">     * @return bool 
+</span></span><span id="912" class="l"><a class="l" href="#912"> 912: </a><span class="php-comment">     * @return bool
 </span></span><span id="913" class="l"><a class="l" href="#913"> 913: </a><span class="php-comment">     */</span>
 </span><span id="914" class="l"><a class="l" href="#914"> 914: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add_inc" href="#_add_inc">add_inc</a>(<span class="php-var">$name</span>, <span class="php-var">$obj</span>)
 </span><span id="915" class="l"><a class="l" href="#915"> 915: </a>    {
@@ -1041,11 +1040,11 @@
 </span><span id="917" class="l"><a class="l" href="#917"> 917: </a>            <span class="php-var">$this</span>-&gt;inc-&gt;{<span class="php-var">$name</span>} = <span class="php-var">$obj</span>;
 </span><span id="918" class="l"><a class="l" href="#918"> 918: </a>        }
 </span><span id="919" class="l"><a class="l" href="#919"> 919: </a>    }
-</span><span id="920" class="l"><a class="l" href="#920"> 920: </a>    
+</span><span id="920" class="l"><a class="l" href="#920"> 920: </a>
 </span><span id="921" class="l"><a class="l" href="#921"> 921: </a>    <span class="php-comment">/**
 </span></span><span id="922" class="l"><a class="l" href="#922"> 922: </a><span class="php-comment">     * Processes the controller and checks whether it has been routed or not.
 </span></span><span id="923" class="l"><a class="l" href="#923"> 923: </a><span class="php-comment">     *
-</span></span><span id="924" class="l"><a class="l" href="#924"> 924: </a><span class="php-comment">     * @return bool 
+</span></span><span id="924" class="l"><a class="l" href="#924"> 924: </a><span class="php-comment">     * @return bool
 </span></span><span id="925" class="l"><a class="l" href="#925"> 925: </a><span class="php-comment">     */</span>
 </span><span id="926" class="l"><a class="l" href="#926"> 926: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check" href="#_check">check</a>()
 </span><span id="927" class="l"><a class="l" href="#927"> 927: </a>    {
@@ -1062,7 +1061,7 @@
 </span><span id="938" class="l"><a class="l" href="#938"> 938: </a>    <span class="php-comment">/**
 </span></span><span id="939" class="l"><a class="l" href="#939"> 939: </a><span class="php-comment">     * Returns the output object.
 </span></span><span id="940" class="l"><a class="l" href="#940"> 940: </a><span class="php-comment">     *
-</span></span><span id="941" class="l"><a class="l" href="#941"> 941: </a><span class="php-comment">     * @return object|false 
+</span></span><span id="941" class="l"><a class="l" href="#941"> 941: </a><span class="php-comment">     * @return object|false
 </span></span><span id="942" class="l"><a class="l" href="#942"> 942: </a><span class="php-comment">     */</span>
 </span><span id="943" class="l"><a class="l" href="#943"> 943: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get" href="#_get">get</a>()
 </span><span id="944" class="l"><a class="l" href="#944"> 944: </a>    {
@@ -1117,7 +1116,7 @@
 </span></span><span id="993" class="l"><a class="l" href="#993"> 993: </a><span class="php-comment">     * Sets the data. Chainable. Should be useless as $this-&gt;data is public. Chainable.
 </span></span><span id="994" class="l"><a class="l" href="#994"> 994: </a><span class="php-comment">     *
 </span></span><span id="995" class="l"><a class="l" href="#995"> 995: </a><span class="php-comment">     * @param array $data
-</span></span><span id="996" class="l"><a class="l" href="#996"> 996: </a><span class="php-comment">     * @return void 
+</span></span><span id="996" class="l"><a class="l" href="#996"> 996: </a><span class="php-comment">     * @return void
 </span></span><span id="997" class="l"><a class="l" href="#997"> 997: </a><span class="php-comment">     */</span>
 </span><span id="998" class="l"><a class="l" href="#998"> 998: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_data" href="#_set_data">set_data</a>(<span class="php-keyword1">array</span> <span class="php-var">$data</span>)
 </span><span id="999" class="l"><a class="l" href="#999"> 999: </a>    {
@@ -1128,7 +1127,7 @@
 </span><span id="1004" class="l"><a class="l" href="#1004">1004: </a>    <span class="php-comment">/**
 </span></span><span id="1005" class="l"><a class="l" href="#1005">1005: </a><span class="php-comment">     * Merges the existing data if there is with this one. Chainable.
 </span></span><span id="1006" class="l"><a class="l" href="#1006">1006: </a><span class="php-comment">     *
-</span></span><span id="1007" class="l"><a class="l" href="#1007">1007: </a><span class="php-comment">     * @return void 
+</span></span><span id="1007" class="l"><a class="l" href="#1007">1007: </a><span class="php-comment">     * @return void
 </span></span><span id="1008" class="l"><a class="l" href="#1008">1008: </a><span class="php-comment">     */</span>
 </span><span id="1009" class="l"><a class="l" href="#1009">1009: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add_data" href="#_add_data">add_data</a>(<span class="php-keyword1">array</span> <span class="php-var">$data</span>)
 </span><span id="1010" class="l"><a class="l" href="#1010">1010: </a>    {
@@ -1144,7 +1143,7 @@
 </span><span id="1020" class="l"><a class="l" href="#1020">1020: </a>    <span class="php-comment">/**
 </span></span><span id="1021" class="l"><a class="l" href="#1021">1021: </a><span class="php-comment">     * Merges the existing data if there is with this one. Chainable.
 </span></span><span id="1022" class="l"><a class="l" href="#1022">1022: </a><span class="php-comment">     *
-</span></span><span id="1023" class="l"><a class="l" href="#1023">1023: </a><span class="php-comment">     * @return void 
+</span></span><span id="1023" class="l"><a class="l" href="#1023">1023: </a><span class="php-comment">     * @return void
 </span></span><span id="1024" class="l"><a class="l" href="#1024">1024: </a><span class="php-comment">     */</span>
 </span><span id="1025" class="l"><a class="l" href="#1025">1025: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add" href="#_add">add</a>(<span class="php-var">$d</span>, <span class="php-var">$data</span>=<span class="php-keyword1">array</span>())
 </span><span id="1026" class="l"><a class="l" href="#1026">1026: </a>    {
@@ -1158,7 +1157,7 @@
 </span><span id="1034" class="l"><a class="l" href="#1034">1034: </a>    <span class="php-comment">/**
 </span></span><span id="1035" class="l"><a class="l" href="#1035">1035: </a><span class="php-comment">     * Outputs the result.
 </span></span><span id="1036" class="l"><a class="l" href="#1036">1036: </a><span class="php-comment">     *
-</span></span><span id="1037" class="l"><a class="l" href="#1037">1037: </a><span class="php-comment">     * @return void 
+</span></span><span id="1037" class="l"><a class="l" href="#1037">1037: </a><span class="php-comment">     * @return void
 </span></span><span id="1038" class="l"><a class="l" href="#1038">1038: </a><span class="php-comment">     */</span>
 </span><span id="1039" class="l"><a class="l" href="#1039">1039: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_output" href="#_output">output</a>()
 </span><span id="1040" class="l"><a class="l" href="#1040">1040: </a>    {
@@ -1167,7 +1166,7 @@
 </span><span id="1043" class="l"><a class="l" href="#1043">1043: </a>        }
 </span><span id="1044" class="l"><a class="l" href="#1044">1044: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() &amp;&amp; <span class="php-var">$this</span>-&gt;obj ){
 </span><span id="1045" class="l"><a class="l" href="#1045">1045: </a>
-</span><span id="1046" class="l"><a class="l" href="#1046">1046: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="1046" class="l"><a class="l" href="#1046">1046: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="1047" class="l"><a class="l" href="#1047">1047: </a>        <span class="php-keyword1">die</span>(<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;output) ? <span class="php-var">$this</span>-&gt;obj-&gt;output : <span class="php-quote">&quot;no output&quot;</span>);
 </span><span id="1048" class="l"><a class="l" href="#1048">1048: </a>      }
 </span><span id="1049" class="l"><a class="l" href="#1049">1049: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;prescript) ){
@@ -1228,7 +1227,7 @@
 </span><span id="1104" class="l"><a class="l" href="#1104">1104: </a>        <span class="php-var">$this</span>-&gt;mode = <span class="php-quote">''</span>;
 </span><span id="1105" class="l"><a class="l" href="#1105">1105: </a>      }
 </span><span id="1106" class="l"><a class="l" href="#1106">1106: </a>            <span class="php-keyword1">switch</span> ( <span class="php-var">$this</span>-&gt;mode ){
-</span><span id="1107" class="l"><a class="l" href="#1107">1107: </a>                
+</span><span id="1107" class="l"><a class="l" href="#1107">1107: </a>
 </span><span id="1108" class="l"><a class="l" href="#1108">1108: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'json'</span>:
 </span><span id="1109" class="l"><a class="l" href="#1109">1109: </a>                    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;output) ){
 </span><span id="1110" class="l"><a class="l" href="#1110">1110: </a>                        <span class="php-var">$this</span>-&gt;obj-&gt;html = <span class="php-var">$this</span>-&gt;obj-&gt;output;
@@ -1237,38 +1236,38 @@
 </span><span id="1113" class="l"><a class="l" href="#1113">1113: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: application/json; charset=utf-8'</span>);
 </span><span id="1114" class="l"><a class="l" href="#1114">1114: </a>                    <span class="php-keyword1">echo</span> <span class="php-keyword2">json_encode</span>(<span class="php-var">$this</span>-&gt;obj);
 </span><span id="1115" class="l"><a class="l" href="#1115">1115: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1116" class="l"><a class="l" href="#1116">1116: </a>          
+</span><span id="1116" class="l"><a class="l" href="#1116">1116: </a>
 </span><span id="1117" class="l"><a class="l" href="#1117">1117: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'dom'</span>:
 </span><span id="1118" class="l"><a class="l" href="#1118">1118: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'html'</span>:
 </span><span id="1119" class="l"><a class="l" href="#1119">1119: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: text/html; charset=utf-8'</span>);
 </span><span id="1120" class="l"><a class="l" href="#1120">1120: </a>                    <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;obj-&gt;output;
 </span><span id="1121" class="l"><a class="l" href="#1121">1121: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1122" class="l"><a class="l" href="#1122">1122: </a>          
+</span><span id="1122" class="l"><a class="l" href="#1122">1122: </a>
 </span><span id="1123" class="l"><a class="l" href="#1123">1123: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'js'</span>:
 </span><span id="1124" class="l"><a class="l" href="#1124">1124: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: application/javascript; charset=utf-8'</span>);
 </span><span id="1125" class="l"><a class="l" href="#1125">1125: </a>                    <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;obj-&gt;output;
 </span><span id="1126" class="l"><a class="l" href="#1126">1126: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1127" class="l"><a class="l" href="#1127">1127: </a>        
+</span><span id="1127" class="l"><a class="l" href="#1127">1127: </a>
 </span><span id="1128" class="l"><a class="l" href="#1128">1128: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'css'</span>:
 </span><span id="1129" class="l"><a class="l" href="#1129">1129: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: text/css; charset=utf-8'</span>);
 </span><span id="1130" class="l"><a class="l" href="#1130">1130: </a>                    <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;obj-&gt;output;
 </span><span id="1131" class="l"><a class="l" href="#1131">1131: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1132" class="l"><a class="l" href="#1132">1132: </a>        
+</span><span id="1132" class="l"><a class="l" href="#1132">1132: </a>
 </span><span id="1133" class="l"><a class="l" href="#1133">1133: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'less'</span>:
 </span><span id="1134" class="l"><a class="l" href="#1134">1134: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: text/x-less; charset=utf-8'</span>);
 </span><span id="1135" class="l"><a class="l" href="#1135">1135: </a>                    <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;obj-&gt;output;
 </span><span id="1136" class="l"><a class="l" href="#1136">1136: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1137" class="l"><a class="l" href="#1137">1137: </a>        
+</span><span id="1137" class="l"><a class="l" href="#1137">1137: </a>
 </span><span id="1138" class="l"><a class="l" href="#1138">1138: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'text'</span>:
 </span><span id="1139" class="l"><a class="l" href="#1139">1139: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: text/plain; charset=utf-8'</span>);
 </span><span id="1140" class="l"><a class="l" href="#1140">1140: </a>                    <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;obj-&gt;output;
 </span><span id="1141" class="l"><a class="l" href="#1141">1141: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1142" class="l"><a class="l" href="#1142">1142: </a>        
+</span><span id="1142" class="l"><a class="l" href="#1142">1142: </a>
 </span><span id="1143" class="l"><a class="l" href="#1143">1143: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'xml'</span>:
 </span><span id="1144" class="l"><a class="l" href="#1144">1144: </a>                    <span class="php-keyword2">header</span>(<span class="php-quote">'Content-type: text/xml; charset=utf-8'</span>);
 </span><span id="1145" class="l"><a class="l" href="#1145">1145: </a>                    <span class="php-keyword1">echo</span> <span class="php-var">$this</span>-&gt;obj-&gt;output;
 </span><span id="1146" class="l"><a class="l" href="#1146">1146: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1147" class="l"><a class="l" href="#1147">1147: </a>        
+</span><span id="1147" class="l"><a class="l" href="#1147">1147: </a>
 </span><span id="1148" class="l"><a class="l" href="#1148">1148: </a>                <span class="php-keyword1">case</span> <span class="php-quote">'image'</span>:
 </span><span id="1149" class="l"><a class="l" href="#1149">1149: </a>                    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;img) ){
 </span><span id="1150" class="l"><a class="l" href="#1150">1150: </a>                        <span class="php-var">$this</span>-&gt;obj-&gt;img-&gt;display();
@@ -1276,10 +1275,10 @@
 </span><span id="1152" class="l"><a class="l" href="#1152">1152: </a>                    <span class="php-keyword1">else</span>{
 </span><span id="1153" class="l"><a class="l" href="#1153">1153: </a>            <span class="php-var">$this</span>-&gt;<span class="php-keyword2">log</span>(<span class="php-quote">&quot;Impossible to display the following image: &quot;</span>.<span class="php-var">$this</span>-&gt;obj-&gt;img-&gt;name);
 </span><span id="1154" class="l"><a class="l" href="#1154">1154: </a>                        <span class="php-keyword2">header</span>(<span class="php-quote">'HTTP/1.0 404 Not Found'</span>);
-</span><span id="1155" class="l"><a class="l" href="#1155">1155: </a>            
+</span><span id="1155" class="l"><a class="l" href="#1155">1155: </a>
 </span><span id="1156" class="l"><a class="l" href="#1156">1156: </a>                    }
 </span><span id="1157" class="l"><a class="l" href="#1157">1157: </a>                    <span class="php-keyword1">break</span>;
-</span><span id="1158" class="l"><a class="l" href="#1158">1158: </a>          
+</span><span id="1158" class="l"><a class="l" href="#1158">1158: </a>
 </span><span id="1159" class="l"><a class="l" href="#1159">1159: </a>                <span class="php-keyword1">default</span>:
 </span><span id="1160" class="l"><a class="l" href="#1160">1160: </a>          <span class="php-comment">//die(\bbn\tools::dump($this-&gt;obj-&gt;file, method_exists($this-&gt;obj-&gt;file, 'download')));</span>
 </span><span id="1161" class="l"><a class="l" href="#1161">1161: </a>                    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;<span class="php-keyword2">file</span>) &amp;&amp; <span class="php-keyword2">is_object</span>(<span class="php-var">$this</span>-&gt;obj-&gt;<span class="php-keyword2">file</span>) &amp;&amp; <span class="php-keyword2">method_exists</span>(<span class="php-var">$this</span>-&gt;obj-&gt;<span class="php-keyword2">file</span>, <span class="php-quote">'download'</span>) ){

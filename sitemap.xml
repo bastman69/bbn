@@ -144,13 +144,13 @@
 	<loc>http://nabab.github.io/bbn/class-bbn.html.input.html</loc>
 </url>
 <url>
-	<loc>http://nabab.github.io/bbn/class-bbn.model.html</loc>
-</url>
-<url>
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.html</loc>
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.controller.html</loc>
+</url>
+<url>
+	<loc>http://nabab.github.io/bbn/class-bbn.mvc.model.html</loc>
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.view.html</loc>
@@ -217,6 +217,12 @@
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.db.engines.html</loc>
+</url>
+<url>
+	<loc>http://nabab.github.io/bbn/class-bbn.mvc.api.html</loc>
+</url>
+<url>
+	<loc>http://nabab.github.io/bbn/class-bbn.mvc.common.html</loc>
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.util.info.html</loc>

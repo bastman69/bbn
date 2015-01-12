@@ -8,7 +8,7 @@
 	<title>File environment.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1956655620"></script>
+	<script type="text/javascript" src="elementlist.js?2855017884"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -68,7 +68,6 @@
 			<ul>
 				<li><a href="class-bbn.decorator.html">decorator</a></li>
 				<li class="active"><a href="class-bbn.environment.html">environment</a></li>
-				<li><a href="class-bbn.model.html">model</a></li>
 				<li><a href="class-bbn.mvc.html">mvc</a></li>
 				<li><a href="class-bbn.mvcv2.html">mvcv2</a></li>
 				<li><a href="class-bbn.obj.html">obj</a></li>
@@ -366,11 +365,11 @@
 </span><span id="242" class="l"><a class="l" href="#242">242: </a>    <span class="php-comment">/** @property \stdClass $inc An object which properties will store another object accessible throughout controllers and models */</span>
 </span><span id="243" class="l"><a class="l" href="#243">243: </a>    <span class="php-var">$this</span>-&gt;inc = <span class="php-keyword1">new</span> \stdClass();
 </span><span id="244" class="l"><a class="l" href="#244">244: </a>    <span class="php-var">$this</span>-&gt;routes = <span class="php-var">$parent</span>;
-</span><span id="245" class="l"><a class="l" href="#245">245: </a>    <span class="php-var">$this</span>-&gt;cli = (<span class="php-keyword2">php_sapi_name</span>() === <span class="php-quote">'cli'</span>);
+</span><span id="245" class="l"><a class="l" href="#245">245: </a>    <span class="php-var">$this</span>-&gt;is_cli() = (<span class="php-keyword2">php_sapi_name</span>() === <span class="php-quote">'cli'</span>);
 </span><span id="246" class="l"><a class="l" href="#246">246: </a>
 </span><span id="247" class="l"><a class="l" href="#247">247: </a>    <span class="php-comment">// When using CLI a first parameter can be used as route,</span>
 </span><span id="248" class="l"><a class="l" href="#248">248: </a>    <span class="php-comment">// a second JSON encoded can be used as $this-&gt;post</span>
-</span><span id="249" class="l"><a class="l" href="#249">249: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="249" class="l"><a class="l" href="#249">249: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="250" class="l"><a class="l" href="#250">250: </a>      <span class="php-keyword1">global</span> <span class="php-var">$argv</span>;
 </span><span id="251" class="l"><a class="l" href="#251">251: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$argv</span>[<span class="php-num">1</span>]) ){
 </span><span id="252" class="l"><a class="l" href="#252">252: </a>        <span class="php-var">$tmp</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">'/'</span>, <span class="php-var">$argv</span>[<span class="php-num">1</span>]);
@@ -408,7 +407,7 @@
 </span><span id="284" class="l"><a class="l" href="#284">284: </a>    <span class="php-keyword1">else</span>{
 </span><span id="285" class="l"><a class="l" href="#285">285: </a>      <span class="php-var">$this</span>-&gt;original_mode = <span class="php-quote">'dom'</span>;
 </span><span id="286" class="l"><a class="l" href="#286">286: </a>    }
-</span><span id="287" class="l"><a class="l" href="#287">287: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="287" class="l"><a class="l" href="#287">287: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="288" class="l"><a class="l" href="#288">288: </a>      <span class="php-var">$this</span>-&gt;original_mode = <span class="php-quote">'cli'</span>;
 </span><span id="289" class="l"><a class="l" href="#289">289: </a>    }
 </span><span id="290" class="l"><a class="l" href="#290">290: </a>    <span class="php-var">$this</span>-&gt;url = <span class="php-keyword2">implode</span>(<span class="php-quote">'/'</span>,<span class="php-var">$this</span>-&gt;params);
@@ -417,7 +416,7 @@
 </span><span id="293" class="l"><a class="l" href="#293">293: </a>
 </span><span id="294" class="l"><a class="l" href="#294">294: </a>    <span class="php-var">$this</span>-&gt;inc =&amp; <span class="php-var">$parent</span>-&gt;inc;
 </span><span id="295" class="l"><a class="l" href="#295">295: </a>    <span class="php-var">$this</span>-&gt;routes =&amp; <span class="php-var">$parent</span>-&gt;routes;
-</span><span id="296" class="l"><a class="l" href="#296">296: </a>    <span class="php-var">$this</span>-&gt;cli =&amp; <span class="php-var">$parent</span>-&gt;cli;
+</span><span id="296" class="l"><a class="l" href="#296">296: </a>    <span class="php-var">$this</span>-&gt;is_cli() =&amp; <span class="php-var">$parent</span>-&gt;cli;
 </span><span id="297" class="l"><a class="l" href="#297">297: </a>    <span class="php-var">$this</span>-&gt;db =&amp; <span class="php-var">$parent</span>-&gt;db;
 </span><span id="298" class="l"><a class="l" href="#298">298: </a>    <span class="php-var">$this</span>-&gt;post =&amp; <span class="php-var">$parent</span>-&gt;post;
 </span><span id="299" class="l"><a class="l" href="#299">299: </a>    <span class="php-var">$this</span>-&gt;get =&amp; <span class="php-var">$parent</span>-&gt;get;
@@ -441,7 +440,7 @@
 </span><span id="317" class="l"><a class="l" href="#317">317: </a>      <span class="php-var">$path</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$path</span>, <span class="php-num">0</span>, -<span class="php-num">1</span>);
 </span><span id="318" class="l"><a class="l" href="#318">318: </a>    }
 </span><span id="319" class="l"><a class="l" href="#319">319: </a>    <span class="php-var">$params</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">'/'</span>, <span class="php-var">$path</span>);
-</span><span id="320" class="l"><a class="l" href="#320">320: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="320" class="l"><a class="l" href="#320">320: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="321" class="l"><a class="l" href="#321">321: </a>      <span class="php-var">$this</span>-&gt;mode = <span class="php-quote">'cron'</span>;
 </span><span id="322" class="l"><a class="l" href="#322">322: </a>    }
 </span><span id="323" class="l"><a class="l" href="#323">323: </a>    <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$params</span>[<span class="php-num">0</span>]) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;outputs[<span class="php-var">$params</span>[<span class="php-num">0</span>]]) ){
@@ -626,7 +625,7 @@
 </span></span><span id="502" class="l"><a class="l" href="#502">502: </a><span class="php-comment">     */</span>
 </span><span id="503" class="l"><a class="l" href="#503">503: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_is_cli" href="#_is_cli">is_cli</a>()
 </span><span id="504" class="l"><a class="l" href="#504">504: </a>  {
-</span><span id="505" class="l"><a class="l" href="#505">505: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;cli;
+</span><span id="505" class="l"><a class="l" href="#505">505: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;is_cli();
 </span><span id="506" class="l"><a class="l" href="#506">506: </a>  }
 </span><span id="507" class="l"><a class="l" href="#507">507: </a>  
 </span><span id="508" class="l"><a class="l" href="#508">508: </a>    <span class="php-comment">/**
@@ -884,7 +883,7 @@
 </span><span id="760" class="l"><a class="l" href="#760">760: </a>        }
 </span><span id="761" class="l"><a class="l" href="#761">761: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() &amp;&amp; <span class="php-var">$this</span>-&gt;obj ){
 </span><span id="762" class="l"><a class="l" href="#762">762: </a>            
-</span><span id="763" class="l"><a class="l" href="#763">763: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cli ){
+</span><span id="763" class="l"><a class="l" href="#763">763: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_cli() ){
 </span><span id="764" class="l"><a class="l" href="#764">764: </a>        <span class="php-keyword1">die</span>(<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;output) ? <span class="php-var">$this</span>-&gt;obj-&gt;output : <span class="php-quote">&quot;no output&quot;</span>);
 </span><span id="765" class="l"><a class="l" href="#765">765: </a>      }
 </span><span id="766" class="l"><a class="l" href="#766">766: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;obj-&gt;prescript) ){
