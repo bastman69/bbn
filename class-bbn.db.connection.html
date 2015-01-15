@@ -7,7 +7,7 @@
 	<title>Class bbn\db\connection | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2855017884"></script>
+	<script type="text/javascript" src="elementlist.js?4039929270"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -176,7 +176,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 				0.2r89<br />
 				<b>Since:</b>
 				Apr 4, 2011, 23:23:55 +0000<br />
-		<b>Located at</b> <a href="source-class-bbn.db.connection.html#9-2687" title="Go to source code">db/connection.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.db.connection.html#9-2708" title="Go to source code">db/connection.php</a><br />
 	</div>
 
 
@@ -298,7 +298,7 @@ _modelize()</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#__statement">#</a>
-		<code><a href="source-class-bbn.db.connection.html#243-296" title="Go to source code">_statement</a>( <span>string <var>$type</var></span>, <span>string <var>$table</var></span>, <span>array <var>$keypairs</var> = []</span>, <span>string <var>$arg4</var> = []</span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#243-296" title="Go to source code">_statement</a>( <span>string <var>$type</var></span>, <span>string <var>$table</var></span>, <span>array <var>$keypairs</var> = []</span>, <span>string <var>$arg4</var> = []</span>, <span>mixed <var>$arg5</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -318,6 +318,8 @@ _modelize()</p>
 					<dd><code>array</code><br>| string $columns or Where string for delete case</dd>
 					<dt><var>$arg4</var></dt>
 					<dd><code>string</code><br>| bool $arg4 Where string or ignore</dd>
+					<dt><var>$arg5</var></dt>
+					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -3628,7 +3630,7 @@ class="php-quote">'Frank'</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2044-2098" title="Go to source code">update</a>( <span>string <var>$table</var></span>, <span>array <var>$values</var></span>, <span>array <var>$where</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2044-2099" title="Go to source code">update</a>( <span>string <var>$table</var></span>, <span>array <var>$values</var></span>, <span>array <var>$where</var></span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -3668,6 +3670,8 @@ class="php-quote">'127'</span>]
 					<dd><code>array</code><br>$values The new value(s).</dd>
 					<dt><var>$where</var></dt>
 					<dd><code>array</code><br>$where The "where" condition.</dd>
+					<dt><var>$ignore</var></dt>
+					<dd><code>boolean</code><br>$ignore If IGNORE should be added to the statement</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -3683,6 +3687,62 @@ class="php-quote">'127'</span>]
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="update_ignore" id="_update_ignore">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update_ignore">#</a>
+		<code><a href="source-class-bbn.db.connection.html#2101-2119" title="Go to source code">update_ignore</a>( <span>string <var>$table</var></span>, <span>array <var>$values</var></span>, <span>array <var>$where</var></span> )</code>
+
+		<div class="description short">
+			
+<p>If exist delete row(s) in a table, else ignore.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>If exist delete row(s) in a table, else ignore.</p>
+
+<pre>
+<span class="php-var">$this</span>-&gt;db-&gt;delete_ignore(
+ <span
+class="php-quote">&quot;table_users&quot;</span>,
+ [<span
+class="php-quote">'id'</span> =&gt; <span
+class="php-quote">'20'</span>]
+);
+</pre>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table</var></dt>
+					<dd><code>string</code><br>$table The table name.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>array</code><br>$where The "where" condition.</dd>
+					<dt><var>$where</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>The number of rows deleted.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="delete" id="_delete">
 
 		<td class="attributes"><code>
@@ -3694,7 +3754,7 @@ class="php-quote">'127'</span>]
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2100-2138" title="Go to source code">delete</a>( <span>string <var>$table</var></span>, <span>array <var>$where</var></span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2121-2159" title="Go to source code">delete</a>( <span>string <var>$table</var></span>, <span>array <var>$where</var></span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -3750,7 +3810,7 @@ class="php-quote">'32'</span>]);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_ignore">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2140-2158" title="Go to source code">delete_ignore</a>( <span>string <var>$table</var></span>, <span>array <var>$where</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2161-2179" title="Go to source code">delete_ignore</a>( <span>string <var>$table</var></span>, <span>array <var>$where</var></span> )</code>
 
 		<div class="description short">
 			
@@ -3804,7 +3864,7 @@ class="php-quote">'20'</span>]
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insert_ignore">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2160-2181" title="Go to source code">insert_ignore</a>( <span>string <var>$table</var></span>, <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2181-2202" title="Go to source code">insert_ignore</a>( <span>string <var>$table</var></span>, <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			
@@ -3867,7 +3927,7 @@ class="php-quote">'Ted'</span>],
 
 		<td class="name"><div>
 		<a class="anchor" href="#_modelize">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2183-2218" title="Go to source code">modelize</a>( <span>string <var>$table</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2204-2239" title="Go to source code">modelize</a>( <span>string <var>$table</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -3914,7 +3974,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_databases">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2220-2232" title="Go to source code">get_databases</a>( )</code>
+		<code><a href="source-class-bbn.db.connection.html#2241-2253" title="Go to source code">get_databases</a>( )</code>
 
 		<div class="description short">
 			
@@ -3957,7 +4017,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_tables">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2234-2251" title="Go to source code">get_tables</a>( <span>string <var>$database</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2255-2272" title="Go to source code">get_tables</a>( <span>string <var>$database</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4006,7 +4066,7 @@ class="php-quote">&quot;database&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_columns">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2253-2270" title="Go to source code">get_columns</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2274-2291" title="Go to source code">get_columns</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4057,7 +4117,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_keys">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2272-2292" title="Go to source code">get_keys</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2293-2313" title="Go to source code">get_keys</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4106,7 +4166,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_change">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2294-2300" title="Go to source code">get_change</a>( <span>mixed <var>$db</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2315-2321" title="Go to source code">get_change</a>( <span>mixed <var>$db</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4139,7 +4199,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_primary">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2302-2319" title="Go to source code">get_primary</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2323-2340" title="Go to source code">get_primary</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4186,7 +4246,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_unique_primary">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2321-2340" title="Go to source code">get_unique_primary</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2342-2361" title="Go to source code">get_unique_primary</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4233,7 +4293,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_unique_keys">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2342-2364" title="Go to source code">get_unique_keys</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2363-2385" title="Go to source code">get_unique_keys</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4280,7 +4340,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_where">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2366-2416" title="Go to source code">get_where</a>( <span>array <var>$where</var></span>, <span>string <var>$table</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$aliases</var> = []</span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2387-2437" title="Go to source code">get_where</a>( <span>array <var>$where</var></span>, <span>string <var>$table</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$aliases</var> = []</span> )</code>
 
 		<div class="description short">
 			
@@ -4332,7 +4392,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_order">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2418-2433" title="Go to source code">get_order</a>( <span>array <var>$order</var></span>, <span>string <var>$table</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2439-2454" title="Go to source code">get_order</a>( <span>array <var>$order</var></span>, <span>string <var>$table</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4386,7 +4446,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_limit">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2435-2450" title="Go to source code">get_limit</a>( <span>integer <var>$limit</var></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2456-2471" title="Go to source code">get_limit</a>( <span>integer <var>$limit</var></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4437,7 +4497,7 @@ class="php-quote">'5'</span>, <span class="php-quote">'2'</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_create">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2452-2466" title="Go to source code">get_create</a>( <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2473-2487" title="Go to source code">get_create</a>( <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			
@@ -4486,7 +4546,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_delete">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2468-2485" title="Go to source code">get_delete</a>( <span>string <var>$table</var></span>, <span>array <var>$where</var></span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2489-2506" title="Go to source code">get_delete</a>( <span>string <var>$table</var></span>, <span>array <var>$where</var></span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4541,7 +4601,7 @@ class="php-quote">&quot;table_users&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_select">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2487-2507" title="Go to source code">get_select</a>( <span>string <var>$table</var></span>, <span>array <var>$fields</var> = []</span>, <span>array <var>$where</var> = []</span>, <span>string <var>$order</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2508-2528" title="Go to source code">get_select</a>( <span>string <var>$table</var></span>, <span>array <var>$fields</var> = []</span>, <span>array <var>$where</var> = []</span>, <span>string <var>$order</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4607,7 +4667,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_insert">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2509-2526" title="Go to source code">get_insert</a>( <span>string <var>$table</var></span>, <span>array <var>$fields</var> = []</span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2530-2547" title="Go to source code">get_insert</a>( <span>string <var>$table</var></span>, <span>array <var>$fields</var> = []</span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4664,7 +4724,7 @@ class="php-quote">'surname'</span>]);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_update">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2528-2545" title="Go to source code">get_update</a>( <span>string <var>$table</var></span>, <span>array <var>$fields</var> = []</span>, <span>array <var>$where</var> = []</span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2549-2566" title="Go to source code">get_update</a>( <span>string <var>$table</var></span>, <span>array <var>$fields</var> = []</span>, <span>array <var>$where</var> = []</span>, <span>boolean <var>$ignore</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4694,8 +4754,10 @@ class="php-quote">'male'</span>]);
 					<dd><code>array</code><br>$fields The fields name.</dd>
 					<dt><var>$where</var></dt>
 					<dd><code>array</code><br>$where The "where" condition.</dd>
-					<dt><var>$php</var></dt>
+					<dt><var>$ignore</var></dt>
 					<dd><code>boolean</code><br>$php default: false.</dd>
+					<dt><var>$php</var></dt>
+					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -4722,7 +4784,7 @@ class="php-quote">'male'</span>]);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_column_values">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2547-2576" title="Go to source code">get_column_values</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2568-2597" title="Go to source code">get_column_values</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4784,7 +4846,7 @@ class="php-quote">&quot;surname&quot;</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_values_count">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2578-2598" title="Go to source code">get_values_count</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2599-2619" title="Go to source code">get_values_count</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span>, <span>boolean <var>$php</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4849,7 +4911,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_field_values">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2600-2622" title="Go to source code">get_field_values</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2621-2643" title="Go to source code">get_field_values</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4910,7 +4972,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_count_field_values">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2624-2645" title="Go to source code">count_field_values</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2645-2666" title="Go to source code">count_field_values</a>( <span>string <var>$table</var></span>, <span>string <var>$field</var></span>, <span>array <var>$where</var> = []</span>, <span>integer <var>$limit</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$start</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -4971,7 +5033,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create_db_index">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2647-2653" title="Go to source code">create_db_index</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span>, <span>mixed <var>$unique</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$length</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2668-2674" title="Go to source code">create_db_index</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span>, <span>mixed <var>$unique</var> = <span class="php-keyword1">false</span></span>, <span>mixed <var>$length</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -5002,7 +5064,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_db_index">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2655-2661" title="Go to source code">delete_db_index</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2676-2682" title="Go to source code">delete_db_index</a>( <span>mixed <var>$table</var></span>, <span>mixed <var>$column</var></span> )</code>
 
 		<div class="description short">
 			
@@ -5033,7 +5095,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create_db_user">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2663-2669" title="Go to source code">create_db_user</a>( <span>mixed <var>$user</var></span>, <span>mixed <var>$pass</var></span>, <span>mixed <var>$db</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2684-2690" title="Go to source code">create_db_user</a>( <span>mixed <var>$user</var></span>, <span>mixed <var>$pass</var></span>, <span>mixed <var>$db</var></span> )</code>
 
 		<div class="description short">
 			
@@ -5064,7 +5126,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_delete_db_user">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2671-2677" title="Go to source code">delete_db_user</a>( <span>mixed <var>$user</var></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2692-2698" title="Go to source code">delete_db_user</a>( <span>mixed <var>$user</var></span> )</code>
 
 		<div class="description short">
 			
@@ -5095,7 +5157,7 @@ class="php-num">2</span>);
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_users">#</a>
-		<code><a href="source-class-bbn.db.connection.html#2679-2685" title="Go to source code">get_users</a>( <span>mixed <var>$user</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$host</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.db.connection.html#2700-2706" title="Go to source code">get_users</a>( <span>mixed <var>$user</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$host</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
