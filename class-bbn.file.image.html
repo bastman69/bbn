@@ -7,7 +7,7 @@
 	<title>Class bbn\file\image | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?4039929270"></script>
+	<script type="text/javascript" src="elementlist.js?1295171203"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -182,7 +182,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 				Deal specifically with SVG<br />
 				<b>Todo:</b>
 				Add a static function and var to check for available libraries (Imagick/GD)<br />
-		<b>Located at</b> <a href="source-class-bbn.file.image.html#6-819" title="Go to source code">file/image.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.file.image.html#6-827" title="Go to source code">file/image.php</a><br />
 	</div>
 
 
@@ -193,14 +193,14 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 		<td class="attributes"><code>
 			 public static
-			string
+			string|array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_pdf2jpg">#</a>
-		<code><a href="source-class-bbn.file.image.html#55-91" title="Go to source code">pdf2jpg</a>( <span>mixed <var>$pdf</var></span>, <span>mixed <var>$jpg</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$num</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#55-99" title="Go to source code">pdf2jpg</a>( <span>mixed <var>$pdf</var></span>, <span>mixed <var>$jpg</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$num</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -245,7 +245,7 @@ Default: 0(first page).</dd>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>string</code><br />
+					<code>string|array</code><br />
 				</div>
 
 
@@ -265,7 +265,7 @@ Default: 0(first page).</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.file.image.html#93-108" title="Go to source code">__construct</a>( <span>mixed <var>$file</var></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#101-116" title="Go to source code">__construct</a>( <span>mixed <var>$file</var></span> )</code>
 
 		<div class="description short">
 			
@@ -301,7 +301,7 @@ Default: 0(first page).</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_extension">#</a>
-		<code><a href="source-class-bbn.file.image.html#110-146" title="Go to source code">get_extension</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#118-154" title="Go to source code">get_extension</a>( )</code>
 
 		<div class="description short">
 			
@@ -350,7 +350,7 @@ class="php-comment">//Returns &quot;jpg&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_test">#</a>
-		<code><a href="source-class-bbn.file.image.html#148-168" title="Go to source code">test</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#156-176" title="Go to source code">test</a>( )</code>
 
 		<div class="description short">
 			
@@ -399,7 +399,7 @@ class="php-comment">//Returns &quot;true&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_make">#</a>
-		<code><a href="source-class-bbn.file.image.html#170-225" title="Go to source code">make</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#178-233" title="Go to source code">make</a>( )</code>
 
 		<div class="description short">
 			
@@ -430,7 +430,7 @@ class="php-comment">//Returns &quot;true&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_display">#</a>
-		<code><a href="source-class-bbn.file.image.html#227-248" title="Go to source code">display</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#235-256" title="Go to source code">display</a>( )</code>
 
 		<div class="description short">
 			
@@ -463,7 +463,7 @@ class="php-comment">//Returns &quot;true&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_save">#</a>
-		<code><a href="source-class-bbn.file.image.html#250-273" title="Go to source code">save</a>( <span>mixed <var>$dest</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#258-281" title="Go to source code">save</a>( <span>mixed <var>$dest</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -494,7 +494,7 @@ class="php-comment">//Returns &quot;true&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_width">#</a>
-		<code><a href="source-class-bbn.file.image.html#275-293" title="Go to source code">get_width</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#283-301" title="Go to source code">get_width</a>( )</code>
 
 		<div class="description short">
 			
@@ -541,7 +541,7 @@ class="php-comment">//Returns &quot;512&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_height">#</a>
-		<code><a href="source-class-bbn.file.image.html#295-313" title="Go to source code">get_height</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#303-321" title="Go to source code">get_height</a>( )</code>
 
 		<div class="description short">
 			
@@ -588,7 +588,7 @@ class="php-comment">//Returns &quot;512&quot;</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_resize">#</a>
-		<code><a href="source-class-bbn.file.image.html#315-445" title="Go to source code">resize</a>( <span>integer <var>$w</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$h</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$crop</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$max_w</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$max_h</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#323-453" title="Go to source code">resize</a>( <span>integer <var>$w</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$h</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$crop</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$max_w</var> = <span class="php-keyword1">false</span></span>, <span>integer <var>$max_h</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -653,7 +653,7 @@ class="php-comment">//Resizes and cuts the image</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_autoresize">#</a>
-		<code><a href="source-class-bbn.file.image.html#447-476" title="Go to source code">autoresize</a>( <span>integer <var>$w</var> = BBN_MAX_WIDTH</span>, <span>integer <var>$h</var> = BBN_MAX_HEIGHT</span> )</code>
+		<code><a href="source-class-bbn.file.image.html#455-484" title="Go to source code">autoresize</a>( <span>integer <var>$w</var> = BBN_MAX_WIDTH</span>, <span>integer <var>$h</var> = BBN_MAX_HEIGHT</span> )</code>
 
 		<div class="description short">
 			
@@ -701,7 +701,7 @@ class="php-comment">//Resizes and cuts the image</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_crop">#</a>
-		<code><a href="source-class-bbn.file.image.html#478-533" title="Go to source code">crop</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var></span>, <span>integer <var>$x</var></span>, <span>integer <var>$y</var></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#486-541" title="Go to source code">crop</a>( <span>integer <var>$w</var></span>, <span>integer <var>$h</var></span>, <span>integer <var>$x</var></span>, <span>integer <var>$y</var></span> )</code>
 
 		<div class="description short">
 			
@@ -760,7 +760,7 @@ class="php-num">300</span>)<span class="php-quote">';
 
 		<td class="name"><div>
 		<a class="anchor" href="#_rotate">#</a>
-		<code><a href="source-class-bbn.file.image.html#535-579" title="Go to source code">rotate</a>( <span>integer <var>$angle</var></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#543-587" title="Go to source code">rotate</a>( <span>integer <var>$angle</var></span> )</code>
 
 		<div class="description short">
 			
@@ -812,7 +812,7 @@ class="php-comment">//Rotates the image 90°</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_flip">#</a>
-		<code><a href="source-class-bbn.file.image.html#581-625" title="Go to source code">flip</a>( <span>string <var>$mode</var> = <span class="php-quote">'v'</span></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#589-633" title="Go to source code">flip</a>( <span>string <var>$mode</var> = <span class="php-quote">'v'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -867,7 +867,7 @@ class="php-comment">//Horizontal flipping</span>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_brightness">#</a>
-		<code><a href="source-class-bbn.file.image.html#627-662" title="Go to source code">brightness</a>( <span>string <var>$val</var> = <span class="php-quote">'+'</span></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#635-670" title="Go to source code">brightness</a>( <span>string <var>$val</var> = <span class="php-quote">'+'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -924,7 +924,7 @@ it.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_contrast">#</a>
-		<code><a href="source-class-bbn.file.image.html#664-699" title="Go to source code">contrast</a>( <span>string <var>$val</var> = <span class="php-quote">'+'</span></span> )</code>
+		<code><a href="source-class-bbn.file.image.html#672-707" title="Go to source code">contrast</a>( <span>string <var>$val</var> = <span class="php-quote">'+'</span></span> )</code>
 
 		<div class="description short">
 			
@@ -980,7 +980,7 @@ it.</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_grayscale">#</a>
-		<code><a href="source-class-bbn.file.image.html#701-731" title="Go to source code">grayscale</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#709-739" title="Go to source code">grayscale</a>( )</code>
 
 		<div class="description short">
 			
@@ -1026,7 +1026,7 @@ class="php-var">$img</span>-&gt;grayscale();
 
 		<td class="name"><div>
 		<a class="anchor" href="#_negate">#</a>
-		<code><a href="source-class-bbn.file.image.html#733-763" title="Go to source code">negate</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#741-771" title="Go to source code">negate</a>( )</code>
 
 		<div class="description short">
 			
@@ -1072,7 +1072,7 @@ class="php-var">$img</span>-&gt;negate();
 
 		<td class="name"><div>
 		<a class="anchor" href="#_polaroid">#</a>
-		<code><a href="source-class-bbn.file.image.html#765-790" title="Go to source code">polaroid</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#773-798" title="Go to source code">polaroid</a>( )</code>
 
 		<div class="description short">
 			
@@ -1122,7 +1122,7 @@ class="php-var">$img</span>-&gt;polaroid();
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toString">#</a>
-		<code><a href="source-class-bbn.file.image.html#792-817" title="Go to source code">toString</a>( )</code>
+		<code><a href="source-class-bbn.file.image.html#800-825" title="Go to source code">toString</a>( )</code>
 
 		<div class="description short">
 			
