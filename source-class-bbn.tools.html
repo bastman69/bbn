@@ -8,7 +8,7 @@
 	<title>File tools.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1295171203"></script>
+	<script type="text/javascript" src="elementlist.js?1762417450"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -788,22 +788,30 @@
 </span><span id="665" class="l"><a class="l" href="#665">665: </a>      <span class="php-var">$param</span> = self::to_array(<span class="php-var">$param</span>);
 </span><span id="666" class="l"><a class="l" href="#666">666: </a>    }
 </span><span id="667" class="l"><a class="l" href="#667">667: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$param</span>) &amp;&amp; (<span class="php-keyword2">count</span>(<span class="php-var">$param</span>) &gt; <span class="php-num">0</span>) ){
-</span><span id="668" class="l"><a class="l" href="#668">668: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$method</span> === <span class="php-quote">'post'</span> ){
-</span><span id="669" class="l"><a class="l" href="#669">669: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_URL, <span class="php-var">$url</span>);
-</span><span id="670" class="l"><a class="l" href="#670">670: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_POST, <span class="php-num">1</span>);
-</span><span id="671" class="l"><a class="l" href="#671">671: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_POSTFIELDS, <span class="php-keyword2">http_build_query</span>(<span class="php-var">$param</span>));
-</span><span id="672" class="l"><a class="l" href="#672">672: </a>      }
-</span><span id="673" class="l"><a class="l" href="#673">673: </a>      <span class="php-keyword1">else</span>{
-</span><span id="674" class="l"><a class="l" href="#674">674: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_URL, <span class="php-var">$url</span>.<span class="php-quote">'?'</span>.<span class="php-keyword2">http_build_query</span>(<span class="php-var">$param</span>));
-</span><span id="675" class="l"><a class="l" href="#675">675: </a>      }
-</span><span id="676" class="l"><a class="l" href="#676">676: </a>    }
-</span><span id="677" class="l"><a class="l" href="#677">677: </a>    <span class="php-keyword1">else</span>{
-</span><span id="678" class="l"><a class="l" href="#678">678: </a>      <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_URL, <span class="php-var">$url</span>);
-</span><span id="679" class="l"><a class="l" href="#679">679: </a>    }
-</span><span id="680" class="l"><a class="l" href="#680">680: </a>    <span class="php-keyword1">return</span> <span class="php-keyword2">curl_exec</span>(<span class="php-var">$ch</span>);
-</span><span id="681" class="l"><a class="l" href="#681">681: </a>  }
-</span><span id="682" class="l"><a class="l" href="#682">682: </a>}
-</span><span id="683" class="l"><a class="l" href="#683">683: </a></span><span class="xlang">?&gt;</span></code></pre>
+</span><span id="668" class="l"><a class="l" href="#668">668: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword2">defined</span>(<span class="php-quote">'BBN_IS_SSL'</span>) &amp;&amp; <span class="php-keyword2">defined</span>(<span class="php-quote">'BBN_IS_DEV'</span>) &amp;&amp; BBN_IS_SSL &amp;&amp; BBN_IS_DEV ){
+</span><span id="669" class="l"><a class="l" href="#669">669: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_SSL_VERIFYPEER, <span class="php-keyword1">false</span>);
+</span><span id="670" class="l"><a class="l" href="#670">670: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_SSL_VERIFYHOST, <span class="php-keyword1">false</span>);
+</span><span id="671" class="l"><a class="l" href="#671">671: </a>      }
+</span><span id="672" class="l"><a class="l" href="#672">672: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$method</span> === <span class="php-quote">'post'</span> ){
+</span><span id="673" class="l"><a class="l" href="#673">673: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_URL, <span class="php-var">$url</span>);
+</span><span id="674" class="l"><a class="l" href="#674">674: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_POST, <span class="php-num">1</span>);
+</span><span id="675" class="l"><a class="l" href="#675">675: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_POSTFIELDS, <span class="php-keyword2">http_build_query</span>(<span class="php-var">$param</span>));
+</span><span id="676" class="l"><a class="l" href="#676">676: </a>      }
+</span><span id="677" class="l"><a class="l" href="#677">677: </a>      <span class="php-keyword1">else</span>{
+</span><span id="678" class="l"><a class="l" href="#678">678: </a>        <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_URL, <span class="php-var">$url</span>.<span class="php-quote">'?'</span>.<span class="php-keyword2">http_build_query</span>(<span class="php-var">$param</span>));
+</span><span id="679" class="l"><a class="l" href="#679">679: </a>      }
+</span><span id="680" class="l"><a class="l" href="#680">680: </a>    }
+</span><span id="681" class="l"><a class="l" href="#681">681: </a>    <span class="php-keyword1">else</span>{
+</span><span id="682" class="l"><a class="l" href="#682">682: </a>      <span class="php-keyword2">curl_setopt</span>(<span class="php-var">$ch</span>, CURLOPT_URL, <span class="php-var">$url</span>);
+</span><span id="683" class="l"><a class="l" href="#683">683: </a>    }
+</span><span id="684" class="l"><a class="l" href="#684">684: </a>    <span class="php-var">$r</span> = <span class="php-keyword2">curl_exec</span>(<span class="php-var">$ch</span>);
+</span><span id="685" class="l"><a class="l" href="#685">685: </a>    <span class="php-keyword1">if</span> ( !<span class="php-var">$r</span> ){
+</span><span id="686" class="l"><a class="l" href="#686">686: </a>      self::<span class="php-keyword2">log</span>(<span class="php-keyword2">curl_error</span>(<span class="php-var">$ch</span>), <span class="php-quote">'curl'</span>);
+</span><span id="687" class="l"><a class="l" href="#687">687: </a>    }
+</span><span id="688" class="l"><a class="l" href="#688">688: </a>    <span class="php-keyword1">return</span> <span class="php-var">$r</span>;
+</span><span id="689" class="l"><a class="l" href="#689">689: </a>  }
+</span><span id="690" class="l"><a class="l" href="#690">690: </a>}
+</span><span id="691" class="l"><a class="l" href="#691">691: </a></span><span class="xlang">?&gt;</span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
