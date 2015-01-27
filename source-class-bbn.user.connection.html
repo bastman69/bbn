@@ -8,7 +8,7 @@
 	<title>File user/connection.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1762417450"></script>
+	<script type="text/javascript" src="elementlist.js?1169556202"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -920,66 +920,77 @@
 </span><span id="799" class="l"><a class="l" href="#799">799: </a>  <span class="php-comment">/**
 </span></span><span id="800" class="l"><a class="l" href="#800">800: </a><span class="php-comment">   * @return void
 </span></span><span id="801" class="l"><a class="l" href="#801">801: </a><span class="php-comment">   */</span>
-</span><span id="802" class="l"><a class="l" href="#802">802: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_token" href="#_get_token">get_token</a>(<span class="php-var">$st</span>)
+</span><span id="802" class="l"><a class="l" href="#802">802: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_name" href="#_get_name">get_name</a>()
 </span><span id="803" class="l"><a class="l" href="#803">803: </a>  {
 </span><span id="804" class="l"><a class="l" href="#804">804: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth ){
-</span><span id="805" class="l"><a class="l" href="#805">805: </a>      <span class="php-var">$s</span> =&amp; <span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]];
-</span><span id="806" class="l"><a class="l" href="#806">806: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>]) ) {
-</span><span id="807" class="l"><a class="l" href="#807">807: </a>        <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>] = \bbn\str\text::genpwd();
-</span><span id="808" class="l"><a class="l" href="#808">808: </a>        <span class="php-keyword1">return</span> <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>];
-</span><span id="809" class="l"><a class="l" href="#809">809: </a>      }
-</span><span id="810" class="l"><a class="l" href="#810">810: </a>    }
-</span><span id="811" class="l"><a class="l" href="#811">811: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="812" class="l"><a class="l" href="#812">812: </a>  }
-</span><span id="813" class="l"><a class="l" href="#813">813: </a>
-</span><span id="814" class="l"><a class="l" href="#814">814: </a>  <span class="php-comment">/**
-</span></span><span id="815" class="l"><a class="l" href="#815">815: </a><span class="php-comment">   * @return void
-</span></span><span id="816" class="l"><a class="l" href="#816">816: </a><span class="php-comment">   */</span>
-</span><span id="817" class="l"><a class="l" href="#817">817: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check_token" href="#_check_token">check_token</a>(<span class="php-var">$st</span>, <span class="php-var">$token</span>)
-</span><span id="818" class="l"><a class="l" href="#818">818: </a>  {
-</span><span id="819" class="l"><a class="l" href="#819">819: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth ){
-</span><span id="820" class="l"><a class="l" href="#820">820: </a>      <span class="php-var">$s</span> =&amp; <span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]];
-</span><span id="821" class="l"><a class="l" href="#821">821: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>], <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>]) ) {
-</span><span id="822" class="l"><a class="l" href="#822">822: </a>        <span class="php-keyword1">return</span> <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>] === <span class="php-var">$token</span>;
-</span><span id="823" class="l"><a class="l" href="#823">823: </a>      }
-</span><span id="824" class="l"><a class="l" href="#824">824: </a>    }
-</span><span id="825" class="l"><a class="l" href="#825">825: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="826" class="l"><a class="l" href="#826">826: </a>  }
-</span><span id="827" class="l"><a class="l" href="#827">827: </a>
-</span><span id="828" class="l"><a class="l" href="#828">828: </a>    <span class="php-comment">/**
-</span></span><span id="829" class="l"><a class="l" href="#829">829: </a><span class="php-comment">     * @return void 
-</span></span><span id="830" class="l"><a class="l" href="#830">830: </a><span class="php-comment">     */</span>
-</span><span id="831" class="l"><a class="l" href="#831">831: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_password" href="#_set_password">set_password</a>(<span class="php-var">$old_pass</span>, <span class="php-var">$new_pass</span>)
-</span><span id="832" class="l"><a class="l" href="#832">832: </a>    {
-</span><span id="833" class="l"><a class="l" href="#833">833: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth ){
-</span><span id="834" class="l"><a class="l" href="#834">834: </a>      <span class="php-var">$stored_pass</span> = <span class="php-var">$this</span>-&gt;db-&gt;select_one(
-</span><span id="835" class="l"><a class="l" href="#835">835: </a>              <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'passwords'</span>],
-</span><span id="836" class="l"><a class="l" href="#836">836: </a>              <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'pass'</span>],
-</span><span id="837" class="l"><a class="l" href="#837">837: </a>              [<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$this</span>-&gt;id],
-</span><span id="838" class="l"><a class="l" href="#838">838: </a>              [<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'added'</span>] =&gt; <span class="php-quote">'DESC'</span>]);
-</span><span id="839" class="l"><a class="l" href="#839">839: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;_check_password(<span class="php-var">$old_pass</span>, <span class="php-var">$stored_pass</span>) ){
-</span><span id="840" class="l"><a class="l" href="#840">840: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;force_password(<span class="php-var">$new_pass</span>);
-</span><span id="841" class="l"><a class="l" href="#841">841: </a>      }
-</span><span id="842" class="l"><a class="l" href="#842">842: </a>        }
-</span><span id="843" class="l"><a class="l" href="#843">843: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="844" class="l"><a class="l" href="#844">844: </a>    }
-</span><span id="845" class="l"><a class="l" href="#845">845: </a>
-</span><span id="846" class="l"><a class="l" href="#846">846: </a>    <span class="php-comment">/**
-</span></span><span id="847" class="l"><a class="l" href="#847">847: </a><span class="php-comment">     * @return boolean 
-</span></span><span id="848" class="l"><a class="l" href="#848">848: </a><span class="php-comment">     */</span>
-</span><span id="849" class="l"><a class="l" href="#849">849: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_force_password" href="#_force_password">force_password</a>(<span class="php-var">$pass</span>)
-</span><span id="850" class="l"><a class="l" href="#850">850: </a>    {
-</span><span id="851" class="l"><a class="l" href="#851">851: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth )
-</span><span id="852" class="l"><a class="l" href="#852">852: </a>        {
-</span><span id="853" class="l"><a class="l" href="#853">853: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;db-&gt;insert(
-</span><span id="854" class="l"><a class="l" href="#854">854: </a>              <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'passwords'</span>], [
-</span><span id="855" class="l"><a class="l" href="#855">855: </a>                <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'pass'</span>] =&gt; <span class="php-var">$this</span>-&gt;_crypt(<span class="php-var">$pass</span>),
-</span><span id="856" class="l"><a class="l" href="#856">856: </a>                <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$this</span>-&gt;id,
-</span><span id="857" class="l"><a class="l" href="#857">857: </a>                <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'added'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)]);
-</span><span id="858" class="l"><a class="l" href="#858">858: </a>        }
-</span><span id="859" class="l"><a class="l" href="#859">859: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="860" class="l"><a class="l" href="#860">860: </a>    }
-</span><span id="861" class="l"><a class="l" href="#861">861: </a></span>}</code></pre>
+</span><span id="805" class="l"><a class="l" href="#805">805: </a>      <span class="php-keyword1">return</span> <span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]][<span class="php-quote">'login'</span>];
+</span><span id="806" class="l"><a class="l" href="#806">806: </a>    }
+</span><span id="807" class="l"><a class="l" href="#807">807: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="808" class="l"><a class="l" href="#808">808: </a>  }
+</span><span id="809" class="l"><a class="l" href="#809">809: </a>
+</span><span id="810" class="l"><a class="l" href="#810">810: </a>  <span class="php-comment">/**
+</span></span><span id="811" class="l"><a class="l" href="#811">811: </a><span class="php-comment">   * @return void
+</span></span><span id="812" class="l"><a class="l" href="#812">812: </a><span class="php-comment">   */</span>
+</span><span id="813" class="l"><a class="l" href="#813">813: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_token" href="#_get_token">get_token</a>(<span class="php-var">$st</span>)
+</span><span id="814" class="l"><a class="l" href="#814">814: </a>  {
+</span><span id="815" class="l"><a class="l" href="#815">815: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth ){
+</span><span id="816" class="l"><a class="l" href="#816">816: </a>      <span class="php-var">$s</span> =&amp; <span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]];
+</span><span id="817" class="l"><a class="l" href="#817">817: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>]) ) {
+</span><span id="818" class="l"><a class="l" href="#818">818: </a>        <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>] = \bbn\str\text::genpwd();
+</span><span id="819" class="l"><a class="l" href="#819">819: </a>        <span class="php-keyword1">return</span> <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>];
+</span><span id="820" class="l"><a class="l" href="#820">820: </a>      }
+</span><span id="821" class="l"><a class="l" href="#821">821: </a>    }
+</span><span id="822" class="l"><a class="l" href="#822">822: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="823" class="l"><a class="l" href="#823">823: </a>  }
+</span><span id="824" class="l"><a class="l" href="#824">824: </a>
+</span><span id="825" class="l"><a class="l" href="#825">825: </a>  <span class="php-comment">/**
+</span></span><span id="826" class="l"><a class="l" href="#826">826: </a><span class="php-comment">   * @return void
+</span></span><span id="827" class="l"><a class="l" href="#827">827: </a><span class="php-comment">   */</span>
+</span><span id="828" class="l"><a class="l" href="#828">828: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check_token" href="#_check_token">check_token</a>(<span class="php-var">$st</span>, <span class="php-var">$token</span>)
+</span><span id="829" class="l"><a class="l" href="#829">829: </a>  {
+</span><span id="830" class="l"><a class="l" href="#830">830: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth ){
+</span><span id="831" class="l"><a class="l" href="#831">831: </a>      <span class="php-var">$s</span> =&amp; <span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]];
+</span><span id="832" class="l"><a class="l" href="#832">832: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>], <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>]) ) {
+</span><span id="833" class="l"><a class="l" href="#833">833: </a>        <span class="php-keyword1">return</span> <span class="php-var">$s</span>[<span class="php-quote">'tokens'</span>][<span class="php-var">$st</span>] === <span class="php-var">$token</span>;
+</span><span id="834" class="l"><a class="l" href="#834">834: </a>      }
+</span><span id="835" class="l"><a class="l" href="#835">835: </a>    }
+</span><span id="836" class="l"><a class="l" href="#836">836: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="837" class="l"><a class="l" href="#837">837: </a>  }
+</span><span id="838" class="l"><a class="l" href="#838">838: </a>
+</span><span id="839" class="l"><a class="l" href="#839">839: </a>    <span class="php-comment">/**
+</span></span><span id="840" class="l"><a class="l" href="#840">840: </a><span class="php-comment">     * @return void 
+</span></span><span id="841" class="l"><a class="l" href="#841">841: </a><span class="php-comment">     */</span>
+</span><span id="842" class="l"><a class="l" href="#842">842: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_password" href="#_set_password">set_password</a>(<span class="php-var">$old_pass</span>, <span class="php-var">$new_pass</span>)
+</span><span id="843" class="l"><a class="l" href="#843">843: </a>    {
+</span><span id="844" class="l"><a class="l" href="#844">844: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth ){
+</span><span id="845" class="l"><a class="l" href="#845">845: </a>      <span class="php-var">$stored_pass</span> = <span class="php-var">$this</span>-&gt;db-&gt;select_one(
+</span><span id="846" class="l"><a class="l" href="#846">846: </a>              <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'passwords'</span>],
+</span><span id="847" class="l"><a class="l" href="#847">847: </a>              <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'pass'</span>],
+</span><span id="848" class="l"><a class="l" href="#848">848: </a>              [<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$this</span>-&gt;id],
+</span><span id="849" class="l"><a class="l" href="#849">849: </a>              [<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'added'</span>] =&gt; <span class="php-quote">'DESC'</span>]);
+</span><span id="850" class="l"><a class="l" href="#850">850: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;_check_password(<span class="php-var">$old_pass</span>, <span class="php-var">$stored_pass</span>) ){
+</span><span id="851" class="l"><a class="l" href="#851">851: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;force_password(<span class="php-var">$new_pass</span>);
+</span><span id="852" class="l"><a class="l" href="#852">852: </a>      }
+</span><span id="853" class="l"><a class="l" href="#853">853: </a>        }
+</span><span id="854" class="l"><a class="l" href="#854">854: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="855" class="l"><a class="l" href="#855">855: </a>    }
+</span><span id="856" class="l"><a class="l" href="#856">856: </a>
+</span><span id="857" class="l"><a class="l" href="#857">857: </a>    <span class="php-comment">/**
+</span></span><span id="858" class="l"><a class="l" href="#858">858: </a><span class="php-comment">     * @return boolean 
+</span></span><span id="859" class="l"><a class="l" href="#859">859: </a><span class="php-comment">     */</span>
+</span><span id="860" class="l"><a class="l" href="#860">860: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_force_password" href="#_force_password">force_password</a>(<span class="php-var">$pass</span>)
+</span><span id="861" class="l"><a class="l" href="#861">861: </a>    {
+</span><span id="862" class="l"><a class="l" href="#862">862: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;auth )
+</span><span id="863" class="l"><a class="l" href="#863">863: </a>        {
+</span><span id="864" class="l"><a class="l" href="#864">864: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;db-&gt;insert(
+</span><span id="865" class="l"><a class="l" href="#865">865: </a>              <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'passwords'</span>], [
+</span><span id="866" class="l"><a class="l" href="#866">866: </a>                <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'pass'</span>] =&gt; <span class="php-var">$this</span>-&gt;_crypt(<span class="php-var">$pass</span>),
+</span><span id="867" class="l"><a class="l" href="#867">867: </a>                <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$this</span>-&gt;id,
+</span><span id="868" class="l"><a class="l" href="#868">868: </a>                <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'passwords'</span>][<span class="php-quote">'added'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)]);
+</span><span id="869" class="l"><a class="l" href="#869">869: </a>        }
+</span><span id="870" class="l"><a class="l" href="#870">870: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="871" class="l"><a class="l" href="#871">871: </a>    }
+</span><span id="872" class="l"><a class="l" href="#872">872: </a></span>}</code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
