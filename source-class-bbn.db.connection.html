@@ -2552,314 +2552,313 @@
 </span><span id="2428" class="l"><a class="l" href="#2428">2428: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_where" href="#_get_where">get_where</a>(<span class="php-keyword1">array</span> <span class="php-var">$where</span>, <span class="php-var">$table</span>=<span class="php-quote">''</span>, <span class="php-var">$aliases</span> = [])
 </span><span id="2429" class="l"><a class="l" href="#2429">2429: </a>  {
 </span><span id="2430" class="l"><a class="l" href="#2430">2430: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$where</span>[<span class="php-quote">'final'</span>], <span class="php-var">$where</span>[<span class="php-quote">'keypair'</span>], <span class="php-var">$where</span>[<span class="php-quote">'values'</span>], <span class="php-var">$where</span>[<span class="php-quote">'fields'</span>]) ){
-</span><span id="2431" class="l"><a class="l" href="#2431">2431: </a>      <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>);
+</span><span id="2431" class="l"><a class="l" href="#2431">2431: </a>      <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>, <span class="php-var">$aliases</span>);
 </span><span id="2432" class="l"><a class="l" href="#2432">2432: </a>    }
 </span><span id="2433" class="l"><a class="l" href="#2433">2433: </a>    <span class="php-var">$st</span> = <span class="php-quote">''</span>;
-</span><span id="2434" class="l"><a class="l" href="#2434">2434: </a>      <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>, <span class="php-var">$aliases</span>);
-</span><span id="2435" class="l"><a class="l" href="#2435">2435: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$where</span>[<span class="php-quote">'final'</span>]) &gt; <span class="php-num">0</span> ){
-</span><span id="2436" class="l"><a class="l" href="#2436">2436: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$table</span>) ){
-</span><span id="2437" class="l"><a class="l" href="#2437">2437: </a>        <span class="php-var">$m</span> = <span class="php-var">$this</span>-&gt;modelize(<span class="php-var">$table</span>);
-</span><span id="2438" class="l"><a class="l" href="#2438">2438: </a>        <span class="php-keyword1">if</span> ( !<span class="php-var">$m</span> || <span class="php-keyword2">count</span>(<span class="php-var">$m</span>[<span class="php-quote">'fields'</span>]) === <span class="php-num">0</span> ){
-</span><span id="2439" class="l"><a class="l" href="#2439">2439: </a>          <span class="php-comment">/*
-</span></span><span id="2440" class="l"><a class="l" href="#2440">2440: </a><span class="php-comment">           * @todo  check the fields against the table's model and the aliases
-</span></span><span id="2441" class="l"><a class="l" href="#2441">2441: </a><span class="php-comment">           */</span>
-</span><span id="2442" class="l"><a class="l" href="#2442">2442: </a>          <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
-</span><span id="2443" class="l"><a class="l" href="#2443">2443: </a>        }
-</span><span id="2444" class="l"><a class="l" href="#2444">2444: </a>      }
-</span><span id="2445" class="l"><a class="l" href="#2445">2445: </a>      <span class="php-var">$operators</span> = <span class="php-keyword2">eval</span>(<span class="php-quote">'return \\bbn\\db\\languages\\'</span>.<span class="php-var">$this</span>-&gt;engine.<span class="php-quote">'::$operators;'</span>);
-</span><span id="2446" class="l"><a class="l" href="#2446">2446: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$where</span>[<span class="php-quote">'final'</span>] <span class="php-keyword1">as</span> <span class="php-var">$w</span> ){
-</span><span id="2447" class="l"><a class="l" href="#2447">2447: </a>        <span class="php-comment">// 2 parameters, we use equal</span>
-</span><span id="2448" class="l"><a class="l" href="#2448">2448: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$w</span>) &gt;= <span class="php-num">3</span> &amp;&amp; <span class="php-keyword2">in_array</span>(<span class="php-keyword2">strtolower</span>(<span class="php-var">$w</span>[<span class="php-num">1</span>]), <span class="php-var">$operators</span>) ){
-</span><span id="2449" class="l"><a class="l" href="#2449">2449: </a>          <span class="php-comment">// 4 parameters, it's a SQL function, no escaping no binding</span>
-</span><span id="2450" class="l"><a class="l" href="#2450">2450: </a>          <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$w</span>[<span class="php-num">3</span>]) ){
-</span><span id="2451" class="l"><a class="l" href="#2451">2451: </a>            <span class="php-var">$st</span> .= <span class="php-quote">'AND '</span>.<span class="php-var">$this</span>-&gt;escape(<span class="php-var">$w</span>[<span class="php-num">0</span>]).<span class="php-quote">' '</span>.<span class="php-var">$w</span>[<span class="php-num">1</span>].<span class="php-quote">' '</span>.<span class="php-var">$w</span>[<span class="php-num">2</span>].<span class="php-quote">' '</span>;
-</span><span id="2452" class="l"><a class="l" href="#2452">2452: </a>          }
-</span><span id="2453" class="l"><a class="l" href="#2453">2453: </a>          <span class="php-comment">// 3 parameters, the operator is second item</span>
-</span><span id="2454" class="l"><a class="l" href="#2454">2454: </a>          <span class="php-keyword1">else</span>{
-</span><span id="2455" class="l"><a class="l" href="#2455">2455: </a>            <span class="php-var">$st</span> .= <span class="php-quote">'AND '</span>.<span class="php-var">$this</span>-&gt;escape(<span class="php-var">$w</span>[<span class="php-num">0</span>]).<span class="php-quote">' '</span>.<span class="php-var">$w</span>[<span class="php-num">1</span>].<span class="php-quote">' ? '</span>;
-</span><span id="2456" class="l"><a class="l" href="#2456">2456: </a>          }
-</span><span id="2457" class="l"><a class="l" href="#2457">2457: </a>        }
-</span><span id="2458" class="l"><a class="l" href="#2458">2458: </a>        <span class="php-var">$st</span> .= PHP_EOL;
-</span><span id="2459" class="l"><a class="l" href="#2459">2459: </a>      }
-</span><span id="2460" class="l"><a class="l" href="#2460">2460: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$st</span>) ){
-</span><span id="2461" class="l"><a class="l" href="#2461">2461: </a>        <span class="php-var">$st</span> = <span class="php-quote">' WHERE 1'</span>.PHP_EOL.<span class="php-var">$st</span>;
-</span><span id="2462" class="l"><a class="l" href="#2462">2462: </a>      }
-</span><span id="2463" class="l"><a class="l" href="#2463">2463: </a>    }
-</span><span id="2464" class="l"><a class="l" href="#2464">2464: </a>    
-</span><span id="2465" class="l"><a class="l" href="#2465">2465: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
-</span><span id="2466" class="l"><a class="l" href="#2466">2466: </a>  }
-</span><span id="2467" class="l"><a class="l" href="#2467">2467: </a>    
-</span><span id="2468" class="l"><a class="l" href="#2468">2468: </a>    <span class="php-comment">/**
-</span></span><span id="2469" class="l"><a class="l" href="#2469">2469: </a><span class="php-comment">   * Get a string starting with ORDER BY with corresponding parameters to $order.
-</span></span><span id="2470" class="l"><a class="l" href="#2470">2470: </a><span class="php-comment">   * 
-</span></span><span id="2471" class="l"><a class="l" href="#2471">2471: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2472" class="l"><a class="l" href="#2472">2472: </a><span class="php-comment">   * $this-&gt;db-&gt;get_order(['name'], &quot;table_users&quot;);
-</span></span><span id="2473" class="l"><a class="l" href="#2473">2473: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2474" class="l"><a class="l" href="#2474">2474: </a><span class="php-comment">   * 
-</span></span><span id="2475" class="l"><a class="l" href="#2475">2475: </a><span class="php-comment">   * @param array $order The &quot;order&quot; condition.
-</span></span><span id="2476" class="l"><a class="l" href="#2476">2476: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2477" class="l"><a class="l" href="#2477">2477: </a><span class="php-comment">   * 
-</span></span><span id="2478" class="l"><a class="l" href="#2478">2478: </a><span class="php-comment">     * @return string
-</span></span><span id="2479" class="l"><a class="l" href="#2479">2479: </a><span class="php-comment">     */</span>
-</span><span id="2480" class="l"><a class="l" href="#2480">2480: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_order" href="#_get_order">get_order</a>(<span class="php-var">$order</span>, <span class="php-var">$table</span>=<span class="php-quote">''</span>)
-</span><span id="2481" class="l"><a class="l" href="#2481">2481: </a>    {
-</span><span id="2482" class="l"><a class="l" href="#2482">2482: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_order(<span class="php-var">$order</span>, <span class="php-var">$table</span>=<span class="php-quote">''</span>);
-</span><span id="2483" class="l"><a class="l" href="#2483">2483: </a>    }
-</span><span id="2484" class="l"><a class="l" href="#2484">2484: </a>    
-</span><span id="2485" class="l"><a class="l" href="#2485">2485: </a>    <span class="php-comment">/**
-</span></span><span id="2486" class="l"><a class="l" href="#2486">2486: </a><span class="php-comment">   * Get a string starting with LIMIT with corresponding parameters to $limit.
-</span></span><span id="2487" class="l"><a class="l" href="#2487">2487: </a><span class="php-comment">   * 
-</span></span><span id="2488" class="l"><a class="l" href="#2488">2488: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2489" class="l"><a class="l" href="#2489">2489: </a><span class="php-comment">   * $this-&gt;db-&gt;get_limit('5', '2');
-</span></span><span id="2490" class="l"><a class="l" href="#2490">2490: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2491" class="l"><a class="l" href="#2491">2491: </a><span class="php-comment">   * 
-</span></span><span id="2492" class="l"><a class="l" href="#2492">2492: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition.
-</span></span><span id="2493" class="l"><a class="l" href="#2493">2493: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
-</span></span><span id="2494" class="l"><a class="l" href="#2494">2494: </a><span class="php-comment">   * 
-</span></span><span id="2495" class="l"><a class="l" href="#2495">2495: </a><span class="php-comment">     * @return string
-</span></span><span id="2496" class="l"><a class="l" href="#2496">2496: </a><span class="php-comment">     */</span>
-</span><span id="2497" class="l"><a class="l" href="#2497">2497: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_limit" href="#_get_limit">get_limit</a>(<span class="php-var">$limit</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>)
-</span><span id="2498" class="l"><a class="l" href="#2498">2498: </a>    {
-</span><span id="2499" class="l"><a class="l" href="#2499">2499: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_limit(<span class="php-var">$limit</span>, <span class="php-var">$start</span>);
-</span><span id="2500" class="l"><a class="l" href="#2500">2500: </a>    }
-</span><span id="2501" class="l"><a class="l" href="#2501">2501: </a>    
-</span><span id="2502" class="l"><a class="l" href="#2502">2502: </a>    <span class="php-comment">/**
-</span></span><span id="2503" class="l"><a class="l" href="#2503">2503: </a><span class="php-comment">   * Returns SQL code for table creation.
-</span></span><span id="2504" class="l"><a class="l" href="#2504">2504: </a><span class="php-comment">   * 
-</span></span><span id="2505" class="l"><a class="l" href="#2505">2505: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2506" class="l"><a class="l" href="#2506">2506: </a><span class="php-comment">   * $this-&gt;db-&gt;get_create(&quot;table_users&quot;);
-</span></span><span id="2507" class="l"><a class="l" href="#2507">2507: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2508" class="l"><a class="l" href="#2508">2508: </a><span class="php-comment">   * 
-</span></span><span id="2509" class="l"><a class="l" href="#2509">2509: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2510" class="l"><a class="l" href="#2510">2510: </a><span class="php-comment">   * 
-</span></span><span id="2511" class="l"><a class="l" href="#2511">2511: </a><span class="php-comment">     * @return string | false
-</span></span><span id="2512" class="l"><a class="l" href="#2512">2512: </a><span class="php-comment">     */</span>
-</span><span id="2513" class="l"><a class="l" href="#2513">2513: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_create" href="#_get_create">get_create</a>(<span class="php-var">$table</span>)
-</span><span id="2514" class="l"><a class="l" href="#2514">2514: </a>    {
-</span><span id="2515" class="l"><a class="l" href="#2515">2515: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_create(<span class="php-var">$table</span>);
-</span><span id="2516" class="l"><a class="l" href="#2516">2516: </a>    }
-</span><span id="2517" class="l"><a class="l" href="#2517">2517: </a>    
-</span><span id="2518" class="l"><a class="l" href="#2518">2518: </a>    <span class="php-comment">/**
-</span></span><span id="2519" class="l"><a class="l" href="#2519">2519: </a><span class="php-comment">   * Returns SQL code for row(s) deletion.
-</span></span><span id="2520" class="l"><a class="l" href="#2520">2520: </a><span class="php-comment">   * 
-</span></span><span id="2521" class="l"><a class="l" href="#2521">2521: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2522" class="l"><a class="l" href="#2522">2522: </a><span class="php-comment">   * $this-&gt;db-&gt;get_delete(&quot;table_users&quot;);
-</span></span><span id="2523" class="l"><a class="l" href="#2523">2523: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2524" class="l"><a class="l" href="#2524">2524: </a><span class="php-comment">   * 
-</span></span><span id="2525" class="l"><a class="l" href="#2525">2525: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2526" class="l"><a class="l" href="#2526">2526: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2527" class="l"><a class="l" href="#2527">2527: </a><span class="php-comment">   * @param bool $ignore If true inserts the &quot;ignore&quot; condition , default: false.
-</span></span><span id="2528" class="l"><a class="l" href="#2528">2528: </a><span class="php-comment">   * @param bool $php default: false.
-</span></span><span id="2529" class="l"><a class="l" href="#2529">2529: </a><span class="php-comment">   * 
-</span></span><span id="2530" class="l"><a class="l" href="#2530">2530: </a><span class="php-comment">     * @return string | false
-</span></span><span id="2531" class="l"><a class="l" href="#2531">2531: </a><span class="php-comment">     */</span>
-</span><span id="2532" class="l"><a class="l" href="#2532">2532: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_delete" href="#_get_delete">get_delete</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$where</span>, <span class="php-var">$ignore</span> = <span class="php-keyword1">false</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
-</span><span id="2533" class="l"><a class="l" href="#2533">2533: </a>    {
-</span><span id="2534" class="l"><a class="l" href="#2534">2534: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_delete(<span class="php-var">$table</span>, <span class="php-var">$where</span>, <span class="php-var">$ignore</span>, <span class="php-var">$php</span>);
-</span><span id="2535" class="l"><a class="l" href="#2535">2535: </a>    }
-</span><span id="2536" class="l"><a class="l" href="#2536">2536: </a>
-</span><span id="2537" class="l"><a class="l" href="#2537">2537: </a>  <span class="php-comment">/**
-</span></span><span id="2538" class="l"><a class="l" href="#2538">2538: </a><span class="php-comment">   * Returns SQL code for row(s) selection.
-</span></span><span id="2539" class="l"><a class="l" href="#2539">2539: </a><span class="php-comment">   * 
-</span></span><span id="2540" class="l"><a class="l" href="#2540">2540: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2541" class="l"><a class="l" href="#2541">2541: </a><span class="php-comment">   * $this-&gt;db-&gt;get_select(&quot;table_users&quot;, ['id', 'name', 'surname'], ['id', '&gt;', '10'], 'name', 5, 2);
-</span></span><span id="2542" class="l"><a class="l" href="#2542">2542: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2543" class="l"><a class="l" href="#2543">2543: </a><span class="php-comment">   * 
-</span></span><span id="2544" class="l"><a class="l" href="#2544">2544: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2545" class="l"><a class="l" href="#2545">2545: </a><span class="php-comment">   * @param array $fields The fields name.
-</span></span><span id="2546" class="l"><a class="l" href="#2546">2546: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2547" class="l"><a class="l" href="#2547">2547: </a><span class="php-comment">   * @param string | array $order The &quot;order&quot; condition.
-</span></span><span id="2548" class="l"><a class="l" href="#2548">2548: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
-</span></span><span id="2549" class="l"><a class="l" href="#2549">2549: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
-</span></span><span id="2550" class="l"><a class="l" href="#2550">2550: </a><span class="php-comment">   * @param bool $php default: false.
-</span></span><span id="2551" class="l"><a class="l" href="#2551">2551: </a><span class="php-comment">   * 
-</span></span><span id="2552" class="l"><a class="l" href="#2552">2552: </a><span class="php-comment">   * @return string
-</span></span><span id="2553" class="l"><a class="l" href="#2553">2553: </a><span class="php-comment">   */</span>
-</span><span id="2554" class="l"><a class="l" href="#2554">2554: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_select" href="#_get_select">get_select</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$fields</span> = [], <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$order</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
-</span><span id="2555" class="l"><a class="l" href="#2555">2555: </a>    {
-</span><span id="2556" class="l"><a class="l" href="#2556">2556: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_select(<span class="php-var">$table</span>, <span class="php-var">$fields</span>, <span class="php-var">$where</span>, <span class="php-var">$order</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>, <span class="php-var">$php</span>);
-</span><span id="2557" class="l"><a class="l" href="#2557">2557: </a>    }
-</span><span id="2558" class="l"><a class="l" href="#2558">2558: </a>    
-</span><span id="2559" class="l"><a class="l" href="#2559">2559: </a>    <span class="php-comment">/**
-</span></span><span id="2560" class="l"><a class="l" href="#2560">2560: </a><span class="php-comment">   * Returns SQL code for row(s) insertion.
-</span></span><span id="2561" class="l"><a class="l" href="#2561">2561: </a><span class="php-comment">   * 
-</span></span><span id="2562" class="l"><a class="l" href="#2562">2562: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2563" class="l"><a class="l" href="#2563">2563: </a><span class="php-comment">   * $this-&gt;db-&gt;get_insert(&quot;table_users&quot;, ['name', 'surname']);
-</span></span><span id="2564" class="l"><a class="l" href="#2564">2564: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2565" class="l"><a class="l" href="#2565">2565: </a><span class="php-comment">   * 
-</span></span><span id="2566" class="l"><a class="l" href="#2566">2566: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2567" class="l"><a class="l" href="#2567">2567: </a><span class="php-comment">   * @param array $fields The fields name.
-</span></span><span id="2568" class="l"><a class="l" href="#2568">2568: </a><span class="php-comment">   * @param bool $ignore If true inserts the &quot;ignore&quot; condition, default: false.
-</span></span><span id="2569" class="l"><a class="l" href="#2569">2569: </a><span class="php-comment">   * @param bool $php default: false.
-</span></span><span id="2570" class="l"><a class="l" href="#2570">2570: </a><span class="php-comment">   * 
-</span></span><span id="2571" class="l"><a class="l" href="#2571">2571: </a><span class="php-comment">     * @return string
-</span></span><span id="2572" class="l"><a class="l" href="#2572">2572: </a><span class="php-comment">     */</span>
-</span><span id="2573" class="l"><a class="l" href="#2573">2573: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_insert" href="#_get_insert">get_insert</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$fields</span> = [], <span class="php-var">$ignore</span> = <span class="php-keyword1">false</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
-</span><span id="2574" class="l"><a class="l" href="#2574">2574: </a>    {
-</span><span id="2575" class="l"><a class="l" href="#2575">2575: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_insert(<span class="php-var">$table</span>, <span class="php-var">$fields</span>, <span class="php-var">$ignore</span>, <span class="php-var">$php</span>);
-</span><span id="2576" class="l"><a class="l" href="#2576">2576: </a>    }
-</span><span id="2577" class="l"><a class="l" href="#2577">2577: </a>    
-</span><span id="2578" class="l"><a class="l" href="#2578">2578: </a>    <span class="php-comment">/**
-</span></span><span id="2579" class="l"><a class="l" href="#2579">2579: </a><span class="php-comment">   * Returns SQL code for row(s) update.
-</span></span><span id="2580" class="l"><a class="l" href="#2580">2580: </a><span class="php-comment">   * 
-</span></span><span id="2581" class="l"><a class="l" href="#2581">2581: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2582" class="l"><a class="l" href="#2582">2582: </a><span class="php-comment">   * $this-&gt;db-&gt;get_update(&quot;table_users&quot;, ['gender'], ['gender', '=', 'male']);
-</span></span><span id="2583" class="l"><a class="l" href="#2583">2583: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2584" class="l"><a class="l" href="#2584">2584: </a><span class="php-comment">   * 
-</span></span><span id="2585" class="l"><a class="l" href="#2585">2585: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2586" class="l"><a class="l" href="#2586">2586: </a><span class="php-comment">   * @param array $fields The fields name.
-</span></span><span id="2587" class="l"><a class="l" href="#2587">2587: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2588" class="l"><a class="l" href="#2588">2588: </a><span class="php-comment">   * @param bool $php default: false.
-</span></span><span id="2589" class="l"><a class="l" href="#2589">2589: </a><span class="php-comment">   * 
-</span></span><span id="2590" class="l"><a class="l" href="#2590">2590: </a><span class="php-comment">     * @return string
-</span></span><span id="2591" class="l"><a class="l" href="#2591">2591: </a><span class="php-comment">     */</span>
-</span><span id="2592" class="l"><a class="l" href="#2592">2592: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_update" href="#_get_update">get_update</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$fields</span> = [], <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$ignore</span> = <span class="php-keyword1">false</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
-</span><span id="2593" class="l"><a class="l" href="#2593">2593: </a>    {
-</span><span id="2594" class="l"><a class="l" href="#2594">2594: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_update(<span class="php-var">$table</span>, <span class="php-var">$fields</span>, <span class="php-var">$where</span>, <span class="php-var">$ignore</span>, <span class="php-var">$php</span>);
-</span><span id="2595" class="l"><a class="l" href="#2595">2595: </a>    }
-</span><span id="2596" class="l"><a class="l" href="#2596">2596: </a>    
-</span><span id="2597" class="l"><a class="l" href="#2597">2597: </a>    <span class="php-comment">/**
-</span></span><span id="2598" class="l"><a class="l" href="#2598">2598: </a><span class="php-comment">   * Returns a single numeric-indexed array with the values of the unique column $field from the $table $table
-</span></span><span id="2599" class="l"><a class="l" href="#2599">2599: </a><span class="php-comment">   * 
-</span></span><span id="2600" class="l"><a class="l" href="#2600">2600: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2601" class="l"><a class="l" href="#2601">2601: </a><span class="php-comment">   * $this-&gt;db-&gt;get_column_values(&quot;table_users&quot;, &quot;surname&quot;);
-</span></span><span id="2602" class="l"><a class="l" href="#2602">2602: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2603" class="l"><a class="l" href="#2603">2603: </a><span class="php-comment">   * 
-</span></span><span id="2604" class="l"><a class="l" href="#2604">2604: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2605" class="l"><a class="l" href="#2605">2605: </a><span class="php-comment">   * @param string $field The field name.
-</span></span><span id="2606" class="l"><a class="l" href="#2606">2606: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2607" class="l"><a class="l" href="#2607">2607: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
-</span></span><span id="2608" class="l"><a class="l" href="#2608">2608: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
-</span></span><span id="2609" class="l"><a class="l" href="#2609">2609: </a><span class="php-comment">   * @param bool $php dafault: false.
-</span></span><span id="2610" class="l"><a class="l" href="#2610">2610: </a><span class="php-comment">   * 
-</span></span><span id="2611" class="l"><a class="l" href="#2611">2611: </a><span class="php-comment">     * @return array
-</span></span><span id="2612" class="l"><a class="l" href="#2612">2612: </a><span class="php-comment">     */</span>
-</span><span id="2613" class="l"><a class="l" href="#2613">2613: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_column_values" href="#_get_column_values">get_column_values</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
-</span><span id="2614" class="l"><a class="l" href="#2614">2614: </a>    {
-</span><span id="2615" class="l"><a class="l" href="#2615">2615: </a>    <span class="php-var">$r</span> = [];
-</span><span id="2616" class="l"><a class="l" href="#2616">2616: </a>    <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>);
-</span><span id="2617" class="l"><a class="l" href="#2617">2617: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$rows</span> = <span class="php-var">$this</span>-&gt;get_irows(
-</span><span id="2618" class="l"><a class="l" href="#2618">2618: </a>      <span class="php-var">$this</span>-&gt;language-&gt;get_column_values(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>, <span class="php-keyword1">false</span>),
-</span><span id="2619" class="l"><a class="l" href="#2619">2619: </a>      <span class="php-var">$where</span>[<span class="php-quote">'values'</span>])
-</span><span id="2620" class="l"><a class="l" href="#2620">2620: </a>    ){
-</span><span id="2621" class="l"><a class="l" href="#2621">2621: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$rows</span> <span class="php-keyword1">as</span> <span class="php-var">$row</span> ){
-</span><span id="2622" class="l"><a class="l" href="#2622">2622: </a>        <span class="php-keyword2">array_push</span>(<span class="php-var">$r</span>, <span class="php-var">$row</span>[<span class="php-num">0</span>]);
-</span><span id="2623" class="l"><a class="l" href="#2623">2623: </a>      }
-</span><span id="2624" class="l"><a class="l" href="#2624">2624: </a>    }
-</span><span id="2625" class="l"><a class="l" href="#2625">2625: </a>    <span class="php-keyword1">return</span> <span class="php-var">$r</span>;
-</span><span id="2626" class="l"><a class="l" href="#2626">2626: </a>    }
-</span><span id="2627" class="l"><a class="l" href="#2627">2627: </a>    
-</span><span id="2628" class="l"><a class="l" href="#2628">2628: </a>    <span class="php-comment">/**
-</span></span><span id="2629" class="l"><a class="l" href="#2629">2629: </a><span class="php-comment">   * Returns a request sql string for count similar values in a field of a table.
-</span></span><span id="2630" class="l"><a class="l" href="#2630">2630: </a><span class="php-comment">   * 
-</span></span><span id="2631" class="l"><a class="l" href="#2631">2631: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2632" class="l"><a class="l" href="#2632">2632: </a><span class="php-comment">   * $this-&gt;db-&gt;get_values_count(&quot;table_users&quot;, &quot;surname&quot;, ['id', '&gt;', '10'], 50, 2);
-</span></span><span id="2633" class="l"><a class="l" href="#2633">2633: </a><span class="php-comment">   * &lt;/code&gt;
+</span><span id="2434" class="l"><a class="l" href="#2434">2434: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$where</span>[<span class="php-quote">'final'</span>]) &gt; <span class="php-num">0</span> ){
+</span><span id="2435" class="l"><a class="l" href="#2435">2435: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$table</span>) ){
+</span><span id="2436" class="l"><a class="l" href="#2436">2436: </a>        <span class="php-var">$m</span> = <span class="php-var">$this</span>-&gt;modelize(<span class="php-var">$table</span>);
+</span><span id="2437" class="l"><a class="l" href="#2437">2437: </a>        <span class="php-keyword1">if</span> ( !<span class="php-var">$m</span> || <span class="php-keyword2">count</span>(<span class="php-var">$m</span>[<span class="php-quote">'fields'</span>]) === <span class="php-num">0</span> ){
+</span><span id="2438" class="l"><a class="l" href="#2438">2438: </a>          <span class="php-comment">/*
+</span></span><span id="2439" class="l"><a class="l" href="#2439">2439: </a><span class="php-comment">           * @todo  check the fields against the table's model and the aliases
+</span></span><span id="2440" class="l"><a class="l" href="#2440">2440: </a><span class="php-comment">           */</span>
+</span><span id="2441" class="l"><a class="l" href="#2441">2441: </a>          <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
+</span><span id="2442" class="l"><a class="l" href="#2442">2442: </a>        }
+</span><span id="2443" class="l"><a class="l" href="#2443">2443: </a>      }
+</span><span id="2444" class="l"><a class="l" href="#2444">2444: </a>      <span class="php-var">$operators</span> = <span class="php-keyword2">eval</span>(<span class="php-quote">'return \\bbn\\db\\languages\\'</span>.<span class="php-var">$this</span>-&gt;engine.<span class="php-quote">'::$operators;'</span>);
+</span><span id="2445" class="l"><a class="l" href="#2445">2445: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$where</span>[<span class="php-quote">'final'</span>] <span class="php-keyword1">as</span> <span class="php-var">$w</span> ){
+</span><span id="2446" class="l"><a class="l" href="#2446">2446: </a>        <span class="php-comment">// 2 parameters, we use equal</span>
+</span><span id="2447" class="l"><a class="l" href="#2447">2447: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$w</span>) &gt;= <span class="php-num">3</span> &amp;&amp; <span class="php-keyword2">in_array</span>(<span class="php-keyword2">strtolower</span>(<span class="php-var">$w</span>[<span class="php-num">1</span>]), <span class="php-var">$operators</span>) ){
+</span><span id="2448" class="l"><a class="l" href="#2448">2448: </a>          <span class="php-comment">// 4 parameters, it's a SQL function, no escaping no binding</span>
+</span><span id="2449" class="l"><a class="l" href="#2449">2449: </a>          <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$w</span>[<span class="php-num">3</span>]) ){
+</span><span id="2450" class="l"><a class="l" href="#2450">2450: </a>            <span class="php-var">$st</span> .= <span class="php-quote">'AND '</span>.<span class="php-var">$this</span>-&gt;escape(<span class="php-var">$w</span>[<span class="php-num">0</span>]).<span class="php-quote">' '</span>.<span class="php-var">$w</span>[<span class="php-num">1</span>].<span class="php-quote">' '</span>.<span class="php-var">$w</span>[<span class="php-num">2</span>].<span class="php-quote">' '</span>;
+</span><span id="2451" class="l"><a class="l" href="#2451">2451: </a>          }
+</span><span id="2452" class="l"><a class="l" href="#2452">2452: </a>          <span class="php-comment">// 3 parameters, the operator is second item</span>
+</span><span id="2453" class="l"><a class="l" href="#2453">2453: </a>          <span class="php-keyword1">else</span>{
+</span><span id="2454" class="l"><a class="l" href="#2454">2454: </a>            <span class="php-var">$st</span> .= <span class="php-quote">'AND '</span>.<span class="php-var">$this</span>-&gt;escape(<span class="php-var">$w</span>[<span class="php-num">0</span>]).<span class="php-quote">' '</span>.<span class="php-var">$w</span>[<span class="php-num">1</span>].<span class="php-quote">' ? '</span>;
+</span><span id="2455" class="l"><a class="l" href="#2455">2455: </a>          }
+</span><span id="2456" class="l"><a class="l" href="#2456">2456: </a>        }
+</span><span id="2457" class="l"><a class="l" href="#2457">2457: </a>        <span class="php-var">$st</span> .= PHP_EOL;
+</span><span id="2458" class="l"><a class="l" href="#2458">2458: </a>      }
+</span><span id="2459" class="l"><a class="l" href="#2459">2459: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$st</span>) ){
+</span><span id="2460" class="l"><a class="l" href="#2460">2460: </a>        <span class="php-var">$st</span> = <span class="php-quote">' WHERE 1'</span>.PHP_EOL.<span class="php-var">$st</span>;
+</span><span id="2461" class="l"><a class="l" href="#2461">2461: </a>      }
+</span><span id="2462" class="l"><a class="l" href="#2462">2462: </a>    }
+</span><span id="2463" class="l"><a class="l" href="#2463">2463: </a>    
+</span><span id="2464" class="l"><a class="l" href="#2464">2464: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
+</span><span id="2465" class="l"><a class="l" href="#2465">2465: </a>  }
+</span><span id="2466" class="l"><a class="l" href="#2466">2466: </a>    
+</span><span id="2467" class="l"><a class="l" href="#2467">2467: </a>    <span class="php-comment">/**
+</span></span><span id="2468" class="l"><a class="l" href="#2468">2468: </a><span class="php-comment">   * Get a string starting with ORDER BY with corresponding parameters to $order.
+</span></span><span id="2469" class="l"><a class="l" href="#2469">2469: </a><span class="php-comment">   * 
+</span></span><span id="2470" class="l"><a class="l" href="#2470">2470: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2471" class="l"><a class="l" href="#2471">2471: </a><span class="php-comment">   * $this-&gt;db-&gt;get_order(['name'], &quot;table_users&quot;);
+</span></span><span id="2472" class="l"><a class="l" href="#2472">2472: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2473" class="l"><a class="l" href="#2473">2473: </a><span class="php-comment">   * 
+</span></span><span id="2474" class="l"><a class="l" href="#2474">2474: </a><span class="php-comment">   * @param array $order The &quot;order&quot; condition.
+</span></span><span id="2475" class="l"><a class="l" href="#2475">2475: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2476" class="l"><a class="l" href="#2476">2476: </a><span class="php-comment">   * 
+</span></span><span id="2477" class="l"><a class="l" href="#2477">2477: </a><span class="php-comment">     * @return string
+</span></span><span id="2478" class="l"><a class="l" href="#2478">2478: </a><span class="php-comment">     */</span>
+</span><span id="2479" class="l"><a class="l" href="#2479">2479: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_order" href="#_get_order">get_order</a>(<span class="php-var">$order</span>, <span class="php-var">$table</span>=<span class="php-quote">''</span>)
+</span><span id="2480" class="l"><a class="l" href="#2480">2480: </a>    {
+</span><span id="2481" class="l"><a class="l" href="#2481">2481: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_order(<span class="php-var">$order</span>, <span class="php-var">$table</span>=<span class="php-quote">''</span>);
+</span><span id="2482" class="l"><a class="l" href="#2482">2482: </a>    }
+</span><span id="2483" class="l"><a class="l" href="#2483">2483: </a>    
+</span><span id="2484" class="l"><a class="l" href="#2484">2484: </a>    <span class="php-comment">/**
+</span></span><span id="2485" class="l"><a class="l" href="#2485">2485: </a><span class="php-comment">   * Get a string starting with LIMIT with corresponding parameters to $limit.
+</span></span><span id="2486" class="l"><a class="l" href="#2486">2486: </a><span class="php-comment">   * 
+</span></span><span id="2487" class="l"><a class="l" href="#2487">2487: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2488" class="l"><a class="l" href="#2488">2488: </a><span class="php-comment">   * $this-&gt;db-&gt;get_limit('5', '2');
+</span></span><span id="2489" class="l"><a class="l" href="#2489">2489: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2490" class="l"><a class="l" href="#2490">2490: </a><span class="php-comment">   * 
+</span></span><span id="2491" class="l"><a class="l" href="#2491">2491: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition.
+</span></span><span id="2492" class="l"><a class="l" href="#2492">2492: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
+</span></span><span id="2493" class="l"><a class="l" href="#2493">2493: </a><span class="php-comment">   * 
+</span></span><span id="2494" class="l"><a class="l" href="#2494">2494: </a><span class="php-comment">     * @return string
+</span></span><span id="2495" class="l"><a class="l" href="#2495">2495: </a><span class="php-comment">     */</span>
+</span><span id="2496" class="l"><a class="l" href="#2496">2496: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_limit" href="#_get_limit">get_limit</a>(<span class="php-var">$limit</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>)
+</span><span id="2497" class="l"><a class="l" href="#2497">2497: </a>    {
+</span><span id="2498" class="l"><a class="l" href="#2498">2498: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_limit(<span class="php-var">$limit</span>, <span class="php-var">$start</span>);
+</span><span id="2499" class="l"><a class="l" href="#2499">2499: </a>    }
+</span><span id="2500" class="l"><a class="l" href="#2500">2500: </a>    
+</span><span id="2501" class="l"><a class="l" href="#2501">2501: </a>    <span class="php-comment">/**
+</span></span><span id="2502" class="l"><a class="l" href="#2502">2502: </a><span class="php-comment">   * Returns SQL code for table creation.
+</span></span><span id="2503" class="l"><a class="l" href="#2503">2503: </a><span class="php-comment">   * 
+</span></span><span id="2504" class="l"><a class="l" href="#2504">2504: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2505" class="l"><a class="l" href="#2505">2505: </a><span class="php-comment">   * $this-&gt;db-&gt;get_create(&quot;table_users&quot;);
+</span></span><span id="2506" class="l"><a class="l" href="#2506">2506: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2507" class="l"><a class="l" href="#2507">2507: </a><span class="php-comment">   * 
+</span></span><span id="2508" class="l"><a class="l" href="#2508">2508: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2509" class="l"><a class="l" href="#2509">2509: </a><span class="php-comment">   * 
+</span></span><span id="2510" class="l"><a class="l" href="#2510">2510: </a><span class="php-comment">     * @return string | false
+</span></span><span id="2511" class="l"><a class="l" href="#2511">2511: </a><span class="php-comment">     */</span>
+</span><span id="2512" class="l"><a class="l" href="#2512">2512: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_create" href="#_get_create">get_create</a>(<span class="php-var">$table</span>)
+</span><span id="2513" class="l"><a class="l" href="#2513">2513: </a>    {
+</span><span id="2514" class="l"><a class="l" href="#2514">2514: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_create(<span class="php-var">$table</span>);
+</span><span id="2515" class="l"><a class="l" href="#2515">2515: </a>    }
+</span><span id="2516" class="l"><a class="l" href="#2516">2516: </a>    
+</span><span id="2517" class="l"><a class="l" href="#2517">2517: </a>    <span class="php-comment">/**
+</span></span><span id="2518" class="l"><a class="l" href="#2518">2518: </a><span class="php-comment">   * Returns SQL code for row(s) deletion.
+</span></span><span id="2519" class="l"><a class="l" href="#2519">2519: </a><span class="php-comment">   * 
+</span></span><span id="2520" class="l"><a class="l" href="#2520">2520: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2521" class="l"><a class="l" href="#2521">2521: </a><span class="php-comment">   * $this-&gt;db-&gt;get_delete(&quot;table_users&quot;);
+</span></span><span id="2522" class="l"><a class="l" href="#2522">2522: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2523" class="l"><a class="l" href="#2523">2523: </a><span class="php-comment">   * 
+</span></span><span id="2524" class="l"><a class="l" href="#2524">2524: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2525" class="l"><a class="l" href="#2525">2525: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2526" class="l"><a class="l" href="#2526">2526: </a><span class="php-comment">   * @param bool $ignore If true inserts the &quot;ignore&quot; condition , default: false.
+</span></span><span id="2527" class="l"><a class="l" href="#2527">2527: </a><span class="php-comment">   * @param bool $php default: false.
+</span></span><span id="2528" class="l"><a class="l" href="#2528">2528: </a><span class="php-comment">   * 
+</span></span><span id="2529" class="l"><a class="l" href="#2529">2529: </a><span class="php-comment">     * @return string | false
+</span></span><span id="2530" class="l"><a class="l" href="#2530">2530: </a><span class="php-comment">     */</span>
+</span><span id="2531" class="l"><a class="l" href="#2531">2531: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_delete" href="#_get_delete">get_delete</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$where</span>, <span class="php-var">$ignore</span> = <span class="php-keyword1">false</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
+</span><span id="2532" class="l"><a class="l" href="#2532">2532: </a>    {
+</span><span id="2533" class="l"><a class="l" href="#2533">2533: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_delete(<span class="php-var">$table</span>, <span class="php-var">$where</span>, <span class="php-var">$ignore</span>, <span class="php-var">$php</span>);
+</span><span id="2534" class="l"><a class="l" href="#2534">2534: </a>    }
+</span><span id="2535" class="l"><a class="l" href="#2535">2535: </a>
+</span><span id="2536" class="l"><a class="l" href="#2536">2536: </a>  <span class="php-comment">/**
+</span></span><span id="2537" class="l"><a class="l" href="#2537">2537: </a><span class="php-comment">   * Returns SQL code for row(s) selection.
+</span></span><span id="2538" class="l"><a class="l" href="#2538">2538: </a><span class="php-comment">   * 
+</span></span><span id="2539" class="l"><a class="l" href="#2539">2539: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2540" class="l"><a class="l" href="#2540">2540: </a><span class="php-comment">   * $this-&gt;db-&gt;get_select(&quot;table_users&quot;, ['id', 'name', 'surname'], ['id', '&gt;', '10'], 'name', 5, 2);
+</span></span><span id="2541" class="l"><a class="l" href="#2541">2541: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2542" class="l"><a class="l" href="#2542">2542: </a><span class="php-comment">   * 
+</span></span><span id="2543" class="l"><a class="l" href="#2543">2543: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2544" class="l"><a class="l" href="#2544">2544: </a><span class="php-comment">   * @param array $fields The fields name.
+</span></span><span id="2545" class="l"><a class="l" href="#2545">2545: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2546" class="l"><a class="l" href="#2546">2546: </a><span class="php-comment">   * @param string | array $order The &quot;order&quot; condition.
+</span></span><span id="2547" class="l"><a class="l" href="#2547">2547: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
+</span></span><span id="2548" class="l"><a class="l" href="#2548">2548: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
+</span></span><span id="2549" class="l"><a class="l" href="#2549">2549: </a><span class="php-comment">   * @param bool $php default: false.
+</span></span><span id="2550" class="l"><a class="l" href="#2550">2550: </a><span class="php-comment">   * 
+</span></span><span id="2551" class="l"><a class="l" href="#2551">2551: </a><span class="php-comment">   * @return string
+</span></span><span id="2552" class="l"><a class="l" href="#2552">2552: </a><span class="php-comment">   */</span>
+</span><span id="2553" class="l"><a class="l" href="#2553">2553: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_select" href="#_get_select">get_select</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$fields</span> = [], <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$order</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
+</span><span id="2554" class="l"><a class="l" href="#2554">2554: </a>    {
+</span><span id="2555" class="l"><a class="l" href="#2555">2555: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_select(<span class="php-var">$table</span>, <span class="php-var">$fields</span>, <span class="php-var">$where</span>, <span class="php-var">$order</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>, <span class="php-var">$php</span>);
+</span><span id="2556" class="l"><a class="l" href="#2556">2556: </a>    }
+</span><span id="2557" class="l"><a class="l" href="#2557">2557: </a>    
+</span><span id="2558" class="l"><a class="l" href="#2558">2558: </a>    <span class="php-comment">/**
+</span></span><span id="2559" class="l"><a class="l" href="#2559">2559: </a><span class="php-comment">   * Returns SQL code for row(s) insertion.
+</span></span><span id="2560" class="l"><a class="l" href="#2560">2560: </a><span class="php-comment">   * 
+</span></span><span id="2561" class="l"><a class="l" href="#2561">2561: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2562" class="l"><a class="l" href="#2562">2562: </a><span class="php-comment">   * $this-&gt;db-&gt;get_insert(&quot;table_users&quot;, ['name', 'surname']);
+</span></span><span id="2563" class="l"><a class="l" href="#2563">2563: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2564" class="l"><a class="l" href="#2564">2564: </a><span class="php-comment">   * 
+</span></span><span id="2565" class="l"><a class="l" href="#2565">2565: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2566" class="l"><a class="l" href="#2566">2566: </a><span class="php-comment">   * @param array $fields The fields name.
+</span></span><span id="2567" class="l"><a class="l" href="#2567">2567: </a><span class="php-comment">   * @param bool $ignore If true inserts the &quot;ignore&quot; condition, default: false.
+</span></span><span id="2568" class="l"><a class="l" href="#2568">2568: </a><span class="php-comment">   * @param bool $php default: false.
+</span></span><span id="2569" class="l"><a class="l" href="#2569">2569: </a><span class="php-comment">   * 
+</span></span><span id="2570" class="l"><a class="l" href="#2570">2570: </a><span class="php-comment">     * @return string
+</span></span><span id="2571" class="l"><a class="l" href="#2571">2571: </a><span class="php-comment">     */</span>
+</span><span id="2572" class="l"><a class="l" href="#2572">2572: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_insert" href="#_get_insert">get_insert</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$fields</span> = [], <span class="php-var">$ignore</span> = <span class="php-keyword1">false</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
+</span><span id="2573" class="l"><a class="l" href="#2573">2573: </a>    {
+</span><span id="2574" class="l"><a class="l" href="#2574">2574: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_insert(<span class="php-var">$table</span>, <span class="php-var">$fields</span>, <span class="php-var">$ignore</span>, <span class="php-var">$php</span>);
+</span><span id="2575" class="l"><a class="l" href="#2575">2575: </a>    }
+</span><span id="2576" class="l"><a class="l" href="#2576">2576: </a>    
+</span><span id="2577" class="l"><a class="l" href="#2577">2577: </a>    <span class="php-comment">/**
+</span></span><span id="2578" class="l"><a class="l" href="#2578">2578: </a><span class="php-comment">   * Returns SQL code for row(s) update.
+</span></span><span id="2579" class="l"><a class="l" href="#2579">2579: </a><span class="php-comment">   * 
+</span></span><span id="2580" class="l"><a class="l" href="#2580">2580: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2581" class="l"><a class="l" href="#2581">2581: </a><span class="php-comment">   * $this-&gt;db-&gt;get_update(&quot;table_users&quot;, ['gender'], ['gender', '=', 'male']);
+</span></span><span id="2582" class="l"><a class="l" href="#2582">2582: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2583" class="l"><a class="l" href="#2583">2583: </a><span class="php-comment">   * 
+</span></span><span id="2584" class="l"><a class="l" href="#2584">2584: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2585" class="l"><a class="l" href="#2585">2585: </a><span class="php-comment">   * @param array $fields The fields name.
+</span></span><span id="2586" class="l"><a class="l" href="#2586">2586: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2587" class="l"><a class="l" href="#2587">2587: </a><span class="php-comment">   * @param bool $php default: false.
+</span></span><span id="2588" class="l"><a class="l" href="#2588">2588: </a><span class="php-comment">   * 
+</span></span><span id="2589" class="l"><a class="l" href="#2589">2589: </a><span class="php-comment">     * @return string
+</span></span><span id="2590" class="l"><a class="l" href="#2590">2590: </a><span class="php-comment">     */</span>
+</span><span id="2591" class="l"><a class="l" href="#2591">2591: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_update" href="#_get_update">get_update</a>(<span class="php-var">$table</span>, <span class="php-keyword1">array</span> <span class="php-var">$fields</span> = [], <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$ignore</span> = <span class="php-keyword1">false</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
+</span><span id="2592" class="l"><a class="l" href="#2592">2592: </a>    {
+</span><span id="2593" class="l"><a class="l" href="#2593">2593: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_update(<span class="php-var">$table</span>, <span class="php-var">$fields</span>, <span class="php-var">$where</span>, <span class="php-var">$ignore</span>, <span class="php-var">$php</span>);
+</span><span id="2594" class="l"><a class="l" href="#2594">2594: </a>    }
+</span><span id="2595" class="l"><a class="l" href="#2595">2595: </a>    
+</span><span id="2596" class="l"><a class="l" href="#2596">2596: </a>    <span class="php-comment">/**
+</span></span><span id="2597" class="l"><a class="l" href="#2597">2597: </a><span class="php-comment">   * Returns a single numeric-indexed array with the values of the unique column $field from the $table $table
+</span></span><span id="2598" class="l"><a class="l" href="#2598">2598: </a><span class="php-comment">   * 
+</span></span><span id="2599" class="l"><a class="l" href="#2599">2599: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2600" class="l"><a class="l" href="#2600">2600: </a><span class="php-comment">   * $this-&gt;db-&gt;get_column_values(&quot;table_users&quot;, &quot;surname&quot;);
+</span></span><span id="2601" class="l"><a class="l" href="#2601">2601: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2602" class="l"><a class="l" href="#2602">2602: </a><span class="php-comment">   * 
+</span></span><span id="2603" class="l"><a class="l" href="#2603">2603: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2604" class="l"><a class="l" href="#2604">2604: </a><span class="php-comment">   * @param string $field The field name.
+</span></span><span id="2605" class="l"><a class="l" href="#2605">2605: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2606" class="l"><a class="l" href="#2606">2606: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
+</span></span><span id="2607" class="l"><a class="l" href="#2607">2607: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
+</span></span><span id="2608" class="l"><a class="l" href="#2608">2608: </a><span class="php-comment">   * @param bool $php dafault: false.
+</span></span><span id="2609" class="l"><a class="l" href="#2609">2609: </a><span class="php-comment">   * 
+</span></span><span id="2610" class="l"><a class="l" href="#2610">2610: </a><span class="php-comment">     * @return array
+</span></span><span id="2611" class="l"><a class="l" href="#2611">2611: </a><span class="php-comment">     */</span>
+</span><span id="2612" class="l"><a class="l" href="#2612">2612: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_column_values" href="#_get_column_values">get_column_values</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
+</span><span id="2613" class="l"><a class="l" href="#2613">2613: </a>    {
+</span><span id="2614" class="l"><a class="l" href="#2614">2614: </a>    <span class="php-var">$r</span> = [];
+</span><span id="2615" class="l"><a class="l" href="#2615">2615: </a>    <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>);
+</span><span id="2616" class="l"><a class="l" href="#2616">2616: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$rows</span> = <span class="php-var">$this</span>-&gt;get_irows(
+</span><span id="2617" class="l"><a class="l" href="#2617">2617: </a>      <span class="php-var">$this</span>-&gt;language-&gt;get_column_values(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>, <span class="php-keyword1">false</span>),
+</span><span id="2618" class="l"><a class="l" href="#2618">2618: </a>      <span class="php-var">$where</span>[<span class="php-quote">'values'</span>])
+</span><span id="2619" class="l"><a class="l" href="#2619">2619: </a>    ){
+</span><span id="2620" class="l"><a class="l" href="#2620">2620: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$rows</span> <span class="php-keyword1">as</span> <span class="php-var">$row</span> ){
+</span><span id="2621" class="l"><a class="l" href="#2621">2621: </a>        <span class="php-keyword2">array_push</span>(<span class="php-var">$r</span>, <span class="php-var">$row</span>[<span class="php-num">0</span>]);
+</span><span id="2622" class="l"><a class="l" href="#2622">2622: </a>      }
+</span><span id="2623" class="l"><a class="l" href="#2623">2623: </a>    }
+</span><span id="2624" class="l"><a class="l" href="#2624">2624: </a>    <span class="php-keyword1">return</span> <span class="php-var">$r</span>;
+</span><span id="2625" class="l"><a class="l" href="#2625">2625: </a>    }
+</span><span id="2626" class="l"><a class="l" href="#2626">2626: </a>    
+</span><span id="2627" class="l"><a class="l" href="#2627">2627: </a>    <span class="php-comment">/**
+</span></span><span id="2628" class="l"><a class="l" href="#2628">2628: </a><span class="php-comment">   * Returns a request sql string for count similar values in a field of a table.
+</span></span><span id="2629" class="l"><a class="l" href="#2629">2629: </a><span class="php-comment">   * 
+</span></span><span id="2630" class="l"><a class="l" href="#2630">2630: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2631" class="l"><a class="l" href="#2631">2631: </a><span class="php-comment">   * $this-&gt;db-&gt;get_values_count(&quot;table_users&quot;, &quot;surname&quot;, ['id', '&gt;', '10'], 50, 2);
+</span></span><span id="2632" class="l"><a class="l" href="#2632">2632: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2633" class="l"><a class="l" href="#2633">2633: </a><span class="php-comment">   * 
 </span></span><span id="2634" class="l"><a class="l" href="#2634">2634: </a><span class="php-comment">   * 
-</span></span><span id="2635" class="l"><a class="l" href="#2635">2635: </a><span class="php-comment">   * 
-</span></span><span id="2636" class="l"><a class="l" href="#2636">2636: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2637" class="l"><a class="l" href="#2637">2637: </a><span class="php-comment">   * @param string $field The field name.
-</span></span><span id="2638" class="l"><a class="l" href="#2638">2638: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2639" class="l"><a class="l" href="#2639">2639: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, dafault: false.
-</span></span><span id="2640" class="l"><a class="l" href="#2640">2640: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, dafault: 0.
-</span></span><span id="2641" class="l"><a class="l" href="#2641">2641: </a><span class="php-comment">   * @param bool $php default: false.
-</span></span><span id="2642" class="l"><a class="l" href="#2642">2642: </a><span class="php-comment">   * 
-</span></span><span id="2643" class="l"><a class="l" href="#2643">2643: </a><span class="php-comment">     * @return string
-</span></span><span id="2644" class="l"><a class="l" href="#2644">2644: </a><span class="php-comment">     */</span>
-</span><span id="2645" class="l"><a class="l" href="#2645">2645: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_values_count" href="#_get_values_count">get_values_count</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
-</span><span id="2646" class="l"><a class="l" href="#2646">2646: </a>    {
-</span><span id="2647" class="l"><a class="l" href="#2647">2647: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_values_count(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>, <span class="php-var">$php</span>);
-</span><span id="2648" class="l"><a class="l" href="#2648">2648: </a>    }
-</span><span id="2649" class="l"><a class="l" href="#2649">2649: </a>  
-</span><span id="2650" class="l"><a class="l" href="#2650">2650: </a>  <span class="php-comment">/**
-</span></span><span id="2651" class="l"><a class="l" href="#2651">2651: </a><span class="php-comment">   * Returns the unique values of a column of a table as a numeric indexed array.
-</span></span><span id="2652" class="l"><a class="l" href="#2652">2652: </a><span class="php-comment">   * 
-</span></span><span id="2653" class="l"><a class="l" href="#2653">2653: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2654" class="l"><a class="l" href="#2654">2654: </a><span class="php-comment">   * $this-&gt;db-&gt;get_field_values(&quot;table_users&quot;, &quot;surname&quot;, ['id', '&gt;', '10'], 50, 2);
-</span></span><span id="2655" class="l"><a class="l" href="#2655">2655: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2656" class="l"><a class="l" href="#2656">2656: </a><span class="php-comment">   * 
-</span></span><span id="2657" class="l"><a class="l" href="#2657">2657: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2658" class="l"><a class="l" href="#2658">2658: </a><span class="php-comment">   * @param string $field The field name.
-</span></span><span id="2659" class="l"><a class="l" href="#2659">2659: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2660" class="l"><a class="l" href="#2660">2660: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
-</span></span><span id="2661" class="l"><a class="l" href="#2661">2661: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
-</span></span><span id="2662" class="l"><a class="l" href="#2662">2662: </a><span class="php-comment">   * 
-</span></span><span id="2663" class="l"><a class="l" href="#2663">2663: </a><span class="php-comment">   * @return array | false
-</span></span><span id="2664" class="l"><a class="l" href="#2664">2664: </a><span class="php-comment">   */</span>
-</span><span id="2665" class="l"><a class="l" href="#2665">2665: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_field_values" href="#_get_field_values">get_field_values</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>)
-</span><span id="2666" class="l"><a class="l" href="#2666">2666: </a>  {
-</span><span id="2667" class="l"><a class="l" href="#2667">2667: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;language-&gt;get_column_values(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>) ){
-</span><span id="2668" class="l"><a class="l" href="#2668">2668: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$d</span> = <span class="php-var">$this</span>-&gt;get_by_columns(<span class="php-var">$r</span>) ){
-</span><span id="2669" class="l"><a class="l" href="#2669">2669: </a>        <span class="php-keyword1">return</span> <span class="php-var">$d</span>[<span class="php-var">$field</span>];
-</span><span id="2670" class="l"><a class="l" href="#2670">2670: </a>      }
-</span><span id="2671" class="l"><a class="l" href="#2671">2671: </a>    }
-</span><span id="2672" class="l"><a class="l" href="#2672">2672: </a>  }
-</span><span id="2673" class="l"><a class="l" href="#2673">2673: </a>    
-</span><span id="2674" class="l"><a class="l" href="#2674">2674: </a>  <span class="php-comment">/**
-</span></span><span id="2675" class="l"><a class="l" href="#2675">2675: </a><span class="php-comment">   * Returns a count of identical values in a field as array, reporting a structure type 'num' - 'val'.
-</span></span><span id="2676" class="l"><a class="l" href="#2676">2676: </a><span class="php-comment">   * 
-</span></span><span id="2677" class="l"><a class="l" href="#2677">2677: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="2678" class="l"><a class="l" href="#2678">2678: </a><span class="php-comment">   * $this-&gt;db-&gt;count_field_values(&quot;table_users&quot;, &quot;surname&quot;, ['id', '&gt;', '10'], 50, 2);
-</span></span><span id="2679" class="l"><a class="l" href="#2679">2679: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="2680" class="l"><a class="l" href="#2680">2680: </a><span class="php-comment">   * 
-</span></span><span id="2681" class="l"><a class="l" href="#2681">2681: </a><span class="php-comment">   * @param string $table The table name.
-</span></span><span id="2682" class="l"><a class="l" href="#2682">2682: </a><span class="php-comment">   * @param string $field The field name.
-</span></span><span id="2683" class="l"><a class="l" href="#2683">2683: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
-</span></span><span id="2684" class="l"><a class="l" href="#2684">2684: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
-</span></span><span id="2685" class="l"><a class="l" href="#2685">2685: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
-</span></span><span id="2686" class="l"><a class="l" href="#2686">2686: </a><span class="php-comment">   * 
-</span></span><span id="2687" class="l"><a class="l" href="#2687">2687: </a><span class="php-comment">   * @return array | false
-</span></span><span id="2688" class="l"><a class="l" href="#2688">2688: </a><span class="php-comment">   */</span>
-</span><span id="2689" class="l"><a class="l" href="#2689">2689: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_count_field_values" href="#_count_field_values">count_field_values</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>)
-</span><span id="2690" class="l"><a class="l" href="#2690">2690: </a>    {
-</span><span id="2691" class="l"><a class="l" href="#2691">2691: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;language-&gt;get_values_count(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>) ){
-</span><span id="2692" class="l"><a class="l" href="#2692">2692: </a>      <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>);
-</span><span id="2693" class="l"><a class="l" href="#2693">2693: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;get_rows(<span class="php-var">$r</span>, <span class="php-var">$where</span>[<span class="php-quote">'values'</span>]);
+</span></span><span id="2635" class="l"><a class="l" href="#2635">2635: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2636" class="l"><a class="l" href="#2636">2636: </a><span class="php-comment">   * @param string $field The field name.
+</span></span><span id="2637" class="l"><a class="l" href="#2637">2637: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2638" class="l"><a class="l" href="#2638">2638: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, dafault: false.
+</span></span><span id="2639" class="l"><a class="l" href="#2639">2639: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, dafault: 0.
+</span></span><span id="2640" class="l"><a class="l" href="#2640">2640: </a><span class="php-comment">   * @param bool $php default: false.
+</span></span><span id="2641" class="l"><a class="l" href="#2641">2641: </a><span class="php-comment">   * 
+</span></span><span id="2642" class="l"><a class="l" href="#2642">2642: </a><span class="php-comment">     * @return string
+</span></span><span id="2643" class="l"><a class="l" href="#2643">2643: </a><span class="php-comment">     */</span>
+</span><span id="2644" class="l"><a class="l" href="#2644">2644: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_values_count" href="#_get_values_count">get_values_count</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>, <span class="php-var">$php</span> = <span class="php-keyword1">false</span>)
+</span><span id="2645" class="l"><a class="l" href="#2645">2645: </a>    {
+</span><span id="2646" class="l"><a class="l" href="#2646">2646: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_values_count(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>, <span class="php-var">$php</span>);
+</span><span id="2647" class="l"><a class="l" href="#2647">2647: </a>    }
+</span><span id="2648" class="l"><a class="l" href="#2648">2648: </a>  
+</span><span id="2649" class="l"><a class="l" href="#2649">2649: </a>  <span class="php-comment">/**
+</span></span><span id="2650" class="l"><a class="l" href="#2650">2650: </a><span class="php-comment">   * Returns the unique values of a column of a table as a numeric indexed array.
+</span></span><span id="2651" class="l"><a class="l" href="#2651">2651: </a><span class="php-comment">   * 
+</span></span><span id="2652" class="l"><a class="l" href="#2652">2652: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2653" class="l"><a class="l" href="#2653">2653: </a><span class="php-comment">   * $this-&gt;db-&gt;get_field_values(&quot;table_users&quot;, &quot;surname&quot;, ['id', '&gt;', '10'], 50, 2);
+</span></span><span id="2654" class="l"><a class="l" href="#2654">2654: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2655" class="l"><a class="l" href="#2655">2655: </a><span class="php-comment">   * 
+</span></span><span id="2656" class="l"><a class="l" href="#2656">2656: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2657" class="l"><a class="l" href="#2657">2657: </a><span class="php-comment">   * @param string $field The field name.
+</span></span><span id="2658" class="l"><a class="l" href="#2658">2658: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2659" class="l"><a class="l" href="#2659">2659: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
+</span></span><span id="2660" class="l"><a class="l" href="#2660">2660: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
+</span></span><span id="2661" class="l"><a class="l" href="#2661">2661: </a><span class="php-comment">   * 
+</span></span><span id="2662" class="l"><a class="l" href="#2662">2662: </a><span class="php-comment">   * @return array | false
+</span></span><span id="2663" class="l"><a class="l" href="#2663">2663: </a><span class="php-comment">   */</span>
+</span><span id="2664" class="l"><a class="l" href="#2664">2664: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_field_values" href="#_get_field_values">get_field_values</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>)
+</span><span id="2665" class="l"><a class="l" href="#2665">2665: </a>  {
+</span><span id="2666" class="l"><a class="l" href="#2666">2666: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;language-&gt;get_column_values(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>) ){
+</span><span id="2667" class="l"><a class="l" href="#2667">2667: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$d</span> = <span class="php-var">$this</span>-&gt;get_by_columns(<span class="php-var">$r</span>) ){
+</span><span id="2668" class="l"><a class="l" href="#2668">2668: </a>        <span class="php-keyword1">return</span> <span class="php-var">$d</span>[<span class="php-var">$field</span>];
+</span><span id="2669" class="l"><a class="l" href="#2669">2669: </a>      }
+</span><span id="2670" class="l"><a class="l" href="#2670">2670: </a>    }
+</span><span id="2671" class="l"><a class="l" href="#2671">2671: </a>  }
+</span><span id="2672" class="l"><a class="l" href="#2672">2672: </a>    
+</span><span id="2673" class="l"><a class="l" href="#2673">2673: </a>  <span class="php-comment">/**
+</span></span><span id="2674" class="l"><a class="l" href="#2674">2674: </a><span class="php-comment">   * Returns a count of identical values in a field as array, reporting a structure type 'num' - 'val'.
+</span></span><span id="2675" class="l"><a class="l" href="#2675">2675: </a><span class="php-comment">   * 
+</span></span><span id="2676" class="l"><a class="l" href="#2676">2676: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="2677" class="l"><a class="l" href="#2677">2677: </a><span class="php-comment">   * $this-&gt;db-&gt;count_field_values(&quot;table_users&quot;, &quot;surname&quot;, ['id', '&gt;', '10'], 50, 2);
+</span></span><span id="2678" class="l"><a class="l" href="#2678">2678: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="2679" class="l"><a class="l" href="#2679">2679: </a><span class="php-comment">   * 
+</span></span><span id="2680" class="l"><a class="l" href="#2680">2680: </a><span class="php-comment">   * @param string $table The table name.
+</span></span><span id="2681" class="l"><a class="l" href="#2681">2681: </a><span class="php-comment">   * @param string $field The field name.
+</span></span><span id="2682" class="l"><a class="l" href="#2682">2682: </a><span class="php-comment">   * @param array $where The &quot;where&quot; condition.
+</span></span><span id="2683" class="l"><a class="l" href="#2683">2683: </a><span class="php-comment">   * @param int $limit The &quot;limit&quot; condition, default: false.
+</span></span><span id="2684" class="l"><a class="l" href="#2684">2684: </a><span class="php-comment">   * @param int $start The &quot;start&quot; condition, default: 0.
+</span></span><span id="2685" class="l"><a class="l" href="#2685">2685: </a><span class="php-comment">   * 
+</span></span><span id="2686" class="l"><a class="l" href="#2686">2686: </a><span class="php-comment">   * @return array | false
+</span></span><span id="2687" class="l"><a class="l" href="#2687">2687: </a><span class="php-comment">   */</span>
+</span><span id="2688" class="l"><a class="l" href="#2688">2688: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_count_field_values" href="#_count_field_values">count_field_values</a>(<span class="php-var">$table</span>, <span class="php-var">$field</span>,  <span class="php-keyword1">array</span> <span class="php-var">$where</span> = [], <span class="php-var">$limit</span> = <span class="php-keyword1">false</span>, <span class="php-var">$start</span> = <span class="php-num">0</span>)
+</span><span id="2689" class="l"><a class="l" href="#2689">2689: </a>    {
+</span><span id="2690" class="l"><a class="l" href="#2690">2690: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;language-&gt;get_values_count(<span class="php-var">$table</span>, <span class="php-var">$field</span>, <span class="php-var">$where</span>, <span class="php-var">$limit</span>, <span class="php-var">$start</span>) ){
+</span><span id="2691" class="l"><a class="l" href="#2691">2691: </a>      <span class="php-var">$where</span> = <span class="php-var">$this</span>-&gt;where_cfg(<span class="php-var">$where</span>, <span class="php-var">$table</span>);
+</span><span id="2692" class="l"><a class="l" href="#2692">2692: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;get_rows(<span class="php-var">$r</span>, <span class="php-var">$where</span>[<span class="php-quote">'values'</span>]);
+</span><span id="2693" class="l"><a class="l" href="#2693">2693: </a>    }
 </span><span id="2694" class="l"><a class="l" href="#2694">2694: </a>    }
-</span><span id="2695" class="l"><a class="l" href="#2695">2695: </a>    }
-</span><span id="2696" class="l"><a class="l" href="#2696">2696: </a>
-</span><span id="2697" class="l"><a class="l" href="#2697">2697: </a>  <span class="php-comment">/**
-</span></span><span id="2698" class="l"><a class="l" href="#2698">2698: </a><span class="php-comment">     * @return void 
-</span></span><span id="2699" class="l"><a class="l" href="#2699">2699: </a><span class="php-comment">     */</span>
-</span><span id="2700" class="l"><a class="l" href="#2700">2700: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_create_db_index" href="#_create_db_index">create_db_index</a>(<span class="php-var">$table</span>, <span class="php-var">$column</span>, <span class="php-var">$unique</span> = <span class="php-keyword1">false</span>, <span class="php-var">$length</span> = <span class="php-keyword1">null</span>)
-</span><span id="2701" class="l"><a class="l" href="#2701">2701: </a>    {
-</span><span id="2702" class="l"><a class="l" href="#2702">2702: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;create_db_index(<span class="php-var">$table</span>, <span class="php-var">$column</span>, <span class="php-var">$unique</span>);
-</span><span id="2703" class="l"><a class="l" href="#2703">2703: </a>    }
-</span><span id="2704" class="l"><a class="l" href="#2704">2704: </a>    
-</span><span id="2705" class="l"><a class="l" href="#2705">2705: </a>    <span class="php-comment">/**
-</span></span><span id="2706" class="l"><a class="l" href="#2706">2706: </a><span class="php-comment">     * @return void 
-</span></span><span id="2707" class="l"><a class="l" href="#2707">2707: </a><span class="php-comment">     */</span>
-</span><span id="2708" class="l"><a class="l" href="#2708">2708: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_delete_db_index" href="#_delete_db_index">delete_db_index</a>(<span class="php-var">$table</span>, <span class="php-var">$column</span>)
-</span><span id="2709" class="l"><a class="l" href="#2709">2709: </a>    {
-</span><span id="2710" class="l"><a class="l" href="#2710">2710: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;delete_db_index(<span class="php-var">$table</span>, <span class="php-var">$column</span>);
-</span><span id="2711" class="l"><a class="l" href="#2711">2711: </a>    }
-</span><span id="2712" class="l"><a class="l" href="#2712">2712: </a>    
-</span><span id="2713" class="l"><a class="l" href="#2713">2713: </a>    <span class="php-comment">/**
-</span></span><span id="2714" class="l"><a class="l" href="#2714">2714: </a><span class="php-comment">     * @return void 
-</span></span><span id="2715" class="l"><a class="l" href="#2715">2715: </a><span class="php-comment">     */</span>
-</span><span id="2716" class="l"><a class="l" href="#2716">2716: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_create_db_user" href="#_create_db_user">create_db_user</a>(<span class="php-var">$user</span>, <span class="php-var">$pass</span>, <span class="php-var">$db</span>)
-</span><span id="2717" class="l"><a class="l" href="#2717">2717: </a>    {
-</span><span id="2718" class="l"><a class="l" href="#2718">2718: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;create_db_user(<span class="php-var">$user</span>, <span class="php-var">$pass</span>, <span class="php-var">$db</span>);
-</span><span id="2719" class="l"><a class="l" href="#2719">2719: </a>    }
-</span><span id="2720" class="l"><a class="l" href="#2720">2720: </a>    
-</span><span id="2721" class="l"><a class="l" href="#2721">2721: </a>    <span class="php-comment">/**
-</span></span><span id="2722" class="l"><a class="l" href="#2722">2722: </a><span class="php-comment">     * @return void 
-</span></span><span id="2723" class="l"><a class="l" href="#2723">2723: </a><span class="php-comment">     */</span>
-</span><span id="2724" class="l"><a class="l" href="#2724">2724: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_delete_db_user" href="#_delete_db_user">delete_db_user</a>(<span class="php-var">$user</span>)
-</span><span id="2725" class="l"><a class="l" href="#2725">2725: </a>    {
-</span><span id="2726" class="l"><a class="l" href="#2726">2726: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;delete_db_user(<span class="php-var">$user</span>);
-</span><span id="2727" class="l"><a class="l" href="#2727">2727: </a>    }
-</span><span id="2728" class="l"><a class="l" href="#2728">2728: </a>
-</span><span id="2729" class="l"><a class="l" href="#2729">2729: </a>    <span class="php-comment">/**
-</span></span><span id="2730" class="l"><a class="l" href="#2730">2730: </a><span class="php-comment">     * @return void 
-</span></span><span id="2731" class="l"><a class="l" href="#2731">2731: </a><span class="php-comment">     */</span>
-</span><span id="2732" class="l"><a class="l" href="#2732">2732: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_users" href="#_get_users">get_users</a>(<span class="php-var">$user</span>=<span class="php-quote">''</span>, <span class="php-var">$host</span>=<span class="php-quote">''</span>)
-</span><span id="2733" class="l"><a class="l" href="#2733">2733: </a>    {
-</span><span id="2734" class="l"><a class="l" href="#2734">2734: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_users(<span class="php-var">$user</span>, <span class="php-var">$host</span>);
-</span><span id="2735" class="l"><a class="l" href="#2735">2735: </a>    }
-</span><span id="2736" class="l"><a class="l" href="#2736">2736: </a>
-</span><span id="2737" class="l"><a class="l" href="#2737">2737: </a>}
-</span><span id="2738" class="l"><a class="l" href="#2738">2738: </a></span><span class="xlang">?&gt;</span></code></pre>
+</span><span id="2695" class="l"><a class="l" href="#2695">2695: </a>
+</span><span id="2696" class="l"><a class="l" href="#2696">2696: </a>  <span class="php-comment">/**
+</span></span><span id="2697" class="l"><a class="l" href="#2697">2697: </a><span class="php-comment">     * @return void 
+</span></span><span id="2698" class="l"><a class="l" href="#2698">2698: </a><span class="php-comment">     */</span>
+</span><span id="2699" class="l"><a class="l" href="#2699">2699: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_create_db_index" href="#_create_db_index">create_db_index</a>(<span class="php-var">$table</span>, <span class="php-var">$column</span>, <span class="php-var">$unique</span> = <span class="php-keyword1">false</span>, <span class="php-var">$length</span> = <span class="php-keyword1">null</span>)
+</span><span id="2700" class="l"><a class="l" href="#2700">2700: </a>    {
+</span><span id="2701" class="l"><a class="l" href="#2701">2701: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;create_db_index(<span class="php-var">$table</span>, <span class="php-var">$column</span>, <span class="php-var">$unique</span>);
+</span><span id="2702" class="l"><a class="l" href="#2702">2702: </a>    }
+</span><span id="2703" class="l"><a class="l" href="#2703">2703: </a>    
+</span><span id="2704" class="l"><a class="l" href="#2704">2704: </a>    <span class="php-comment">/**
+</span></span><span id="2705" class="l"><a class="l" href="#2705">2705: </a><span class="php-comment">     * @return void 
+</span></span><span id="2706" class="l"><a class="l" href="#2706">2706: </a><span class="php-comment">     */</span>
+</span><span id="2707" class="l"><a class="l" href="#2707">2707: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_delete_db_index" href="#_delete_db_index">delete_db_index</a>(<span class="php-var">$table</span>, <span class="php-var">$column</span>)
+</span><span id="2708" class="l"><a class="l" href="#2708">2708: </a>    {
+</span><span id="2709" class="l"><a class="l" href="#2709">2709: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;delete_db_index(<span class="php-var">$table</span>, <span class="php-var">$column</span>);
+</span><span id="2710" class="l"><a class="l" href="#2710">2710: </a>    }
+</span><span id="2711" class="l"><a class="l" href="#2711">2711: </a>    
+</span><span id="2712" class="l"><a class="l" href="#2712">2712: </a>    <span class="php-comment">/**
+</span></span><span id="2713" class="l"><a class="l" href="#2713">2713: </a><span class="php-comment">     * @return void 
+</span></span><span id="2714" class="l"><a class="l" href="#2714">2714: </a><span class="php-comment">     */</span>
+</span><span id="2715" class="l"><a class="l" href="#2715">2715: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_create_db_user" href="#_create_db_user">create_db_user</a>(<span class="php-var">$user</span>, <span class="php-var">$pass</span>, <span class="php-var">$db</span>)
+</span><span id="2716" class="l"><a class="l" href="#2716">2716: </a>    {
+</span><span id="2717" class="l"><a class="l" href="#2717">2717: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;create_db_user(<span class="php-var">$user</span>, <span class="php-var">$pass</span>, <span class="php-var">$db</span>);
+</span><span id="2718" class="l"><a class="l" href="#2718">2718: </a>    }
+</span><span id="2719" class="l"><a class="l" href="#2719">2719: </a>    
+</span><span id="2720" class="l"><a class="l" href="#2720">2720: </a>    <span class="php-comment">/**
+</span></span><span id="2721" class="l"><a class="l" href="#2721">2721: </a><span class="php-comment">     * @return void 
+</span></span><span id="2722" class="l"><a class="l" href="#2722">2722: </a><span class="php-comment">     */</span>
+</span><span id="2723" class="l"><a class="l" href="#2723">2723: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_delete_db_user" href="#_delete_db_user">delete_db_user</a>(<span class="php-var">$user</span>)
+</span><span id="2724" class="l"><a class="l" href="#2724">2724: </a>    {
+</span><span id="2725" class="l"><a class="l" href="#2725">2725: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;delete_db_user(<span class="php-var">$user</span>);
+</span><span id="2726" class="l"><a class="l" href="#2726">2726: </a>    }
+</span><span id="2727" class="l"><a class="l" href="#2727">2727: </a>
+</span><span id="2728" class="l"><a class="l" href="#2728">2728: </a>    <span class="php-comment">/**
+</span></span><span id="2729" class="l"><a class="l" href="#2729">2729: </a><span class="php-comment">     * @return void 
+</span></span><span id="2730" class="l"><a class="l" href="#2730">2730: </a><span class="php-comment">     */</span>
+</span><span id="2731" class="l"><a class="l" href="#2731">2731: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_users" href="#_get_users">get_users</a>(<span class="php-var">$user</span>=<span class="php-quote">''</span>, <span class="php-var">$host</span>=<span class="php-quote">''</span>)
+</span><span id="2732" class="l"><a class="l" href="#2732">2732: </a>    {
+</span><span id="2733" class="l"><a class="l" href="#2733">2733: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;language-&gt;get_users(<span class="php-var">$user</span>, <span class="php-var">$host</span>);
+</span><span id="2734" class="l"><a class="l" href="#2734">2734: </a>    }
+</span><span id="2735" class="l"><a class="l" href="#2735">2735: </a>
+</span><span id="2736" class="l"><a class="l" href="#2736">2736: </a>}
+</span><span id="2737" class="l"><a class="l" href="#2737">2737: </a></span><span class="xlang">?&gt;</span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
