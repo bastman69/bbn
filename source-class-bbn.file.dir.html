@@ -460,10 +460,10 @@
 </span><span id="339" class="l"><a class="l" href="#339">339: </a>      <span class="php-var">$files</span> = \bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::get_files(<span class="php-var">$src</span>);
 </span><span id="340" class="l"><a class="l" href="#340">340: </a>      <span class="php-var">$dirs</span> = \bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::get_dirs(<span class="php-var">$src</span>);
 </span><span id="341" class="l"><a class="l" href="#341">341: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$files</span> <span class="php-keyword1">as</span> <span class="php-var">$f</span> ){
-</span><span id="342" class="l"><a class="l" href="#342">342: </a>        <span class="php-keyword2">copy</span>(<span class="php-var">$f</span>, <span class="php-var">$dst</span>.<span class="php-keyword2">basename</span>(<span class="php-var">$f</span>));
+</span><span id="342" class="l"><a class="l" href="#342">342: </a>        <span class="php-keyword2">copy</span>(<span class="php-var">$f</span>, <span class="php-var">$dst</span>.<span class="php-quote">'/'</span>.<span class="php-keyword2">basename</span>(<span class="php-var">$f</span>));
 </span><span id="343" class="l"><a class="l" href="#343">343: </a>      }
 </span><span id="344" class="l"><a class="l" href="#344">344: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$dirs</span> <span class="php-keyword1">as</span> <span class="php-var">$f</span> ){
-</span><span id="345" class="l"><a class="l" href="#345">345: </a>        self::<span class="php-keyword2">copy</span>(<span class="php-var">$f</span>, <span class="php-var">$dst</span>.<span class="php-keyword2">basename</span>(<span class="php-var">$f</span>));
+</span><span id="345" class="l"><a class="l" href="#345">345: </a>        self::<span class="php-keyword2">copy</span>(<span class="php-var">$f</span>, <span class="php-var">$dst</span>.<span class="php-quote">'/'</span>.<span class="php-keyword2">basename</span>(<span class="php-var">$f</span>));
 </span><span id="346" class="l"><a class="l" href="#346">346: </a>      }
 </span><span id="347" class="l"><a class="l" href="#347">347: </a>      <span class="php-keyword1">return</span> <span class="php-num">1</span>;
 </span><span id="348" class="l"><a class="l" href="#348">348: </a>    }
