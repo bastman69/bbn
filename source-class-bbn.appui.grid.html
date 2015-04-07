@@ -8,7 +8,7 @@
 	<title>File appui/grid.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?3735002792"></script>
+	<script type="text/javascript" src="elementlist.js?3398541482"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -289,33 +289,34 @@
 </span><span id="166" class="l"><a class="l" href="#166">166: </a>              <span class="php-var">$res</span> .= <span class="php-quote">&quot;NOT LIKE ? &quot;</span>;
 </span><span id="167" class="l"><a class="l" href="#167">167: </a>              <span class="php-var">$f</span>[<span class="php-quote">'value'</span>] = <span class="php-quote">'%'</span>.<span class="php-var">$f</span>[<span class="php-quote">'value'</span>].<span class="php-quote">'%'</span>;
 </span><span id="168" class="l"><a class="l" href="#168">168: </a>              <span class="php-keyword1">break</span>;
-</span><span id="169" class="l"><a class="l" href="#169">169: </a>            }
-</span><span id="170" class="l"><a class="l" href="#170">170: </a>          }
-</span><span id="171" class="l"><a class="l" href="#171">171: </a>        }
-</span><span id="172" class="l"><a class="l" href="#172">172: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$res</span>) ){
-</span><span id="173" class="l"><a class="l" href="#173">173: </a>          <span class="php-var">$res</span> .= <span class="php-quote">&quot; ) &quot;</span>;
-</span><span id="174" class="l"><a class="l" href="#174">174: </a>        }
-</span><span id="175" class="l"><a class="l" href="#175">175: </a>      }
-</span><span id="176" class="l"><a class="l" href="#176">176: </a>    }
-</span><span id="177" class="l"><a class="l" href="#177">177: </a>    <span class="php-keyword1">return</span> <span class="php-var">$res</span>;
-</span><span id="178" class="l"><a class="l" href="#178">178: </a>  }
-</span><span id="179" class="l"><a class="l" href="#179">179: </a>  
-</span><span id="180" class="l"><a class="l" href="#180">180: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_order" href="#_order">order</a>(){
-</span><span id="181" class="l"><a class="l" href="#181">181: </a>    <span class="php-var">$st</span> = <span class="php-quote">''</span>;
-</span><span id="182" class="l"><a class="l" href="#182">182: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sort'</span>]) ){
-</span><span id="183" class="l"><a class="l" href="#183">183: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sort'</span>] <span class="php-keyword1">as</span> <span class="php-var">$f</span> ){
-</span><span id="184" class="l"><a class="l" href="#184">184: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$field</span> = <span class="php-var">$this</span>-&gt;get_field(<span class="php-var">$f</span>) ){
-</span><span id="185" class="l"><a class="l" href="#185">185: </a>          <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$st</span>) ){
-</span><span id="186" class="l"><a class="l" href="#186">186: </a>            <span class="php-var">$st</span> .= <span class="php-quote">&quot;, &quot;</span>;
-</span><span id="187" class="l"><a class="l" href="#187">187: </a>          }
-</span><span id="188" class="l"><a class="l" href="#188">188: </a>          <span class="php-var">$st</span> .= <span class="php-var">$field</span>.<span class="php-quote">&quot; &quot;</span>.( <span class="php-keyword2">strtolower</span>(<span class="php-var">$f</span>[<span class="php-quote">'dir'</span>]) === <span class="php-quote">'desc'</span> ? <span class="php-quote">'DESC'</span> : <span class="php-quote">'ASC'</span> );
-</span><span id="189" class="l"><a class="l" href="#189">189: </a>        }
-</span><span id="190" class="l"><a class="l" href="#190">190: </a>      }
-</span><span id="191" class="l"><a class="l" href="#191">191: </a>    }
-</span><span id="192" class="l"><a class="l" href="#192">192: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
-</span><span id="193" class="l"><a class="l" href="#193">193: </a>  }
-</span><span id="194" class="l"><a class="l" href="#194">194: </a>  
-</span><span id="195" class="l"><a class="l" href="#195">195: </a></span>}</code></pre>
+</span><span id="169" class="l"><a class="l" href="#169">169: </a>
+</span><span id="170" class="l"><a class="l" href="#170">170: </a>            }
+</span><span id="171" class="l"><a class="l" href="#171">171: </a>          }
+</span><span id="172" class="l"><a class="l" href="#172">172: </a>        }
+</span><span id="173" class="l"><a class="l" href="#173">173: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$res</span>) ){
+</span><span id="174" class="l"><a class="l" href="#174">174: </a>          <span class="php-var">$res</span> .= <span class="php-quote">&quot; ) &quot;</span>;
+</span><span id="175" class="l"><a class="l" href="#175">175: </a>        }
+</span><span id="176" class="l"><a class="l" href="#176">176: </a>      }
+</span><span id="177" class="l"><a class="l" href="#177">177: </a>    }
+</span><span id="178" class="l"><a class="l" href="#178">178: </a>    <span class="php-keyword1">return</span> <span class="php-var">$res</span>;
+</span><span id="179" class="l"><a class="l" href="#179">179: </a>  }
+</span><span id="180" class="l"><a class="l" href="#180">180: </a>  
+</span><span id="181" class="l"><a class="l" href="#181">181: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_order" href="#_order">order</a>(){
+</span><span id="182" class="l"><a class="l" href="#182">182: </a>    <span class="php-var">$st</span> = <span class="php-quote">''</span>;
+</span><span id="183" class="l"><a class="l" href="#183">183: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sort'</span>]) ){
+</span><span id="184" class="l"><a class="l" href="#184">184: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sort'</span>] <span class="php-keyword1">as</span> <span class="php-var">$f</span> ){
+</span><span id="185" class="l"><a class="l" href="#185">185: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$field</span> = <span class="php-var">$this</span>-&gt;get_field(<span class="php-var">$f</span>) ){
+</span><span id="186" class="l"><a class="l" href="#186">186: </a>          <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$st</span>) ){
+</span><span id="187" class="l"><a class="l" href="#187">187: </a>            <span class="php-var">$st</span> .= <span class="php-quote">&quot;, &quot;</span>;
+</span><span id="188" class="l"><a class="l" href="#188">188: </a>          }
+</span><span id="189" class="l"><a class="l" href="#189">189: </a>          <span class="php-var">$st</span> .= <span class="php-var">$field</span>.<span class="php-quote">&quot; &quot;</span>.( <span class="php-keyword2">strtolower</span>(<span class="php-var">$f</span>[<span class="php-quote">'dir'</span>]) === <span class="php-quote">'desc'</span> ? <span class="php-quote">'DESC'</span> : <span class="php-quote">'ASC'</span> );
+</span><span id="190" class="l"><a class="l" href="#190">190: </a>        }
+</span><span id="191" class="l"><a class="l" href="#191">191: </a>      }
+</span><span id="192" class="l"><a class="l" href="#192">192: </a>    }
+</span><span id="193" class="l"><a class="l" href="#193">193: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
+</span><span id="194" class="l"><a class="l" href="#194">194: </a>  }
+</span><span id="195" class="l"><a class="l" href="#195">195: </a>  
+</span><span id="196" class="l"><a class="l" href="#196">196: </a></span>}</code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
