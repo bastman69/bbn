@@ -924,7 +924,7 @@
 </span><span id="806" class="l"><a class="l" href="#806">806: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
 </span><span id="807" class="l"><a class="l" href="#807">807: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
 </span><span id="808" class="l"><a class="l" href="#808">808: </a>            <span class="php-var">$a</span> = self::cast(<span class="php-var">$a</span>);
-</span><span id="809" class="l"><a class="l" href="#809">809: </a>            <span class="php-var">$t</span> = <span class="php-keyword2">preg_match</span>(<span class="php-quote">'#[A-z]+[A-z0-9_]*#'</span>,<span class="php-var">$a</span>,<span class="php-var">$m</span>);
+</span><span id="809" class="l"><a class="l" href="#809">809: </a>            <span class="php-var">$t</span> = <span class="php-keyword2">preg_match</span>(<span class="php-quote">'#[A-z0-9_]*#'</span>,<span class="php-var">$a</span>,<span class="php-var">$m</span>);
 </span><span id="810" class="l"><a class="l" href="#810">810: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$t</span> !== <span class="php-num">1</span> || <span class="php-var">$m</span>[<span class="php-num">0</span>] !== <span class="php-var">$a</span> ){
 </span><span id="811" class="l"><a class="l" href="#811">811: </a>                <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="812" class="l"><a class="l" href="#812">812: </a>            }
