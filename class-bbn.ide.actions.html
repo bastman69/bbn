@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\decorator | nabab/bbn</title>
+	<title>Class bbn\ide\actions | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?471643807"></script>
@@ -41,7 +41,7 @@
 						</li>
 				<li><a href="namespace-bbn.html.html">html</a>
 						</li>
-				<li><a href="namespace-bbn.ide.html">ide</a>
+				<li class="active"><a href="namespace-bbn.ide.html">ide</a>
 						</li>
 				<li><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
@@ -67,13 +67,8 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-bbn.decorator.html">decorator</a></li>
-				<li><a href="class-bbn.environment.html">environment</a></li>
-				<li><a href="class-bbn.mvc.html">mvc</a></li>
-				<li><a href="class-bbn.mvcv2.html">mvcv2</a></li>
-				<li><a href="class-bbn.obj.html">obj</a></li>
-				<li><a href="class-bbn.tools.html">tools</a></li>
-				<li><a href="class-bbn.tpl.html">tpl</a></li>
+				<li class="active"><a href="class-bbn.ide.actions.html">actions</a></li>
+				<li><a href="class-bbn.ide.directories.html">directories</a></li>
 			</ul>
 
 
@@ -101,7 +96,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.html" title="Summary of bbn"><span>Namespace</span></a>
+				<a href="namespace-bbn.ide.html" title="Summary of bbn\ide"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -122,16 +117,9 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class decorator</h1>
+	<h1>Class actions</h1>
 
 
-	<div class="description">
-	
-<p>Basic object Class</p>
-
-<p>This class implements basic functions and vars</p>
-
-	</div>
 
 
 
@@ -144,25 +132,10 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.ide.html">ide</a><br />
 		
 
-				<b>Category:</b>
-				Generic classes<br />
-				<b>Copyright:</b>
-				BBN Solutions<br />
-				<b>License:</b>
-				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
-				<b>Author:</b>
-				Thomas Nabet &lt;<a
-href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
-				<b>Version:</b>
-				0.1<br />
-				<b>Since:</b>
-				Apr 24, 2013, 23:23:55 +0000<br />
-				<b>Link:</b>
-				<a href="http://stackoverflow.com/questions/3011910/how-to-add-a-method-to-an-existing-class-in-php">Comes from there...</a><br />
-		<b>Located at</b> <a href="source-class-bbn.decorator.html#6-53" title="Go to source code">decorator.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.ide.actions.html#7-414" title="Go to source code">ide/actions.php</a><br />
 	</div>
 
 
@@ -180,7 +153,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.decorator.html#24-32" title="Go to source code">__construct</a>( <span>mixed <var>$classname</var></span>, <span>mixed <var>$instance</var></span> )</code>
+		<code><a href="source-class-bbn.ide.actions.html#9-11" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span> )</code>
 
 		<div class="description short">
 			
@@ -198,7 +171,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="__call" id="___call">
+	<tr data-order="save" id="_save">
 
 		<td class="attributes"><code>
 			 public 
@@ -208,8 +181,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-bbn.decorator.html#34-38" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$args</var></span> )</code>
+		<a class="anchor" href="#_save">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#13-63" title="Go to source code">save</a>( <span>mixed <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -227,7 +200,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="__get" id="___get">
+	<tr data-order="delete" id="_delete">
 
 		<td class="attributes"><code>
 			 public 
@@ -237,8 +210,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-bbn.decorator.html#40-44" title="Go to source code">__get</a>( <span>mixed <var>$key</var></span> )</code>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#65-128" title="Go to source code">delete</a>( <span>mixed <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -256,7 +229,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="__set" id="___set">
+	<tr data-order="duplicate" id="_duplicate">
 
 		<td class="attributes"><code>
 			 public 
@@ -266,8 +239,153 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___set">#</a>
-		<code><a href="source-class-bbn.decorator.html#46-50" title="Go to source code">__set</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<a class="anchor" href="#_duplicate">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#130-197" title="Go to source code">duplicate</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insert" id="_insert">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insert">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#199-245" title="Go to source code">insert</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="move" id="_move">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_move">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#247-319" title="Go to source code">move</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rename" id="_rename">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rename">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#321-390" title="Go to source code">rename</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="close" id="_close">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_close">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#392-408" title="Go to source code">close</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="error" id="_error">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_error">#</a>
+		<code><a href="source-class-bbn.ide.actions.html#411-413" title="Go to source code">error</a>( <span>mixed <var>$msg</var> = <span class="php-quote">&quot;Error.&quot;</span></span> )</code>
 
 		<div class="description short">
 			
@@ -298,32 +416,6 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 
 
-	<table class="summary" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="_instance" id="$_instance">
-		<td class="attributes"><code>
-			protected  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.decorator.html#22" title="Go to source code"><var>$_instance</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$_instance" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 

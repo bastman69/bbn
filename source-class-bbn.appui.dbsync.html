@@ -8,7 +8,7 @@
 	<title>File appui/dbsync.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?3398541482"></script>
+	<script type="text/javascript" src="elementlist.js?471643807"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -41,6 +41,8 @@
 				<li><a href="namespace-bbn.file.html">file</a>
 						</li>
 				<li><a href="namespace-bbn.html.html">html</a>
+						</li>
+				<li><a href="namespace-bbn.ide.html">ide</a>
 						</li>
 				<li><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
@@ -218,7 +220,7 @@
 </span><span id="95" class="l"><a class="l" href="#95"> 95: </a>            self::<span class="php-var">$tables</span>);
 </span><span id="96" class="l"><a class="l" href="#96"> 96: </a>      self::<span class="php-var">$db</span>-&gt;set_trigger(
 </span><span id="97" class="l"><a class="l" href="#97"> 97: </a>            <span class="php-quote">'\\bbn\\appui\\dbsync::trigger'</span>,
-</span><span id="98" class="l"><a class="l" href="#98"> 98: </a>            [<span class="php-quote">'update'</span>, <span class="php-quote">'insert'</span>],
+</span><span id="98" class="l"><a class="l" href="#98"> 98: </a>            [<span class="php-quote">'delete'</span>, <span class="php-quote">'update'</span>, <span class="php-quote">'insert'</span>],
 </span><span id="99" class="l"><a class="l" href="#99"> 99: </a>            <span class="php-quote">'after'</span>,
 </span><span id="100" class="l"><a class="l" href="#100">100: </a>            self::<span class="php-var">$tables</span>);
 </span><span id="101" class="l"><a class="l" href="#101">101: </a>    }
@@ -282,7 +284,7 @@
 </span><span id="159" class="l"><a class="l" href="#159">159: </a>      <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
 </span><span id="160" class="l"><a class="l" href="#160">160: </a>        <span class="php-comment">// Case where we actually delete or restore through the $hcol column</span>
 </span><span id="161" class="l"><a class="l" href="#161">161: </a>        <span class="php-keyword1">if</span> ( (<span class="php-var">$kind</span> === <span class="php-quote">'update'</span>) &amp;&amp; self::<span class="php-var">$has_history</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$values</span>[\bbn\appui\history::<span class="php-var">$hcol</span>]) ){
-</span><span id="162" class="l"><a class="l" href="#162">162: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$values</span>[\bbn\appui\history::<span class="php-var">$hcol</span>] === <span class="php-num">0</span> ){
+</span><span id="162" class="l"><a class="l" href="#162">162: </a>          <span class="php-keyword1">if</span> ( !<span class="php-var">$values</span>[\bbn\appui\history::<span class="php-var">$hcol</span>] ){
 </span><span id="163" class="l"><a class="l" href="#163">163: </a>            <span class="php-var">$kind</span> = <span class="php-quote">'delete'</span>;
 </span><span id="164" class="l"><a class="l" href="#164">164: </a>            <span class="php-var">$values</span> = self::<span class="php-var">$db</span>-&gt;select(<span class="php-var">$table</span>, [], <span class="php-var">$where</span>);
 </span><span id="165" class="l"><a class="l" href="#165">165: </a>          }
@@ -296,15 +298,15 @@
 </span></span><span id="173" class="l"><a class="l" href="#173">173: </a><span class="php-comment">          $values = self::$db-&gt;select($table, [], $values);
 </span></span><span id="174" class="l"><a class="l" href="#174">174: </a><span class="php-comment">        }
 </span></span><span id="175" class="l"><a class="l" href="#175">175: </a><span class="php-comment">         */</span>
-</span><span id="176" class="l"><a class="l" href="#176">176: </a>      }
-</span><span id="177" class="l"><a class="l" href="#177">177: </a>      self::<span class="php-var">$dbs</span>-&gt;insert(self::<span class="php-var">$dbs_table</span>, [
-</span><span id="178" class="l"><a class="l" href="#178">178: </a>        <span class="php-quote">'db'</span> =&gt; self::<span class="php-var">$db</span>-&gt;<span class="php-keyword2">current</span>,
-</span><span id="179" class="l"><a class="l" href="#179">179: </a>        <span class="php-quote">'tab'</span> =&gt; <span class="php-var">$stable</span>,
-</span><span id="180" class="l"><a class="l" href="#180">180: </a>        <span class="php-quote">'action'</span> =&gt; <span class="php-var">$kind</span>,
-</span><span id="181" class="l"><a class="l" href="#181">181: </a>        <span class="php-quote">'moment'</span> =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>),
-</span><span id="182" class="l"><a class="l" href="#182">182: </a>        <span class="php-quote">'rows'</span> =&gt; <span class="php-keyword2">json_encode</span>(<span class="php-var">$where</span>),
-</span><span id="183" class="l"><a class="l" href="#183">183: </a>        <span class="php-quote">'vals'</span> =&gt; <span class="php-keyword2">json_encode</span>(<span class="php-var">$values</span>)
-</span><span id="184" class="l"><a class="l" href="#184">184: </a>      ]);
+</span><span id="176" class="l"><a class="l" href="#176">176: </a>        self::<span class="php-var">$dbs</span>-&gt;insert(self::<span class="php-var">$dbs_table</span>, [
+</span><span id="177" class="l"><a class="l" href="#177">177: </a>          <span class="php-quote">'db'</span> =&gt; self::<span class="php-var">$db</span>-&gt;<span class="php-keyword2">current</span>,
+</span><span id="178" class="l"><a class="l" href="#178">178: </a>          <span class="php-quote">'tab'</span> =&gt; <span class="php-var">$stable</span>,
+</span><span id="179" class="l"><a class="l" href="#179">179: </a>          <span class="php-quote">'action'</span> =&gt; <span class="php-var">$kind</span>,
+</span><span id="180" class="l"><a class="l" href="#180">180: </a>          <span class="php-quote">'moment'</span> =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>),
+</span><span id="181" class="l"><a class="l" href="#181">181: </a>          <span class="php-quote">'rows'</span> =&gt; <span class="php-keyword2">json_encode</span>(<span class="php-var">$where</span>),
+</span><span id="182" class="l"><a class="l" href="#182">182: </a>          <span class="php-quote">'vals'</span> =&gt; <span class="php-keyword1">empty</span>(<span class="php-var">$values</span>) ? <span class="php-quote">'[]'</span> : <span class="php-keyword2">json_encode</span>(<span class="php-var">$values</span>)
+</span><span id="183" class="l"><a class="l" href="#183">183: </a>        ]);
+</span><span id="184" class="l"><a class="l" href="#184">184: </a>      }
 </span><span id="185" class="l"><a class="l" href="#185">185: </a>    }
 </span><span id="186" class="l"><a class="l" href="#186">186: </a>    <span class="php-keyword1">return</span> <span class="php-var">$res</span>;
 </span><span id="187" class="l"><a class="l" href="#187">187: </a>  }

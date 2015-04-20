@@ -31,6 +31,9 @@
 	<loc>http://nabab.github.io/bbn/namespace-bbn.html.html</loc>
 </url>
 <url>
+	<loc>http://nabab.github.io/bbn/namespace-bbn.ide.html</loc>
+</url>
+<url>
 	<loc>http://nabab.github.io/bbn/namespace-bbn.mvc.html</loc>
 </url>
 <url>
@@ -145,6 +148,12 @@
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.html.input.html</loc>
+</url>
+<url>
+	<loc>http://nabab.github.io/bbn/class-bbn.ide.actions.html</loc>
+</url>
+<url>
+	<loc>http://nabab.github.io/bbn/class-bbn.ide.directories.html</loc>
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.html</loc>

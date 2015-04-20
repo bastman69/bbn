@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Interface bbn\mvc\api | nabab/bbn</title>
+	<title>Class bbn\ide\directories | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?471643807"></script>
@@ -41,9 +41,9 @@
 						</li>
 				<li><a href="namespace-bbn.html.html">html</a>
 						</li>
-				<li><a href="namespace-bbn.ide.html">ide</a>
+				<li class="active"><a href="namespace-bbn.ide.html">ide</a>
 						</li>
-				<li class="active"><a href="namespace-bbn.mvc.html">mvc</a>
+				<li><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
 				<li><a href="namespace-bbn.str.html">str</a>
 						</li>
@@ -67,20 +67,11 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-bbn.mvc.controller.html">controller</a></li>
-				<li><a href="class-bbn.mvc.model.html">model</a></li>
-				<li><a href="class-bbn.mvc.view.html">view</a></li>
+				<li><a href="class-bbn.ide.actions.html">actions</a></li>
+				<li class="active"><a href="class-bbn.ide.directories.html">directories</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li class="active"><a href="class-bbn.mvc.api.html">api</a></li>
-			</ul>
 
-			<h3>Traits</h3>
-			<ul>
-				<li><a href="class-bbn.mvc.common.html">common</a></li>
-			</ul>
 
 
 
@@ -105,7 +96,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.mvc.html" title="Summary of bbn\mvc"><span>Namespace</span></a>
+				<a href="namespace-bbn.ide.html" title="Summary of bbn\ide"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -126,7 +117,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Interface api</h1>
+	<h1>Class directories</h1>
 
 
 
@@ -134,11 +125,6 @@
 
 
 
-	<div>
-		<h4>Direct known implementers</h4>
-			<a href="class-bbn.mvc.controller.html">bbn\mvc\controller</a>, 
-			<a href="class-bbn.mvcv2.html">bbn\mvcv2</a>
-	</div>
 
 
 
@@ -146,17 +132,17 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.ide.html">ide</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.mvc.api.html#12-22" title="Go to source code">mvc/api.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.ide.directories.html#7-124" title="Go to source code">ide/directories.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="reroute" id="_reroute">
+	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
@@ -166,8 +152,8 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_reroute">#</a>
-		<code><a href="source-class-bbn.mvc.api.html#14" title="Go to source code">reroute</a>( <span>mixed <var>$path</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$check</var> = <span class="php-num">1</span></span> )</code>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#9-11" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span> )</code>
 
 		<div class="description short">
 			
@@ -185,7 +171,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_model" id="_get_model">
+	<tr data-order="add" id="_add">
 
 		<td class="attributes"><code>
 			 public 
@@ -195,8 +181,8 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_model">#</a>
-		<code><a href="source-class-bbn.mvc.api.html#16" title="Go to source code">get_model</a>( <span>mixed <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<a class="anchor" href="#_add">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#13-25" title="Go to source code">add</a>( <span>mixed <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -214,7 +200,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_view" id="_get_view">
+	<tr data-order="edit" id="_edit">
 
 		<td class="attributes"><code>
 			 public 
@@ -224,8 +210,8 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_view">#</a>
-		<code><a href="source-class-bbn.mvc.api.html#18" title="Go to source code">get_view</a>( <span>mixed <var>$path</var></span>, <span>mixed <var>$data</var> = []</span>, <span>mixed <var>$mode</var></span> )</code>
+		<a class="anchor" href="#_edit">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#27-38" title="Go to source code">edit</a>( <span>mixed <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -243,7 +229,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="is_cli" id="_is_cli">
+	<tr data-order="delete" id="_delete">
 
 		<td class="attributes"><code>
 			 public 
@@ -253,8 +239,124 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_is_cli">#</a>
-		<code><a href="source-class-bbn.mvc.api.html#20" title="Go to source code">is_cli</a>( )</code>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#40-45" title="Go to source code">delete</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#47-49" title="Go to source code">get</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="dirs" id="_dirs">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_dirs">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#51-69" title="Go to source code">dirs</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="modes" id="_modes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_modes">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#71-118" title="Go to source code">modes</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="error" id="_error">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_error">#</a>
+		<code><a href="source-class-bbn.ide.directories.html#121-123" title="Go to source code">error</a>( <span>mixed <var>$msg</var> = <span class="php-quote">&quot;Error: DB.&quot;</span></span> )</code>
 
 		<div class="description short">
 			
