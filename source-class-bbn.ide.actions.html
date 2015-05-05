@@ -8,7 +8,7 @@
 	<title>File ide/actions.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?471643807"></script>
+	<script type="text/javascript" src="elementlist.js?1859515339"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -139,7 +139,7 @@
 </span><span id="19" class="l"><a class="l" href="#19"> 19: </a>      <span class="php-comment">// The rest of the path</span>
 </span><span id="20" class="l"><a class="l" href="#20"> 20: </a>      <span class="php-var">$path</span> = <span class="php-keyword2">implode</span>(<span class="php-quote">'/'</span>, <span class="php-var">$args</span>);
 </span><span id="21" class="l"><a class="l" href="#21"> 21: </a>      <span class="php-comment">// Gives the config array of each directory, indexed on the dir's name</span>
-</span><span id="22" class="l"><a class="l" href="#22"> 22: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> \bbn\ide\directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="22" class="l"><a class="l" href="#22"> 22: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
 </span><span id="23" class="l"><a class="l" href="#23"> 23: </a>      <span class="php-var">$cfg</span> = <span class="php-var">$directories</span>-&gt;dirs();
 </span><span id="24" class="l"><a class="l" href="#24"> 24: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$cfg</span>[<span class="php-var">$dir</span>]) ){
 </span><span id="25" class="l"><a class="l" href="#25"> 25: </a>        <span class="php-var">$dirs</span> =&amp; <span class="php-var">$cfg</span>[<span class="php-var">$dir</span>];
@@ -183,7 +183,7 @@
 </span><span id="63" class="l"><a class="l" href="#63"> 63: </a>  }
 </span><span id="64" class="l"><a class="l" href="#64"> 64: </a>
 </span><span id="65" class="l"><a class="l" href="#65"> 65: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <span class="php-keyword2">delete</span>(<span class="php-var">$data</span>){
-</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>    <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> \bbn\ide\directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="66" class="l"><a class="l" href="#66"> 66: </a>    <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
 </span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    <span class="php-var">$cfg</span> = <span class="php-var">$directories</span>-&gt;dirs();
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>], <span class="php-var">$data</span>[<span class="php-quote">'name'</span>], <span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-var">$data</span>[<span class="php-quote">'type'</span>], <span class="php-var">$cfg</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]]) &amp;&amp;
 </span><span id="69" class="l"><a class="l" href="#69"> 69: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) &amp;&amp; \bbn\str\text::check_filename(<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]) ) {
@@ -252,7 +252,7 @@
 </span><span id="132" class="l"><a class="l" href="#132">132: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'src'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) &amp;&amp;
 </span><span id="133" class="l"><a class="l" href="#133">133: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) &amp;&amp;
 </span><span id="134" class="l"><a class="l" href="#134">134: </a>      \bbn\str\text::check_filename(<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]) ){
-</span><span id="135" class="l"><a class="l" href="#135">135: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> \bbn\ide\directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="135" class="l"><a class="l" href="#135">135: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
 </span><span id="136" class="l"><a class="l" href="#136">136: </a>      <span class="php-var">$dirs</span> = <span class="php-var">$directories</span>-&gt;dirs();
 </span><span id="137" class="l"><a class="l" href="#137">137: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]]) ){
 </span><span id="138" class="l"><a class="l" href="#138">138: </a>        <span class="php-var">$cfg</span> =&amp; <span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]];
@@ -317,7 +317,7 @@
 </span><span id="197" class="l"><a class="l" href="#197">197: </a>  }
 </span><span id="198" class="l"><a class="l" href="#198">198: </a>
 </span><span id="199" class="l"><a class="l" href="#199">199: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_insert" href="#_insert">insert</a>(<span class="php-var">$data</span>){
-</span><span id="200" class="l"><a class="l" href="#200">200: </a>    <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> \bbn\ide\directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="200" class="l"><a class="l" href="#200">200: </a>    <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
 </span><span id="201" class="l"><a class="l" href="#201">201: </a>    <span class="php-var">$dirs</span> = <span class="php-var">$directories</span>-&gt;dirs();
 </span><span id="202" class="l"><a class="l" href="#202">202: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>], <span class="php-var">$data</span>[<span class="php-quote">'name'</span>], <span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-var">$data</span>[<span class="php-quote">'type'</span>], <span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]]) &amp;&amp;
 </span><span id="203" class="l"><a class="l" href="#203">203: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) &amp;&amp;
@@ -368,7 +368,7 @@
 </span><span id="248" class="l"><a class="l" href="#248">248: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>], <span class="php-var">$data</span>[<span class="php-quote">'spath'</span>], <span class="php-var">$data</span>[<span class="php-quote">'dpath'</span>]) &amp;&amp;
 </span><span id="249" class="l"><a class="l" href="#249">249: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'dpath'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) &amp;&amp;
 </span><span id="250" class="l"><a class="l" href="#250">250: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'spath'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) ){
-</span><span id="251" class="l"><a class="l" href="#251">251: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> \bbn\ide\directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="251" class="l"><a class="l" href="#251">251: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
 </span><span id="252" class="l"><a class="l" href="#252">252: </a>      <span class="php-var">$dirs</span> = <span class="php-var">$directories</span>-&gt;dirs();
 </span><span id="253" class="l"><a class="l" href="#253">253: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]]) ){
 </span><span id="254" class="l"><a class="l" href="#254">254: </a>        <span class="php-var">$cfg</span> =&amp; <span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]];
@@ -442,7 +442,7 @@
 </span><span id="322" class="l"><a class="l" href="#322">322: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>], <span class="php-var">$data</span>[<span class="php-quote">'name'</span>], <span class="php-var">$data</span>[<span class="php-quote">'path'</span>]) &amp;&amp;
 </span><span id="323" class="l"><a class="l" href="#323">323: </a>      (<span class="php-keyword2">strpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-quote">'../'</span>) === <span class="php-keyword1">false</span>) &amp;&amp;
 </span><span id="324" class="l"><a class="l" href="#324">324: </a>      \bbn\str\text::check_filename(<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]) ){
-</span><span id="325" class="l"><a class="l" href="#325">325: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> \bbn\ide\directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="325" class="l"><a class="l" href="#325">325: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
 </span><span id="326" class="l"><a class="l" href="#326">326: </a>      <span class="php-var">$dirs</span> = <span class="php-var">$directories</span>-&gt;dirs();
 </span><span id="327" class="l"><a class="l" href="#327">327: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]]) ){
 </span><span id="328" class="l"><a class="l" href="#328">328: </a>        <span class="php-var">$cfg</span> =&amp; <span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]];
@@ -527,11 +527,108 @@
 </span><span id="407" class="l"><a class="l" href="#407">407: </a>    <span class="php-keyword1">return</span> [<span class="php-quote">'data'</span> =&gt; <span class="php-quote">&quot;Tab is not in session.&quot;</span>];
 </span><span id="408" class="l"><a class="l" href="#408">408: </a>  }
 </span><span id="409" class="l"><a class="l" href="#409">409: </a>
-</span><span id="410" class="l"><a class="l" href="#410">410: </a>  <span class="php-comment">// Error</span>
-</span><span id="411" class="l"><a class="l" href="#411">411: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_error" href="#_error">error</a>(<span class="php-var">$msg</span> = <span class="php-quote">&quot;Error.&quot;</span>){
-</span><span id="412" class="l"><a class="l" href="#412">412: </a>    <span class="php-keyword1">return</span> [<span class="php-quote">&quot;error&quot;</span> =&gt; <span class="php-var">$msg</span>];
-</span><span id="413" class="l"><a class="l" href="#413">413: </a>  }
-</span><span id="414" class="l"><a class="l" href="#414">414: </a></span>}</code></pre>
+</span><span id="410" class="l"><a class="l" href="#410">410: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_export" href="#_export">export</a>(<span class="php-var">$data</span>){
+</span><span id="411" class="l"><a class="l" href="#411">411: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>], <span class="php-var">$data</span>[<span class="php-quote">'name'</span>], <span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-var">$data</span>[<span class="php-quote">'type'</span>]) ){
+</span><span id="412" class="l"><a class="l" href="#412">412: </a>      <span class="php-var">$directories</span> = <span class="php-keyword1">new</span> directories(<span class="php-var">$this</span>-&gt;db);
+</span><span id="413" class="l"><a class="l" href="#413">413: </a>      <span class="php-var">$dirs</span> = <span class="php-var">$directories</span>-&gt;dirs();
+</span><span id="414" class="l"><a class="l" href="#414">414: </a>      <span class="php-comment">//$root_dest = BBN_DATA_PATH.'users/'.$_SESSION[BBN_SESS_NAME]['user']['id'].'/ide/exported/';</span>
+</span><span id="415" class="l"><a class="l" href="#415">415: </a>      <span class="php-var">$root_dest</span> = BBN_USER_PATH.<span class="php-quote">'tmp/'</span>.\bbn\str\text::genpwd().<span class="php-quote">'/'</span>;
+</span><span id="416" class="l"><a class="l" href="#416">416: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]]) ){
+</span><span id="417" class="l"><a class="l" href="#417">417: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$data</span>[<span class="php-quote">'dir'</span>] === <span class="php-quote">'controllers'</span> ){
+</span><span id="418" class="l"><a class="l" href="#418">418: </a>          <span class="php-keyword1">foreach</span> ( <span class="php-var">$dirs</span>[<span class="php-quote">'controllers'</span>][<span class="php-quote">'files'</span>] <span class="php-keyword1">as</span> <span class="php-var">$f</span> ) {
+</span><span id="419" class="l"><a class="l" href="#419">419: </a>            <span class="php-var">$dest</span> = <span class="php-var">$root_dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'/'</span>.<span class="php-keyword2">str_replace</span>(BBN_APP_PATH, <span class="php-quote">''</span>, <span class="php-var">$f</span>[<span class="php-quote">'path'</span>]);
+</span><span id="420" class="l"><a class="l" href="#420">420: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$data</span>[<span class="php-quote">'type'</span>] === <span class="php-quote">'file'</span> ) {
+</span><span id="421" class="l"><a class="l" href="#421">421: </a>              <span class="php-var">$ext</span> = \bbn\str\text::file_ext(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>]);
+</span><span id="422" class="l"><a class="l" href="#422">422: </a>              <span class="php-var">$path</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-num">0</span>, <span class="php-keyword2">strrpos</span>(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-var">$ext</span>));
+</span><span id="423" class="l"><a class="l" href="#423">423: </a>              <span class="php-var">$file</span> = <span class="php-var">$f</span>[<span class="php-quote">'path'</span>].<span class="php-var">$path</span>.<span class="php-var">$f</span>[<span class="php-quote">'ext'</span>];
+</span><span id="424" class="l"><a class="l" href="#424">424: </a>              <span class="php-keyword1">if</span> ( <span class="php-keyword2">file_exists</span>(<span class="php-var">$file</span>) ){
+</span><span id="425" class="l"><a class="l" href="#425">425: </a>                <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::create_path(<span class="php-var">$dest</span>) ){
+</span><span id="426" class="l"><a class="l" href="#426">426: </a>                  <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;Impossible to create the path </span><span class="php-var">$dest</span><span class="php-quote">&quot;</span>);
+</span><span id="427" class="l"><a class="l" href="#427">427: </a>                }
+</span><span id="428" class="l"><a class="l" href="#428">428: </a>                <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::<span class="php-keyword2">copy</span>(<span class="php-var">$file</span>, <span class="php-var">$dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'.'</span>.<span class="php-var">$f</span>[<span class="php-quote">'ext'</span>]) ){
+</span><span id="429" class="l"><a class="l" href="#429">429: </a>                  <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">'Impossible to export the file '</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'.'</span>.<span class="php-var">$f</span>[<span class="php-quote">'ext'</span>]);
+</span><span id="430" class="l"><a class="l" href="#430">430: </a>                }
+</span><span id="431" class="l"><a class="l" href="#431">431: </a>              }
+</span><span id="432" class="l"><a class="l" href="#432">432: </a>            }
+</span><span id="433" class="l"><a class="l" href="#433">433: </a>            <span class="php-keyword1">else</span> {
+</span><span id="434" class="l"><a class="l" href="#434">434: </a>              <span class="php-var">$dir</span> = <span class="php-var">$f</span>[<span class="php-quote">'path'</span>].<span class="php-var">$data</span>[<span class="php-quote">'name'</span>];
+</span><span id="435" class="l"><a class="l" href="#435">435: </a>              <span class="php-keyword1">if</span> ( <span class="php-keyword2">file_exists</span>(<span class="php-var">$dir</span>) ){
+</span><span id="436" class="l"><a class="l" href="#436">436: </a>                <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::<span class="php-keyword2">copy</span>(<span class="php-var">$dir</span>, <span class="php-var">$dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]) ){
+</span><span id="437" class="l"><a class="l" href="#437">437: </a>                  <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">'Impossible to export the folder '</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]);
+</span><span id="438" class="l"><a class="l" href="#438">438: </a>                }
+</span><span id="439" class="l"><a class="l" href="#439">439: </a>              }
+</span><span id="440" class="l"><a class="l" href="#440">440: </a>            }
+</span><span id="441" class="l"><a class="l" href="#441">441: </a>          }
+</span><span id="442" class="l"><a class="l" href="#442">442: </a>        }
+</span><span id="443" class="l"><a class="l" href="#443">443: </a>        <span class="php-keyword1">else</span> {
+</span><span id="444" class="l"><a class="l" href="#444">444: </a>          <span class="php-var">$ext</span> = \bbn\str\text::file_ext(<span class="php-var">$data</span>[<span class="php-quote">'path'</span>]);
+</span><span id="445" class="l"><a class="l" href="#445">445: </a>          <span class="php-var">$dir</span> = <span class="php-keyword1">false</span>;
+</span><span id="446" class="l"><a class="l" href="#446">446: </a>          <span class="php-keyword1">foreach</span> ( <span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]][<span class="php-quote">'files'</span>] <span class="php-keyword1">as</span> <span class="php-var">$f</span> ){
+</span><span id="447" class="l"><a class="l" href="#447">447: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$ext</span> === <span class="php-var">$f</span>[<span class="php-quote">'ext'</span>] ){
+</span><span id="448" class="l"><a class="l" href="#448">448: </a>              <span class="php-var">$dir</span> = <span class="php-var">$f</span>[<span class="php-quote">'root'</span>];
+</span><span id="449" class="l"><a class="l" href="#449">449: </a>            }
+</span><span id="450" class="l"><a class="l" href="#450">450: </a>          }
+</span><span id="451" class="l"><a class="l" href="#451">451: </a>          <span class="php-keyword1">if</span> ( !<span class="php-var">$dir</span> ){
+</span><span id="452" class="l"><a class="l" href="#452">452: </a>            <span class="php-var">$dir</span> = <span class="php-var">$dirs</span>[<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>]][<span class="php-quote">'files'</span>][<span class="php-num">0</span>][<span class="php-quote">'path'</span>];
+</span><span id="453" class="l"><a class="l" href="#453">453: </a>          }
+</span><span id="454" class="l"><a class="l" href="#454">454: </a>          <span class="php-var">$dest</span> = <span class="php-var">$root_dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'/'</span>.<span class="php-var">$data</span>[<span class="php-quote">'path'</span>];
+</span><span id="455" class="l"><a class="l" href="#455">455: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$data</span>[<span class="php-quote">'type'</span>] === <span class="php-quote">'file'</span> ) {
+</span><span id="456" class="l"><a class="l" href="#456">456: </a>            <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::create_path(<span class="php-keyword2">substr</span>(<span class="php-var">$dest</span>, <span class="php-num">0</span>, <span class="php-keyword2">strrpos</span>(<span class="php-var">$dest</span>, <span class="php-quote">'/'</span>) + <span class="php-num">1</span>)) ){
+</span><span id="457" class="l"><a class="l" href="#457">457: </a>              <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">'Impossible to create the path '</span> . <span class="php-keyword2">substr</span>(<span class="php-var">$dest</span>, <span class="php-num">0</span>, <span class="php-keyword2">strrpos</span>(<span class="php-var">$dest</span>, <span class="php-quote">'/'</span>) + <span class="php-num">1</span>));
+</span><span id="458" class="l"><a class="l" href="#458">458: </a>            }
+</span><span id="459" class="l"><a class="l" href="#459">459: </a>          }
+</span><span id="460" class="l"><a class="l" href="#460">460: </a>          <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::<span class="php-keyword2">copy</span>(<span class="php-var">$dir</span>.<span class="php-var">$data</span>[<span class="php-quote">'path'</span>], <span class="php-var">$dest</span>) ){
+</span><span id="461" class="l"><a class="l" href="#461">461: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">'Impossible to export the file or folder '</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]);
+</span><span id="462" class="l"><a class="l" href="#462">462: </a>          }
+</span><span id="463" class="l"><a class="l" href="#463">463: </a>        }
+</span><span id="464" class="l"><a class="l" href="#464">464: </a>        <span class="php-comment">// Create zip file</span>
+</span><span id="465" class="l"><a class="l" href="#465">465: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">class_exists</span>(<span class="php-quote">'\\ZipArchive'</span>) ) {
+</span><span id="466" class="l"><a class="l" href="#466">466: </a>          <span class="php-var">$dest</span> = ( <span class="php-var">$data</span>[<span class="php-quote">'dir'</span>] === <span class="php-quote">'controllers'</span> ) ? <span class="php-var">$root_dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'/mvc/'</span> : <span class="php-var">$dest</span>;
+</span><span id="467" class="l"><a class="l" href="#467">467: </a>          <span class="php-var">$filezip</span> = BBN_USER_PATH.<span class="php-quote">'tmp/'</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'.zip'</span>;
+</span><span id="468" class="l"><a class="l" href="#468">468: </a>          <span class="php-var">$zip</span> = <span class="php-keyword1">new</span> \ZipArchive();
+</span><span id="469" class="l"><a class="l" href="#469">469: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$err</span> = <span class="php-var">$zip</span>-&gt;open(<span class="php-var">$filezip</span>, \ZipArchive::OVERWRITE) ) {
+</span><span id="470" class="l"><a class="l" href="#470">470: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword2">file_exists</span>(<span class="php-var">$dest</span>) ){
+</span><span id="471" class="l"><a class="l" href="#471">471: </a>              <span class="php-keyword1">if</span> ( (<span class="php-var">$data</span>[<span class="php-quote">'type'</span>] === <span class="php-quote">'dir'</span>) || (<span class="php-var">$data</span>[<span class="php-quote">'dir'</span>] === <span class="php-quote">'controllers'</span>) ){
+</span><span id="472" class="l"><a class="l" href="#472">472: </a>                <span class="php-comment">// Create recursive directory iterator</span>
+</span><span id="473" class="l"><a class="l" href="#473">473: </a>                <span class="php-var">$files</span> = \bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::scan(<span class="php-var">$dest</span>);
+</span><span id="474" class="l"><a class="l" href="#474">474: </a>                <span class="php-keyword1">foreach</span> (<span class="php-var">$files</span> <span class="php-keyword1">as</span> <span class="php-var">$file</span>) {
+</span><span id="475" class="l"><a class="l" href="#475">475: </a>                  <span class="php-comment">// Add current file to archive</span>
+</span><span id="476" class="l"><a class="l" href="#476">476: </a>                  <span class="php-keyword1">if</span> ( (<span class="php-var">$file</span> !== <span class="php-var">$root_dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]) &amp;&amp;
+</span><span id="477" class="l"><a class="l" href="#477">477: </a>                    <span class="php-keyword2">is_file</span>(<span class="php-var">$file</span>) &amp;&amp;
+</span><span id="478" class="l"><a class="l" href="#478">478: </a>                    !<span class="php-var">$zip</span>-&gt;addFile(<span class="php-var">$file</span>, <span class="php-keyword2">str_replace</span>(<span class="php-var">$root_dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>].<span class="php-quote">'/'</span>, <span class="php-quote">''</span>, <span class="php-var">$file</span>))
+</span><span id="479" class="l"><a class="l" href="#479">479: </a>                  ){
+</span><span id="480" class="l"><a class="l" href="#480">480: </a>                    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;Impossible to add </span><span class="php-var">$file</span><span class="php-quote">&quot;</span>);
+</span><span id="481" class="l"><a class="l" href="#481">481: </a>                  }
+</span><span id="482" class="l"><a class="l" href="#482">482: </a>                }
+</span><span id="483" class="l"><a class="l" href="#483">483: </a>              }
+</span><span id="484" class="l"><a class="l" href="#484">484: </a>              <span class="php-keyword1">else</span> {
+</span><span id="485" class="l"><a class="l" href="#485">485: </a>                <span class="php-keyword1">if</span> ( !<span class="php-var">$zip</span>-&gt;addFile(<span class="php-var">$dest</span>, <span class="php-var">$data</span>[<span class="php-quote">'path'</span>]) ){
+</span><span id="486" class="l"><a class="l" href="#486">486: </a>                  <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;Impossible to add </span><span class="php-var">$dest</span><span class="php-quote">&quot;</span>);
+</span><span id="487" class="l"><a class="l" href="#487">487: </a>                }
+</span><span id="488" class="l"><a class="l" href="#488">488: </a>              }
+</span><span id="489" class="l"><a class="l" href="#489">489: </a>              <span class="php-keyword1">if</span> ( <span class="php-var">$zip</span>-&gt;close() ) {
+</span><span id="490" class="l"><a class="l" href="#490">490: </a>                <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::<span class="php-keyword2">delete</span>(<span class="php-var">$root_dest</span>, <span class="php-num">1</span>) ) {
+</span><span id="491" class="l"><a class="l" href="#491">491: </a>                  <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;Impossible to delete the directory </span><span class="php-var">$root_dest</span><span class="php-quote">&quot;</span>);
+</span><span id="492" class="l"><a class="l" href="#492">492: </a>                }
+</span><span id="493" class="l"><a class="l" href="#493">493: </a>                <span class="php-keyword1">return</span> <span class="php-var">$filezip</span>;
+</span><span id="494" class="l"><a class="l" href="#494">494: </a>              }
+</span><span id="495" class="l"><a class="l" href="#495">495: </a>              <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;Impossible to close the zip file </span><span class="php-var">$filezip</span><span class="php-quote">&quot;</span>);
+</span><span id="496" class="l"><a class="l" href="#496">496: </a>            }
+</span><span id="497" class="l"><a class="l" href="#497">497: </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;The path does not exist: </span><span class="php-var">$dest</span><span class="php-quote">&quot;</span>);
+</span><span id="498" class="l"><a class="l" href="#498">498: </a>          }
+</span><span id="499" class="l"><a class="l" href="#499">499: </a>          <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;Impossible to create </span><span class="php-var">$filezip</span><span class="php-quote"> (</span><span class="php-var">$err</span><span class="php-quote">)&quot;</span>);
+</span><span id="500" class="l"><a class="l" href="#500">500: </a>        }
+</span><span id="501" class="l"><a class="l" href="#501">501: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">&quot;ZipArchive class non-existent&quot;</span>);
+</span><span id="502" class="l"><a class="l" href="#502">502: </a>      }
+</span><span id="503" class="l"><a class="l" href="#503">503: </a>    }
+</span><span id="504" class="l"><a class="l" href="#504">504: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error();
+</span><span id="505" class="l"><a class="l" href="#505">505: </a>  }
+</span><span id="506" class="l"><a class="l" href="#506">506: </a>
+</span><span id="507" class="l"><a class="l" href="#507">507: </a>  <span class="php-comment">// Error</span>
+</span><span id="508" class="l"><a class="l" href="#508">508: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_error" href="#_error">error</a>(<span class="php-var">$msg</span> = <span class="php-quote">&quot;Error.&quot;</span>){
+</span><span id="509" class="l"><a class="l" href="#509">509: </a>    <span class="php-keyword1">return</span> [<span class="php-quote">&quot;error&quot;</span> =&gt; <span class="php-var">$msg</span>];
+</span><span id="510" class="l"><a class="l" href="#510">510: </a>  }
+</span><span id="511" class="l"><a class="l" href="#511">511: </a></span>}</code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
