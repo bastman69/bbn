@@ -8,7 +8,7 @@
 	<title>File mvc.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2543450898"></script>
+	<script type="text/javascript" src="elementlist.js?764555039"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -72,6 +72,7 @@
 				<li><a href="class-bbn.environment.html">environment</a></li>
 				<li class="active"><a href="class-bbn.mvc.html">mvc</a></li>
 				<li><a href="class-bbn.mvcv2.html">mvcv2</a></li>
+				<li><a href="class-bbn.mvcv3.html">mvcv3</a></li>
 				<li><a href="class-bbn.obj.html">obj</a></li>
 				<li><a href="class-bbn.tools.html">tools</a></li>
 				<li><a href="class-bbn.tpl.html">tpl</a></li>
@@ -149,7 +150,7 @@
 </span><span id="24" class="l"><a class="l" href="#24">  24: </a>
 </span><span id="25" class="l"><a class="l" href="#25">  25: </a>    <span class="php-keyword1">private</span>
 </span><span id="26" class="l"><a class="l" href="#26">  26: </a>    <span class="php-comment">/**
-</span></span><span id="27" class="l"><a class="l" href="#27">  27: </a><span class="php-comment">     * Is set to null while not routed, then 1 if routing was sucessful, and false otherwise.
+</span></span><span id="27" class="l"><a class="l" href="#27">  27: </a><span class="php-comment">     * Is set to null while not routed, then 1 if routing was successful, and false otherwise.
 </span></span><span id="28" class="l"><a class="l" href="#28">  28: </a><span class="php-comment">     * @var null|boolean
 </span></span><span id="29" class="l"><a class="l" href="#29">  29: </a><span class="php-comment">     */</span>
 </span><span id="30" class="l"><a class="l" href="#30">  30: </a>        <span class="php-var">$is_routed</span>,
@@ -174,7 +175,7 @@
 </span></span><span id="49" class="l"><a class="l" href="#49">  49: </a><span class="php-comment">     */</span>
 </span><span id="50" class="l"><a class="l" href="#50">  50: </a>    <span class="php-var">$path</span>,
 </span><span id="51" class="l"><a class="l" href="#51">  51: </a>    <span class="php-comment">/**
-</span></span><span id="52" class="l"><a class="l" href="#52">  52: </a><span class="php-comment">     * A path to be prepended to all views and models paths
+</span></span><span id="52" class="l"><a class="l" href="#52">  52: </a><span class="php-comment">     * A path to be prepended to all views and models paths not starting with /
 </span></span><span id="53" class="l"><a class="l" href="#53">  53: </a><span class="php-comment">     * @var null|string
 </span></span><span id="54" class="l"><a class="l" href="#54">  54: </a><span class="php-comment">     */</span>
 </span><span id="55" class="l"><a class="l" href="#55">  55: </a>    <span class="php-var">$prepath</span>,
@@ -905,16 +906,16 @@
 </span><span id="780" class="l"><a class="l" href="#780"> 780: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">empty</span>(<span class="php-var">$path</span>) ){
 </span><span id="781" class="l"><a class="l" href="#781"> 781: </a>                <span class="php-var">$path</span> = <span class="php-var">$this</span>-&gt;dest;
 </span><span id="782" class="l"><a class="l" href="#782"> 782: </a>            }
-</span><span id="783" class="l"><a class="l" href="#783"> 783: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;prepath ){
+</span><span id="783" class="l"><a class="l" href="#783"> 783: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;prepath &amp;&amp; (<span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'/'</span>) !== <span class="php-num">0</span>) ){
 </span><span id="784" class="l"><a class="l" href="#784"> 784: </a>        <span class="php-var">$path</span> = <span class="php-var">$this</span>-&gt;prepath.<span class="php-var">$path</span>;
 </span><span id="785" class="l"><a class="l" href="#785"> 785: </a>      }
 </span><span id="786" class="l"><a class="l" href="#786"> 786: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;outputs[<span class="php-var">$mode</span>]) ){
 </span><span id="787" class="l"><a class="l" href="#787"> 787: </a>                <span class="php-var">$ext</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">','</span>,<span class="php-var">$this</span>-&gt;outputs[<span class="php-var">$mode</span>]);
 </span><span id="788" class="l"><a class="l" href="#788"> 788: </a>                <span class="php-comment">/* First we look into the loaded_views if it isn't there already */</span>
 </span><span id="789" class="l"><a class="l" href="#789"> 789: </a>                <span class="php-keyword1">foreach</span> ( <span class="php-var">$ext</span> <span class="php-keyword1">as</span> <span class="php-var">$e</span> ){
-</span><span id="790" class="l"><a class="l" href="#790"> 790: </a>                    <span class="php-var">$file1</span> = <span class="php-var">$mode</span>.<span class="php-quote">'/'</span>.<span class="php-var">$path</span>.<span class="php-quote">'.'</span>.<span class="php-var">$e</span>;
+</span><span id="790" class="l"><a class="l" href="#790"> 790: </a>                    <span class="php-var">$file1</span> = \bbn\str\text::parse_path(<span class="php-var">$mode</span>.<span class="php-quote">'/'</span>.<span class="php-var">$path</span>.<span class="php-quote">'.'</span>.<span class="php-var">$e</span>);
 </span><span id="791" class="l"><a class="l" href="#791"> 791: </a>                    <span class="php-var">$t</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">'/'</span>,<span class="php-var">$path</span>);
-</span><span id="792" class="l"><a class="l" href="#792"> 792: </a>                    <span class="php-var">$file2</span> = <span class="php-var">$mode</span>.<span class="php-quote">'/'</span>.<span class="php-var">$path</span>.<span class="php-quote">'/'</span>.<span class="php-keyword2">array_pop</span>(<span class="php-var">$t</span>).<span class="php-quote">'.'</span>.<span class="php-var">$e</span>;
+</span><span id="792" class="l"><a class="l" href="#792"> 792: </a>                    <span class="php-var">$file2</span> = \bbn\str\text::parse_path(<span class="php-var">$mode</span>.<span class="php-quote">'/'</span>.<span class="php-var">$path</span>.<span class="php-quote">'/'</span>.<span class="php-keyword2">array_pop</span>(<span class="php-var">$t</span>).<span class="php-quote">'.'</span>.<span class="php-var">$e</span>);
 </span><span id="793" class="l"><a class="l" href="#793"> 793: </a>                    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;loaded_views[<span class="php-var">$file1</span>]) ){
 </span><span id="794" class="l"><a class="l" href="#794"> 794: </a>                        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;loaded_views[<span class="php-var">$file1</span>];
 </span><span id="795" class="l"><a class="l" href="#795"> 795: </a>                    }

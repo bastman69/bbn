@@ -8,7 +8,7 @@
 	<title>File str/text.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2543450898"></script>
+	<script type="text/javascript" src="elementlist.js?764555039"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -883,222 +883,225 @@
 </span><span id="763" class="l"><a class="l" href="#763">763: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_parse_path" href="#_parse_path">parse_path</a>(<span class="php-var">$path</span>)
 </span><span id="764" class="l"><a class="l" href="#764">764: </a>    {
 </span><span id="765" class="l"><a class="l" href="#765">765: </a>    <span class="php-var">$path</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">'\\'</span>, <span class="php-quote">'/'</span>, self::cast(<span class="php-var">$path</span>));
-</span><span id="766" class="l"><a class="l" href="#766">766: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'../'</span>) !== <span class="php-keyword1">false</span> ){
-</span><span id="767" class="l"><a class="l" href="#767">767: </a>      <span class="php-keyword1">return</span> <span class="php-quote">''</span>;
+</span><span id="766" class="l"><a class="l" href="#766">766: </a>    <span class="php-keyword1">while</span> ( <span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'//'</span>) !== <span class="php-keyword1">false</span> ) {
+</span><span id="767" class="l"><a class="l" href="#767">767: </a>      <span class="php-var">$path</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">'//'</span>, <span class="php-quote">'/'</span>, <span class="php-var">$path</span>);
 </span><span id="768" class="l"><a class="l" href="#768">768: </a>    }
-</span><span id="769" class="l"><a class="l" href="#769">769: </a>        <span class="php-keyword1">return</span> <span class="php-var">$path</span>;
-</span><span id="770" class="l"><a class="l" href="#770">770: </a>    }
-</span><span id="771" class="l"><a class="l" href="#771">771: </a>
-</span><span id="772" class="l"><a class="l" href="#772">772: </a>    <span class="php-comment">/**
-</span></span><span id="773" class="l"><a class="l" href="#773">773: </a><span class="php-comment">   * Replaces accented characters with their character without accent.
-</span></span><span id="774" class="l"><a class="l" href="#774">774: </a><span class="php-comment">   * 
-</span></span><span id="775" class="l"><a class="l" href="#775">775: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="776" class="l"><a class="l" href="#776">776: </a><span class="php-comment">   * \bbn\str\text::remove_accents(&quot;TÃ¨st FÃ¬lÃ¨ Ã²Ã¨Ã Ã¹&quot;); //Returns &quot;Test File oeau&quot;
-</span></span><span id="777" class="l"><a class="l" href="#777">777: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="778" class="l"><a class="l" href="#778">778: </a><span class="php-comment">   * 
-</span></span><span id="779" class="l"><a class="l" href="#779">779: </a><span class="php-comment">   * @param string $st The string.
-</span></span><span id="780" class="l"><a class="l" href="#780">780: </a><span class="php-comment">   * 
-</span></span><span id="781" class="l"><a class="l" href="#781">781: </a><span class="php-comment">     * @return string 
-</span></span><span id="782" class="l"><a class="l" href="#782">782: </a><span class="php-comment">     */</span>
-</span><span id="783" class="l"><a class="l" href="#783">783: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_remove_accents" href="#_remove_accents">remove_accents</a>(<span class="php-var">$st</span>)
-</span><span id="784" class="l"><a class="l" href="#784">784: </a>    {
-</span><span id="785" class="l"><a class="l" href="#785">785: </a>        <span class="php-var">$st</span> = <span class="php-keyword2">trim</span>(<span class="php-keyword2">mb_ereg_replace</span>(<span class="php-quote">'&amp;(.)(tilde|circ|grave|acute|uml|ring|oelig);'</span>, <span class="php-quote">'\\1'</span>, self::cast(<span class="php-var">$st</span>)));
-</span><span id="786" class="l"><a class="l" href="#786">786: </a>        <span class="php-var">$search</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot;,&quot;</span>,<span class="php-quote">&quot;ç,æ,œ,á,é,í,ó,ú,à,è,ì,ò,ù,ä,ë,ï,ö,ü,ÿ,â,ê,î,ô,û,å,e,i,ø,u,ą,ń,ł,ź,ę,À,Á,Â,Ã,Ä,Ç,È,É,Ê,Ë,Ì,Í,Î,Ï,Ñ,Ò,Ó,Ô,Õ,Ö,Ù,Ú,Û,Ü,Ý,Ł,Ś&quot;</span>);
-</span><span id="787" class="l"><a class="l" href="#787">787: </a>        <span class="php-var">$replace</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot;,&quot;</span>,<span class="php-quote">&quot;c,ae,oe,a,e,i,o,u,a,e,i,o,u,a,e,i,o,u,y,a,e,i,o,u,a,e,i,o,u,a,n,l,z,e,A,A,A,A,A,C,E,E,E,E,I,I,I,I,N,O,O,O,O,O,U,U,U,U,Y,L,S&quot;</span>);
-</span><span id="788" class="l"><a class="l" href="#788">788: </a>    <span class="php-keyword1">foreach</span> ( <span class="php-var">$search</span> <span class="php-keyword1">as</span> <span class="php-var">$i</span> =&gt; <span class="php-var">$s</span> )
-</span><span id="789" class="l"><a class="l" href="#789">789: </a>            <span class="php-var">$st</span> = <span class="php-keyword2">mb_ereg_replace</span>(<span class="php-var">$s</span>, <span class="php-var">$replace</span>[<span class="php-var">$i</span>], <span class="php-var">$st</span>);
-</span><span id="790" class="l"><a class="l" href="#790">790: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
-</span><span id="791" class="l"><a class="l" href="#791">791: </a>    }
-</span><span id="792" class="l"><a class="l" href="#792">792: </a>
-</span><span id="793" class="l"><a class="l" href="#793">793: </a>    <span class="php-comment">/**
-</span></span><span id="794" class="l"><a class="l" href="#794">794: </a><span class="php-comment">     * Checks if a string comply with SQL naming convention.
-</span></span><span id="795" class="l"><a class="l" href="#795">795: </a><span class="php-comment">     *
-</span></span><span id="796" class="l"><a class="l" href="#796">796: </a><span class="php-comment">     * &lt;code&gt;
-</span></span><span id="797" class="l"><a class="l" href="#797">797: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;Paul&quot;); //Returns true
-</span></span><span id="798" class="l"><a class="l" href="#798">798: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;PÃ ul&quot;); //Returns false
-</span></span><span id="799" class="l"><a class="l" href="#799">799: </a><span class="php-comment">     * &lt;/code&gt;
-</span></span><span id="800" class="l"><a class="l" href="#800">800: </a><span class="php-comment">     *
-</span></span><span id="801" class="l"><a class="l" href="#801">801: </a><span class="php-comment">     * @return bool
-</span></span><span id="802" class="l"><a class="l" href="#802">802: </a><span class="php-comment">     */</span>
-</span><span id="803" class="l"><a class="l" href="#803">803: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_check_name" href="#_check_name">check_name</a>(){
-</span><span id="804" class="l"><a class="l" href="#804">804: </a>
-</span><span id="805" class="l"><a class="l" href="#805">805: </a>        <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
-</span><span id="806" class="l"><a class="l" href="#806">806: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
-</span><span id="807" class="l"><a class="l" href="#807">807: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
-</span><span id="808" class="l"><a class="l" href="#808">808: </a>            <span class="php-var">$a</span> = self::cast(<span class="php-var">$a</span>);
-</span><span id="809" class="l"><a class="l" href="#809">809: </a>            <span class="php-var">$t</span> = <span class="php-keyword2">preg_match</span>(<span class="php-quote">'#[A-z0-9_]+#'</span>,<span class="php-var">$a</span>,<span class="php-var">$m</span>);
-</span><span id="810" class="l"><a class="l" href="#810">810: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$t</span> !== <span class="php-num">1</span> || <span class="php-var">$m</span>[<span class="php-num">0</span>] !== <span class="php-var">$a</span> ){
-</span><span id="811" class="l"><a class="l" href="#811">811: </a>                <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="812" class="l"><a class="l" href="#812">812: </a>            }
-</span><span id="813" class="l"><a class="l" href="#813">813: </a>        }
-</span><span id="814" class="l"><a class="l" href="#814">814: </a>
-</span><span id="815" class="l"><a class="l" href="#815">815: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="816" class="l"><a class="l" href="#816">816: </a>    }
-</span><span id="817" class="l"><a class="l" href="#817">817: </a>    <span class="php-comment">/**
-</span></span><span id="818" class="l"><a class="l" href="#818">818: </a><span class="php-comment">     * Checks if a string doesn't contain a filesystem path
-</span></span><span id="819" class="l"><a class="l" href="#819">819: </a><span class="php-comment">     *
-</span></span><span id="820" class="l"><a class="l" href="#820">820: </a><span class="php-comment">     * &lt;code&gt;
-</span></span><span id="821" class="l"><a class="l" href="#821">821: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;Paul&quot;); //Returns true
-</span></span><span id="822" class="l"><a class="l" href="#822">822: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;PA/ul&quot;); //Returns false
-</span></span><span id="823" class="l"><a class="l" href="#823">823: </a><span class="php-comment">     * &lt;/code&gt;
-</span></span><span id="824" class="l"><a class="l" href="#824">824: </a><span class="php-comment">     *
-</span></span><span id="825" class="l"><a class="l" href="#825">825: </a><span class="php-comment">     * @return bool
-</span></span><span id="826" class="l"><a class="l" href="#826">826: </a><span class="php-comment">     */</span>
-</span><span id="827" class="l"><a class="l" href="#827">827: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_check_filename" href="#_check_filename">check_filename</a>(){
-</span><span id="828" class="l"><a class="l" href="#828">828: </a>
-</span><span id="829" class="l"><a class="l" href="#829">829: </a>        <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
-</span><span id="830" class="l"><a class="l" href="#830">830: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
-</span><span id="831" class="l"><a class="l" href="#831">831: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
-</span><span id="832" class="l"><a class="l" href="#832">832: </a>            <span class="php-keyword1">if</span> ( !<span class="php-keyword2">is_string</span>(<span class="php-var">$a</span>) || (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'/'</span>) !== <span class="php-keyword1">false</span>) || (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'\\'</span>) !== <span class="php-keyword1">false</span>) ){
-</span><span id="833" class="l"><a class="l" href="#833">833: </a>                <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="834" class="l"><a class="l" href="#834">834: </a>            }
-</span><span id="835" class="l"><a class="l" href="#835">835: </a>        }
-</span><span id="836" class="l"><a class="l" href="#836">836: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="837" class="l"><a class="l" href="#837">837: </a>    }
-</span><span id="838" class="l"><a class="l" href="#838">838: </a>
-</span><span id="839" class="l"><a class="l" href="#839">839: </a>
-</span><span id="840" class="l"><a class="l" href="#840">840: </a>    <span class="php-comment">/**
-</span></span><span id="841" class="l"><a class="l" href="#841">841: </a><span class="php-comment">   * Checks if a string comply with SQL naming convention.
-</span></span><span id="842" class="l"><a class="l" href="#842">842: </a><span class="php-comment">   * Returns &quot;true&quot; if slash or backslash are present.
-</span></span><span id="843" class="l"><a class="l" href="#843">843: </a><span class="php-comment">   * 
-</span></span><span id="844" class="l"><a class="l" href="#844">844: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="845" class="l"><a class="l" href="#845">845: </a><span class="php-comment">   * \bbn\str\text::has_slash(&quot;Paul&quot;); //Returns false
-</span></span><span id="846" class="l"><a class="l" href="#846">846: </a><span class="php-comment">   * \bbn\str\text::has_slash(&quot;Paul/&quot;); //Returns true
-</span></span><span id="847" class="l"><a class="l" href="#847">847: </a><span class="php-comment">   * \bbn\str\text::has_slash(&quot;Paul\\&quot;); //Returns true
-</span></span><span id="848" class="l"><a class="l" href="#848">848: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="849" class="l"><a class="l" href="#849">849: </a><span class="php-comment">   * 
-</span></span><span id="850" class="l"><a class="l" href="#850">850: </a><span class="php-comment">   * @return bool
-</span></span><span id="851" class="l"><a class="l" href="#851">851: </a><span class="php-comment">     */</span>
-</span><span id="852" class="l"><a class="l" href="#852">852: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_has_slash" href="#_has_slash">has_slash</a>(){
-</span><span id="853" class="l"><a class="l" href="#853">853: </a>
-</span><span id="854" class="l"><a class="l" href="#854">854: </a>        <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
-</span><span id="855" class="l"><a class="l" href="#855">855: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
-</span><span id="856" class="l"><a class="l" href="#856">856: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
-</span><span id="857" class="l"><a class="l" href="#857">857: </a>      <span class="php-keyword1">if</span> ( (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'/'</span>) !== <span class="php-keyword1">false</span>) || (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'\\'</span>) !== <span class="php-keyword1">false</span>) ){
-</span><span id="858" class="l"><a class="l" href="#858">858: </a>        <span class="php-keyword1">return</span> <span class="php-num">1</span>;
-</span><span id="859" class="l"><a class="l" href="#859">859: </a>            }
-</span><span id="860" class="l"><a class="l" href="#860">860: </a>        }
-</span><span id="861" class="l"><a class="l" href="#861">861: </a>        
-</span><span id="862" class="l"><a class="l" href="#862">862: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="863" class="l"><a class="l" href="#863">863: </a>    }
-</span><span id="864" class="l"><a class="l" href="#864">864: </a>    
-</span><span id="865" class="l"><a class="l" href="#865">865: </a>  <span class="php-comment">/**
-</span></span><span id="866" class="l"><a class="l" href="#866">866: </a><span class="php-comment">   * Extracts all digits from a string.
-</span></span><span id="867" class="l"><a class="l" href="#867">867: </a><span class="php-comment">   * 
-</span></span><span id="868" class="l"><a class="l" href="#868">868: </a><span class="php-comment">   * &lt;code&gt;
-</span></span><span id="869" class="l"><a class="l" href="#869">869: </a><span class="php-comment">   * \bbn\str\text::get_numbers(&quot;test 13 example 24&quot;); //Returns 1324
-</span></span><span id="870" class="l"><a class="l" href="#870">870: </a><span class="php-comment">   * &lt;/code&gt;
-</span></span><span id="871" class="l"><a class="l" href="#871">871: </a><span class="php-comment">   * 
-</span></span><span id="872" class="l"><a class="l" href="#872">872: </a><span class="php-comment">   * @param string $st The string.
-</span></span><span id="873" class="l"><a class="l" href="#873">873: </a><span class="php-comment">   * 
-</span></span><span id="874" class="l"><a class="l" href="#874">874: </a><span class="php-comment">   * @return string
-</span></span><span id="875" class="l"><a class="l" href="#875">875: </a><span class="php-comment">   */</span>
-</span><span id="876" class="l"><a class="l" href="#876">876: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_get_numbers" href="#_get_numbers">get_numbers</a>(<span class="php-var">$st</span>){
-</span><span id="877" class="l"><a class="l" href="#877">877: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">&quot;/[^0-9]/&quot;</span>, <span class="php-quote">''</span>, self::cast(<span class="php-var">$st</span>));
-</span><span id="878" class="l"><a class="l" href="#878">878: </a>    }
-</span><span id="879" class="l"><a class="l" href="#879">879: </a>
-</span><span id="880" class="l"><a class="l" href="#880">880: </a>  <span class="php-comment">/**
-</span></span><span id="881" class="l"><a class="l" href="#881">881: </a><span class="php-comment">   * returns the argumented value, replacing non standard objects (not stdClass) by their class name.
-</span></span><span id="882" class="l"><a class="l" href="#882">882: </a><span class="php-comment">   * 
-</span></span><span id="883" class="l"><a class="l" href="#883">883: </a><span class="php-comment">   * @param mixed $o The item.
-</span></span><span id="884" class="l"><a class="l" href="#884">884: </a><span class="php-comment">   * 
-</span></span><span id="885" class="l"><a class="l" href="#885">885: </a><span class="php-comment">   * @return mixed
-</span></span><span id="886" class="l"><a class="l" href="#886">886: </a><span class="php-comment">   */</span>
-</span><span id="887" class="l"><a class="l" href="#887">887: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_make_readable" href="#_make_readable">make_readable</a>(<span class="php-var">$o</span>)
-</span><span id="888" class="l"><a class="l" href="#888">888: </a>  {
-</span><span id="889" class="l"><a class="l" href="#889">889: </a>    <span class="php-var">$is_array</span> = <span class="php-keyword1">false</span>;
-</span><span id="890" class="l"><a class="l" href="#890">890: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) ){
-</span><span id="891" class="l"><a class="l" href="#891">891: </a>      <span class="php-var">$class</span> = <span class="php-keyword2">get_class</span>(<span class="php-var">$o</span>);
-</span><span id="892" class="l"><a class="l" href="#892">892: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$class</span> === <span class="php-quote">'stdClass'</span> ){
-</span><span id="893" class="l"><a class="l" href="#893">893: </a>        <span class="php-var">$is_array</span> = <span class="php-num">1</span>;
-</span><span id="894" class="l"><a class="l" href="#894">894: </a>      }
-</span><span id="895" class="l"><a class="l" href="#895">895: </a>      <span class="php-keyword1">else</span>{
-</span><span id="896" class="l"><a class="l" href="#896">896: </a>        <span class="php-keyword1">return</span> <span class="php-var">$class</span>;
+</span><span id="769" class="l"><a class="l" href="#769">769: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'../'</span>) !== <span class="php-keyword1">false</span> ){
+</span><span id="770" class="l"><a class="l" href="#770">770: </a>      <span class="php-keyword1">return</span> <span class="php-quote">''</span>;
+</span><span id="771" class="l"><a class="l" href="#771">771: </a>    }
+</span><span id="772" class="l"><a class="l" href="#772">772: </a>        <span class="php-keyword1">return</span> <span class="php-var">$path</span>;
+</span><span id="773" class="l"><a class="l" href="#773">773: </a>    }
+</span><span id="774" class="l"><a class="l" href="#774">774: </a>
+</span><span id="775" class="l"><a class="l" href="#775">775: </a>    <span class="php-comment">/**
+</span></span><span id="776" class="l"><a class="l" href="#776">776: </a><span class="php-comment">   * Replaces accented characters with their character without accent.
+</span></span><span id="777" class="l"><a class="l" href="#777">777: </a><span class="php-comment">   * 
+</span></span><span id="778" class="l"><a class="l" href="#778">778: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="779" class="l"><a class="l" href="#779">779: </a><span class="php-comment">   * \bbn\str\text::remove_accents(&quot;TÃ¨st FÃ¬lÃ¨ Ã²Ã¨Ã Ã¹&quot;); //Returns &quot;Test File oeau&quot;
+</span></span><span id="780" class="l"><a class="l" href="#780">780: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="781" class="l"><a class="l" href="#781">781: </a><span class="php-comment">   * 
+</span></span><span id="782" class="l"><a class="l" href="#782">782: </a><span class="php-comment">   * @param string $st The string.
+</span></span><span id="783" class="l"><a class="l" href="#783">783: </a><span class="php-comment">   * 
+</span></span><span id="784" class="l"><a class="l" href="#784">784: </a><span class="php-comment">     * @return string 
+</span></span><span id="785" class="l"><a class="l" href="#785">785: </a><span class="php-comment">     */</span>
+</span><span id="786" class="l"><a class="l" href="#786">786: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_remove_accents" href="#_remove_accents">remove_accents</a>(<span class="php-var">$st</span>)
+</span><span id="787" class="l"><a class="l" href="#787">787: </a>    {
+</span><span id="788" class="l"><a class="l" href="#788">788: </a>        <span class="php-var">$st</span> = <span class="php-keyword2">trim</span>(<span class="php-keyword2">mb_ereg_replace</span>(<span class="php-quote">'&amp;(.)(tilde|circ|grave|acute|uml|ring|oelig);'</span>, <span class="php-quote">'\\1'</span>, self::cast(<span class="php-var">$st</span>)));
+</span><span id="789" class="l"><a class="l" href="#789">789: </a>        <span class="php-var">$search</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot;,&quot;</span>,<span class="php-quote">&quot;ç,æ,œ,á,é,í,ó,ú,à,è,ì,ò,ù,ä,ë,ï,ö,ü,ÿ,â,ê,î,ô,û,å,e,i,ø,u,ą,ń,ł,ź,ę,À,Á,Â,Ã,Ä,Ç,È,É,Ê,Ë,Ì,Í,Î,Ï,Ñ,Ò,Ó,Ô,Õ,Ö,Ù,Ú,Û,Ü,Ý,Ł,Ś&quot;</span>);
+</span><span id="790" class="l"><a class="l" href="#790">790: </a>        <span class="php-var">$replace</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">&quot;,&quot;</span>,<span class="php-quote">&quot;c,ae,oe,a,e,i,o,u,a,e,i,o,u,a,e,i,o,u,y,a,e,i,o,u,a,e,i,o,u,a,n,l,z,e,A,A,A,A,A,C,E,E,E,E,I,I,I,I,N,O,O,O,O,O,U,U,U,U,Y,L,S&quot;</span>);
+</span><span id="791" class="l"><a class="l" href="#791">791: </a>    <span class="php-keyword1">foreach</span> ( <span class="php-var">$search</span> <span class="php-keyword1">as</span> <span class="php-var">$i</span> =&gt; <span class="php-var">$s</span> )
+</span><span id="792" class="l"><a class="l" href="#792">792: </a>            <span class="php-var">$st</span> = <span class="php-keyword2">mb_ereg_replace</span>(<span class="php-var">$s</span>, <span class="php-var">$replace</span>[<span class="php-var">$i</span>], <span class="php-var">$st</span>);
+</span><span id="793" class="l"><a class="l" href="#793">793: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
+</span><span id="794" class="l"><a class="l" href="#794">794: </a>    }
+</span><span id="795" class="l"><a class="l" href="#795">795: </a>
+</span><span id="796" class="l"><a class="l" href="#796">796: </a>    <span class="php-comment">/**
+</span></span><span id="797" class="l"><a class="l" href="#797">797: </a><span class="php-comment">     * Checks if a string comply with SQL naming convention.
+</span></span><span id="798" class="l"><a class="l" href="#798">798: </a><span class="php-comment">     *
+</span></span><span id="799" class="l"><a class="l" href="#799">799: </a><span class="php-comment">     * &lt;code&gt;
+</span></span><span id="800" class="l"><a class="l" href="#800">800: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;Paul&quot;); //Returns true
+</span></span><span id="801" class="l"><a class="l" href="#801">801: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;PÃ ul&quot;); //Returns false
+</span></span><span id="802" class="l"><a class="l" href="#802">802: </a><span class="php-comment">     * &lt;/code&gt;
+</span></span><span id="803" class="l"><a class="l" href="#803">803: </a><span class="php-comment">     *
+</span></span><span id="804" class="l"><a class="l" href="#804">804: </a><span class="php-comment">     * @return bool
+</span></span><span id="805" class="l"><a class="l" href="#805">805: </a><span class="php-comment">     */</span>
+</span><span id="806" class="l"><a class="l" href="#806">806: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_check_name" href="#_check_name">check_name</a>(){
+</span><span id="807" class="l"><a class="l" href="#807">807: </a>
+</span><span id="808" class="l"><a class="l" href="#808">808: </a>        <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
+</span><span id="809" class="l"><a class="l" href="#809">809: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
+</span><span id="810" class="l"><a class="l" href="#810">810: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
+</span><span id="811" class="l"><a class="l" href="#811">811: </a>            <span class="php-var">$a</span> = self::cast(<span class="php-var">$a</span>);
+</span><span id="812" class="l"><a class="l" href="#812">812: </a>            <span class="php-var">$t</span> = <span class="php-keyword2">preg_match</span>(<span class="php-quote">'#[A-z0-9_]+#'</span>,<span class="php-var">$a</span>,<span class="php-var">$m</span>);
+</span><span id="813" class="l"><a class="l" href="#813">813: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$t</span> !== <span class="php-num">1</span> || <span class="php-var">$m</span>[<span class="php-num">0</span>] !== <span class="php-var">$a</span> ){
+</span><span id="814" class="l"><a class="l" href="#814">814: </a>                <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="815" class="l"><a class="l" href="#815">815: </a>            }
+</span><span id="816" class="l"><a class="l" href="#816">816: </a>        }
+</span><span id="817" class="l"><a class="l" href="#817">817: </a>
+</span><span id="818" class="l"><a class="l" href="#818">818: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="819" class="l"><a class="l" href="#819">819: </a>    }
+</span><span id="820" class="l"><a class="l" href="#820">820: </a>    <span class="php-comment">/**
+</span></span><span id="821" class="l"><a class="l" href="#821">821: </a><span class="php-comment">     * Checks if a string doesn't contain a filesystem path
+</span></span><span id="822" class="l"><a class="l" href="#822">822: </a><span class="php-comment">     *
+</span></span><span id="823" class="l"><a class="l" href="#823">823: </a><span class="php-comment">     * &lt;code&gt;
+</span></span><span id="824" class="l"><a class="l" href="#824">824: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;Paul&quot;); //Returns true
+</span></span><span id="825" class="l"><a class="l" href="#825">825: </a><span class="php-comment">     * \bbn\str\text::check_name(&quot;PA/ul&quot;); //Returns false
+</span></span><span id="826" class="l"><a class="l" href="#826">826: </a><span class="php-comment">     * &lt;/code&gt;
+</span></span><span id="827" class="l"><a class="l" href="#827">827: </a><span class="php-comment">     *
+</span></span><span id="828" class="l"><a class="l" href="#828">828: </a><span class="php-comment">     * @return bool
+</span></span><span id="829" class="l"><a class="l" href="#829">829: </a><span class="php-comment">     */</span>
+</span><span id="830" class="l"><a class="l" href="#830">830: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_check_filename" href="#_check_filename">check_filename</a>(){
+</span><span id="831" class="l"><a class="l" href="#831">831: </a>
+</span><span id="832" class="l"><a class="l" href="#832">832: </a>        <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
+</span><span id="833" class="l"><a class="l" href="#833">833: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
+</span><span id="834" class="l"><a class="l" href="#834">834: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
+</span><span id="835" class="l"><a class="l" href="#835">835: </a>            <span class="php-keyword1">if</span> ( !<span class="php-keyword2">is_string</span>(<span class="php-var">$a</span>) || (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'/'</span>) !== <span class="php-keyword1">false</span>) || (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'\\'</span>) !== <span class="php-keyword1">false</span>) ){
+</span><span id="836" class="l"><a class="l" href="#836">836: </a>                <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="837" class="l"><a class="l" href="#837">837: </a>            }
+</span><span id="838" class="l"><a class="l" href="#838">838: </a>        }
+</span><span id="839" class="l"><a class="l" href="#839">839: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="840" class="l"><a class="l" href="#840">840: </a>    }
+</span><span id="841" class="l"><a class="l" href="#841">841: </a>
+</span><span id="842" class="l"><a class="l" href="#842">842: </a>
+</span><span id="843" class="l"><a class="l" href="#843">843: </a>    <span class="php-comment">/**
+</span></span><span id="844" class="l"><a class="l" href="#844">844: </a><span class="php-comment">   * Checks if a string comply with SQL naming convention.
+</span></span><span id="845" class="l"><a class="l" href="#845">845: </a><span class="php-comment">   * Returns &quot;true&quot; if slash or backslash are present.
+</span></span><span id="846" class="l"><a class="l" href="#846">846: </a><span class="php-comment">   * 
+</span></span><span id="847" class="l"><a class="l" href="#847">847: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="848" class="l"><a class="l" href="#848">848: </a><span class="php-comment">   * \bbn\str\text::has_slash(&quot;Paul&quot;); //Returns false
+</span></span><span id="849" class="l"><a class="l" href="#849">849: </a><span class="php-comment">   * \bbn\str\text::has_slash(&quot;Paul/&quot;); //Returns true
+</span></span><span id="850" class="l"><a class="l" href="#850">850: </a><span class="php-comment">   * \bbn\str\text::has_slash(&quot;Paul\\&quot;); //Returns true
+</span></span><span id="851" class="l"><a class="l" href="#851">851: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="852" class="l"><a class="l" href="#852">852: </a><span class="php-comment">   * 
+</span></span><span id="853" class="l"><a class="l" href="#853">853: </a><span class="php-comment">   * @return bool
+</span></span><span id="854" class="l"><a class="l" href="#854">854: </a><span class="php-comment">     */</span>
+</span><span id="855" class="l"><a class="l" href="#855">855: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_has_slash" href="#_has_slash">has_slash</a>(){
+</span><span id="856" class="l"><a class="l" href="#856">856: </a>
+</span><span id="857" class="l"><a class="l" href="#857">857: </a>        <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
+</span><span id="858" class="l"><a class="l" href="#858">858: </a>        <span class="php-comment">// Each argument must be a string starting with a letter, and having than one character made of letters, numbers and underscores</span>
+</span><span id="859" class="l"><a class="l" href="#859">859: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$args</span> <span class="php-keyword1">as</span> <span class="php-var">$a</span> ){
+</span><span id="860" class="l"><a class="l" href="#860">860: </a>      <span class="php-keyword1">if</span> ( (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'/'</span>) !== <span class="php-keyword1">false</span>) || (<span class="php-keyword2">strpos</span>(<span class="php-var">$a</span>, <span class="php-quote">'\\'</span>) !== <span class="php-keyword1">false</span>) ){
+</span><span id="861" class="l"><a class="l" href="#861">861: </a>        <span class="php-keyword1">return</span> <span class="php-num">1</span>;
+</span><span id="862" class="l"><a class="l" href="#862">862: </a>            }
+</span><span id="863" class="l"><a class="l" href="#863">863: </a>        }
+</span><span id="864" class="l"><a class="l" href="#864">864: </a>        
+</span><span id="865" class="l"><a class="l" href="#865">865: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="866" class="l"><a class="l" href="#866">866: </a>    }
+</span><span id="867" class="l"><a class="l" href="#867">867: </a>    
+</span><span id="868" class="l"><a class="l" href="#868">868: </a>  <span class="php-comment">/**
+</span></span><span id="869" class="l"><a class="l" href="#869">869: </a><span class="php-comment">   * Extracts all digits from a string.
+</span></span><span id="870" class="l"><a class="l" href="#870">870: </a><span class="php-comment">   * 
+</span></span><span id="871" class="l"><a class="l" href="#871">871: </a><span class="php-comment">   * &lt;code&gt;
+</span></span><span id="872" class="l"><a class="l" href="#872">872: </a><span class="php-comment">   * \bbn\str\text::get_numbers(&quot;test 13 example 24&quot;); //Returns 1324
+</span></span><span id="873" class="l"><a class="l" href="#873">873: </a><span class="php-comment">   * &lt;/code&gt;
+</span></span><span id="874" class="l"><a class="l" href="#874">874: </a><span class="php-comment">   * 
+</span></span><span id="875" class="l"><a class="l" href="#875">875: </a><span class="php-comment">   * @param string $st The string.
+</span></span><span id="876" class="l"><a class="l" href="#876">876: </a><span class="php-comment">   * 
+</span></span><span id="877" class="l"><a class="l" href="#877">877: </a><span class="php-comment">   * @return string
+</span></span><span id="878" class="l"><a class="l" href="#878">878: </a><span class="php-comment">   */</span>
+</span><span id="879" class="l"><a class="l" href="#879">879: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_get_numbers" href="#_get_numbers">get_numbers</a>(<span class="php-var">$st</span>){
+</span><span id="880" class="l"><a class="l" href="#880">880: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">preg_replace</span>(<span class="php-quote">&quot;/[^0-9]/&quot;</span>, <span class="php-quote">''</span>, self::cast(<span class="php-var">$st</span>));
+</span><span id="881" class="l"><a class="l" href="#881">881: </a>    }
+</span><span id="882" class="l"><a class="l" href="#882">882: </a>
+</span><span id="883" class="l"><a class="l" href="#883">883: </a>  <span class="php-comment">/**
+</span></span><span id="884" class="l"><a class="l" href="#884">884: </a><span class="php-comment">   * returns the argumented value, replacing non standard objects (not stdClass) by their class name.
+</span></span><span id="885" class="l"><a class="l" href="#885">885: </a><span class="php-comment">   * 
+</span></span><span id="886" class="l"><a class="l" href="#886">886: </a><span class="php-comment">   * @param mixed $o The item.
+</span></span><span id="887" class="l"><a class="l" href="#887">887: </a><span class="php-comment">   * 
+</span></span><span id="888" class="l"><a class="l" href="#888">888: </a><span class="php-comment">   * @return mixed
+</span></span><span id="889" class="l"><a class="l" href="#889">889: </a><span class="php-comment">   */</span>
+</span><span id="890" class="l"><a class="l" href="#890">890: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_make_readable" href="#_make_readable">make_readable</a>(<span class="php-var">$o</span>)
+</span><span id="891" class="l"><a class="l" href="#891">891: </a>  {
+</span><span id="892" class="l"><a class="l" href="#892">892: </a>    <span class="php-var">$is_array</span> = <span class="php-keyword1">false</span>;
+</span><span id="893" class="l"><a class="l" href="#893">893: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) ){
+</span><span id="894" class="l"><a class="l" href="#894">894: </a>      <span class="php-var">$class</span> = <span class="php-keyword2">get_class</span>(<span class="php-var">$o</span>);
+</span><span id="895" class="l"><a class="l" href="#895">895: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$class</span> === <span class="php-quote">'stdClass'</span> ){
+</span><span id="896" class="l"><a class="l" href="#896">896: </a>        <span class="php-var">$is_array</span> = <span class="php-num">1</span>;
 </span><span id="897" class="l"><a class="l" href="#897">897: </a>      }
-</span><span id="898" class="l"><a class="l" href="#898">898: </a>    }
-</span><span id="899" class="l"><a class="l" href="#899">899: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$o</span>) || <span class="php-var">$is_array</span> ){
-</span><span id="900" class="l"><a class="l" href="#900">900: </a>      <span class="php-var">$r</span> = [];
-</span><span id="901" class="l"><a class="l" href="#901">901: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$o</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span> ){
-</span><span id="902" class="l"><a class="l" href="#902">902: </a>        <span class="php-var">$r</span>[<span class="php-var">$k</span>] = self::make_readable(<span class="php-var">$v</span>);
-</span><span id="903" class="l"><a class="l" href="#903">903: </a>      }
-</span><span id="904" class="l"><a class="l" href="#904">904: </a>      <span class="php-keyword1">return</span> <span class="php-var">$r</span>;
-</span><span id="905" class="l"><a class="l" href="#905">905: </a>    }
-</span><span id="906" class="l"><a class="l" href="#906">906: </a>    <span class="php-keyword1">return</span> <span class="php-var">$o</span>;
-</span><span id="907" class="l"><a class="l" href="#907">907: </a>  }
-</span><span id="908" class="l"><a class="l" href="#908">908: </a>
-</span><span id="909" class="l"><a class="l" href="#909">909: </a>  <span class="php-comment">/**
-</span></span><span id="910" class="l"><a class="l" href="#910">910: </a><span class="php-comment">   * Returns a variable in a fashion that is directly usable by PHP.
-</span></span><span id="911" class="l"><a class="l" href="#911">911: </a><span class="php-comment">   * 
-</span></span><span id="912" class="l"><a class="l" href="#912">912: </a><span class="php-comment">   * @param mixed $o The item to be.
-</span></span><span id="913" class="l"><a class="l" href="#913">913: </a><span class="php-comment">   * @param bool $remove_empty Default: &quot;false&quot;.
-</span></span><span id="914" class="l"><a class="l" href="#914">914: </a><span class="php-comment">   * @param int $lev Default: &quot;1&quot;.
-</span></span><span id="915" class="l"><a class="l" href="#915">915: </a><span class="php-comment">   * 
-</span></span><span id="916" class="l"><a class="l" href="#916">916: </a><span class="php-comment">   * @return mixed
-</span></span><span id="917" class="l"><a class="l" href="#917">917: </a><span class="php-comment">   */</span>
-</span><span id="918" class="l"><a class="l" href="#918">918: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_export" href="#_export">export</a>(<span class="php-var">$o</span>, <span class="php-var">$remove_empty</span>=<span class="php-keyword1">false</span>, <span class="php-var">$lev</span>=<span class="php-num">1</span>){
-</span><span id="919" class="l"><a class="l" href="#919">919: </a>    <span class="php-var">$st</span> = <span class="php-quote">''</span>;
-</span><span id="920" class="l"><a class="l" href="#920">920: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) &amp;&amp; (<span class="php-var">$cls</span> = <span class="php-keyword2">get_class</span>(<span class="php-var">$o</span>)) &amp;&amp; (<span class="php-var">$cls</span> !== <span class="php-quote">'stdClass'</span>) ){
-</span><span id="921" class="l"><a class="l" href="#921">921: </a>      <span class="php-var">$st</span> .= <span class="php-quote">&quot;Object &quot;</span>.<span class="php-keyword2">get_class</span>(<span class="php-var">$o</span>).PHP_EOL;
-</span><span id="922" class="l"><a class="l" href="#922">922: </a>    }
-</span><span id="923" class="l"><a class="l" href="#923">923: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) || <span class="php-keyword2">is_array</span>(<span class="php-var">$o</span>) ){
-</span><span id="924" class="l"><a class="l" href="#924">924: </a>      <span class="php-var">$is_assoc</span> = (<span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) || \bbn\tools::is_assoc(<span class="php-var">$o</span>));
-</span><span id="925" class="l"><a class="l" href="#925">925: </a>      <span class="php-comment">//$st .= $is_assoc ? '{' : '[';</span>
-</span><span id="926" class="l"><a class="l" href="#926">926: </a>      <span class="php-var">$st</span> .= <span class="php-quote">'['</span>;
-</span><span id="927" class="l"><a class="l" href="#927">927: </a>      <span class="php-var">$st</span> .= PHP_EOL;
-</span><span id="928" class="l"><a class="l" href="#928">928: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$o</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span> ){
-</span><span id="929" class="l"><a class="l" href="#929">929: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$remove_empty</span> &amp;&amp; ( ( <span class="php-keyword2">is_string</span>(<span class="php-var">$v</span>) &amp;&amp; <span class="php-keyword1">empty</span>(<span class="php-var">$v</span>) ) || ( <span class="php-keyword2">is_array</span>(<span class="php-var">$v</span>) &amp;&amp; <span class="php-keyword2">count</span>(<span class="php-var">$v</span>) === <span class="php-num">0</span> ) ) ){
-</span><span id="930" class="l"><a class="l" href="#930">930: </a>          <span class="php-keyword1">continue</span>;
-</span><span id="931" class="l"><a class="l" href="#931">931: </a>        }
-</span><span id="932" class="l"><a class="l" href="#932">932: </a>        <span class="php-var">$st</span> .= <span class="php-keyword2">str_repeat</span>(<span class="php-quote">'    '</span>, <span class="php-var">$lev</span>);
-</span><span id="933" class="l"><a class="l" href="#933">933: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$is_assoc</span> ){
-</span><span id="934" class="l"><a class="l" href="#934">934: </a>          <span class="php-var">$st</span> .= ( <span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>) ? <span class="php-quote">&quot;'&quot;</span>.\bbn\str\text::escape_squote(<span class="php-var">$k</span>).<span class="php-quote">&quot;'&quot;</span> : <span class="php-var">$k</span> ). <span class="php-quote">&quot; =&gt; &quot;</span>;
-</span><span id="935" class="l"><a class="l" href="#935">935: </a>        }
-</span><span id="936" class="l"><a class="l" href="#936">936: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$v</span>) ){
-</span><span id="937" class="l"><a class="l" href="#937">937: </a>          <span class="php-var">$st</span> .= self::export(<span class="php-var">$v</span>, <span class="php-var">$remove_empty</span>, <span class="php-var">$lev</span>+<span class="php-num">1</span>);
+</span><span id="898" class="l"><a class="l" href="#898">898: </a>      <span class="php-keyword1">else</span>{
+</span><span id="899" class="l"><a class="l" href="#899">899: </a>        <span class="php-keyword1">return</span> <span class="php-var">$class</span>;
+</span><span id="900" class="l"><a class="l" href="#900">900: </a>      }
+</span><span id="901" class="l"><a class="l" href="#901">901: </a>    }
+</span><span id="902" class="l"><a class="l" href="#902">902: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$o</span>) || <span class="php-var">$is_array</span> ){
+</span><span id="903" class="l"><a class="l" href="#903">903: </a>      <span class="php-var">$r</span> = [];
+</span><span id="904" class="l"><a class="l" href="#904">904: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$o</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span> ){
+</span><span id="905" class="l"><a class="l" href="#905">905: </a>        <span class="php-var">$r</span>[<span class="php-var">$k</span>] = self::make_readable(<span class="php-var">$v</span>);
+</span><span id="906" class="l"><a class="l" href="#906">906: </a>      }
+</span><span id="907" class="l"><a class="l" href="#907">907: </a>      <span class="php-keyword1">return</span> <span class="php-var">$r</span>;
+</span><span id="908" class="l"><a class="l" href="#908">908: </a>    }
+</span><span id="909" class="l"><a class="l" href="#909">909: </a>    <span class="php-keyword1">return</span> <span class="php-var">$o</span>;
+</span><span id="910" class="l"><a class="l" href="#910">910: </a>  }
+</span><span id="911" class="l"><a class="l" href="#911">911: </a>
+</span><span id="912" class="l"><a class="l" href="#912">912: </a>  <span class="php-comment">/**
+</span></span><span id="913" class="l"><a class="l" href="#913">913: </a><span class="php-comment">   * Returns a variable in a fashion that is directly usable by PHP.
+</span></span><span id="914" class="l"><a class="l" href="#914">914: </a><span class="php-comment">   * 
+</span></span><span id="915" class="l"><a class="l" href="#915">915: </a><span class="php-comment">   * @param mixed $o The item to be.
+</span></span><span id="916" class="l"><a class="l" href="#916">916: </a><span class="php-comment">   * @param bool $remove_empty Default: &quot;false&quot;.
+</span></span><span id="917" class="l"><a class="l" href="#917">917: </a><span class="php-comment">   * @param int $lev Default: &quot;1&quot;.
+</span></span><span id="918" class="l"><a class="l" href="#918">918: </a><span class="php-comment">   * 
+</span></span><span id="919" class="l"><a class="l" href="#919">919: </a><span class="php-comment">   * @return mixed
+</span></span><span id="920" class="l"><a class="l" href="#920">920: </a><span class="php-comment">   */</span>
+</span><span id="921" class="l"><a class="l" href="#921">921: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_export" href="#_export">export</a>(<span class="php-var">$o</span>, <span class="php-var">$remove_empty</span>=<span class="php-keyword1">false</span>, <span class="php-var">$lev</span>=<span class="php-num">1</span>){
+</span><span id="922" class="l"><a class="l" href="#922">922: </a>    <span class="php-var">$st</span> = <span class="php-quote">''</span>;
+</span><span id="923" class="l"><a class="l" href="#923">923: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) &amp;&amp; (<span class="php-var">$cls</span> = <span class="php-keyword2">get_class</span>(<span class="php-var">$o</span>)) &amp;&amp; (<span class="php-var">$cls</span> !== <span class="php-quote">'stdClass'</span>) ){
+</span><span id="924" class="l"><a class="l" href="#924">924: </a>      <span class="php-var">$st</span> .= <span class="php-quote">&quot;Object &quot;</span>.<span class="php-keyword2">get_class</span>(<span class="php-var">$o</span>).PHP_EOL;
+</span><span id="925" class="l"><a class="l" href="#925">925: </a>    }
+</span><span id="926" class="l"><a class="l" href="#926">926: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) || <span class="php-keyword2">is_array</span>(<span class="php-var">$o</span>) ){
+</span><span id="927" class="l"><a class="l" href="#927">927: </a>      <span class="php-var">$is_assoc</span> = (<span class="php-keyword2">is_object</span>(<span class="php-var">$o</span>) || \bbn\tools::is_assoc(<span class="php-var">$o</span>));
+</span><span id="928" class="l"><a class="l" href="#928">928: </a>      <span class="php-comment">//$st .= $is_assoc ? '{' : '[';</span>
+</span><span id="929" class="l"><a class="l" href="#929">929: </a>      <span class="php-var">$st</span> .= <span class="php-quote">'['</span>;
+</span><span id="930" class="l"><a class="l" href="#930">930: </a>      <span class="php-var">$st</span> .= PHP_EOL;
+</span><span id="931" class="l"><a class="l" href="#931">931: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$o</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> =&gt; <span class="php-var">$v</span> ){
+</span><span id="932" class="l"><a class="l" href="#932">932: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$remove_empty</span> &amp;&amp; ( ( <span class="php-keyword2">is_string</span>(<span class="php-var">$v</span>) &amp;&amp; <span class="php-keyword1">empty</span>(<span class="php-var">$v</span>) ) || ( <span class="php-keyword2">is_array</span>(<span class="php-var">$v</span>) &amp;&amp; <span class="php-keyword2">count</span>(<span class="php-var">$v</span>) === <span class="php-num">0</span> ) ) ){
+</span><span id="933" class="l"><a class="l" href="#933">933: </a>          <span class="php-keyword1">continue</span>;
+</span><span id="934" class="l"><a class="l" href="#934">934: </a>        }
+</span><span id="935" class="l"><a class="l" href="#935">935: </a>        <span class="php-var">$st</span> .= <span class="php-keyword2">str_repeat</span>(<span class="php-quote">'    '</span>, <span class="php-var">$lev</span>);
+</span><span id="936" class="l"><a class="l" href="#936">936: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$is_assoc</span> ){
+</span><span id="937" class="l"><a class="l" href="#937">937: </a>          <span class="php-var">$st</span> .= ( <span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>) ? <span class="php-quote">&quot;'&quot;</span>.\bbn\str\text::escape_squote(<span class="php-var">$k</span>).<span class="php-quote">&quot;'&quot;</span> : <span class="php-var">$k</span> ). <span class="php-quote">&quot; =&gt; &quot;</span>;
 </span><span id="938" class="l"><a class="l" href="#938">938: </a>        }
-</span><span id="939" class="l"><a class="l" href="#939">939: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$v</span>) ){
-</span><span id="940" class="l"><a class="l" href="#940">940: </a>          <span class="php-var">$cls</span> = <span class="php-keyword2">get_class</span>(<span class="php-var">$v</span>);
-</span><span id="941" class="l"><a class="l" href="#941">941: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$cls</span> === <span class="php-quote">'stdClass'</span> ){
-</span><span id="942" class="l"><a class="l" href="#942">942: </a>            <span class="php-var">$st</span> .= self::export(<span class="php-var">$v</span>, <span class="php-var">$remove_empty</span>, <span class="php-var">$lev</span>+<span class="php-num">1</span>);
-</span><span id="943" class="l"><a class="l" href="#943">943: </a>          }
-</span><span id="944" class="l"><a class="l" href="#944">944: </a>          <span class="php-keyword1">else</span>{
-</span><span id="945" class="l"><a class="l" href="#945">945: </a>            <span class="php-var">$st</span> .= <span class="php-quote">&quot;Object </span><span class="php-var">$cls</span><span class="php-quote">&quot;</span>;
+</span><span id="939" class="l"><a class="l" href="#939">939: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$v</span>) ){
+</span><span id="940" class="l"><a class="l" href="#940">940: </a>          <span class="php-var">$st</span> .= self::export(<span class="php-var">$v</span>, <span class="php-var">$remove_empty</span>, <span class="php-var">$lev</span>+<span class="php-num">1</span>);
+</span><span id="941" class="l"><a class="l" href="#941">941: </a>        }
+</span><span id="942" class="l"><a class="l" href="#942">942: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_object</span>(<span class="php-var">$v</span>) ){
+</span><span id="943" class="l"><a class="l" href="#943">943: </a>          <span class="php-var">$cls</span> = <span class="php-keyword2">get_class</span>(<span class="php-var">$v</span>);
+</span><span id="944" class="l"><a class="l" href="#944">944: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$cls</span> === <span class="php-quote">'stdClass'</span> ){
+</span><span id="945" class="l"><a class="l" href="#945">945: </a>            <span class="php-var">$st</span> .= self::export(<span class="php-var">$v</span>, <span class="php-var">$remove_empty</span>, <span class="php-var">$lev</span>+<span class="php-num">1</span>);
 </span><span id="946" class="l"><a class="l" href="#946">946: </a>          }
-</span><span id="947" class="l"><a class="l" href="#947">947: </a>        }
-</span><span id="948" class="l"><a class="l" href="#948">948: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$v</span> === <span class="php-num">0</span> ){
-</span><span id="949" class="l"><a class="l" href="#949">949: </a>          <span class="php-var">$st</span> .= <span class="php-quote">'0'</span>;
+</span><span id="947" class="l"><a class="l" href="#947">947: </a>          <span class="php-keyword1">else</span>{
+</span><span id="948" class="l"><a class="l" href="#948">948: </a>            <span class="php-var">$st</span> .= <span class="php-quote">&quot;Object </span><span class="php-var">$cls</span><span class="php-quote">&quot;</span>;
+</span><span id="949" class="l"><a class="l" href="#949">949: </a>          }
 </span><span id="950" class="l"><a class="l" href="#950">950: </a>        }
-</span><span id="951" class="l"><a class="l" href="#951">951: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_null</span>(<span class="php-var">$v</span>) ){
-</span><span id="952" class="l"><a class="l" href="#952">952: </a>          <span class="php-var">$st</span> .= <span class="php-quote">'null'</span>;
+</span><span id="951" class="l"><a class="l" href="#951">951: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$v</span> === <span class="php-num">0</span> ){
+</span><span id="952" class="l"><a class="l" href="#952">952: </a>          <span class="php-var">$st</span> .= <span class="php-quote">'0'</span>;
 </span><span id="953" class="l"><a class="l" href="#953">953: </a>        }
-</span><span id="954" class="l"><a class="l" href="#954">954: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_bool</span>(<span class="php-var">$v</span>) ){
-</span><span id="955" class="l"><a class="l" href="#955">955: </a>          <span class="php-var">$st</span> .= <span class="php-var">$v</span> === <span class="php-keyword1">false</span> ? <span class="php-quote">'false'</span> : <span class="php-quote">'true'</span>;
+</span><span id="954" class="l"><a class="l" href="#954">954: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_null</span>(<span class="php-var">$v</span>) ){
+</span><span id="955" class="l"><a class="l" href="#955">955: </a>          <span class="php-var">$st</span> .= <span class="php-quote">'null'</span>;
 </span><span id="956" class="l"><a class="l" href="#956">956: </a>        }
-</span><span id="957" class="l"><a class="l" href="#957">957: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_int</span>(<span class="php-var">$v</span>) || <span class="php-keyword2">is_float</span>(<span class="php-var">$v</span>) ){
-</span><span id="958" class="l"><a class="l" href="#958">958: </a>          <span class="php-var">$st</span> .= <span class="php-var">$v</span>;
+</span><span id="957" class="l"><a class="l" href="#957">957: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_bool</span>(<span class="php-var">$v</span>) ){
+</span><span id="958" class="l"><a class="l" href="#958">958: </a>          <span class="php-var">$st</span> .= <span class="php-var">$v</span> === <span class="php-keyword1">false</span> ? <span class="php-quote">'false'</span> : <span class="php-quote">'true'</span>;
 </span><span id="959" class="l"><a class="l" href="#959">959: </a>        }
-</span><span id="960" class="l"><a class="l" href="#960">960: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( !<span class="php-var">$remove_empty</span> || !<span class="php-keyword1">empty</span>(<span class="php-var">$v</span>) ){
-</span><span id="961" class="l"><a class="l" href="#961">961: </a>          <span class="php-var">$st</span> .= <span class="php-quote">&quot;'&quot;</span>.\bbn\str\text::escape_squote(<span class="php-var">$v</span>).<span class="php-quote">&quot;'&quot;</span>;
+</span><span id="960" class="l"><a class="l" href="#960">960: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_int</span>(<span class="php-var">$v</span>) || <span class="php-keyword2">is_float</span>(<span class="php-var">$v</span>) ){
+</span><span id="961" class="l"><a class="l" href="#961">961: </a>          <span class="php-var">$st</span> .= <span class="php-var">$v</span>;
 </span><span id="962" class="l"><a class="l" href="#962">962: </a>        }
-</span><span id="963" class="l"><a class="l" href="#963">963: </a>        <span class="php-var">$st</span> .= <span class="php-quote">','</span>.PHP_EOL;
-</span><span id="964" class="l"><a class="l" href="#964">964: </a>      }
-</span><span id="965" class="l"><a class="l" href="#965">965: </a>      <span class="php-var">$st</span> .= <span class="php-keyword2">str_repeat</span>(<span class="php-quote">'    '</span>, <span class="php-var">$lev</span>-<span class="php-num">1</span>);
-</span><span id="966" class="l"><a class="l" href="#966">966: </a>      <span class="php-comment">//$st .= $is_assoc ? '}' : ']';</span>
-</span><span id="967" class="l"><a class="l" href="#967">967: </a>      <span class="php-var">$st</span> .= <span class="php-quote">']'</span>;
-</span><span id="968" class="l"><a class="l" href="#968">968: </a>      <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
-</span><span id="969" class="l"><a class="l" href="#969">969: </a>    }
-</span><span id="970" class="l"><a class="l" href="#970">970: </a>    <span class="php-keyword1">return</span> <span class="php-var">$o</span>;
-</span><span id="971" class="l"><a class="l" href="#971">971: </a>  }
-</span><span id="972" class="l"><a class="l" href="#972">972: </a>
-</span><span id="973" class="l"><a class="l" href="#973">973: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_replace_once" href="#_replace_once">replace_once</a>(<span class="php-var">$search</span>, <span class="php-var">$replace</span>, <span class="php-var">$subject</span>){
-</span><span id="974" class="l"><a class="l" href="#974">974: </a>        <span class="php-var">$pos</span> = <span class="php-keyword2">strpos</span>(<span class="php-var">$subject</span>, <span class="php-var">$search</span>);
-</span><span id="975" class="l"><a class="l" href="#975">975: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$pos</span> !== <span class="php-keyword1">false</span>) {
-</span><span id="976" class="l"><a class="l" href="#976">976: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">substr_replace</span>(<span class="php-var">$subject</span>, <span class="php-var">$replace</span>, <span class="php-var">$pos</span>, <span class="php-keyword2">strlen</span>(<span class="php-var">$search</span>));
-</span><span id="977" class="l"><a class="l" href="#977">977: </a>        }
-</span><span id="978" class="l"><a class="l" href="#978">978: </a>        <span class="php-keyword1">return</span> <span class="php-var">$subject</span>;
-</span><span id="979" class="l"><a class="l" href="#979">979: </a>    }
-</span><span id="980" class="l"><a class="l" href="#980">980: </a>}
-</span><span id="981" class="l"><a class="l" href="#981">981: </a></span></code></pre>
+</span><span id="963" class="l"><a class="l" href="#963">963: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( !<span class="php-var">$remove_empty</span> || !<span class="php-keyword1">empty</span>(<span class="php-var">$v</span>) ){
+</span><span id="964" class="l"><a class="l" href="#964">964: </a>          <span class="php-var">$st</span> .= <span class="php-quote">&quot;'&quot;</span>.\bbn\str\text::escape_squote(<span class="php-var">$v</span>).<span class="php-quote">&quot;'&quot;</span>;
+</span><span id="965" class="l"><a class="l" href="#965">965: </a>        }
+</span><span id="966" class="l"><a class="l" href="#966">966: </a>        <span class="php-var">$st</span> .= <span class="php-quote">','</span>.PHP_EOL;
+</span><span id="967" class="l"><a class="l" href="#967">967: </a>      }
+</span><span id="968" class="l"><a class="l" href="#968">968: </a>      <span class="php-var">$st</span> .= <span class="php-keyword2">str_repeat</span>(<span class="php-quote">'    '</span>, <span class="php-var">$lev</span>-<span class="php-num">1</span>);
+</span><span id="969" class="l"><a class="l" href="#969">969: </a>      <span class="php-comment">//$st .= $is_assoc ? '}' : ']';</span>
+</span><span id="970" class="l"><a class="l" href="#970">970: </a>      <span class="php-var">$st</span> .= <span class="php-quote">']'</span>;
+</span><span id="971" class="l"><a class="l" href="#971">971: </a>      <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
+</span><span id="972" class="l"><a class="l" href="#972">972: </a>    }
+</span><span id="973" class="l"><a class="l" href="#973">973: </a>    <span class="php-keyword1">return</span> <span class="php-var">$o</span>;
+</span><span id="974" class="l"><a class="l" href="#974">974: </a>  }
+</span><span id="975" class="l"><a class="l" href="#975">975: </a>
+</span><span id="976" class="l"><a class="l" href="#976">976: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_replace_once" href="#_replace_once">replace_once</a>(<span class="php-var">$search</span>, <span class="php-var">$replace</span>, <span class="php-var">$subject</span>){
+</span><span id="977" class="l"><a class="l" href="#977">977: </a>        <span class="php-var">$pos</span> = <span class="php-keyword2">strpos</span>(<span class="php-var">$subject</span>, <span class="php-var">$search</span>);
+</span><span id="978" class="l"><a class="l" href="#978">978: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$pos</span> !== <span class="php-keyword1">false</span>) {
+</span><span id="979" class="l"><a class="l" href="#979">979: </a>            <span class="php-keyword1">return</span> <span class="php-keyword2">substr_replace</span>(<span class="php-var">$subject</span>, <span class="php-var">$replace</span>, <span class="php-var">$pos</span>, <span class="php-keyword2">strlen</span>(<span class="php-var">$search</span>));
+</span><span id="980" class="l"><a class="l" href="#980">980: </a>        }
+</span><span id="981" class="l"><a class="l" href="#981">981: </a>        <span class="php-keyword1">return</span> <span class="php-var">$subject</span>;
+</span><span id="982" class="l"><a class="l" href="#982">982: </a>    }
+</span><span id="983" class="l"><a class="l" href="#983">983: </a>}
+</span><span id="984" class="l"><a class="l" href="#984">984: </a></span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
