@@ -8,7 +8,7 @@
 	<title>File mvc.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?764555039"></script>
+	<script type="text/javascript" src="elementlist.js?416024402"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -906,7 +906,7 @@
 </span><span id="780" class="l"><a class="l" href="#780"> 780: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">empty</span>(<span class="php-var">$path</span>) ){
 </span><span id="781" class="l"><a class="l" href="#781"> 781: </a>                <span class="php-var">$path</span> = <span class="php-var">$this</span>-&gt;dest;
 </span><span id="782" class="l"><a class="l" href="#782"> 782: </a>            }
-</span><span id="783" class="l"><a class="l" href="#783"> 783: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;prepath &amp;&amp; (<span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'/'</span>) !== <span class="php-num">0</span>) ){
+</span><span id="783" class="l"><a class="l" href="#783"> 783: </a>      <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;prepath &amp;&amp; (<span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'/'</span>) !== <span class="php-num">0</span>) ){
 </span><span id="784" class="l"><a class="l" href="#784"> 784: </a>        <span class="php-var">$path</span> = <span class="php-var">$this</span>-&gt;prepath.<span class="php-var">$path</span>;
 </span><span id="785" class="l"><a class="l" href="#785"> 785: </a>      }
 </span><span id="786" class="l"><a class="l" href="#786"> 786: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;outputs[<span class="php-var">$mode</span>]) ){
@@ -1009,7 +1009,7 @@
 </span><span id="883" class="l"><a class="l" href="#883"> 883: </a>            <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$path</span>) ){
 </span><span id="884" class="l"><a class="l" href="#884"> 884: </a>                <span class="php-var">$path</span> = <span class="php-var">$this</span>-&gt;dest;
 </span><span id="885" class="l"><a class="l" href="#885"> 885: </a>            }
-</span><span id="886" class="l"><a class="l" href="#886"> 886: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;prepath ){
+</span><span id="886" class="l"><a class="l" href="#886"> 886: </a>      <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;prepath &amp;&amp; (<span class="php-keyword2">strpos</span>(<span class="php-var">$path</span>, <span class="php-quote">'/'</span>) !== <span class="php-num">0</span>) ){
 </span><span id="887" class="l"><a class="l" href="#887"> 887: </a>        <span class="php-var">$path</span> = <span class="php-var">$this</span>-&gt;prepath.<span class="php-var">$path</span>;
 </span><span id="888" class="l"><a class="l" href="#888"> 888: </a>      }
 </span><span id="889" class="l"><a class="l" href="#889"> 889: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check_path(<span class="php-var">$path</span>) &amp;&amp; <span class="php-keyword2">is_file</span>(self::mpath.<span class="php-var">$path</span>.<span class="php-quote">'.php'</span>) ){
@@ -1050,7 +1050,7 @@
 </span><span id="924" class="l"><a class="l" href="#924"> 924: </a>    {
 </span><span id="925" class="l"><a class="l" href="#925"> 925: </a>    <span class="php-keyword1">foreach</span> ( <span class="php-var">$this</span>-&gt;checkers <span class="php-keyword1">as</span> <span class="php-var">$chk</span> ){
 </span><span id="926" class="l"><a class="l" href="#926"> 926: </a>      <span class="php-comment">// If a checker file returns false, the controller is not processed</span>
-</span><span id="927" class="l"><a class="l" href="#927"> 927: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">include_once</span>(<span class="php-var">$chk</span>) ){
+</span><span id="927" class="l"><a class="l" href="#927"> 927: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">include</span>(<span class="php-var">$chk</span>) ){
 </span><span id="928" class="l"><a class="l" href="#928"> 928: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="929" class="l"><a class="l" href="#929"> 929: </a>      }
 </span><span id="930" class="l"><a class="l" href="#930"> 930: </a>    }
