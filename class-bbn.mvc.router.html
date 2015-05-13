@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\decorator | nabab/bbn</title>
+	<title>Class bbn\mvc\router | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?359230696"></script>
@@ -43,7 +43,7 @@
 						</li>
 				<li><a href="namespace-bbn.ide.html">ide</a>
 						</li>
-				<li><a href="namespace-bbn.mvc.html">mvc</a>
+				<li class="active"><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
 				<li><a href="namespace-bbn.str.html">str</a>
 						</li>
@@ -67,16 +67,22 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-bbn.decorator.html">decorator</a></li>
-				<li><a href="class-bbn.mvc.html">mvc</a></li>
-				<li><a href="class-bbn.mvcv2.html">mvcv2</a></li>
-				<li><a href="class-bbn.mvcv3.html">mvcv3</a></li>
-				<li><a href="class-bbn.obj.html">obj</a></li>
-				<li><a href="class-bbn.tools.html">tools</a></li>
-				<li><a href="class-bbn.tpl.html">tpl</a></li>
+				<li><a href="class-bbn.mvc.controller.html">controller</a></li>
+				<li><a href="class-bbn.mvc.environment.html">environment</a></li>
+				<li><a href="class-bbn.mvc.model.html">model</a></li>
+				<li class="active"><a href="class-bbn.mvc.router.html">router</a></li>
+				<li><a href="class-bbn.mvc.view.html">view</a></li>
 			</ul>
 
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.api.html">api</a></li>
+			</ul>
 
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.common.html">common</a></li>
+			</ul>
 
 
 
@@ -101,7 +107,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.html" title="Summary of bbn"><span>Namespace</span></a>
+				<a href="namespace-bbn.mvc.html" title="Summary of bbn\mvc"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -122,17 +128,19 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class decorator</h1>
+	<h1>Class router</h1>
 
 
-	<div class="description">
-	
-<p>Basic object Class</p>
 
-<p>This class implements basic functions and vars</p>
-
-	</div>
-
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>bbn\mvc\router</span></b>			
+			
+			 uses 
+				<a href="class-bbn.mvc.common.html"><span>bbn\mvc\common</span></a>
+			
+		</dd>
+	</dl>
 
 
 
@@ -144,25 +152,10 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
 		
 
-				<b>Category:</b>
-				Generic classes<br />
-				<b>Copyright:</b>
-				BBN Solutions<br />
-				<b>License:</b>
-				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
-				<b>Author:</b>
-				Thomas Nabet &lt;<a
-href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
-				<b>Version:</b>
-				0.1<br />
-				<b>Since:</b>
-				Apr 24, 2013, 23:23:55 +0000<br />
-				<b>Link:</b>
-				<a href="http://stackoverflow.com/questions/3011910/how-to-add-a-method-to-an-existing-class-in-php">Comes from there...</a><br />
-		<b>Located at</b> <a href="source-class-bbn.decorator.html#6-53" title="Go to source code">decorator.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvc.router.html#12-85" title="Go to source code">mvc/router.php</a><br />
 	</div>
 
 
@@ -180,16 +173,26 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.decorator.html#24-32" title="Go to source code">__construct</a>( <span>mixed <var>$classname</var></span>, <span>mixed <var>$instance</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.router.html#30-39" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.mvcv2.html">bbn\mvcv2</a></code> <var>$mvc</var></span> )</code>
 
 		<div class="description short">
 			
+<p>This will fetch the route to the controller for a given path. Chainable</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>This will fetch the route to the controller for a given path. Chainable</p>
 
 
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mvc</var></dt>
+					<dd><code>string</code><br>$path The request path &lt;em&gt;(e.g books/466565 or
+xml/books/48465)&lt;/em&gt;</dd>
+				</dl></div>
 
 
 
@@ -198,7 +201,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="__call" id="___call">
+	<tr data-order="route" id="_route">
 
 		<td class="attributes"><code>
 			 public 
@@ -208,66 +211,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-bbn.decorator.html#34-38" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$args</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="__get" id="___get">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-bbn.decorator.html#40-44" title="Go to source code">__get</a>( <span>mixed <var>$key</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="__set" id="___set">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___set">#</a>
-		<code><a href="source-class-bbn.decorator.html#46-50" title="Go to source code">__set</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<a class="anchor" href="#_route">#</a>
+		<code><a href="source-class-bbn.mvc.router.html#41-82" title="Go to source code">route</a>( )</code>
 
 		<div class="description short">
 			
@@ -288,6 +233,16 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 	</table>
 
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-bbn.mvc.common.html#methods">bbn\mvc\common</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-bbn.mvc.common.html#_check">()</a>, 
+			<a href="class-bbn.mvc.common.html#_check_path">()</a>, 
+			<a href="class-bbn.mvc.common.html#_error">()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -300,18 +255,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="_instance" id="$_instance">
+	<tr data-order="is_routed" id="$is_routed">
 		<td class="attributes"><code>
-			protected  
+			private  
 			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.decorator.html#22" title="Go to source code"><var>$_instance</var></a>
+				<a href="source-class-bbn.mvc.router.html#16-17" title="Go to source code"><var>$is_routed</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$_instance" class="anchor">#</a>
+			<a href="#$is_routed" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -319,6 +274,62 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 			<div class="description detailed hidden">
 				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="known_controllers" id="$known_controllers">
+		<td class="attributes"><code>
+			private  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.router.html#18-22" title="Go to source code"><var>$known_controllers</var></a>
+		</td>
+		<td class="value"><code>[]</code></td>
+		<td class="description"><div>
+			<a href="#$known_controllers" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The list of used controllers with their corresponding request, so we don't
+have to look for them again.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The list of used controllers with their corresponding request, so we don't
+have to look for them again.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="path" id="$path">
+		<td class="attributes"><code>
+			private  
+			null|string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.router.html#23-27" title="Go to source code"><var>$path</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$path" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The path sent to the main controller.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The path sent to the main controller.</p>
+
 
 			</div>
 		</div></td>

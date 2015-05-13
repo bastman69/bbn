@@ -117,9 +117,6 @@
 	<loc>http://nabab.github.io/bbn/class-bbn.decorator.html</loc>
 </url>
 <url>
-	<loc>http://nabab.github.io/bbn/class-bbn.environment.html</loc>
-</url>
-<url>
 	<loc>http://nabab.github.io/bbn/class-bbn.file.dir.html</loc>
 </url>
 <url>
@@ -162,7 +159,13 @@
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.controller.html</loc>
 </url>
 <url>
+	<loc>http://nabab.github.io/bbn/class-bbn.mvc.environment.html</loc>
+</url>
+<url>
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.model.html</loc>
+</url>
+<url>
+	<loc>http://nabab.github.io/bbn/class-bbn.mvc.router.html</loc>
 </url>
 <url>
 	<loc>http://nabab.github.io/bbn/class-bbn.mvc.view.html</loc>

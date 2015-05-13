@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\user\simple | nabab/bbn</title>
+	<title>Class bbn\mvc\environment | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?359230696"></script>
@@ -43,13 +43,13 @@
 						</li>
 				<li><a href="namespace-bbn.ide.html">ide</a>
 						</li>
-				<li><a href="namespace-bbn.mvc.html">mvc</a>
+				<li class="active"><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
 				<li><a href="namespace-bbn.str.html">str</a>
 						</li>
 				<li><a href="namespace-bbn.time.html">time</a>
 						</li>
-				<li class="active"><a href="namespace-bbn.user.html">user</a>
+				<li><a href="namespace-bbn.user.html">user</a>
 						</li>
 				<li><a href="namespace-bbn.util.html">util</a>
 						</li>
@@ -67,14 +67,22 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-bbn.user.appui.html">appui</a></li>
-				<li><a href="class-bbn.user.config.html">config</a></li>
-				<li><a href="class-bbn.user.connection.html" class="invalid">connection</a></li>
-				<li><a href="class-bbn.user.manager.html" class="invalid">manager</a></li>
-				<li class="active"><a href="class-bbn.user.simple.html">simple</a></li>
+				<li><a href="class-bbn.mvc.controller.html">controller</a></li>
+				<li class="active"><a href="class-bbn.mvc.environment.html">environment</a></li>
+				<li><a href="class-bbn.mvc.model.html">model</a></li>
+				<li><a href="class-bbn.mvc.router.html">router</a></li>
+				<li><a href="class-bbn.mvc.view.html">view</a></li>
 			</ul>
 
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.api.html">api</a></li>
+			</ul>
 
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.common.html">common</a></li>
+			</ul>
 
 
 
@@ -99,7 +107,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.user.html" title="Summary of bbn\user"><span>Namespace</span></a>
+				<a href="namespace-bbn.mvc.html" title="Summary of bbn\mvc"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -120,29 +128,10 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class simple</h1>
+	<h1>Class environment</h1>
 
 
-	<div class="description">
-	
-<p>A simple user Class based on config file authentication</p>
 
-	</div>
-
-	<dl class="tree">
-		<dd style="padding-left:0px">
-			<a href="class-bbn.obj.html"><span>bbn\obj</span></a>
-			
-			
-			
-		</dd>
-		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>bbn\user\simple</span></b>			
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -154,41 +143,28 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.user.html">user</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
 		
 
-				<b>Category:</b>
-				Authentication<br />
-				<b>Copyright:</b>
-				BBN Solutions<br />
-				<b>License:</b>
-				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
-				<b>Author:</b>
-				Thomas Nabet &lt;<a
-href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
-				<b>Version:</b>
-				0.2r89<br />
-				<b>Since:</b>
-				Apr 4, 2011, 23:23:55 +0000<br />
-		<b>Located at</b> <a href="source-class-bbn.user.simple.html#6-278" title="Go to source code">user/simple.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvc.environment.html#12-202" title="Go to source code">mvc/environment.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="get_users" id="_get_users">
+	<tr data-order="set_params" id="_set_params">
 
 		<td class="attributes"><code>
-			 private static
+			 private 
 			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_users">#</a>
-		<code><a href="source-class-bbn.user.simple.html#55-78" title="Go to source code">get_users</a>( )</code>
+		<a class="anchor" href="#_set_params">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#48-63" title="Go to source code">set_params</a>( <span>mixed <var>$path</var></span> )</code>
 
 		<div class="description short">
 			
@@ -206,28 +182,41 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="set_users" id="_set_users">
+	<tr data-order="set_mode" id="_set_mode">
 
 		<td class="attributes"><code>
-			 private static
-			
+			 private 
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_set_users">#</a>
-		<code><a href="source-class-bbn.user.simple.html#80-99" title="Go to source code">set_users</a>( <span>mixed <var>$users</var></span> )</code>
+		<a class="anchor" href="#_set_mode">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#65-76" title="Go to source code">set_mode</a>( <span>mixed <var>$mode</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Change the output mode (content-type)</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Change the output mode (content-type)</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mode</var></dt>
+					<dd><code>mixed</code><br>$mode</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>$this-&gt;mode<br />
+				</div>
 
 
 
@@ -246,7 +235,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.user.simple.html#101-135" title="Go to source code">__construct</a>( <span>mixed <var>$cfg</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-bbn.mvc.environment.html#78-91" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			
@@ -264,28 +253,36 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="_identify" id="__identify">
+	<tr data-order="is_cli" id="_is_cli">
 
 		<td class="attributes"><code>
-			 private 
-			
+			 public 
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#__identify">#</a>
-		<code><a href="source-class-bbn.user.simple.html#137-163" title="Go to source code">_identify</a>( <span>mixed <var>$cfg</var></span> )</code>
+		<a class="anchor" href="#_is_cli">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#93-103" title="Go to source code">is_cli</a>( )</code>
 
 		<div class="description short">
 			
+<p>Returns true if called from CLI/Cron, false otherwise</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Returns true if called from CLI/Cron, false otherwise</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
 
 
 
@@ -293,7 +290,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="add" id="_add">
+	<tr data-order="get_url" id="_get_url">
 
 		<td class="attributes"><code>
 			 public 
@@ -303,8 +300,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-bbn.user.simple.html#165-183" title="Go to source code">add</a>( <span>mixed <var>$priv</var> = <span class="php-num">1</span></span> )</code>
+		<a class="anchor" href="#_get_url">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#105-107" title="Go to source code">get_url</a>( )</code>
 
 		<div class="description short">
 			
@@ -322,7 +319,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="delete" id="_delete">
+	<tr data-order="get_mode" id="_get_mode">
 
 		<td class="attributes"><code>
 			 public 
@@ -332,8 +329,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-bbn.user.simple.html#185-204" title="Go to source code">delete</a>( )</code>
+		<a class="anchor" href="#_get_mode">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#109-111" title="Go to source code">get_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -351,7 +348,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="logout" id="_logout">
+	<tr data-order="get_cli" id="_get_cli">
 
 		<td class="attributes"><code>
 			 public 
@@ -361,8 +358,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_logout">#</a>
-		<code><a href="source-class-bbn.user.simple.html#206-225" title="Go to source code">logout</a>( )</code>
+		<a class="anchor" href="#_get_cli">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#113-128" title="Go to source code">get_cli</a>( )</code>
 
 		<div class="description short">
 			
@@ -380,7 +377,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="change_password" id="_change_password">
+	<tr data-order="get_get" id="_get_get">
 
 		<td class="attributes"><code>
 			 public 
@@ -390,8 +387,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_change_password">#</a>
-		<code><a href="source-class-bbn.user.simple.html#227-234" title="Go to source code">change_password</a>( <span>mixed <var>$old</var></span>, <span>mixed <var>$new</var></span> )</code>
+		<a class="anchor" href="#_get_get">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#130-141" title="Go to source code">get_get</a>( )</code>
 
 		<div class="description short">
 			
@@ -409,7 +406,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="set_password" id="_set_password">
+	<tr data-order="get_post" id="_get_post">
 
 		<td class="attributes"><code>
 			 public 
@@ -419,8 +416,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_set_password">#</a>
-		<code><a href="source-class-bbn.user.simple.html#236-255" title="Go to source code">set_password</a>( <span>mixed <var>$pass</var></span> )</code>
+		<a class="anchor" href="#_get_post">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#143-170" title="Go to source code">get_post</a>( )</code>
 
 		<div class="description short">
 			
@@ -438,7 +435,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="set_privilege" id="_set_privilege">
+	<tr data-order="get_files" id="_get_files">
 
 		<td class="attributes"><code>
 			 public 
@@ -448,8 +445,37 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_set_privilege">#</a>
-		<code><a href="source-class-bbn.user.simple.html#257-276" title="Go to source code">set_privilege</a>( <span>mixed <var>$level</var></span> )</code>
+		<a class="anchor" href="#_get_files">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#172-197" title="Go to source code">get_files</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_params" id="_get_params">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_params">#</a>
+		<code><a href="source-class-bbn.mvc.environment.html#199-201" title="Go to source code">get_params</a>( )</code>
 
 		<div class="description short">
 			
@@ -469,16 +495,6 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 	</tr>
 	</table>
 
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-bbn.obj.html#methods">bbn\obj</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-bbn.obj.html#___call">__call()</a>, 
-			<a href="class-bbn.obj.html#_log">log()</a>, 
-			<a href="class-bbn.obj.html#_test">test()</a>
-		</code></td>
-	</tr>
-	</table>
 
 
 
@@ -492,178 +508,199 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="cf" id="$cf">
-		<td class="attributes"><code>
-			private static 
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.user.simple.html#19-22" title="Go to source code"><var>$cf</var></a>
-		</td>
-		<td class="value"><code><span class="php-quote">'include/users.cfg'</span></code></td>
-		<td class="description"><div>
-			<a href="#$cf" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="sp" id="$sp">
-		<td class="attributes"><code>
-			private static 
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.user.simple.html#24-27" title="Go to source code"><var>$sp</var></a>
-		</td>
-		<td class="value"><code><span class="php-quote">':::'</span></code></td>
-		<td class="description"><div>
-			<a href="#$sp" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="pass" id="$pass">
+	<tr data-order="params" id="$params">
 		<td class="attributes"><code>
 			private  
-			mixed
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.simple.html#29-32" title="Go to source code"><var>$pass</var></a>
+				<a href="source-class-bbn.mvc.environment.html#10-19" title="Go to source code"><var>$params</var></a>
 		</td>
-		<td class="value"><code></code></td>
+		<td class="value"><code>[]</code></td>
 		<td class="description"><div>
-			<a href="#$pass" class="anchor">#</a>
+			<a href="#$params" class="anchor">#</a>
 
 			<div class="description short">
 				
+<p>The list of views which have been loaded. We keep their content in an array
+to not have to include the file again. This is useful for loops.</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>The list of views which have been loaded. We keep their content in an array
+to not have to include the file again. This is useful for loops.</p>
+
 
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="login" id="$login">
+	<tr data-order="mode" id="$mode">
 		<td class="attributes"><code>
-			public  
-			mixed
+			private  
+			null|string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.simple.html#34-37" title="Go to source code"><var>$login</var></a>
+				<a href="source-class-bbn.mvc.environment.html#20-24" title="Go to source code"><var>$mode</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$login" class="anchor">#</a>
+			<a href="#$mode" class="anchor">#</a>
 
 			<div class="description short">
 				
+<p>The mode of the output (doc, html, json, txt, xml...)</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>The mode of the output (doc, html, json, txt, xml...)</p>
+
 
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="alert" id="$alert">
+	<tr data-order="url" id="$url">
 		<td class="attributes"><code>
-			public  
-			mixed
+			private  
+			null|string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.simple.html#39-42" title="Go to source code"><var>$alert</var></a>
+				<a href="source-class-bbn.mvc.environment.html#25-29" title="Go to source code"><var>$url</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$alert" class="anchor">#</a>
+			<a href="#$url" class="anchor">#</a>
 
 			<div class="description short">
 				
+<p>The request sent to the server to get the actual controller.</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>The request sent to the server to get the actual controller.</p>
+
 
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="identified" id="$identified">
+	<tr data-order="post" id="$post">
 		<td class="attributes"><code>
-			public  
-			mixed
+			private  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.simple.html#44-47" title="Go to source code"><var>$identified</var></a>
+				<a href="source-class-bbn.mvc.environment.html#30-33" title="Go to source code"><var>$post</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$identified" class="anchor">#</a>
+			<a href="#$post" class="anchor">#</a>
 
 			<div class="description short">
 				
+<p>$_POST</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>$_POST</p>
+
 
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="privilege" id="$privilege">
+	<tr data-order="get" id="$get">
 		<td class="attributes"><code>
-			public  
-			mixed
+			private  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.simple.html#49-52" title="Go to source code"><var>$privilege</var></a>
+				<a href="source-class-bbn.mvc.environment.html#34-37" title="Go to source code"><var>$get</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$privilege" class="anchor">#</a>
+			<a href="#$get" class="anchor">#</a>
 
 			<div class="description short">
 				
+<p>$_GET</p>
+
 			</div>
 
 			<div class="description detailed hidden">
 				
+<p>$_GET</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="files" id="$files">
+		<td class="attributes"><code>
+			private  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.environment.html#38-41" title="Go to source code"><var>$files</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$files" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>$_FILES</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>$_FILES</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="cli" id="$cli">
+		<td class="attributes"><code>
+			private  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.environment.html#42-46" title="Go to source code"><var>$cli</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$cli" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Determines if it is sent through the command line</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Determines if it is sent through the command line</p>
+
 
 			</div>
 		</div></td>
 	</tr>
 	</table>
 
-	<table class="summary inherited">
-	<caption>Properties inherited from <a href="class-bbn.obj.html#properties">bbn\obj</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-bbn.obj.html#$error"><var>$error</var></a>, 
-			<a href="class-bbn.obj.html#$log"><var>$log</var></a>
-		</code></td>
-	</tr>
-	</table>
 
 
 
