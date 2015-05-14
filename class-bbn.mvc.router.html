@@ -7,7 +7,7 @@
 	<title>Class bbn\mvc\router | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?359230696"></script>
+	<script type="text/javascript" src="elementlist.js?3965448238"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -155,7 +155,7 @@
 		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.mvc.router.html#12-85" title="Go to source code">mvc/router.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvc.router.html#12-114" title="Go to source code">mvc/router.php</a><br />
 	</div>
 
 
@@ -173,7 +173,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.mvc.router.html#30-39" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.mvcv2.html">bbn\mvcv2</a></code> <var>$mvc</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.router.html#42-55" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.mvcv2.html">bbn\mvcv2</a></code> <var>$mvc</var></span>, <span>array <var>$routes</var> = []</span> )</code>
 
 		<div class="description short">
 			
@@ -192,7 +192,96 @@
 					<dt><var>$mvc</var></dt>
 					<dd><code>string</code><br>$path The request path &lt;em&gt;(e.g books/466565 or
 xml/books/48465)&lt;/em&gt;</dd>
+					<dt><var>$routes</var></dt>
+					<dd></dd>
 				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_mode" id="_get_mode">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_mode">#</a>
+		<code><a href="source-class-bbn.mvc.router.html#57-59" title="Go to source code">get_mode</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_url" id="_get_url">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_url">#</a>
+		<code><a href="source-class-bbn.mvc.router.html#61-63" title="Go to source code">get_url</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="add_routes" id="_add_routes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add_routes">#</a>
+		<code><a href="source-class-bbn.mvc.router.html#65-68" title="Go to source code">add_routes</a>( <span>array <var>$routes</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
 
 
 
@@ -212,7 +301,7 @@ xml/books/48465)&lt;/em&gt;</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_route">#</a>
-		<code><a href="source-class-bbn.mvc.router.html#41-82" title="Go to source code">route</a>( )</code>
+		<code><a href="source-class-bbn.mvc.router.html#70-107" title="Go to source code">route</a>( <span>mixed <var>$path</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$mode</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -237,7 +326,6 @@ xml/books/48465)&lt;/em&gt;</dd>
 	<caption>Methods used from <a href="class-bbn.mvc.common.html#methods">bbn\mvc\common</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-bbn.mvc.common.html#_check">()</a>, 
 			<a href="class-bbn.mvc.common.html#_check_path">()</a>, 
 			<a href="class-bbn.mvc.common.html#_error">()</a>
 		</code></td>
@@ -255,18 +343,21 @@ xml/books/48465)&lt;/em&gt;</dd>
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="is_routed" id="$is_routed">
+	<tr data-order="routes" id="$routes">
 		<td class="attributes"><code>
-			private  
-			mixed
+			private static 
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.router.html#16-17" title="Go to source code"><var>$is_routed</var></a>
+				<a href="source-class-bbn.mvc.router.html#16-19" title="Go to source code"><var>$routes</var></a>
 		</td>
-		<td class="value"><code></code></td>
+		<td class="value"><code>[
+<span class="php-quote">'content'</span> =&gt; [],
+<span class="php-quote">'container'</span> =&gt; []
+  ]</code></td>
 		<td class="description"><div>
-			<a href="#$is_routed" class="anchor">#</a>
+			<a href="#$routes" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -285,9 +376,12 @@ xml/books/48465)&lt;/em&gt;</dd>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.router.html#18-22" title="Go to source code"><var>$known_controllers</var></a>
+				<a href="source-class-bbn.mvc.router.html#17-29" title="Go to source code"><var>$known_controllers</var></a>
 		</td>
-		<td class="value"><code>[]</code></td>
+		<td class="value"><code>[
+  <span class="php-quote">'container'</span> =&gt; [],
+  <span class="php-quote">'content'</span> =&gt; []
+]</code></td>
 		<td class="description"><div>
 			<a href="#$known_controllers" class="anchor">#</a>
 
@@ -307,6 +401,35 @@ have to look for them again.</p>
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="is_routed" id="$is_routed">
+		<td class="attributes"><code>
+			private  
+			null|boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.router.html#30-34" title="Go to source code"><var>$is_routed</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$is_routed" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Is set to null while not routed, then 1 if routing was successful, and false
+otherwise.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Is set to null while not routed, then 1 if routing was successful, and false
+otherwise.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="path" id="$path">
 		<td class="attributes"><code>
 			private  
@@ -314,9 +437,9 @@ have to look for them again.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.router.html#23-27" title="Go to source code"><var>$path</var></a>
+				<a href="source-class-bbn.mvc.router.html#35-39" title="Go to source code"><var>$path</var></a>
 		</td>
-		<td class="value"><code></code></td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
 		<td class="description"><div>
 			<a href="#$path" class="anchor">#</a>
 
