@@ -7,7 +7,7 @@
 	<title>Class bbn\mvcv2 | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?3965448238"></script>
+	<script type="text/javascript" src="elementlist.js?1085752954"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -151,13 +151,59 @@
 		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.mvcv2.html#27-387" title="Go to source code">mvcv2.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvcv2.html#27-255" title="Go to source code">mvcv2.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="add_view" id="_add_view">
+
+		<td class="attributes"><code>
+			 public static
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add_view">#</a>
+		<code><a href="source-class-bbn.mvcv2.html#75-87" title="Go to source code">add_view</a>( <span>string <var>$path</var></span>, <span><code><a href="class-bbn.mvc.view.html">bbn\mvc\view</a></code> <var>$view</var></span> )</code>
+
+		<div class="description short">
+			
+<p>This function gets the content of a view file and adds it to the loaded_views
+array.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>This function gets the content of a view file and adds it to the loaded_views
+array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd><code>string</code><br>$p The full path to the view file</dd>
+					<dt><var>$view</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>The content of the view<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
@@ -711,7 +757,7 @@ xml/books/48465)&lt;/em&gt;</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_process">#</a>
-		<code><a href="source-class-bbn.mvcv2.html#233-246" title="Go to source code">process</a>( )</code>
+		<code><a href="source-class-bbn.mvcv2.html#233-246" title="Go to source code">process</a>( <span>mixed <var>$route</var></span> )</code>
 
 		<div class="description short">
 			
@@ -750,18 +796,14 @@ process() (or check()) must have been called before.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_output">#</a>
-		<code><a href="source-class-bbn.mvcv2.html#248-386" title="Go to source code">output</a>( )</code>
+		<code><a href="source-class-bbn.mvcv2.html#248-254" title="Go to source code">output</a>( <span>stdClass <var>$obj</var></span> )</code>
 
 		<div class="description short">
 			
-<p>Outputs the result.</p>
-
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Outputs the result.</p>
-
 
 
 
@@ -796,6 +838,35 @@ process() (or check()) must have been called before.</p>
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
+	<tr data-order="loaded_views" id="$loaded_views">
+		<td class="attributes"><code>
+			private static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvcv2.html#27-36" title="Go to source code"><var>$loaded_views</var></a>
+		</td>
+		<td class="value"><code>[]</code></td>
+		<td class="description"><div>
+			<a href="#$loaded_views" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The list of views which have been loaded. We keep their content in an array
+to not have to include the file again. This is useful for loops.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The list of views which have been loaded. We keep their content in an array
+to not have to include the file again. This is useful for loops.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="controller" id="$controller">
 		<td class="attributes"><code>
 			private  
@@ -803,7 +874,7 @@ process() (or check()) must have been called before.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#27-36" title="Go to source code"><var>$controller</var></a>
+				<a href="source-class-bbn.mvcv2.html#34-43" title="Go to source code"><var>$controller</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -823,35 +894,6 @@ process() (or check()) must have been called before.</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="loaded_views" id="$loaded_views">
-		<td class="attributes"><code>
-			private  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#37-42" title="Go to source code"><var>$loaded_views</var></a>
-		</td>
-		<td class="value"><code>[]</code></td>
-		<td class="description"><div>
-			<a href="#$loaded_views" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>/** The list of views which have been loaded. We keep their content in an
-array to not have to include the file again. This is useful for loops.</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>/** The list of views which have been loaded. We keep their content in an
-array to not have to include the file again. This is useful for loops.</p>
-
-
-			</div>
-		</div></td>
-	</tr>
 	<tr data-order="db" id="$db">
 		<td class="attributes"><code>
 			private  
@@ -859,7 +901,7 @@ array to not have to include the file again. This is useful for loops.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#43-46" title="Go to source code"><var>$db</var></a>
+				<a href="source-class-bbn.mvcv2.html#44-47" title="Go to source code"><var>$db</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -886,7 +928,7 @@ array to not have to include the file again. This is useful for loops.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#47-50" title="Go to source code"><var>$env</var></a>
+				<a href="source-class-bbn.mvcv2.html#48-51" title="Go to source code"><var>$env</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -913,7 +955,7 @@ array to not have to include the file again. This is useful for loops.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#51-54" title="Go to source code"><var>$router</var></a>
+				<a href="source-class-bbn.mvcv2.html#52-55" title="Go to source code"><var>$router</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -940,7 +982,7 @@ array to not have to include the file again. This is useful for loops.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#52-61" title="Go to source code"><var>$inc</var></a>
+				<a href="source-class-bbn.mvcv2.html#53-62" title="Go to source code"><var>$inc</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -969,7 +1011,7 @@ used as a global with the function add_inc</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#63" title="Go to source code"><var>$o</var></a>
+				<a href="source-class-bbn.mvcv2.html#64" title="Go to source code"><var>$o</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -992,7 +1034,7 @@ used as a global with the function add_inc</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#64-68" title="Go to source code"><var>$obj</var></a>
+				<a href="source-class-bbn.mvcv2.html#65-69" title="Go to source code"><var>$obj</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1019,7 +1061,7 @@ used as a global with the function add_inc</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#71-72" title="Go to source code"><var>$reserved</var></a>
+				<a href="source-class-bbn.mvcv2.html#72-73" title="Go to source code"><var>$reserved</var></a>
 		</td>
 		<td class="value"><code>[<span class="php-quote">'index'</span>, <span class="php-quote">'_private'</span>, <span class="php-quote">'_common'</span>, <span class="php-quote">'_htaccess'</span>]</code></td>
 		<td class="description"><div>
@@ -1031,45 +1073,6 @@ used as a global with the function add_inc</p>
 
 			<div class="description detailed hidden">
 				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="outputs" id="$outputs">
-		<td class="attributes"><code>
-			public static 
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.mvcv2.html#73-87" title="Go to source code"><var>$outputs</var></a>
-		</td>
-		<td class="value"><code>[
-  <span class="php-quote">'container'</span> =&gt; <span class="php-quote">'html'</span>,
-  <span class="php-quote">'content'</span> =&gt; <span class="php-quote">'json'</span><span class="php-comment">/*,
-  'image' =&gt; 'jpg,jpeg,gif,png,svg',
-  'json' =&gt; 'json',
-  'text'=&gt;'txt',
-  'xml' =&gt; 'xml',
-  'js' =&gt; 'js',
-  'css' =&gt; 'css',
-  'less' =&gt; 'less'*/</span>
-]</code></td>
-		<td class="description"><div>
-			<a href="#$outputs" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>List of possible outputs with their according file extension
-possibilities</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>List of possible outputs with their according file extension
-possibilities</p>
-
 
 			</div>
 		</div></td>

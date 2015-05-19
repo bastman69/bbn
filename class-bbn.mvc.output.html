@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Namespace bbn\appui | nabab/bbn</title>
+	<title>Class bbn\mvc\output | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?1085752954"></script>
@@ -30,7 +30,7 @@
 				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
 						</li>
 							</ul></li></ul></li>
-				<li class="active"><a href="namespace-bbn.appui.html">appui</a>
+				<li><a href="namespace-bbn.appui.html">appui</a>
 						</li>
 				<li><a href="namespace-bbn.db.html">db<span></span></a>
 						<ul>
@@ -43,7 +43,7 @@
 						</li>
 				<li><a href="namespace-bbn.ide.html">ide</a>
 						</li>
-				<li><a href="namespace-bbn.mvc.html">mvc</a>
+				<li class="active"><a href="namespace-bbn.mvc.html">mvc</a>
 						</li>
 				<li><a href="namespace-bbn.str.html">str</a>
 						</li>
@@ -67,16 +67,23 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-bbn.appui.cron.html">cron</a></li>
-				<li><a href="class-bbn.appui.dbsync.html">dbsync</a></li>
-				<li><a href="class-bbn.appui.grid.html">grid</a></li>
-				<li><a href="class-bbn.appui.history.html">history</a></li>
-				<li><a href="class-bbn.appui.mapper.html">mapper</a></li>
-				<li><a href="class-bbn.appui.square.html">square</a></li>
-				<li><a href="class-bbn.appui.task.html">task</a></li>
+				<li><a href="class-bbn.mvc.controller.html">controller</a></li>
+				<li><a href="class-bbn.mvc.environment.html">environment</a></li>
+				<li><a href="class-bbn.mvc.model.html">model</a></li>
+				<li class="active"><a href="class-bbn.mvc.output.html">output</a></li>
+				<li><a href="class-bbn.mvc.router.html">router</a></li>
+				<li><a href="class-bbn.mvc.view.html">view</a></li>
 			</ul>
 
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.api.html">api</a></li>
+			</ul>
 
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-bbn.mvc.common.html">common</a></li>
+			</ul>
 
 
 
@@ -100,9 +107,10 @@
 			<li>
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
-			<li class="active">
-<span>Namespace</span>			</li>
 			<li>
+				<a href="namespace-bbn.mvc.html" title="Summary of bbn\mvc"><span>Namespace</span></a>
+			</li>
+			<li class="active">
 <span>Class</span>			</li>
 		</ul>
 		<ul>
@@ -120,62 +128,108 @@
 		</ul>
 	</div>
 
-<div id="content" class="namespace">
-	<h1>Namespace <a href="namespace-bbn.html">bbn</a>\appui</h1>
+<div id="content" class="class">
+	<h1>Class output</h1>
 
 
 
-<table class="summary" id="classes">
-<caption>Classes summary</caption>
-<tr>
-	<td class="name"><a href="class-bbn.appui.cron.html">cron</a></td>
-	<td>Basic object Class</td>
-</tr>
-<tr>
-	<td class="name"><a href="class-bbn.appui.dbsync.html">dbsync</a></td>
-	<td></td>
-</tr>
-<tr>
-	<td class="name"><a href="class-bbn.appui.grid.html">grid</a></td>
-	<td>Basic object Class</td>
-</tr>
-<tr>
-	<td class="name"><a href="class-bbn.appui.history.html">history</a></td>
-	<td></td>
-</tr>
-<tr>
-	<td class="name"><a href="class-bbn.appui.mapper.html">mapper</a></td>
-	<td>This class builds special tables and defines databases' structure and according
-forms in them. The built tables all have the same prefix (bbn in this example),
-and are called:
-<ul>
-	<li>bbn_clients</li>
 
-	<li>bbn_projects</li>
 
-	<li>bbn_dbs</li>
 
-	<li>bbn_tables</li>
 
-	<li>bbn_columns</li>
 
-	<li>bbn_keys</li>
 
-	<li>bbn_forms</li>
 
-	<li>bbn_fields</li>
-</ul>
-</td>
-</tr>
-<tr>
-	<td class="name"><a href="class-bbn.appui.square.html">square</a></td>
-	<td></td>
-</tr>
-<tr>
-	<td class="name"><a href="class-bbn.appui.task.html">task</a></td>
-	<td></td>
-</tr>
-</table>
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
+		
+
+		<b>Located at</b> <a href="source-class-bbn.mvc.output.html#12-155" title="Go to source code">mvc/output.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-bbn.mvc.output.html#14-17" title="Go to source code">__construct</a>( <span>stdClass <var>$obj</var></span>, <span>mixed <var>$mode</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="run" id="_run">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_run">#</a>
+		<code><a href="source-class-bbn.mvc.output.html#20-154" title="Go to source code">run</a>( )</code>
+
+		<div class="description short">
+			
+<p>Outputs the result.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Outputs the result.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
