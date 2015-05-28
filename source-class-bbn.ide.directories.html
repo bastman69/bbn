@@ -8,7 +8,7 @@
 	<title>File ide/directories.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1085752954"></script>
+	<script type="text/javascript" src="elementlist.js?2844358066"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -133,7 +133,7 @@
 </span><span id="13" class="l"><a class="l" href="#13"> 13: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_add" href="#_add">add</a>(<span class="php-var">$data</span>){
 </span><span id="14" class="l"><a class="l" href="#14"> 14: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;db-&gt;insert(<span class="php-quote">'bbn_ide_directories'</span>, [
 </span><span id="15" class="l"><a class="l" href="#15"> 15: </a>      <span class="php-quote">'name'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'name'</span>],
-</span><span id="16" class="l"><a class="l" href="#16"> 16: </a>      <span class="php-quote">'root_path'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'root_path'</span>],
+</span><span id="16" class="l"><a class="l" href="#16"> 16: </a>      <span class="php-quote">'root_path'</span> =&gt; \bbn\str\text::parse_path(<span class="php-var">$data</span>[<span class="php-quote">'root_path'</span>]),
 </span><span id="17" class="l"><a class="l" href="#17"> 17: </a>      <span class="php-quote">'fcolor'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'fcolor'</span>],
 </span><span id="18" class="l"><a class="l" href="#18"> 18: </a>      <span class="php-quote">'bcolor'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'bcolor'</span>],
 </span><span id="19" class="l"><a class="l" href="#19"> 19: </a>      <span class="php-quote">'files'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'files'</span>]
@@ -147,7 +147,7 @@
 </span><span id="27" class="l"><a class="l" href="#27"> 27: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_edit" href="#_edit">edit</a>(<span class="php-var">$data</span>){
 </span><span id="28" class="l"><a class="l" href="#28"> 28: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-quote">'bbn_ide_directories'</span>, [
 </span><span id="29" class="l"><a class="l" href="#29"> 29: </a>      <span class="php-quote">'name'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'name'</span>],
-</span><span id="30" class="l"><a class="l" href="#30"> 30: </a>      <span class="php-quote">'root_path'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'root_path'</span>],
+</span><span id="30" class="l"><a class="l" href="#30"> 30: </a>      <span class="php-quote">'root_path'</span> =&gt; \bbn\str\text::parse_path(<span class="php-var">$data</span>[<span class="php-quote">'root_path'</span>]),
 </span><span id="31" class="l"><a class="l" href="#31"> 31: </a>      <span class="php-quote">'fcolor'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'fcolor'</span>],
 </span><span id="32" class="l"><a class="l" href="#32"> 32: </a>      <span class="php-quote">'bcolor'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'bcolor'</span>],
 </span><span id="33" class="l"><a class="l" href="#33"> 33: </a>      <span class="php-quote">'files'</span> =&gt; <span class="php-var">$data</span>[<span class="php-quote">'files'</span>]
@@ -172,11 +172,11 @@
 </span><span id="52" class="l"><a class="l" href="#52"> 52: </a>    <span class="php-var">$dirs</span> = [];
 </span><span id="53" class="l"><a class="l" href="#53"> 53: </a>    <span class="php-keyword1">foreach</span> ( <span class="php-var">$this</span>-&gt;get() <span class="php-keyword1">as</span> <span class="php-var">$d</span> ){
 </span><span id="54" class="l"><a class="l" href="#54"> 54: </a>      <span class="php-var">$files</span> = <span class="php-keyword2">json_decode</span>(<span class="php-var">$d</span>[<span class="php-quote">'files'</span>]);
-</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>      <span class="php-var">$p</span> = <span class="php-keyword2">substr</span>(<span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>], <span class="php-num">0</span>, <span class="php-keyword2">strpos</span>(<span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>], <span class="php-quote">'/'</span>));
-</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>      <span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>] = <span class="php-keyword2">constant</span>(<span class="php-var">$p</span>).<span class="php-keyword2">str_replace</span>(<span class="php-var">$p</span>, <span class="php-quote">''</span>, <span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>]);
+</span><span id="55" class="l"><a class="l" href="#55"> 55: </a>      <span class="php-var">$p</span> = \bbn\str\text::parse_path(<span class="php-keyword2">substr</span>(<span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>], <span class="php-num">0</span>, <span class="php-keyword2">strpos</span>(<span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>], <span class="php-quote">'/'</span>)));
+</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>      <span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>] = \bbn\str\text::parse_path(<span class="php-keyword2">constant</span>(<span class="php-var">$p</span>).<span class="php-keyword2">str_replace</span>(<span class="php-var">$p</span>, <span class="php-quote">''</span>, <span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>]));
 </span><span id="57" class="l"><a class="l" href="#57"> 57: </a>      <span class="php-keyword1">foreach</span> ( <span class="php-var">$files</span> <span class="php-keyword1">as</span> <span class="php-var">$i</span> =&gt; <span class="php-var">$f</span> ){
 </span><span id="58" class="l"><a class="l" href="#58"> 58: </a>        <span class="php-var">$f</span> = (<span class="php-keyword1">array</span>)<span class="php-var">$f</span>;
-</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>        <span class="php-var">$f</span>[<span class="php-quote">'path'</span>] = <span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>].<span class="php-var">$f</span>[<span class="php-quote">'path'</span>];
+</span><span id="59" class="l"><a class="l" href="#59"> 59: </a>        <span class="php-var">$f</span>[<span class="php-quote">'path'</span>] = \bbn\str\text::parse_path(<span class="php-var">$d</span>[<span class="php-quote">'root_path'</span>].<span class="php-var">$f</span>[<span class="php-quote">'path'</span>]);
 </span><span id="60" class="l"><a class="l" href="#60"> 60: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$f</span>[<span class="php-quote">'default'</span>]) ){
 </span><span id="61" class="l"><a class="l" href="#61"> 61: </a>          <span class="php-var">$d</span>[<span class="php-quote">'def'</span>] = <span class="php-var">$f</span>[<span class="php-quote">'url'</span>];
 </span><span id="62" class="l"><a class="l" href="#62"> 62: </a>        }

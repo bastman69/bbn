@@ -7,7 +7,7 @@
 	<title>Class bbn\mvc\controller | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1085752954"></script>
+	<script type="text/javascript" src="elementlist.js?2844358066"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -158,7 +158,7 @@
 		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.mvc.controller.html#5-590" title="Go to source code">mvc/controller.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvc.controller.html#5-594" title="Go to source code">mvc/controller.php</a><br />
 	</div>
 
 
@@ -176,7 +176,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#70-92" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.mvcv2.html">bbn\mvcv2</a></code> <var>$mvc</var></span>, <span>array <var>$path</var></span>, <span>mixed <var>$data</var> = <span class="php-keyword1">false</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#64-92" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.mvc.html" class="invalid">bbn\mvc</a></code> <var>$mvc</var></span>, <span>array <var>$files</var></span>, <span>mixed <var>$data</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -200,7 +200,7 @@ through $this-&gt;add($path).</p>
 					<dd><code>object</code><br>| string $db The database object in the first call and the controller path in
 the calls within the class (through Add)&lt;em&gt;(e.g books/466565 or
 html/home)&lt;/em&gt;</dd>
-					<dt><var>$path</var></dt>
+					<dt><var>$files</var></dt>
 					<dd><code>string</code><br>| object $parent The parent controller&lt;/em&gt;</dd>
 					<dt><var>$data</var></dt>
 					<dd></dd>
@@ -210,46 +210,6 @@ html/home)&lt;/em&gt;</dd>
 				<div class="list">
 					<code>boolean</code><br />
 				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="set_controller" id="_set_controller">
-
-		<td class="attributes"><code>
-			 private 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_set_controller">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#94-113" title="Go to source code">set_controller</a>( <span>string <var>$p</var></span> )</code>
-
-		<div class="description short">
-			
-<p>Adds the newly found controller to the known controllers array, and sets the
-original controller if it has not been set yet</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>Adds the newly found controller to the known controllers array, and sets the
-original controller if it has not been set yet</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$p</var></dt>
-					<dd><code>string</code><br>$c The name of the request or how set by the controller</dd>
-				</dl></div>
-
 
 
 
@@ -268,7 +228,7 @@ original controller if it has not been set yet</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_exists">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#115-117" title="Go to source code">exists</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#94-96" title="Go to source code">exists</a>( )</code>
 
 		<div class="description short">
 			
@@ -297,7 +257,7 @@ original controller if it has not been set yet</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_say_controller">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#119-127" title="Go to source code">say_controller</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#98-106" title="Go to source code">say_controller</a>( )</code>
 
 		<div class="description short">
 			
@@ -334,7 +294,7 @@ original controller if it has not been set yet</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_say_path">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#129-137" title="Go to source code">say_path</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#108-116" title="Go to source code">say_path</a>( )</code>
 
 		<div class="description short">
 			
@@ -371,7 +331,7 @@ original controller if it has not been set yet</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_say_route">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#139-147" title="Go to source code">say_route</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#118-126" title="Go to source code">say_route</a>( )</code>
 
 		<div class="description short">
 			
@@ -408,7 +368,7 @@ original controller if it has not been set yet</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_say_dir">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#149-157" title="Go to source code">say_dir</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#128-136" title="Go to source code">say_dir</a>( )</code>
 
 		<div class="description short">
 			
@@ -445,7 +405,7 @@ original controller if it has not been set yet</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_render">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#159-178" title="Go to source code">render</a>( <span>string <var>$view</var></span>, <span>array <var>$model</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#138-154" title="Go to source code">render</a>( <span>string <var>$view</var></span>, <span>array <var>$model</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -487,7 +447,7 @@ Mustache engine.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_is_cli">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#180-188" title="Go to source code">is_cli</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#156-164" title="Go to source code">is_cli</a>( )</code>
 
 		<div class="description short">
 			
@@ -515,46 +475,6 @@ Mustache engine.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_controller" id="_get_controller">
-
-		<td class="attributes"><code>
-			 private 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_controller">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#190-221" title="Go to source code">get_controller</a>( <span>string <var>$p</var></span> )</code>
-
-		<div class="description short">
-			
-<p>This looks for a given controller in the file system if it has not been
-already done and returns it if it finds it, false otherwise.</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			
-<p>This looks for a given controller in the file system if it has not been
-already done and returns it if it finds it, false otherwise.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$p</var></dt>
-					<dd><code>string</code><br>$p</dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
 	<tr data-order="reroute" id="_reroute">
 
 		<td class="attributes"><code>
@@ -566,7 +486,7 @@ already done and returns it if it finds it, false otherwise.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_reroute">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#223-232" title="Go to source code">reroute</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$check</var> = <span class="php-num">1</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#166-175" title="Go to source code">reroute</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$check</var> = <span class="php-num">1</span></span> )</code>
 
 		<div class="description short">
 			
@@ -609,7 +529,7 @@ xml/books/48465)&lt;/em&gt;</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_incl">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#234-252" title="Go to source code">incl</a>( <span>string <var>$file_name</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#177-195" title="Go to source code">incl</a>( <span>string <var>$file_name</var></span> )</code>
 
 		<div class="description short">
 			
@@ -647,7 +567,7 @@ xml/books/48465)&lt;/em&gt;</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_script">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#255-270" title="Go to source code">add_script</a>( <span>string <var>$script</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#198-213" title="Go to source code">add_script</a>( <span>string <var>$script</var></span> )</code>
 
 		<div class="description short">
 			
@@ -687,7 +607,7 @@ needed. Chainable</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_control">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#272-301" title="Go to source code">control</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#215-244" title="Go to source code">control</a>( )</code>
 
 		<div class="description short">
 			
@@ -722,7 +642,7 @@ through check()</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_process">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#303-318" title="Go to source code">process</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#246-261" title="Go to source code">process</a>( )</code>
 
 		<div class="description short">
 			
@@ -757,7 +677,7 @@ through check().</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_js">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#320-329" title="Go to source code">get_js</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#263-280" title="Go to source code">get_js</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -803,7 +723,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_css">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#331-340" title="Go to source code">get_css</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#282-294" title="Go to source code">get_css</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -845,7 +765,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_less">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#342-351" title="Go to source code">get_less</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#296-311" title="Go to source code">get_less</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -887,7 +807,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_js">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#353-376" title="Go to source code">add_js</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#313-336" title="Go to source code">add_js</a>( )</code>
 
 		<div class="description short">
 			
@@ -924,7 +844,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_view">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#378-401" title="Go to source code">get_view</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>string <var>$data</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$mode</var> = <span class="php-quote">'html'</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#338-377" title="Go to source code">get_view</a>( )</code>
 
 		<div class="description short">
 			
@@ -938,15 +858,6 @@ embedding in HTML.</p>
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$path</var></dt>
-					<dd><code>string</code><br>$path</dd>
-					<dt><var>$data</var></dt>
-					<dd><code>string</code><br>$mode</dd>
-					<dt><var>$mode</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -956,8 +867,6 @@ embedding in HTML.</p>
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-bbn.mvc.api.html#_get_view">bbn\mvc\api::get_view()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -972,7 +881,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_combo">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#403-405" title="Go to source code">combo</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#379-381" title="Go to source code">combo</a>( )</code>
 
 		<div class="description short">
 			
@@ -1001,7 +910,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_content">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#407-419" title="Go to source code">get_content</a>( <span>string <var>$file_name</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#383-395" title="Go to source code">get_content</a>( <span>string <var>$file_name</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1043,7 +952,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_php">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#421-458" title="Go to source code">get_php</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>string <var>$mode</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#397-434" title="Go to source code">get_php</a>( <span>string <var>$path</var> = <span class="php-quote">''</span></span>, <span>string <var>$mode</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1087,7 +996,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_model">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#460-472" title="Go to source code">get_model</a>( <span>mixed <var>$path</var></span>, <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#436-468" title="Go to source code">get_model</a>( )</code>
 
 		<div class="description short">
 			
@@ -1115,8 +1024,35 @@ embedding in HTML.</p>
 				</div>
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-bbn.mvc.api.html#_get_model">bbn\mvc\api::get_model()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_object_model" id="_get_object_model">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_object_model">#</a>
+		<code><a href="source-class-bbn.mvc.controller.html#470-475" title="Go to source code">get_object_model</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
 		</div>
 		</div></td>
 	</tr>
@@ -1131,7 +1067,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_inc">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#474-484" title="Go to source code">add_inc</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$obj</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#477-487" title="Go to source code">add_inc</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$obj</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1168,7 +1104,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#486-494" title="Go to source code">get</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#489-497" title="Go to source code">get</a>( )</code>
 
 		<div class="description short">
 			
@@ -1205,7 +1141,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has_data">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#496-507" title="Go to source code">has_data</a>( <span>mixed <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#499-510" title="Go to source code">has_data</a>( <span>mixed <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1242,7 +1178,7 @@ embedding in HTML.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_rendered">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#509-521" title="Go to source code">get_rendered</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#512-524" title="Go to source code">get_rendered</a>( )</code>
 
 		<div class="description short">
 			
@@ -1281,7 +1217,7 @@ process() (or check()) must have been called before.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_mode">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#523-525" title="Go to source code">get_mode</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#526-528" title="Go to source code">get_mode</a>( )</code>
 
 		<div class="description short">
 			
@@ -1310,7 +1246,7 @@ process() (or check()) must have been called before.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_mode">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#527-529" title="Go to source code">set_mode</a>( <span>mixed <var>$mode</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#530-532" title="Go to source code">set_mode</a>( <span>mixed <var>$mode</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1339,7 +1275,7 @@ process() (or check()) must have been called before.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_script">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#531-543" title="Go to source code">get_script</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#534-546" title="Go to source code">get_script</a>( )</code>
 
 		<div class="description short">
 			
@@ -1378,7 +1314,7 @@ process() (or check()) must have been called before.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_data">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#545-555" title="Go to source code">set_data</a>( <span>array <var>$data</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#548-558" title="Go to source code">set_data</a>( <span>array <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1418,7 +1354,7 @@ Chainable.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add_data">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#557-570" title="Go to source code">add_data</a>( <span>array <var>$data</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#560-573" title="Go to source code">add_data</a>( <span>array <var>$data</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1451,7 +1387,7 @@ Chainable.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#572-584" title="Go to source code">add</a>( <span>mixed <var>$d</var></span>, <span>mixed <var>$data</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#575-588" title="Go to source code">add</a>( <span>mixed <var>$path</var></span>, <span>mixed <var>$data</var> = []</span>, <span>mixed <var>$internal</var> = <span class="php-keyword1">false</span></span> )</code>
 
 		<div class="description short">
 			
@@ -1484,7 +1420,7 @@ Chainable.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_result">#</a>
-		<code><a href="source-class-bbn.mvc.controller.html#586-588" title="Go to source code">get_result</a>( )</code>
+		<code><a href="source-class-bbn.mvc.controller.html#590-592" title="Go to source code">get_result</a>( )</code>
 
 		<div class="description short">
 			
@@ -1520,33 +1456,6 @@ Chainable.</p>
 
 
 
-	<table class="summary" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="root" id="root">
-
-		<td class="attributes"><code>string</code></td>
-		<td class="name"><code>
-				<a href="source-class-bbn.mvc.controller.html#65-68" title="Go to source code"><b>root</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-quote">'mvc/controllers/'</span></code></td>
-		<td class="description"><div>
-			<a href="#root" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Path to the controllers.</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Path to the controllers.</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 
@@ -1556,7 +1465,7 @@ Chainable.</p>
 	<tr data-order="mvc" id="$mvc">
 		<td class="attributes"><code>
 			private  
-			<code><a href="class-bbn.mvcv2.html">bbn\mvcv2</a></code>
+			<code><a href="class-bbn.mvc.html" class="invalid">bbn\mvc</a></code>
 		</code></td>
 
 		<td class="name">
@@ -1609,28 +1518,55 @@ otherwise.</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="dest" id="$dest">
+	<tr data-order="path" id="$path">
 		<td class="attributes"><code>
 			private  
 			null|string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#20-24" title="Go to source code"><var>$dest</var></a>
+				<a href="source-class-bbn.mvc.controller.html#20-24" title="Go to source code"><var>$path</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$dest" class="anchor">#</a>
+			<a href="#$path" class="anchor">#</a>
 
 			<div class="description short">
 				
-<p>The name of the controller.</p>
+<p>The internal path to the controller.</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>The name of the controller.</p>
+<p>The internal path to the controller.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="request" id="$request">
+		<td class="attributes"><code>
+			private  
+			null|string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.controller.html#25-29" title="Go to source code"><var>$request</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$request" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The request sent to get to the controller</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The request sent to get to the controller</p>
 
 
 			</div>
@@ -1643,7 +1579,7 @@ otherwise.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#25-29" title="Go to source code"><var>$dir</var></a>
+				<a href="source-class-bbn.mvc.controller.html#30-34" title="Go to source code"><var>$dir</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1670,7 +1606,7 @@ otherwise.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#30-34" title="Go to source code"><var>$file</var></a>
+				<a href="source-class-bbn.mvc.controller.html#35-39" title="Go to source code"><var>$file</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1697,7 +1633,7 @@ otherwise.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#35-40" title="Go to source code"><var>$checkers</var></a>
+				<a href="source-class-bbn.mvc.controller.html#40-45" title="Go to source code"><var>$checkers</var></a>
 		</td>
 		<td class="value"><code>[]</code></td>
 		<td class="description"><div>
@@ -1719,41 +1655,14 @@ controller</p>
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="controller" id="$controller">
-		<td class="attributes"><code>
-			private  
-			null|string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#41-45" title="Go to source code"><var>$controller</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$controller" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>The controller file (with full path)</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>The controller file (with full path)</p>
-
-
-			</div>
-		</div></td>
-	</tr>
 	<tr data-order="data" id="$data">
 		<td class="attributes"><code>
-			private  
+			public  
 			null|array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#46-50" title="Go to source code"><var>$data</var></a>
+				<a href="source-class-bbn.mvc.controller.html#43-52" title="Go to source code"><var>$data</var></a>
 		</td>
 		<td class="value"><code>[]</code></td>
 		<td class="description"><div>
@@ -1773,6 +1682,33 @@ controller</p>
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="obj" id="$obj">
+		<td class="attributes"><code>
+			public  
+			null|object
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.controller.html#53-57" title="Go to source code"><var>$obj</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$obj" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The output object</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The output object</p>
+
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="inc" id="$inc">
 		<td class="attributes"><code>
 			public  
@@ -1780,7 +1716,7 @@ controller</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#48-57" title="Go to source code"><var>$inc</var></a>
+				<a href="source-class-bbn.mvc.controller.html#58-62" title="Go to source code"><var>$inc</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -1797,33 +1733,6 @@ used as a global with the function add_inc</p>
 				
 <p>An external object that can be filled after the object creation and can be
 used as a global with the function add_inc</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="obj" id="$obj">
-		<td class="attributes"><code>
-			public  
-			null|object
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.mvc.controller.html#58-62" title="Go to source code"><var>$obj</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$obj" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>The output object</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>The output object</p>
 
 
 			</div>

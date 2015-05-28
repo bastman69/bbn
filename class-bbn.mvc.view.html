@@ -7,7 +7,7 @@
 	<title>Class bbn\mvc\view | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1085752954"></script>
+	<script type="text/javascript" src="elementlist.js?2844358066"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -156,7 +156,7 @@
 		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.mvc.html">mvc</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.mvc.view.html#22-125" title="Go to source code">mvc/view.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mvc.view.html#22-97" title="Go to source code">mvc/view.php</a><br />
 	</div>
 
 
@@ -174,7 +174,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.mvc.view.html#62-84" title="Go to source code">__construct</a>( <span>object <var>$path</var></span>, <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-bbn.mvc.view.html#43-56" title="Go to source code">__construct</a>( <span>array <var>$info</var></span> )</code>
 
 		<div class="description short">
 			
@@ -194,12 +194,10 @@ through $this-&gt;add($path).</p>
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$path</var></dt>
+					<dt><var>$info</var></dt>
 					<dd><code>object</code><br>| string $db The database object in the first call and the controller path in
 the calls within the class (through Add)&lt;em&gt;(e.g books/466565 or
 html/home)&lt;/em&gt;</dd>
-					<dt><var>$type</var></dt>
-					<dd><code>string</code><br>| object $parent The parent controller&lt;/em&gt;</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -224,7 +222,7 @@ html/home)&lt;/em&gt;</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_check">#</a>
-		<code><a href="source-class-bbn.mvc.view.html#86-88" title="Go to source code">check</a>( )</code>
+		<code><a href="source-class-bbn.mvc.view.html#58-60" title="Go to source code">check</a>( )</code>
 
 		<div class="description short">
 			
@@ -253,7 +251,7 @@ html/home)&lt;/em&gt;</dd>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-bbn.mvc.view.html#90-124" title="Go to source code">get</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.mvc.view.html#62-96" title="Go to source code">get</a>( <span>array <var>$data</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -297,33 +295,6 @@ html/home)&lt;/em&gt;</dd>
 
 
 
-	<table class="summary" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="root" id="root">
-
-		<td class="attributes"><code>string</code></td>
-		<td class="name"><code>
-				<a href="source-class-bbn.mvc.view.html#57-60" title="Go to source code"><b>root</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-quote">'mvc/views/'</span></code></td>
-		<td class="description"><div>
-			<a href="#root" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>Path to the views.</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>Path to the views.</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	</table>
 
 
 
@@ -345,13 +316,40 @@ html/home)&lt;/em&gt;</dd>
 
 			<div class="description short">
 				
-<p>The path to the controller.</p>
+<p>The full path to the view file</p>
 
 			</div>
 
 			<div class="description detailed hidden">
 				
-<p>The path to the controller.</p>
+<p>The full path to the view file</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="ext" id="$ext">
+		<td class="attributes"><code>
+			private  
+			null|string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mvc.view.html#32-36" title="Go to source code"><var>$ext</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$ext" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>The file's extension</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>The file's extension</p>
 
 
 			</div>
@@ -364,7 +362,7 @@ html/home)&lt;/em&gt;</dd>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.mvc.view.html#32-36" title="Go to source code"><var>$content</var></a>
+				<a href="source-class-bbn.mvc.view.html#37-41" title="Go to source code"><var>$content</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -379,46 +377,6 @@ html/home)&lt;/em&gt;</dd>
 			<div class="description detailed hidden">
 				
 <p>The content the view file.</p>
-
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="outputs" id="$outputs">
-		<td class="attributes"><code>
-			public static 
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.mvc.view.html#34-54" title="Go to source code"><var>$outputs</var></a>
-		</td>
-		<td class="value"><code>[
-  <span class="php-quote">'container'</span> =&gt; <span class="php-quote">'html'</span>,
-  <span class="php-quote">'content'</span> =&gt; <span class="php-quote">'json'</span>,
-  <span class="php-quote">'image'</span> =&gt; [<span class="php-quote">'jpg'</span>,<span class="php-quote">'jpeg'</span>,<span class="php-quote">'gif'</span>,<span class="php-quote">'png'</span>,<span class="php-quote">'svg'</span>],
-  <span class="php-quote">'json'</span> =&gt; <span class="php-quote">'json'</span>,
-  <span class="php-quote">'text'</span>=&gt;<span class="php-quote">'txt'</span>,
-  <span class="php-quote">'xml'</span> =&gt; <span class="php-quote">'xml'</span>,
-  <span class="php-quote">'js'</span> =&gt; [<span class="php-quote">'js'</span>, <span class="php-quote">'coffee'</span>],
-  <span class="php-quote">'css'</span> =&gt; [<span class="php-quote">'css'</span>, <span class="php-quote">'less'</span>],
-  <span class="php-quote">'scss'</span> =&gt; [<span class="php-quote">'scss'</span>, <span class="php-quote">'css'</span>],
-  <span class="php-quote">'less'</span> =&gt; [<span class="php-quote">'less'</span>, <span class="php-quote">'css'</span>]
-]</code></td>
-		<td class="description"><div>
-			<a href="#$outputs" class="anchor">#</a>
-
-			<div class="description short">
-				
-<p>List of possible outputs with their according file extension
-possibilities</p>
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-<p>List of possible outputs with their according file extension
-possibilities</p>
 
 
 			</div>
