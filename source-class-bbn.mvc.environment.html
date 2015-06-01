@@ -185,7 +185,7 @@
 </span><span id="53" class="l"><a class="l" href="#53"> 53: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$t</span>) ) {
 </span><span id="54" class="l"><a class="l" href="#54"> 54: </a>          <span class="php-keyword1">if</span> ( <span class="php-keyword2">in_array</span>(<span class="php-var">$t</span>, \bbn\mvc::<span class="php-var">$reserved</span>) ){
 </span><span id="55" class="l"><a class="l" href="#55"> 55: </a>            <span class="php-keyword1">die</span>(<span class="php-quote">&quot;The controller you are asking for contains one of the following reserved strings: &quot;</span> .
-</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>              <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;, &quot;</span>, self::<span class="php-var">$reserved</span>));
+</span><span id="56" class="l"><a class="l" href="#56"> 56: </a>              <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;, &quot;</span>, \bbn\mvc::<span class="php-var">$reserved</span>));
 </span><span id="57" class="l"><a class="l" href="#57"> 57: </a>          }
 </span><span id="58" class="l"><a class="l" href="#58"> 58: </a>          <span class="php-keyword2">array_push</span>(<span class="php-var">$this</span>-&gt;params, <span class="php-var">$t</span>);
 </span><span id="59" class="l"><a class="l" href="#59"> 59: </a>        }
