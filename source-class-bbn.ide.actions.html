@@ -8,7 +8,7 @@
 	<title>File ide/actions.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2018591252"></script>
+	<script type="text/javascript" src="elementlist.js?204092852"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -575,7 +575,7 @@
 </span><span id="455" class="l"><a class="l" href="#455">455: </a>              }
 </span><span id="456" class="l"><a class="l" href="#456">456: </a>            }
 </span><span id="457" class="l"><a class="l" href="#457">457: </a>            <span class="php-keyword1">else</span> {
-</span><span id="458" class="l"><a class="l" href="#458">458: </a>              <span class="php-var">$dir</span> = <span class="php-var">$f</span>[<span class="php-quote">'path'</span>].<span class="php-var">$data</span>[<span class="php-quote">'name'</span>];
+</span><span id="458" class="l"><a class="l" href="#458">458: </a>              <span class="php-var">$dir</span> = <span class="php-var">$f</span>[<span class="php-quote">'path'</span>].<span class="php-var">$data</span>[<span class="php-quote">'path'</span>];
 </span><span id="459" class="l"><a class="l" href="#459">459: </a>              <span class="php-keyword1">if</span> ( <span class="php-keyword2">file_exists</span>(<span class="php-var">$dir</span>) ){
 </span><span id="460" class="l"><a class="l" href="#460">460: </a>                <span class="php-keyword1">if</span> ( !\bbn\<span class="php-keyword2">file</span>\<span class="php-keyword2">dir</span>::<span class="php-keyword2">copy</span>(<span class="php-var">$dir</span>, <span class="php-var">$dest</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]) ){
 </span><span id="461" class="l"><a class="l" href="#461">461: </a>                  <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;error(<span class="php-quote">'Impossible to export the folder '</span>.<span class="php-var">$data</span>[<span class="php-quote">'name'</span>]);
