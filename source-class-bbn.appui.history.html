@@ -606,162 +606,163 @@
 </span><span id="481" class="l"><a class="l" href="#481">481: </a>      <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(self::<span class="php-var">$hstructures</span>[<span class="php-var">$table</span>], self::<span class="php-var">$hstructures</span>[<span class="php-var">$table</span>][<span class="php-quote">'history'</span>]) &amp;&amp; self::<span class="php-var">$hstructures</span>[<span class="php-var">$table</span>][<span class="php-quote">'history'</span>] ){
 </span><span id="482" class="l"><a class="l" href="#482">482: </a>        <span class="php-var">$s</span> =&amp; self::<span class="php-var">$hstructures</span>[<span class="php-var">$table</span>];
 </span><span id="483" class="l"><a class="l" href="#483">483: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]) ){
-</span><span id="484" class="l"><a class="l" href="#484">484: </a>          <span class="php-keyword1">die</span>(\bbn\tools::dump(<span class="php-quote">&quot;You need to have a primary key on a single column in your table </span><span class="php-var">$table</span><span class="php-quote"> in order to use the history class&quot;</span>, <span class="php-var">$s</span>));
-</span><span id="485" class="l"><a class="l" href="#485">485: </a>        }
-</span><span id="486" class="l"><a class="l" href="#486">486: </a>
-</span><span id="487" class="l"><a class="l" href="#487">487: </a>        <span class="php-var">$date</span> = self::<span class="php-var">$date</span> ? self::<span class="php-var">$date</span> : <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>);
-</span><span id="488" class="l"><a class="l" href="#488">488: </a>        
-</span><span id="489" class="l"><a class="l" href="#489">489: </a>        <span class="php-keyword1">if</span> ( (<span class="php-keyword2">count</span>(<span class="php-var">$values</span>) === <span class="php-num">1</span>) &amp;&amp; (<span class="php-keyword2">array_keys</span>(<span class="php-var">$values</span>)[<span class="php-num">0</span>] === self::<span class="php-var">$hcol</span>) ){
-</span><span id="490" class="l"><a class="l" href="#490">490: </a>          <span class="php-var">$kind</span> = <span class="php-keyword2">array_values</span>(<span class="php-var">$values</span>)[<span class="php-num">0</span>] === <span class="php-num">1</span> ? <span class="php-quote">'restore'</span> : <span class="php-quote">'delete'</span>;
-</span><span id="491" class="l"><a class="l" href="#491">491: </a>        }
-</span><span id="492" class="l"><a class="l" href="#492">492: </a>          
-</span><span id="493" class="l"><a class="l" href="#493">493: </a>        <span class="php-keyword1">switch</span> ( <span class="php-var">$kind</span> ){
-</span><span id="494" class="l"><a class="l" href="#494">494: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'select'</span>:
-</span><span id="495" class="l"><a class="l" href="#495">495: </a>            <span class="php-keyword1">break</span>;
-</span><span id="496" class="l"><a class="l" href="#496">496: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'insert'</span>:
-</span><span id="497" class="l"><a class="l" href="#497">497: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'before'</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$values</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]]) ){
-</span><span id="498" class="l"><a class="l" href="#498">498: </a>              <span class="php-keyword1">if</span> ( self::<span class="php-var">$db</span>-&gt;select_one(<span class="php-var">$table</span>, self::<span class="php-var">$hcol</span>, [<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>] =&gt; <span class="php-var">$values</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]]]) === <span class="php-num">0</span> ){
-</span><span id="499" class="l"><a class="l" href="#499">499: </a>                self::<span class="php-var">$db</span>-&gt;update(<span class="php-var">$table</span>, [self::<span class="php-var">$hcol</span>=<span class="php-num">1</span>], [<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>] =&gt; <span class="php-var">$values</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]]]);
-</span><span id="500" class="l"><a class="l" href="#500">500: </a>              }
-</span><span id="501" class="l"><a class="l" href="#501">501: </a>            }
-</span><span id="502" class="l"><a class="l" href="#502">502: </a>            <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
-</span><span id="503" class="l"><a class="l" href="#503">503: </a>              <span class="php-var">$id</span> = self::<span class="php-var">$db</span>-&gt;last_id();
-</span><span id="504" class="l"><a class="l" href="#504">504: </a>              self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
-</span><span id="505" class="l"><a class="l" href="#505">505: </a>                <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'INSERT'</span>,
-</span><span id="506" class="l"><a class="l" href="#506">506: </a>                <span class="php-quote">'line'</span> =&gt; <span class="php-var">$id</span>,
-</span><span id="507" class="l"><a class="l" href="#507">507: </a>                <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>],
-</span><span id="508" class="l"><a class="l" href="#508">508: </a>                <span class="php-quote">'old'</span> =&gt; <span class="php-keyword1">null</span>,
-</span><span id="509" class="l"><a class="l" href="#509">509: </a>                <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
-</span><span id="510" class="l"><a class="l" href="#510">510: </a>                <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>
-</span><span id="511" class="l"><a class="l" href="#511">511: </a>              ]);
-</span><span id="512" class="l"><a class="l" href="#512">512: </a>              self::<span class="php-var">$db</span>-&gt;set_last_insert_id(<span class="php-var">$id</span>);
-</span><span id="513" class="l"><a class="l" href="#513">513: </a>            }
-</span><span id="514" class="l"><a class="l" href="#514">514: </a>            <span class="php-keyword1">break</span>;
-</span><span id="515" class="l"><a class="l" href="#515">515: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'restore'</span>:
-</span><span id="516" class="l"><a class="l" href="#516">516: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
-</span><span id="517" class="l"><a class="l" href="#517">517: </a>              self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
-</span><span id="518" class="l"><a class="l" href="#518">518: </a>                <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'RESTORE'</span>,
-</span><span id="519" class="l"><a class="l" href="#519">519: </a>                <span class="php-quote">'line'</span> =&gt; <span class="php-var">$where</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]],
-</span><span id="520" class="l"><a class="l" href="#520">520: </a>                <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.self::<span class="php-var">$hcol</span>,
-</span><span id="521" class="l"><a class="l" href="#521">521: </a>                <span class="php-quote">'old'</span> =&gt; <span class="php-quote">'0'</span>,
-</span><span id="522" class="l"><a class="l" href="#522">522: </a>                <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
-</span><span id="523" class="l"><a class="l" href="#523">523: </a>                <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>
-</span><span id="524" class="l"><a class="l" href="#524">524: </a>              ]);
-</span><span id="525" class="l"><a class="l" href="#525">525: </a>            }
-</span><span id="526" class="l"><a class="l" href="#526">526: </a>            <span class="php-keyword1">break</span>;
-</span><span id="527" class="l"><a class="l" href="#527">527: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'update'</span>:
-</span><span id="528" class="l"><a class="l" href="#528">528: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'before'</span> ){
-</span><span id="529" class="l"><a class="l" href="#529">529: </a>              self::<span class="php-var">$last_rows</span> = self::<span class="php-var">$db</span>-&gt;rselect_all(<span class="php-var">$table</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$values</span>), <span class="php-var">$where</span>);
-</span><span id="530" class="l"><a class="l" href="#530">530: </a>            }
-</span><span id="531" class="l"><a class="l" href="#531">531: </a>            <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
-</span><span id="532" class="l"><a class="l" href="#532">532: </a>              <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(self::<span class="php-var">$last_rows</span>) ){
-</span><span id="533" class="l"><a class="l" href="#533">533: </a>                <span class="php-keyword1">foreach</span> ( self::<span class="php-var">$last_rows</span> <span class="php-keyword1">as</span> <span class="php-var">$upd</span> ){
-</span><span id="534" class="l"><a class="l" href="#534">534: </a>                  <span class="php-keyword1">foreach</span> ( <span class="php-var">$values</span> <span class="php-keyword1">as</span> <span class="php-var">$c</span> =&gt; <span class="php-var">$v</span> ){
-</span><span id="535" class="l"><a class="l" href="#535">535: </a>                    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$upd</span>[<span class="php-var">$c</span>]) ){
-</span><span id="536" class="l"><a class="l" href="#536">536: </a>                      <span class="php-var">$upd</span>[<span class="php-var">$c</span>] = <span class="php-keyword1">null</span>;
-</span><span id="537" class="l"><a class="l" href="#537">537: </a>                    }
-</span><span id="538" class="l"><a class="l" href="#538">538: </a>                    <span class="php-keyword1">if</span> ( ( <span class="php-var">$v</span> !== <span class="php-var">$upd</span>[<span class="php-var">$c</span>] ) &amp;&amp; ( <span class="php-var">$c</span> !== self::<span class="php-var">$hcol</span> ) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'fields'</span>][<span class="php-var">$c</span>][<span class="php-quote">'config'</span>][<span class="php-quote">'history'</span>]) ){
-</span><span id="539" class="l"><a class="l" href="#539">539: </a>                      self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
-</span><span id="540" class="l"><a class="l" href="#540">540: </a>                        <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'UPDATE'</span>,
-</span><span id="541" class="l"><a class="l" href="#541">541: </a>                        <span class="php-quote">'line'</span> =&gt; <span class="php-var">$where</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]],
-</span><span id="542" class="l"><a class="l" href="#542">542: </a>                        <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.<span class="php-var">$c</span>,
-</span><span id="543" class="l"><a class="l" href="#543">543: </a>                        <span class="php-quote">'old'</span> =&gt; <span class="php-var">$upd</span>[<span class="php-var">$c</span>],
-</span><span id="544" class="l"><a class="l" href="#544">544: </a>                        <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
-</span><span id="545" class="l"><a class="l" href="#545">545: </a>                        <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>]);
-</span><span id="546" class="l"><a class="l" href="#546">546: </a>                    }
-</span><span id="547" class="l"><a class="l" href="#547">547: </a>                  }
-</span><span id="548" class="l"><a class="l" href="#548">548: </a>                }
-</span><span id="549" class="l"><a class="l" href="#549">549: </a>              }
-</span><span id="550" class="l"><a class="l" href="#550">550: </a>              <span class="php-comment">// insert_update case</span>
-</span><span id="551" class="l"><a class="l" href="#551">551: </a>              <span class="php-keyword1">else</span>{
-</span><span id="552" class="l"><a class="l" href="#552">552: </a>                <span class="php-var">$id</span> = self::<span class="php-var">$db</span>-&gt;last_id();
-</span><span id="553" class="l"><a class="l" href="#553">553: </a>                self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
-</span><span id="554" class="l"><a class="l" href="#554">554: </a>                  <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'INSERT'</span>,
-</span><span id="555" class="l"><a class="l" href="#555">555: </a>                  <span class="php-quote">'line'</span> =&gt; <span class="php-var">$id</span>,
-</span><span id="556" class="l"><a class="l" href="#556">556: </a>                  <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>],
-</span><span id="557" class="l"><a class="l" href="#557">557: </a>                  <span class="php-quote">'old'</span> =&gt; <span class="php-quote">''</span>,
-</span><span id="558" class="l"><a class="l" href="#558">558: </a>                  <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
-</span><span id="559" class="l"><a class="l" href="#559">559: </a>                  <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>
-</span><span id="560" class="l"><a class="l" href="#560">560: </a>                ]);
-</span><span id="561" class="l"><a class="l" href="#561">561: </a>                self::<span class="php-var">$db</span>-&gt;set_last_insert_id(<span class="php-var">$id</span>);
-</span><span id="562" class="l"><a class="l" href="#562">562: </a>              }
-</span><span id="563" class="l"><a class="l" href="#563">563: </a>              self::<span class="php-var">$last_rows</span> = <span class="php-keyword1">false</span>;
-</span><span id="564" class="l"><a class="l" href="#564">564: </a>            }
-</span><span id="565" class="l"><a class="l" href="#565">565: </a>            <span class="php-keyword1">break</span>;
-</span><span id="566" class="l"><a class="l" href="#566">566: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'delete'</span>:
-</span><span id="567" class="l"><a class="l" href="#567">567: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'before'</span> ){
-</span><span id="568" class="l"><a class="l" href="#568">568: </a>              <span class="php-comment">// Looking for foreign constraints </span>
-</span><span id="569" class="l"><a class="l" href="#569">569: </a>              <span class="php-comment">// Nothing is really deleted, the hcol is just set to 0</span>
-</span><span id="570" class="l"><a class="l" href="#570">570: </a>              <span class="php-var">$values</span> = <span class="php-keyword2">array_values</span>(<span class="php-var">$where</span>);
-</span><span id="571" class="l"><a class="l" href="#571">571: </a>              <span class="php-keyword2">array_unshift</span>(<span class="php-var">$values</span>, <span class="php-num">0</span>);
-</span><span id="572" class="l"><a class="l" href="#572">572: </a>              <span class="php-keyword1">if</span> ( <span class="php-var">$r</span> = self::<span class="php-var">$db</span>-&gt;query(
-</span><span id="573" class="l"><a class="l" href="#573">573: </a>                      self::<span class="php-var">$db</span>-&gt;get_update(
-</span><span id="574" class="l"><a class="l" href="#574">574: </a>                        <span class="php-var">$table</span>,
-</span><span id="575" class="l"><a class="l" href="#575">575: </a>                        [self::<span class="php-var">$hcol</span>],
-</span><span id="576" class="l"><a class="l" href="#576">576: </a>                        <span class="php-var">$where</span>), <span class="php-var">$values</span>) ){
-</span><span id="577" class="l"><a class="l" href="#577">577: </a>                self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
-</span><span id="578" class="l"><a class="l" href="#578">578: </a>                  <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'DELETE'</span>,
-</span><span id="579" class="l"><a class="l" href="#579">579: </a>                  <span class="php-quote">'line'</span> =&gt; <span class="php-var">$where</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]],
-</span><span id="580" class="l"><a class="l" href="#580">580: </a>                  <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.self::<span class="php-var">$hcol</span>,
-</span><span id="581" class="l"><a class="l" href="#581">581: </a>                  <span class="php-quote">'old'</span> =&gt; <span class="php-num">1</span>,
-</span><span id="582" class="l"><a class="l" href="#582">582: </a>                  <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
-</span><span id="583" class="l"><a class="l" href="#583">583: </a>                  <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>]);
-</span><span id="584" class="l"><a class="l" href="#584">584: </a>                <span class="php-keyword1">return</span> [<span class="php-quote">'trig'</span> =&gt; <span class="php-keyword1">false</span>, <span class="php-quote">'value'</span> =&gt; <span class="php-var">$r</span>];
-</span><span id="585" class="l"><a class="l" href="#585">585: </a>                <span class="php-comment">/* For each value of this key which is deleted (hopefully one)
-</span></span><span id="586" class="l"><a class="l" href="#586">586: </a><span class="php-comment">                $to_check = self::$db-&gt;get_rows(&quot;
-</span></span><span id="587" class="l"><a class="l" href="#587">587: </a><span class="php-comment">                  SELECT k.`column` AS id, c1.`column` AS to_change, c2.`column` AS from_change,
-</span></span><span id="588" class="l"><a class="l" href="#588">588: </a><span class="php-comment">                  c1.`null`, t.`table`
-</span></span><span id="589" class="l"><a class="l" href="#589">589: </a><span class="php-comment">                  FROM `&quot;.self::$admin_db.&quot;`.`&quot;.self::$prefix.&quot;keys` AS k
-</span></span><span id="590" class="l"><a class="l" href="#590">590: </a><span class="php-comment">                    JOIN `&quot;.self::$prefix.&quot;columns` AS c1
-</span></span><span id="591" class="l"><a class="l" href="#591">591: </a><span class="php-comment">                      ON c1.`id` LIKE k.`column`
-</span></span><span id="592" class="l"><a class="l" href="#592">592: </a><span class="php-comment">                    JOIN `&quot;.self::$prefix.&quot;columns` AS c2
-</span></span><span id="593" class="l"><a class="l" href="#593">593: </a><span class="php-comment">                      ON c2.`id` LIKE k.`ref_column`
-</span></span><span id="594" class="l"><a class="l" href="#594">594: </a><span class="php-comment">                    JOIN `&quot;.self::$prefix.&quot;tables` AS t
-</span></span><span id="595" class="l"><a class="l" href="#595">595: </a><span class="php-comment">                      ON t.`id` LIKE c1.`table`
-</span></span><span id="596" class="l"><a class="l" href="#596">596: </a><span class="php-comment">                  WHERE k.`ref_column` LIKE ?&quot;,
-</span></span><span id="597" class="l"><a class="l" href="#597">597: </a><span class="php-comment">                  $table.'.%%');
-</span></span><span id="598" class="l"><a class="l" href="#598">598: </a><span class="php-comment">                $to_select = [self::$primary];
-</span></span><span id="599" class="l"><a class="l" href="#599">599: </a><span class="php-comment">                foreach ( $to_check as $c ){
-</span></span><span id="600" class="l"><a class="l" href="#600">600: </a><span class="php-comment">                  array_push($to_select, $c['from_change']);
-</span></span><span id="601" class="l"><a class="l" href="#601">601: </a><span class="php-comment">                }
-</span></span><span id="602" class="l"><a class="l" href="#602">602: </a><span class="php-comment">                // The values from the constrained rows that should have been deleted
-</span></span><span id="603" class="l"><a class="l" href="#603">603: </a><span class="php-comment">                $delete = self::$db-&gt;select_all($table, array_unique($to_select), $where);
-</span></span><span id="604" class="l"><a class="l" href="#604">604: </a><span class="php-comment">                foreach ( $delete as $del ){
-</span></span><span id="605" class="l"><a class="l" href="#605">605: </a><span class="php-comment">                  $del = (array) $del;
-</span></span><span id="606" class="l"><a class="l" href="#606">606: </a><span class="php-comment">                  // For each table having a constrain
-</span></span><span id="607" class="l"><a class="l" href="#607">607: </a><span class="php-comment">                  foreach ( $to_check as $c ){
-</span></span><span id="608" class="l"><a class="l" href="#608">608: </a><span class="php-comment">                    // If it's nullable we set it to null
-</span></span><span id="609" class="l"><a class="l" href="#609">609: </a><span class="php-comment">                    if ( $c['null'] == 1 ){
-</span></span><span id="610" class="l"><a class="l" href="#610">610: </a><span class="php-comment">                      self::$db-&gt;query(&quot;
-</span></span><span id="611" class="l"><a class="l" href="#611">611: </a><span class="php-comment">                        UPDATE `$c[table]`
-</span></span><span id="612" class="l"><a class="l" href="#612">612: </a><span class="php-comment">                        SET `$c[to_change]` = NULL
-</span></span><span id="613" class="l"><a class="l" href="#613">613: </a><span class="php-comment">                        WHERE `$c[to_change]` = ?&quot;,
-</span></span><span id="614" class="l"><a class="l" href="#614">614: </a><span class="php-comment">                        $del[$c['from_change']]);
-</span></span><span id="615" class="l"><a class="l" href="#615">615: </a><span class="php-comment">                    }
-</span></span><span id="616" class="l"><a class="l" href="#616">616: </a><span class="php-comment">                    // Then we &quot;delete&quot; it on the same manner
-</span></span><span id="617" class="l"><a class="l" href="#617">617: </a><span class="php-comment">                    self::$db-&gt;delete($c['table'], [ $c['to_change'] =&gt; $del[$c['from_change']] ], $date);
-</span></span><span id="618" class="l"><a class="l" href="#618">618: </a><span class="php-comment">                  }
-</span></span><span id="619" class="l"><a class="l" href="#619">619: </a><span class="php-comment">                  // Inserting a new history row for each deleted value
-</span></span><span id="620" class="l"><a class="l" href="#620">620: </a><span class="php-comment">                  self::$db-&gt;insert(self::$htable, [
-</span></span><span id="621" class="l"><a class="l" href="#621">621: </a><span class="php-comment">                    'operation' =&gt; 'DELETE',
-</span></span><span id="622" class="l"><a class="l" href="#622">622: </a><span class="php-comment">                    'line' =&gt; $del[$s['primary']],
-</span></span><span id="623" class="l"><a class="l" href="#623">623: </a><span class="php-comment">                    'column' =&gt; $table.'.'.self::$hcol,
-</span></span><span id="624" class="l"><a class="l" href="#624">624: </a><span class="php-comment">                    'old' =&gt; 1,
-</span></span><span id="625" class="l"><a class="l" href="#625">625: </a><span class="php-comment">                    'last_mod' =&gt; $date,
-</span></span><span id="626" class="l"><a class="l" href="#626">626: </a><span class="php-comment">                    'id_user' =&gt; self::$huser]);
-</span></span><span id="627" class="l"><a class="l" href="#627">627: </a><span class="php-comment">                }
-</span></span><span id="628" class="l"><a class="l" href="#628">628: </a><span class="php-comment">                 * 
-</span></span><span id="629" class="l"><a class="l" href="#629">629: </a><span class="php-comment">                 */</span>
-</span><span id="630" class="l"><a class="l" href="#630">630: </a>              }
-</span><span id="631" class="l"><a class="l" href="#631">631: </a>            }
-</span><span id="632" class="l"><a class="l" href="#632">632: </a>            <span class="php-keyword1">break</span>;
-</span><span id="633" class="l"><a class="l" href="#633">633: </a>        }
-</span><span id="634" class="l"><a class="l" href="#634">634: </a>      }
-</span><span id="635" class="l"><a class="l" href="#635">635: </a>    }
-</span><span id="636" class="l"><a class="l" href="#636">636: </a>    <span class="php-keyword1">return</span> <span class="php-num">1</span>;
-</span><span id="637" class="l"><a class="l" href="#637">637: </a>  }
-</span><span id="638" class="l"><a class="l" href="#638">638: </a>    
-</span><span id="639" class="l"><a class="l" href="#639">639: </a></span>}</code></pre>
+</span><span id="484" class="l"><a class="l" href="#484">484: </a>          self::<span class="php-var">$db</span>-&gt;error(<span class="php-quote">&quot;You need to have a primary key on a single column in your table </span><span class="php-var">$table</span><span class="php-quote"> in order to use the history class&quot;</span>);
+</span><span id="485" class="l"><a class="l" href="#485">485: </a>          <span class="php-keyword1">die</span>(\bbn\tools::dump(<span class="php-quote">&quot;You need to have a primary key on a single column in your table </span><span class="php-var">$table</span><span class="php-quote"> in order to use the history class&quot;</span>, <span class="php-var">$s</span>));
+</span><span id="486" class="l"><a class="l" href="#486">486: </a>        }
+</span><span id="487" class="l"><a class="l" href="#487">487: </a>
+</span><span id="488" class="l"><a class="l" href="#488">488: </a>        <span class="php-var">$date</span> = self::<span class="php-var">$date</span> ? self::<span class="php-var">$date</span> : <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="489" class="l"><a class="l" href="#489">489: </a>        
+</span><span id="490" class="l"><a class="l" href="#490">490: </a>        <span class="php-keyword1">if</span> ( (<span class="php-keyword2">count</span>(<span class="php-var">$values</span>) === <span class="php-num">1</span>) &amp;&amp; (<span class="php-keyword2">array_keys</span>(<span class="php-var">$values</span>)[<span class="php-num">0</span>] === self::<span class="php-var">$hcol</span>) ){
+</span><span id="491" class="l"><a class="l" href="#491">491: </a>          <span class="php-var">$kind</span> = <span class="php-keyword2">array_values</span>(<span class="php-var">$values</span>)[<span class="php-num">0</span>] === <span class="php-num">1</span> ? <span class="php-quote">'restore'</span> : <span class="php-quote">'delete'</span>;
+</span><span id="492" class="l"><a class="l" href="#492">492: </a>        }
+</span><span id="493" class="l"><a class="l" href="#493">493: </a>          
+</span><span id="494" class="l"><a class="l" href="#494">494: </a>        <span class="php-keyword1">switch</span> ( <span class="php-var">$kind</span> ){
+</span><span id="495" class="l"><a class="l" href="#495">495: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'select'</span>:
+</span><span id="496" class="l"><a class="l" href="#496">496: </a>            <span class="php-keyword1">break</span>;
+</span><span id="497" class="l"><a class="l" href="#497">497: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'insert'</span>:
+</span><span id="498" class="l"><a class="l" href="#498">498: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'before'</span> &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$values</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]]) ){
+</span><span id="499" class="l"><a class="l" href="#499">499: </a>              <span class="php-keyword1">if</span> ( self::<span class="php-var">$db</span>-&gt;select_one(<span class="php-var">$table</span>, self::<span class="php-var">$hcol</span>, [<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>] =&gt; <span class="php-var">$values</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]]]) === <span class="php-num">0</span> ){
+</span><span id="500" class="l"><a class="l" href="#500">500: </a>                self::<span class="php-var">$db</span>-&gt;update(<span class="php-var">$table</span>, [self::<span class="php-var">$hcol</span>=<span class="php-num">1</span>], [<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>] =&gt; <span class="php-var">$values</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]]]);
+</span><span id="501" class="l"><a class="l" href="#501">501: </a>              }
+</span><span id="502" class="l"><a class="l" href="#502">502: </a>            }
+</span><span id="503" class="l"><a class="l" href="#503">503: </a>            <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
+</span><span id="504" class="l"><a class="l" href="#504">504: </a>              <span class="php-var">$id</span> = self::<span class="php-var">$db</span>-&gt;last_id();
+</span><span id="505" class="l"><a class="l" href="#505">505: </a>              self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
+</span><span id="506" class="l"><a class="l" href="#506">506: </a>                <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'INSERT'</span>,
+</span><span id="507" class="l"><a class="l" href="#507">507: </a>                <span class="php-quote">'line'</span> =&gt; <span class="php-var">$id</span>,
+</span><span id="508" class="l"><a class="l" href="#508">508: </a>                <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>],
+</span><span id="509" class="l"><a class="l" href="#509">509: </a>                <span class="php-quote">'old'</span> =&gt; <span class="php-keyword1">null</span>,
+</span><span id="510" class="l"><a class="l" href="#510">510: </a>                <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
+</span><span id="511" class="l"><a class="l" href="#511">511: </a>                <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>
+</span><span id="512" class="l"><a class="l" href="#512">512: </a>              ]);
+</span><span id="513" class="l"><a class="l" href="#513">513: </a>              self::<span class="php-var">$db</span>-&gt;set_last_insert_id(<span class="php-var">$id</span>);
+</span><span id="514" class="l"><a class="l" href="#514">514: </a>            }
+</span><span id="515" class="l"><a class="l" href="#515">515: </a>            <span class="php-keyword1">break</span>;
+</span><span id="516" class="l"><a class="l" href="#516">516: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'restore'</span>:
+</span><span id="517" class="l"><a class="l" href="#517">517: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
+</span><span id="518" class="l"><a class="l" href="#518">518: </a>              self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
+</span><span id="519" class="l"><a class="l" href="#519">519: </a>                <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'RESTORE'</span>,
+</span><span id="520" class="l"><a class="l" href="#520">520: </a>                <span class="php-quote">'line'</span> =&gt; <span class="php-var">$where</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]],
+</span><span id="521" class="l"><a class="l" href="#521">521: </a>                <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.self::<span class="php-var">$hcol</span>,
+</span><span id="522" class="l"><a class="l" href="#522">522: </a>                <span class="php-quote">'old'</span> =&gt; <span class="php-quote">'0'</span>,
+</span><span id="523" class="l"><a class="l" href="#523">523: </a>                <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
+</span><span id="524" class="l"><a class="l" href="#524">524: </a>                <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>
+</span><span id="525" class="l"><a class="l" href="#525">525: </a>              ]);
+</span><span id="526" class="l"><a class="l" href="#526">526: </a>            }
+</span><span id="527" class="l"><a class="l" href="#527">527: </a>            <span class="php-keyword1">break</span>;
+</span><span id="528" class="l"><a class="l" href="#528">528: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'update'</span>:
+</span><span id="529" class="l"><a class="l" href="#529">529: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'before'</span> ){
+</span><span id="530" class="l"><a class="l" href="#530">530: </a>              self::<span class="php-var">$last_rows</span> = self::<span class="php-var">$db</span>-&gt;rselect_all(<span class="php-var">$table</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$values</span>), <span class="php-var">$where</span>);
+</span><span id="531" class="l"><a class="l" href="#531">531: </a>            }
+</span><span id="532" class="l"><a class="l" href="#532">532: </a>            <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'after'</span> ){
+</span><span id="533" class="l"><a class="l" href="#533">533: </a>              <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(self::<span class="php-var">$last_rows</span>) ){
+</span><span id="534" class="l"><a class="l" href="#534">534: </a>                <span class="php-keyword1">foreach</span> ( self::<span class="php-var">$last_rows</span> <span class="php-keyword1">as</span> <span class="php-var">$upd</span> ){
+</span><span id="535" class="l"><a class="l" href="#535">535: </a>                  <span class="php-keyword1">foreach</span> ( <span class="php-var">$values</span> <span class="php-keyword1">as</span> <span class="php-var">$c</span> =&gt; <span class="php-var">$v</span> ){
+</span><span id="536" class="l"><a class="l" href="#536">536: </a>                    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$upd</span>[<span class="php-var">$c</span>]) ){
+</span><span id="537" class="l"><a class="l" href="#537">537: </a>                      <span class="php-var">$upd</span>[<span class="php-var">$c</span>] = <span class="php-keyword1">null</span>;
+</span><span id="538" class="l"><a class="l" href="#538">538: </a>                    }
+</span><span id="539" class="l"><a class="l" href="#539">539: </a>                    <span class="php-keyword1">if</span> ( ( <span class="php-var">$v</span> !== <span class="php-var">$upd</span>[<span class="php-var">$c</span>] ) &amp;&amp; ( <span class="php-var">$c</span> !== self::<span class="php-var">$hcol</span> ) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$s</span>[<span class="php-quote">'fields'</span>][<span class="php-var">$c</span>][<span class="php-quote">'config'</span>][<span class="php-quote">'history'</span>]) ){
+</span><span id="540" class="l"><a class="l" href="#540">540: </a>                      self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
+</span><span id="541" class="l"><a class="l" href="#541">541: </a>                        <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'UPDATE'</span>,
+</span><span id="542" class="l"><a class="l" href="#542">542: </a>                        <span class="php-quote">'line'</span> =&gt; <span class="php-var">$where</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]],
+</span><span id="543" class="l"><a class="l" href="#543">543: </a>                        <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.<span class="php-var">$c</span>,
+</span><span id="544" class="l"><a class="l" href="#544">544: </a>                        <span class="php-quote">'old'</span> =&gt; <span class="php-var">$upd</span>[<span class="php-var">$c</span>],
+</span><span id="545" class="l"><a class="l" href="#545">545: </a>                        <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
+</span><span id="546" class="l"><a class="l" href="#546">546: </a>                        <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>]);
+</span><span id="547" class="l"><a class="l" href="#547">547: </a>                    }
+</span><span id="548" class="l"><a class="l" href="#548">548: </a>                  }
+</span><span id="549" class="l"><a class="l" href="#549">549: </a>                }
+</span><span id="550" class="l"><a class="l" href="#550">550: </a>              }
+</span><span id="551" class="l"><a class="l" href="#551">551: </a>              <span class="php-comment">// insert_update case</span>
+</span><span id="552" class="l"><a class="l" href="#552">552: </a>              <span class="php-keyword1">else</span>{
+</span><span id="553" class="l"><a class="l" href="#553">553: </a>                <span class="php-var">$id</span> = self::<span class="php-var">$db</span>-&gt;last_id();
+</span><span id="554" class="l"><a class="l" href="#554">554: </a>                self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
+</span><span id="555" class="l"><a class="l" href="#555">555: </a>                  <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'INSERT'</span>,
+</span><span id="556" class="l"><a class="l" href="#556">556: </a>                  <span class="php-quote">'line'</span> =&gt; <span class="php-var">$id</span>,
+</span><span id="557" class="l"><a class="l" href="#557">557: </a>                  <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>],
+</span><span id="558" class="l"><a class="l" href="#558">558: </a>                  <span class="php-quote">'old'</span> =&gt; <span class="php-quote">''</span>,
+</span><span id="559" class="l"><a class="l" href="#559">559: </a>                  <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
+</span><span id="560" class="l"><a class="l" href="#560">560: </a>                  <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>
+</span><span id="561" class="l"><a class="l" href="#561">561: </a>                ]);
+</span><span id="562" class="l"><a class="l" href="#562">562: </a>                self::<span class="php-var">$db</span>-&gt;set_last_insert_id(<span class="php-var">$id</span>);
+</span><span id="563" class="l"><a class="l" href="#563">563: </a>              }
+</span><span id="564" class="l"><a class="l" href="#564">564: </a>              self::<span class="php-var">$last_rows</span> = <span class="php-keyword1">false</span>;
+</span><span id="565" class="l"><a class="l" href="#565">565: </a>            }
+</span><span id="566" class="l"><a class="l" href="#566">566: </a>            <span class="php-keyword1">break</span>;
+</span><span id="567" class="l"><a class="l" href="#567">567: </a>          <span class="php-keyword1">case</span> <span class="php-quote">'delete'</span>:
+</span><span id="568" class="l"><a class="l" href="#568">568: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$moment</span> === <span class="php-quote">'before'</span> ){
+</span><span id="569" class="l"><a class="l" href="#569">569: </a>              <span class="php-comment">// Looking for foreign constraints </span>
+</span><span id="570" class="l"><a class="l" href="#570">570: </a>              <span class="php-comment">// Nothing is really deleted, the hcol is just set to 0</span>
+</span><span id="571" class="l"><a class="l" href="#571">571: </a>              <span class="php-var">$values</span> = <span class="php-keyword2">array_values</span>(<span class="php-var">$where</span>);
+</span><span id="572" class="l"><a class="l" href="#572">572: </a>              <span class="php-keyword2">array_unshift</span>(<span class="php-var">$values</span>, <span class="php-num">0</span>);
+</span><span id="573" class="l"><a class="l" href="#573">573: </a>              <span class="php-keyword1">if</span> ( <span class="php-var">$r</span> = self::<span class="php-var">$db</span>-&gt;query(
+</span><span id="574" class="l"><a class="l" href="#574">574: </a>                      self::<span class="php-var">$db</span>-&gt;get_update(
+</span><span id="575" class="l"><a class="l" href="#575">575: </a>                        <span class="php-var">$table</span>,
+</span><span id="576" class="l"><a class="l" href="#576">576: </a>                        [self::<span class="php-var">$hcol</span>],
+</span><span id="577" class="l"><a class="l" href="#577">577: </a>                        <span class="php-var">$where</span>), <span class="php-var">$values</span>) ){
+</span><span id="578" class="l"><a class="l" href="#578">578: </a>                self::<span class="php-var">$db</span>-&gt;insert(self::<span class="php-var">$htable</span>, [
+</span><span id="579" class="l"><a class="l" href="#579">579: </a>                  <span class="php-quote">'operation'</span> =&gt; <span class="php-quote">'DELETE'</span>,
+</span><span id="580" class="l"><a class="l" href="#580">580: </a>                  <span class="php-quote">'line'</span> =&gt; <span class="php-var">$where</span>[<span class="php-var">$s</span>[<span class="php-quote">'primary'</span>]],
+</span><span id="581" class="l"><a class="l" href="#581">581: </a>                  <span class="php-quote">'column'</span> =&gt; <span class="php-var">$table</span>.<span class="php-quote">'.'</span>.self::<span class="php-var">$hcol</span>,
+</span><span id="582" class="l"><a class="l" href="#582">582: </a>                  <span class="php-quote">'old'</span> =&gt; <span class="php-num">1</span>,
+</span><span id="583" class="l"><a class="l" href="#583">583: </a>                  <span class="php-quote">'last_mod'</span> =&gt; <span class="php-var">$date</span>,
+</span><span id="584" class="l"><a class="l" href="#584">584: </a>                  <span class="php-quote">'id_user'</span> =&gt; self::<span class="php-var">$huser</span>]);
+</span><span id="585" class="l"><a class="l" href="#585">585: </a>                <span class="php-keyword1">return</span> [<span class="php-quote">'trig'</span> =&gt; <span class="php-keyword1">false</span>, <span class="php-quote">'value'</span> =&gt; <span class="php-var">$r</span>];
+</span><span id="586" class="l"><a class="l" href="#586">586: </a>                <span class="php-comment">/* For each value of this key which is deleted (hopefully one)
+</span></span><span id="587" class="l"><a class="l" href="#587">587: </a><span class="php-comment">                $to_check = self::$db-&gt;get_rows(&quot;
+</span></span><span id="588" class="l"><a class="l" href="#588">588: </a><span class="php-comment">                  SELECT k.`column` AS id, c1.`column` AS to_change, c2.`column` AS from_change,
+</span></span><span id="589" class="l"><a class="l" href="#589">589: </a><span class="php-comment">                  c1.`null`, t.`table`
+</span></span><span id="590" class="l"><a class="l" href="#590">590: </a><span class="php-comment">                  FROM `&quot;.self::$admin_db.&quot;`.`&quot;.self::$prefix.&quot;keys` AS k
+</span></span><span id="591" class="l"><a class="l" href="#591">591: </a><span class="php-comment">                    JOIN `&quot;.self::$prefix.&quot;columns` AS c1
+</span></span><span id="592" class="l"><a class="l" href="#592">592: </a><span class="php-comment">                      ON c1.`id` LIKE k.`column`
+</span></span><span id="593" class="l"><a class="l" href="#593">593: </a><span class="php-comment">                    JOIN `&quot;.self::$prefix.&quot;columns` AS c2
+</span></span><span id="594" class="l"><a class="l" href="#594">594: </a><span class="php-comment">                      ON c2.`id` LIKE k.`ref_column`
+</span></span><span id="595" class="l"><a class="l" href="#595">595: </a><span class="php-comment">                    JOIN `&quot;.self::$prefix.&quot;tables` AS t
+</span></span><span id="596" class="l"><a class="l" href="#596">596: </a><span class="php-comment">                      ON t.`id` LIKE c1.`table`
+</span></span><span id="597" class="l"><a class="l" href="#597">597: </a><span class="php-comment">                  WHERE k.`ref_column` LIKE ?&quot;,
+</span></span><span id="598" class="l"><a class="l" href="#598">598: </a><span class="php-comment">                  $table.'.%%');
+</span></span><span id="599" class="l"><a class="l" href="#599">599: </a><span class="php-comment">                $to_select = [self::$primary];
+</span></span><span id="600" class="l"><a class="l" href="#600">600: </a><span class="php-comment">                foreach ( $to_check as $c ){
+</span></span><span id="601" class="l"><a class="l" href="#601">601: </a><span class="php-comment">                  array_push($to_select, $c['from_change']);
+</span></span><span id="602" class="l"><a class="l" href="#602">602: </a><span class="php-comment">                }
+</span></span><span id="603" class="l"><a class="l" href="#603">603: </a><span class="php-comment">                // The values from the constrained rows that should have been deleted
+</span></span><span id="604" class="l"><a class="l" href="#604">604: </a><span class="php-comment">                $delete = self::$db-&gt;select_all($table, array_unique($to_select), $where);
+</span></span><span id="605" class="l"><a class="l" href="#605">605: </a><span class="php-comment">                foreach ( $delete as $del ){
+</span></span><span id="606" class="l"><a class="l" href="#606">606: </a><span class="php-comment">                  $del = (array) $del;
+</span></span><span id="607" class="l"><a class="l" href="#607">607: </a><span class="php-comment">                  // For each table having a constrain
+</span></span><span id="608" class="l"><a class="l" href="#608">608: </a><span class="php-comment">                  foreach ( $to_check as $c ){
+</span></span><span id="609" class="l"><a class="l" href="#609">609: </a><span class="php-comment">                    // If it's nullable we set it to null
+</span></span><span id="610" class="l"><a class="l" href="#610">610: </a><span class="php-comment">                    if ( $c['null'] == 1 ){
+</span></span><span id="611" class="l"><a class="l" href="#611">611: </a><span class="php-comment">                      self::$db-&gt;query(&quot;
+</span></span><span id="612" class="l"><a class="l" href="#612">612: </a><span class="php-comment">                        UPDATE `$c[table]`
+</span></span><span id="613" class="l"><a class="l" href="#613">613: </a><span class="php-comment">                        SET `$c[to_change]` = NULL
+</span></span><span id="614" class="l"><a class="l" href="#614">614: </a><span class="php-comment">                        WHERE `$c[to_change]` = ?&quot;,
+</span></span><span id="615" class="l"><a class="l" href="#615">615: </a><span class="php-comment">                        $del[$c['from_change']]);
+</span></span><span id="616" class="l"><a class="l" href="#616">616: </a><span class="php-comment">                    }
+</span></span><span id="617" class="l"><a class="l" href="#617">617: </a><span class="php-comment">                    // Then we &quot;delete&quot; it on the same manner
+</span></span><span id="618" class="l"><a class="l" href="#618">618: </a><span class="php-comment">                    self::$db-&gt;delete($c['table'], [ $c['to_change'] =&gt; $del[$c['from_change']] ], $date);
+</span></span><span id="619" class="l"><a class="l" href="#619">619: </a><span class="php-comment">                  }
+</span></span><span id="620" class="l"><a class="l" href="#620">620: </a><span class="php-comment">                  // Inserting a new history row for each deleted value
+</span></span><span id="621" class="l"><a class="l" href="#621">621: </a><span class="php-comment">                  self::$db-&gt;insert(self::$htable, [
+</span></span><span id="622" class="l"><a class="l" href="#622">622: </a><span class="php-comment">                    'operation' =&gt; 'DELETE',
+</span></span><span id="623" class="l"><a class="l" href="#623">623: </a><span class="php-comment">                    'line' =&gt; $del[$s['primary']],
+</span></span><span id="624" class="l"><a class="l" href="#624">624: </a><span class="php-comment">                    'column' =&gt; $table.'.'.self::$hcol,
+</span></span><span id="625" class="l"><a class="l" href="#625">625: </a><span class="php-comment">                    'old' =&gt; 1,
+</span></span><span id="626" class="l"><a class="l" href="#626">626: </a><span class="php-comment">                    'last_mod' =&gt; $date,
+</span></span><span id="627" class="l"><a class="l" href="#627">627: </a><span class="php-comment">                    'id_user' =&gt; self::$huser]);
+</span></span><span id="628" class="l"><a class="l" href="#628">628: </a><span class="php-comment">                }
+</span></span><span id="629" class="l"><a class="l" href="#629">629: </a><span class="php-comment">                 * 
+</span></span><span id="630" class="l"><a class="l" href="#630">630: </a><span class="php-comment">                 */</span>
+</span><span id="631" class="l"><a class="l" href="#631">631: </a>              }
+</span><span id="632" class="l"><a class="l" href="#632">632: </a>            }
+</span><span id="633" class="l"><a class="l" href="#633">633: </a>            <span class="php-keyword1">break</span>;
+</span><span id="634" class="l"><a class="l" href="#634">634: </a>        }
+</span><span id="635" class="l"><a class="l" href="#635">635: </a>      }
+</span><span id="636" class="l"><a class="l" href="#636">636: </a>    }
+</span><span id="637" class="l"><a class="l" href="#637">637: </a>    <span class="php-keyword1">return</span> <span class="php-num">1</span>;
+</span><span id="638" class="l"><a class="l" href="#638">638: </a>  }
+</span><span id="639" class="l"><a class="l" href="#639">639: </a>    
+</span><span id="640" class="l"><a class="l" href="#640">640: </a></span>}</code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
