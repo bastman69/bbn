@@ -281,9 +281,9 @@
 </span><span id="156" class="l"><a class="l" href="#156">156: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() &amp;&amp; (<span class="php-var">$data</span> = <span class="php-var">$this</span>-&gt;db-&gt;get_row(<span class="php-quote">&quot;
 </span></span><span id="157" class="l"><a class="l" href="#157">157: </a><span class="php-quote">        SELECT *
 </span></span><span id="158" class="l"><a class="l" href="#158">158: </a><span class="php-quote">        FROM </span><span class="php-var">{$this-&gt;table}</span><span class="php-quote">
-</span></span><span id="159" class="l"><a class="l" href="#159">159: </a><span class="php-quote">        WHERE active = 1 
-</span></span><span id="160" class="l"><a class="l" href="#160">160: </a><span class="php-quote">        AND next &lt; ?&quot;</span>.
-</span><span id="161" class="l"><a class="l" href="#161">161: </a>        ( <span class="php-keyword2">is_int</span>(<span class="php-var">$id_cron</span>) ? <span class="php-quote">&quot; AND `id_cron` = </span><span class="php-var">$id_cron</span><span class="php-quote">&quot;</span> : <span class="php-quote">&quot;&quot;</span> ).<span class="php-quote">&quot;
+</span></span><span id="159" class="l"><a class="l" href="#159">159: </a><span class="php-quote">        WHERE `active` = 1 
+</span></span><span id="160" class="l"><a class="l" href="#160">160: </a><span class="php-quote">        AND `next` &lt; ?&quot;</span>.
+</span><span id="161" class="l"><a class="l" href="#161">161: </a>        ( <span class="php-keyword2">is_int</span>(<span class="php-var">$id_cron</span>) ? <span class="php-quote">&quot; AND `id` = </span><span class="php-var">$id_cron</span><span class="php-quote">&quot;</span> : <span class="php-quote">&quot;&quot;</span> ).<span class="php-quote">&quot;
 </span></span><span id="162" class="l"><a class="l" href="#162">162: </a><span class="php-quote">        ORDER BY `priority` ASC, `next` ASC
 </span></span><span id="163" class="l"><a class="l" href="#163">163: </a><span class="php-quote">        LIMIT 1&quot;</span>,
 </span><span id="164" class="l"><a class="l" href="#164">164: </a>        <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>))) ){
@@ -317,8 +317,8 @@
 </span><span id="192" class="l"><a class="l" href="#192">192: </a>    }
 </span><span id="193" class="l"><a class="l" href="#193">193: </a>  }
 </span><span id="194" class="l"><a class="l" href="#194">194: </a>
-</span><span id="195" class="l"><a class="l" href="#195">195: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>(<span class="php-var">$id_cron</span> = <span class="php-keyword1">null</span>){
-</span><span id="196" class="l"><a class="l" href="#196">196: </a>    <span class="php-keyword1">if</span> ( (<span class="php-var">$cron</span> = <span class="php-var">$this</span>-&gt;get_next(<span class="php-var">$id_cron</span>)) ){
+</span><span id="195" class="l"><a class="l" href="#195">195: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run" href="#_run">run</a>(<span class="php-var">$id_cron</span>){
+</span><span id="196" class="l"><a class="l" href="#196">196: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$cron</span> = <span class="php-var">$this</span>-&gt;get_next(<span class="php-var">$id_cron</span>) ){
 </span><span id="197" class="l"><a class="l" href="#197">197: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_running(<span class="php-var">$cron</span>[<span class="php-quote">'id'</span>]) ){
 </span><span id="198" class="l"><a class="l" href="#198">198: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;is_timeout(<span class="php-var">$cron</span>[<span class="php-quote">'id'</span>]) ){
 </span><span id="199" class="l"><a class="l" href="#199">199: </a>          <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;get_runner(<span class="php-var">$cron</span>[<span class="php-quote">'id'</span>]);
@@ -344,33 +344,39 @@
 </span><span id="219" class="l"><a class="l" href="#219">219: </a>
 </span><span id="220" class="l"><a class="l" href="#220">220: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_run_all" href="#_run_all">run_all</a>(){
 </span><span id="221" class="l"><a class="l" href="#221">221: </a>    <span class="php-var">$time</span> = <span class="php-num">0</span>;
-</span><span id="222" class="l"><a class="l" href="#222">222: </a>    <span class="php-keyword1">while</span> ( (<span class="php-var">$time</span> &lt; <span class="php-var">$this</span>-&gt;timeout) &amp;&amp; (<span class="php-var">$ctx</span> = <span class="php-var">$this</span>-&gt;run()) ){
-</span><span id="223" class="l"><a class="l" href="#223">223: </a>      <span class="php-var">$time</span> += <span class="php-var">$ctx</span>;
-</span><span id="224" class="l"><a class="l" href="#224">224: </a>    }
-</span><span id="225" class="l"><a class="l" href="#225">225: </a>    <span class="php-keyword1">return</span> <span class="php-var">$time</span>;
-</span><span id="226" class="l"><a class="l" href="#226">226: </a>  }
-</span><span id="227" class="l"><a class="l" href="#227">227: </a>
-</span><span id="228" class="l"><a class="l" href="#228">228: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_is_timeout" href="#_is_timeout">is_timeout</a>(<span class="php-var">$id_cron</span>){
-</span><span id="229" class="l"><a class="l" href="#229">229: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() &amp;&amp; <span class="php-keyword2">is_int</span>(<span class="php-var">$id_cron</span>) &amp;&amp; <span class="php-var">$this</span>-&gt;is_running(<span class="php-var">$id_cron</span>)){
-</span><span id="230" class="l"><a class="l" href="#230">230: </a>      <span class="php-var">$c</span> = <span class="php-var">$this</span>-&gt;get_cron(<span class="php-var">$id_cron</span>);
-</span><span id="231" class="l"><a class="l" href="#231">231: </a>      <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;get_runner(<span class="php-var">$id_cron</span>);
-</span><span id="232" class="l"><a class="l" href="#232">232: </a>      <span class="php-keyword1">if</span> ( (<span class="php-keyword2">strtotime</span>(<span class="php-var">$r</span>[<span class="php-quote">'start'</span>]) + <span class="php-var">$c</span>[<span class="php-quote">'cfg'</span>][<span class="php-quote">'timeout'</span>]) &lt; <span class="php-keyword2">time</span>() ){
-</span><span id="233" class="l"><a class="l" href="#233">233: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
-</span><span id="234" class="l"><a class="l" href="#234">234: </a>      }
-</span><span id="235" class="l"><a class="l" href="#235">235: </a>    }
-</span><span id="236" class="l"><a class="l" href="#236">236: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="237" class="l"><a class="l" href="#237">237: </a>  }
-</span><span id="238" class="l"><a class="l" href="#238">238: </a>
-</span><span id="239" class="l"><a class="l" href="#239">239: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__exec" href="#__exec">_exec</a>(<span class="php-var">$file</span>, <span class="php-var">$data</span>=[]){
-</span><span id="240" class="l"><a class="l" href="#240">240: </a>    <span class="php-var">$this</span>-&gt;ctrl-&gt;data = <span class="php-var">$data</span>;
-</span><span id="241" class="l"><a class="l" href="#241">241: </a>    <span class="php-var">$this</span>-&gt;obj = <span class="php-keyword1">new</span> \stdClass();
-</span><span id="242" class="l"><a class="l" href="#242">242: </a>    <span class="php-keyword2">ob_start</span>();
-</span><span id="243" class="l"><a class="l" href="#243">243: </a>    <span class="php-var">$this</span>-&gt;ctrl-&gt;incl(<span class="php-var">$file</span>, <span class="php-keyword1">false</span>);
-</span><span id="244" class="l"><a class="l" href="#244">244: </a>    <span class="php-var">$output</span> = <span class="php-keyword2">ob_get_contents</span>();
-</span><span id="245" class="l"><a class="l" href="#245">245: </a>    <span class="php-keyword2">ob_end_clean</span>();
-</span><span id="246" class="l"><a class="l" href="#246">246: </a>    <span class="php-keyword1">return</span> <span class="php-var">$output</span>;
-</span><span id="247" class="l"><a class="l" href="#247">247: </a>  }
-</span><span id="248" class="l"><a class="l" href="#248">248: </a></span>}</code></pre>
+</span><span id="222" class="l"><a class="l" href="#222">222: </a>    <span class="php-var">$done</span> = [];
+</span><span id="223" class="l"><a class="l" href="#223">223: </a>    <span class="php-keyword1">while</span> ( (<span class="php-var">$time</span> &lt; <span class="php-var">$this</span>-&gt;timeout) &amp;&amp;
+</span><span id="224" class="l"><a class="l" href="#224">224: </a>           (<span class="php-var">$cron</span> = <span class="php-var">$this</span>-&gt;get_next()) &amp;&amp;
+</span><span id="225" class="l"><a class="l" href="#225">225: </a>           !<span class="php-keyword2">in_array</span>(<span class="php-var">$cron</span>[<span class="php-quote">'id'</span>], <span class="php-var">$done</span>) ){
+</span><span id="226" class="l"><a class="l" href="#226">226: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$ctx</span> = <span class="php-var">$this</span>-&gt;run(<span class="php-var">$cron</span>[<span class="php-quote">'id'</span>]) ){
+</span><span id="227" class="l"><a class="l" href="#227">227: </a>        <span class="php-var">$time</span> += <span class="php-var">$ctx</span>;
+</span><span id="228" class="l"><a class="l" href="#228">228: </a>      }
+</span><span id="229" class="l"><a class="l" href="#229">229: </a>      <span class="php-keyword2">array_push</span>(<span class="php-var">$done</span>, <span class="php-var">$cron</span>[<span class="php-quote">'id'</span>]);
+</span><span id="230" class="l"><a class="l" href="#230">230: </a>    }
+</span><span id="231" class="l"><a class="l" href="#231">231: </a>    <span class="php-keyword1">return</span> <span class="php-var">$time</span>;
+</span><span id="232" class="l"><a class="l" href="#232">232: </a>  }
+</span><span id="233" class="l"><a class="l" href="#233">233: </a>
+</span><span id="234" class="l"><a class="l" href="#234">234: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_is_timeout" href="#_is_timeout">is_timeout</a>(<span class="php-var">$id_cron</span>){
+</span><span id="235" class="l"><a class="l" href="#235">235: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() &amp;&amp; <span class="php-keyword2">is_int</span>(<span class="php-var">$id_cron</span>) &amp;&amp; <span class="php-var">$this</span>-&gt;is_running(<span class="php-var">$id_cron</span>)){
+</span><span id="236" class="l"><a class="l" href="#236">236: </a>      <span class="php-var">$c</span> = <span class="php-var">$this</span>-&gt;get_cron(<span class="php-var">$id_cron</span>);
+</span><span id="237" class="l"><a class="l" href="#237">237: </a>      <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;get_runner(<span class="php-var">$id_cron</span>);
+</span><span id="238" class="l"><a class="l" href="#238">238: </a>      <span class="php-keyword1">if</span> ( (<span class="php-keyword2">strtotime</span>(<span class="php-var">$r</span>[<span class="php-quote">'start'</span>]) + <span class="php-var">$c</span>[<span class="php-quote">'cfg'</span>][<span class="php-quote">'timeout'</span>]) &lt; <span class="php-keyword2">time</span>() ){
+</span><span id="239" class="l"><a class="l" href="#239">239: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
+</span><span id="240" class="l"><a class="l" href="#240">240: </a>      }
+</span><span id="241" class="l"><a class="l" href="#241">241: </a>    }
+</span><span id="242" class="l"><a class="l" href="#242">242: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="243" class="l"><a class="l" href="#243">243: </a>  }
+</span><span id="244" class="l"><a class="l" href="#244">244: </a>
+</span><span id="245" class="l"><a class="l" href="#245">245: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__exec" href="#__exec">_exec</a>(<span class="php-var">$file</span>, <span class="php-var">$data</span>=[]){
+</span><span id="246" class="l"><a class="l" href="#246">246: </a>    <span class="php-var">$this</span>-&gt;ctrl-&gt;data = <span class="php-var">$data</span>;
+</span><span id="247" class="l"><a class="l" href="#247">247: </a>    <span class="php-var">$this</span>-&gt;obj = <span class="php-keyword1">new</span> \stdClass();
+</span><span id="248" class="l"><a class="l" href="#248">248: </a>    <span class="php-keyword2">ob_start</span>();
+</span><span id="249" class="l"><a class="l" href="#249">249: </a>    <span class="php-var">$this</span>-&gt;ctrl-&gt;incl(<span class="php-var">$file</span>, <span class="php-keyword1">false</span>);
+</span><span id="250" class="l"><a class="l" href="#250">250: </a>    <span class="php-var">$output</span> = <span class="php-keyword2">ob_get_contents</span>();
+</span><span id="251" class="l"><a class="l" href="#251">251: </a>    <span class="php-keyword2">ob_end_clean</span>();
+</span><span id="252" class="l"><a class="l" href="#252">252: </a>    <span class="php-keyword1">return</span> <span class="php-var">$output</span>;
+</span><span id="253" class="l"><a class="l" href="#253">253: </a>  }
+</span><span id="254" class="l"><a class="l" href="#254">254: </a></span>}</code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
