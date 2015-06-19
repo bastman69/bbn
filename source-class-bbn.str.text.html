@@ -8,7 +8,7 @@
 	<title>File str/text.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?1135443154"></script>
+	<script type="text/javascript" src="elementlist.js?1434479903"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -1054,7 +1054,7 @@
 </span><span id="934" class="l"><a class="l" href="#934">934: </a>        }
 </span><span id="935" class="l"><a class="l" href="#935">935: </a>        <span class="php-var">$st</span> .= <span class="php-keyword2">str_repeat</span>(<span class="php-quote">'    '</span>, <span class="php-var">$lev</span>);
 </span><span id="936" class="l"><a class="l" href="#936">936: </a>        <span class="php-keyword1">if</span> ( <span class="php-var">$is_assoc</span> ){
-</span><span id="937" class="l"><a class="l" href="#937">937: </a>          <span class="php-var">$st</span> .= ( <span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>) ? <span class="php-quote">&quot;'&quot;</span>.\bbn\str\text::escape_squote(<span class="php-var">$k</span>).<span class="php-quote">&quot;'&quot;</span> : <span class="php-var">$k</span> ). <span class="php-quote">&quot; =&gt; &quot;</span>;
+</span><span id="937" class="l"><a class="l" href="#937">937: </a>          <span class="php-var">$st</span> .= ( <span class="php-keyword2">is_string</span>(<span class="php-var">$k</span>) ? <span class="php-quote">'&quot;'</span>.\bbn\str\text::escape_dquote(<span class="php-var">$k</span>).<span class="php-quote">'&quot;'</span> : <span class="php-var">$k</span> ). <span class="php-quote">&quot; =&gt; &quot;</span>;
 </span><span id="938" class="l"><a class="l" href="#938">938: </a>        }
 </span><span id="939" class="l"><a class="l" href="#939">939: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$v</span>) ){
 </span><span id="940" class="l"><a class="l" href="#940">940: </a>          <span class="php-var">$st</span> .= self::export(<span class="php-var">$v</span>, <span class="php-var">$remove_empty</span>, <span class="php-var">$lev</span>+<span class="php-num">1</span>);
@@ -1081,7 +1081,7 @@
 </span><span id="961" class="l"><a class="l" href="#961">961: </a>          <span class="php-var">$st</span> .= <span class="php-var">$v</span>;
 </span><span id="962" class="l"><a class="l" href="#962">962: </a>        }
 </span><span id="963" class="l"><a class="l" href="#963">963: </a>        <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( !<span class="php-var">$remove_empty</span> || !<span class="php-keyword1">empty</span>(<span class="php-var">$v</span>) ){
-</span><span id="964" class="l"><a class="l" href="#964">964: </a>          <span class="php-var">$st</span> .= <span class="php-quote">&quot;'&quot;</span>.\bbn\str\text::escape_squote(<span class="php-var">$v</span>).<span class="php-quote">&quot;'&quot;</span>;
+</span><span id="964" class="l"><a class="l" href="#964">964: </a>          <span class="php-var">$st</span> .= <span class="php-quote">'&quot;'</span>.\bbn\str\text::escape_dquote(<span class="php-var">$v</span>).<span class="php-quote">'&quot;'</span>;
 </span><span id="965" class="l"><a class="l" href="#965">965: </a>        }
 </span><span id="966" class="l"><a class="l" href="#966">966: </a>        <span class="php-var">$st</span> .= <span class="php-quote">','</span>.PHP_EOL;
 </span><span id="967" class="l"><a class="l" href="#967">967: </a>      }
