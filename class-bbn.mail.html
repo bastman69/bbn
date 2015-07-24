@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\appui\grid | nabab/bbn</title>
+	<title>Class bbn\mail | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?3811714013"></script>
@@ -30,7 +30,7 @@
 				<li><a href="namespace-bbn.api.kendo.i18n.html">i18n</a>
 						</li>
 							</ul></li></ul></li>
-				<li class="active"><a href="namespace-bbn.appui.html">appui</a>
+				<li><a href="namespace-bbn.appui.html">appui</a>
 						</li>
 				<li><a href="namespace-bbn.db.html">db<span></span></a>
 						<ul>
@@ -67,13 +67,13 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-bbn.appui.cron.html">cron</a></li>
-				<li><a href="class-bbn.appui.dbsync.html">dbsync</a></li>
-				<li class="active"><a href="class-bbn.appui.grid.html">grid</a></li>
-				<li><a href="class-bbn.appui.history.html">history</a></li>
-				<li><a href="class-bbn.appui.mapper.html">mapper</a></li>
-				<li><a href="class-bbn.appui.square.html">square</a></li>
-				<li><a href="class-bbn.appui.task.html">task</a></li>
+				<li><a href="class-bbn.decorator.html">decorator</a></li>
+				<li class="active"><a href="class-bbn.mail.html">mail</a></li>
+				<li><a href="class-bbn.mail_with_sent.html">mail_with_sent</a></li>
+				<li><a href="class-bbn.mvc.html" class="invalid">mvc</a></li>
+				<li><a href="class-bbn.obj.html">obj</a></li>
+				<li><a href="class-bbn.tools.html">tools</a></li>
+				<li><a href="class-bbn.tpl.html">tpl</a></li>
 			</ul>
 
 
@@ -101,7 +101,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.appui.html" title="Summary of bbn\appui"><span>Namespace</span></a>
+				<a href="namespace-bbn.html" title="Summary of bbn"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -122,7 +122,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class grid</h1>
+	<h1>Class mail</h1>
 
 
 	<div class="description">
@@ -142,7 +142,7 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>bbn\appui\grid</span></b>			
+<b><span>bbn\mail</span></b>			
 			
 			
 		</dd>
@@ -158,7 +158,7 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.appui.html">appui</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a><br />
 		
 
 				<b>Category:</b>
@@ -175,7 +175,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 functions<br />
 				<b>Since:</b>
 				Apr 4, 2011, 23:23:55 +0000<br />
-		<b>Located at</b> <a href="source-class-bbn.appui.grid.html#21-196" title="Go to source code">appui/grid.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.mail.html#53-262" title="Go to source code">mail.php</a><br />
 	</div>
 
 
@@ -193,7 +193,7 @@ functions<br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#35-63" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span>, <span>mixed <var>$cfg</var></span>, <span>mixed <var>$table</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$fields</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.mail.html#71-106" title="Go to source code">__construct</a>( <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -211,7 +211,7 @@ functions<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="check" id="_check">
+	<tr data-order="set_imap" id="_set_imap">
 
 		<td class="attributes"><code>
 			 public 
@@ -221,8 +221,8 @@ functions<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_check">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#65-68" title="Go to source code">check</a>( )</code>
+		<a class="anchor" href="#_set_imap">#</a>
+		<code><a href="source-class-bbn.mail.html#108-139" title="Go to source code">set_imap</a>( <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -240,7 +240,7 @@ functions<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="start" id="_start">
+	<tr data-order="unset_imap" id="_unset_imap">
 
 		<td class="attributes"><code>
 			 public 
@@ -250,8 +250,8 @@ functions<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_start">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#70-73" title="Go to source code">start</a>( )</code>
+		<a class="anchor" href="#_unset_imap">#</a>
+		<code><a href="source-class-bbn.mail.html#141-144" title="Go to source code">unset_imap</a>( )</code>
 
 		<div class="description short">
 			
@@ -269,7 +269,7 @@ functions<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="limit" id="_limit">
+	<tr data-order="set_from" id="_set_from">
 
 		<td class="attributes"><code>
 			 public 
@@ -279,8 +279,8 @@ functions<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_limit">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#75-78" title="Go to source code">limit</a>( )</code>
+		<a class="anchor" href="#_set_from">#</a>
+		<code><a href="source-class-bbn.mail.html#146-156" title="Go to source code">set_from</a>( <span>mixed <var>$email</var></span>, <span>mixed <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -298,7 +298,7 @@ functions<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="where" id="_where">
+	<tr data-order="set_template" id="_set_template">
 
 		<td class="attributes"><code>
 			 public 
@@ -308,8 +308,8 @@ functions<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_where">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#80-85" title="Go to source code">where</a>( )</code>
+		<a class="anchor" href="#_set_template">#</a>
+		<code><a href="source-class-bbn.mail.html#158-168" title="Go to source code">set_template</a>( <span>mixed <var>$file</var></span> )</code>
 
 		<div class="description short">
 			
@@ -327,7 +327,7 @@ functions<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_field" id="_get_field">
+	<tr data-order="get_error" id="_get_error">
 
 		<td class="attributes"><code>
 			 public 
@@ -337,8 +337,8 @@ functions<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_field">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#87-100" title="Go to source code">get_field</a>( <span>mixed <var>$f</var></span> )</code>
+		<a class="anchor" href="#_get_error">#</a>
+		<code><a href="source-class-bbn.mail.html#170-172" title="Go to source code">get_error</a>( )</code>
 
 		<div class="description short">
 			
@@ -356,7 +356,7 @@ functions<br />
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="filter" id="_filter">
+	<tr data-order="send" id="_send">
 
 		<td class="attributes"><code>
 			 public 
@@ -366,37 +366,8 @@ functions<br />
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#102-179" title="Go to source code">filter</a>( <span>mixed <var>$filters</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="order" id="_order">
-
-		<td class="attributes"><code>
-			 public 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_order">#</a>
-		<code><a href="source-class-bbn.appui.grid.html#181-194" title="Go to source code">order</a>( )</code>
+		<a class="anchor" href="#_send">#</a>
+		<code><a href="source-class-bbn.mail.html#174-261" title="Go to source code">send</a>( <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -439,87 +410,18 @@ functions<br />
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="db" id="$db">
+	<tr data-order="dest_fields" id="$dest_fields">
 		<td class="attributes"><code>
-			private  
-			boolean
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#23-25" title="Go to source code"><var>$db</var></a>
-		</td>
-		<td class="value"><code><span class="php-keyword1">false</span></code></td>
-		<td class="description"><div>
-			<a href="#$db" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="prefix" id="$prefix">
-		<td class="attributes"><code>
-			private  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#27" title="Go to source code"><var>$prefix</var></a>
-		</td>
-		<td class="value"><code><span class="php-quote">'bbn_'</span></code></td>
-		<td class="description"><div>
-			<a href="#$prefix" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="primary" id="$primary">
-		<td class="attributes"><code>
-			private  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#28" title="Go to source code"><var>$primary</var></a>
-		</td>
-		<td class="value"><code><span class="php-quote">'id'</span></code></td>
-		<td class="description"><div>
-			<a href="#$primary" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="cfg" id="$cfg">
-		<td class="attributes"><code>
-			private  
+			private static 
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#29" title="Go to source code"><var>$cfg</var></a>
+				<a href="source-class-bbn.mail.html#55-56" title="Go to source code"><var>$dest_fields</var></a>
 		</td>
-		<td class="value"><code>[]</code></td>
+		<td class="value"><code>[<span class="php-quote">'to'</span>, <span class="php-quote">'cc'</span>, <span class="php-quote">'bcc'</span>]</code></td>
 		<td class="description"><div>
-			<a href="#$cfg" class="anchor">#</a>
+			<a href="#$dest_fields" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -531,18 +433,19 @@ functions<br />
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="table" id="$table">
+	<tr data-order="default_template" id="$default_template">
 		<td class="attributes"><code>
-			private  
-			boolean
+			private static 
+			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#30" title="Go to source code"><var>$table</var></a>
+				<a href="source-class-bbn.mail.html#57-58" title="Go to source code"><var>$default_template</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="value"><code><span class="php-quote">'&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;{{title}}&lt;/title&gt;&lt;meta http-equiv=&quot;Content-Type&quot;
+content=&quot;text/html; charset=UTF-8&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;{{{text}}}&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;'</span></code></td>
 		<td class="description"><div>
-			<a href="#$table" class="anchor">#</a>
+			<a href="#$default_template" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -554,18 +457,18 @@ functions<br />
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="structure" id="$structure">
+	<tr data-order="mailer" id="$mailer">
 		<td class="attributes"><code>
-			private  
-			boolean
+			public  
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#31" title="Go to source code"><var>$structure</var></a>
+				<a href="source-class-bbn.mail.html#60" title="Go to source code"><var>$mailer</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$structure" class="anchor">#</a>
+			<a href="#$mailer" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -577,18 +480,18 @@ functions<br />
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="fields" id="$fields">
+	<tr data-order="template" id="$template">
 		<td class="attributes"><code>
 			private  
 			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#32" title="Go to source code"><var>$fields</var></a>
+				<a href="source-class-bbn.mail.html#62-63" title="Go to source code"><var>$template</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">null</span></code></td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$fields" class="anchor">#</a>
+			<a href="#$template" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -600,18 +503,133 @@ functions<br />
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="additional_fields" id="$additional_fields">
+	<tr data-order="path" id="$path">
 		<td class="attributes"><code>
 			private  
-			array
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.appui.grid.html#33" title="Go to source code"><var>$additional_fields</var></a>
+				<a href="source-class-bbn.mail.html#64" title="Go to source code"><var>$path</var></a>
 		</td>
-		<td class="value"><code>[]</code></td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$additional_fields" class="anchor">#</a>
+			<a href="#$path" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="imap_user" id="$imap_user">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mail.html#65" title="Go to source code"><var>$imap_user</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$imap_user" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="imap_pass" id="$imap_pass">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mail.html#66" title="Go to source code"><var>$imap_pass</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$imap_pass" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="imap_sent" id="$imap_sent">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mail.html#67" title="Go to source code"><var>$imap_sent</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$imap_sent" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="imap_string" id="$imap_string">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mail.html#68" title="Go to source code"><var>$imap_string</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$imap_string" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="imap" id="$imap">
+		<td class="attributes"><code>
+			private  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.mail.html#69" title="Go to source code"><var>$imap</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$imap" class="anchor">#</a>
 
 			<div class="description short">
 				
