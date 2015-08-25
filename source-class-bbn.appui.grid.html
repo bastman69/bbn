@@ -8,7 +8,7 @@
 	<title>File appui/grid.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?3811714013"></script>
+	<script type="text/javascript" src="elementlist.js?2475224860"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -124,7 +124,7 @@
 	</div>
 
 <pre><code><span id="1" class="l"><a class="l" href="#1">  1: </a><span class="xlang">&lt;?php</span>
-</span><span id="2" class="l"><a class="l" href="#2">  2: </a><span class="php-comment">/* 
+</span><span id="2" class="l"><a class="l" href="#2">  2: </a><span class="php-comment">/*
 </span></span><span id="3" class="l"><a class="l" href="#3">  3: </a><span class="php-comment"> * Copyright (C) 2014 BBN
 </span></span><span id="4" class="l"><a class="l" href="#4">  4: </a><span class="php-comment"> *
 </span></span><span id="5" class="l"><a class="l" href="#5">  5: </a><span class="php-comment"> * This program is free software: you can redistribute it and/or modify
@@ -144,8 +144,8 @@
 </span><span id="19" class="l"><a class="l" href="#19"> 19: </a><span class="php-keyword1">namespace</span> bbn\appui;
 </span><span id="20" class="l"><a class="l" href="#20"> 20: </a>
 </span><span id="21" class="l"><a class="l" href="#21"> 21: </a><span class="php-keyword1">class</span> <a id="grid" href="#grid">grid</a> <span class="php-keyword1">extends</span> \bbn\obj{
-</span><span id="22" class="l"><a class="l" href="#22"> 22: </a>  
-</span><span id="23" class="l"><a class="l" href="#23"> 23: </a>    <span class="php-keyword1">private</span> 
+</span><span id="22" class="l"><a class="l" href="#22"> 22: </a>
+</span><span id="23" class="l"><a class="l" href="#23"> 23: </a>    <span class="php-keyword1">private</span>
 </span><span id="24" class="l"><a class="l" href="#24"> 24: </a>          <span class="php-comment">/* @var \bbn\db\connection The DB connection */</span>
 </span><span id="25" class="l"><a class="l" href="#25"> 25: </a>          <span class="php-var">$db</span> = <span class="php-keyword1">false</span>,
 </span><span id="26" class="l"><a class="l" href="#26"> 26: </a>          <span class="php-comment">/* @var string The tables' prefix (the tables will be called ?cron and ?journal) */</span>
@@ -156,7 +156,7 @@
 </span><span id="31" class="l"><a class="l" href="#31"> 31: </a>          <span class="php-var">$structure</span> = <span class="php-keyword1">false</span>,
 </span><span id="32" class="l"><a class="l" href="#32"> 32: </a>          <span class="php-var">$fields</span> = <span class="php-keyword1">null</span>,
 </span><span id="33" class="l"><a class="l" href="#33"> 33: </a>          <span class="php-var">$additional_fields</span> = [];
-</span><span id="34" class="l"><a class="l" href="#34"> 34: </a>    
+</span><span id="34" class="l"><a class="l" href="#34"> 34: </a>
 </span><span id="35" class="l"><a class="l" href="#35"> 35: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>(\bbn\db\connection <span class="php-var">$db</span>, <span class="php-var">$cfg</span>, <span class="php-var">$table</span> = <span class="php-keyword1">null</span>, <span class="php-var">$fields</span> = <span class="php-keyword1">null</span>){
 </span><span id="36" class="l"><a class="l" href="#36"> 36: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$cfg</span>) ){
 </span><span id="37" class="l"><a class="l" href="#37"> 37: </a>      <span class="php-var">$this</span>-&gt;db = <span class="php-var">$db</span>;
@@ -186,29 +186,29 @@
 </span><span id="61" class="l"><a class="l" href="#61"> 61: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'filter'</span>] = <span class="php-keyword1">isset</span>(<span class="php-var">$cfg</span>[<span class="php-quote">'filter'</span>][<span class="php-quote">'filters'</span>]) ? <span class="php-var">$cfg</span>[<span class="php-quote">'filter'</span>] : [];
 </span><span id="62" class="l"><a class="l" href="#62"> 62: </a>    }
 </span><span id="63" class="l"><a class="l" href="#63"> 63: </a>  }
-</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>  
+</span><span id="64" class="l"><a class="l" href="#64"> 64: </a>
 </span><span id="65" class="l"><a class="l" href="#65"> 65: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check" href="#_check">check</a>()
 </span><span id="66" class="l"><a class="l" href="#66"> 66: </a>  {
 </span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    <span class="php-keyword1">return</span> <span class="php-keyword2">is_array</span>(<span class="php-var">$this</span>-&gt;cfg);
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>  }
-</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>  
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>
 </span><span id="70" class="l"><a class="l" href="#70"> 70: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_start" href="#_start">start</a>()
 </span><span id="71" class="l"><a class="l" href="#71"> 71: </a>  {
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'start'</span>];
 </span><span id="73" class="l"><a class="l" href="#73"> 73: </a>  }
-</span><span id="74" class="l"><a class="l" href="#74"> 74: </a>  
+</span><span id="74" class="l"><a class="l" href="#74"> 74: </a>
 </span><span id="75" class="l"><a class="l" href="#75"> 75: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_limit" href="#_limit">limit</a>()
 </span><span id="76" class="l"><a class="l" href="#76"> 76: </a>  {
 </span><span id="77" class="l"><a class="l" href="#77"> 77: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'limit'</span>];
 </span><span id="78" class="l"><a class="l" href="#78"> 78: </a>  }
-</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>  
+</span><span id="79" class="l"><a class="l" href="#79"> 79: </a>
 </span><span id="80" class="l"><a class="l" href="#80"> 80: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_where" href="#_where">where</a>()
 </span><span id="81" class="l"><a class="l" href="#81"> 81: </a>  {
 </span><span id="82" class="l"><a class="l" href="#82"> 82: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() ){
 </span><span id="83" class="l"><a class="l" href="#83"> 83: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;filter(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'filter'</span>]);
 </span><span id="84" class="l"><a class="l" href="#84"> 84: </a>    }
 </span><span id="85" class="l"><a class="l" href="#85"> 85: </a>  }
-</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>  
+</span><span id="86" class="l"><a class="l" href="#86"> 86: </a>
 </span><span id="87" class="l"><a class="l" href="#87"> 87: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_field" href="#_get_field">get_field</a>(<span class="php-var">$f</span>){
 </span><span id="88" class="l"><a class="l" href="#88"> 88: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword2">is_array</span>(<span class="php-var">$f</span>) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$f</span>[<span class="php-quote">'field'</span>]) ) {
 </span><span id="89" class="l"><a class="l" href="#89"> 89: </a>      <span class="php-var">$f</span> = <span class="php-var">$f</span>[<span class="php-quote">'field'</span>];
@@ -223,7 +223,7 @@
 </span><span id="98" class="l"><a class="l" href="#98"> 98: </a>    }
 </span><span id="99" class="l"><a class="l" href="#99"> 99: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="100" class="l"><a class="l" href="#100">100: </a>  }
-</span><span id="101" class="l"><a class="l" href="#101">101: </a>  
+</span><span id="101" class="l"><a class="l" href="#101">101: </a>
 </span><span id="102" class="l"><a class="l" href="#102">102: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_filter" href="#_filter">filter</a>(<span class="php-var">$filters</span>){
 </span><span id="103" class="l"><a class="l" href="#103">103: </a>    <span class="php-var">$res</span> = <span class="php-quote">''</span>;
 </span><span id="104" class="l"><a class="l" href="#104">104: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$filters</span>[<span class="php-quote">'filters'</span>]) ){
@@ -302,7 +302,7 @@
 </span><span id="177" class="l"><a class="l" href="#177">177: </a>    }
 </span><span id="178" class="l"><a class="l" href="#178">178: </a>    <span class="php-keyword1">return</span> <span class="php-var">$res</span>;
 </span><span id="179" class="l"><a class="l" href="#179">179: </a>  }
-</span><span id="180" class="l"><a class="l" href="#180">180: </a>  
+</span><span id="180" class="l"><a class="l" href="#180">180: </a>
 </span><span id="181" class="l"><a class="l" href="#181">181: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_order" href="#_order">order</a>(){
 </span><span id="182" class="l"><a class="l" href="#182">182: </a>    <span class="php-var">$st</span> = <span class="php-quote">''</span>;
 </span><span id="183" class="l"><a class="l" href="#183">183: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sort'</span>]) ){
@@ -317,8 +317,9 @@
 </span><span id="192" class="l"><a class="l" href="#192">192: </a>    }
 </span><span id="193" class="l"><a class="l" href="#193">193: </a>    <span class="php-keyword1">return</span> <span class="php-var">$st</span>;
 </span><span id="194" class="l"><a class="l" href="#194">194: </a>  }
-</span><span id="195" class="l"><a class="l" href="#195">195: </a>  
-</span><span id="196" class="l"><a class="l" href="#196">196: </a></span>}</code></pre>
+</span><span id="195" class="l"><a class="l" href="#195">195: </a>
+</span><span id="196" class="l"><a class="l" href="#196">196: </a>}
+</span><span id="197" class="l"><a class="l" href="#197">197: </a></span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
