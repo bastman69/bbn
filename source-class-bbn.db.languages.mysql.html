@@ -380,7 +380,7 @@
 </span><span id="259" class="l"><a class="l" href="#259">259: </a>        <span class="php-var">$p</span> = <span class="php-num">1</span>;
 </span><span id="260" class="l"><a class="l" href="#260">260: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$rows</span> <span class="php-keyword1">as</span> <span class="php-var">$row</span> ){
 </span><span id="261" class="l"><a class="l" href="#261">261: </a>          <span class="php-var">$f</span> = <span class="php-var">$row</span>[<span class="php-quote">'Field'</span>];
-</span><span id="262" class="l"><a class="l" href="#262">262: </a>          <span class="php-var">$r</span>[<span class="php-var">$f</span>] = <span class="php-keyword1">array</span>(
+</span><span id="262" class="l"><a class="l" href="#262">262: </a>          <span class="php-var">$r</span>[<span class="php-var">$f</span>] = [
 </span><span id="263" class="l"><a class="l" href="#263">263: </a>            <span class="php-quote">'position'</span> =&gt; <span class="php-var">$p</span>++,
 </span><span id="264" class="l"><a class="l" href="#264">264: </a>            <span class="php-quote">'null'</span> =&gt; <span class="php-var">$row</span>[<span class="php-quote">'Null'</span>] === <span class="php-quote">'NO'</span> ? <span class="php-num">0</span> : <span class="php-num">1</span>,
 </span><span id="265" class="l"><a class="l" href="#265">265: </a>            <span class="php-quote">'key'</span> =&gt; <span class="php-keyword2">in_array</span>(<span class="php-var">$row</span>[<span class="php-quote">'Key'</span>], <span class="php-keyword1">array</span>(<span class="php-quote">'PRI'</span>, <span class="php-quote">'UNI'</span>, <span class="php-quote">'MUL'</span>)) ? <span class="php-var">$row</span>[<span class="php-quote">'Key'</span>] : <span class="php-keyword1">null</span>,
@@ -388,7 +388,7 @@
 </span><span id="267" class="l"><a class="l" href="#267">267: </a>            <span class="php-quote">'extra'</span> =&gt; <span class="php-var">$row</span>[<span class="php-quote">'Extra'</span>],
 </span><span id="268" class="l"><a class="l" href="#268">268: </a>            <span class="php-quote">'signed'</span> =&gt; <span class="php-num">0</span>,
 </span><span id="269" class="l"><a class="l" href="#269">269: </a>            <span class="php-quote">'maxlength'</span> =&gt; <span class="php-num">0</span>
-</span><span id="270" class="l"><a class="l" href="#270">270: </a>          );
+</span><span id="270" class="l"><a class="l" href="#270">270: </a>          ];
 </span><span id="271" class="l"><a class="l" href="#271">271: </a>          <span class="php-keyword1">if</span> ( <span class="php-keyword2">strpos</span>(<span class="php-var">$row</span>[<span class="php-quote">'Type'</span>], <span class="php-quote">'enum'</span>) === <span class="php-num">0</span> ){
 </span><span id="272" class="l"><a class="l" href="#272">272: </a>            <span class="php-var">$r</span>[<span class="php-var">$f</span>][<span class="php-quote">'type'</span>] = <span class="php-quote">'enum'</span>;
 </span><span id="273" class="l"><a class="l" href="#273">273: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/\((.*?)\)/'</span>, <span class="php-var">$row</span>[<span class="php-quote">'Type'</span>], <span class="php-var">$matches</span>) ){
