@@ -8,7 +8,7 @@
 	<title>File appui/dbsync.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2475224860"></script>
+	<script type="text/javascript" src="elementlist.js?1325198338"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -357,7 +357,7 @@
 </span></span><span id="232" class="l"><a class="l" href="#232">232: </a><span class="php-quote">      FROM &quot;</span>.self::<span class="php-var">$dbs</span>-&gt;escape(self::<span class="php-var">$dbs_table</span>).<span class="php-quote">&quot;
 </span></span><span id="233" class="l"><a class="l" href="#233">233: </a><span class="php-quote">      WHERE db NOT LIKE ?
 </span></span><span id="234" class="l"><a class="l" href="#234">234: </a><span class="php-quote">      AND state = 0&quot;</span>,
-</span><span id="235" class="l"><a class="l" href="#235">235: </a>      self::<span class="php-var">$db</span>-&gt;<span class="php-keyword2">current</span>) ) ? <span class="php-var">$test</span> : <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="235" class="l"><a class="l" href="#235">235: </a>      self::<span class="php-var">$db</span>-&gt;<span class="php-keyword2">current</span>) ) ? <span class="php-var">$test</span> : <span class="php-keyword2">time</span>();
 </span><span id="236" class="l"><a class="l" href="#236">236: </a>    <span class="php-comment">// Deleting the entries prior to this sync we produced and have been seen by the twin process</span>
 </span><span id="237" class="l"><a class="l" href="#237">237: </a>    <span class="php-var">$to_log</span>[<span class="php-quote">'deleted_sync'</span>] = self::<span class="php-var">$dbs</span>-&gt;<span class="php-keyword2">delete</span>(self::<span class="php-var">$dbs_table</span>, [
 </span><span id="238" class="l"><a class="l" href="#238">238: </a>      [<span class="php-quote">'db'</span>, <span class="php-quote">'LIKE'</span>, self::<span class="php-var">$db</span>-&gt;<span class="php-keyword2">current</span>],

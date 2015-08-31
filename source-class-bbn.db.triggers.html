@@ -8,7 +8,7 @@
 	<title>File db/triggers.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2475224860"></script>
+	<script type="text/javascript" src="elementlist.js?1325198338"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -371,10 +371,10 @@
 </span><span id="241" class="l"><a class="l" href="#241">241: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$cfg</span>[<span class="php-quote">'sql'</span>] ){
 </span><span id="242" class="l"><a class="l" href="#242">242: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;triggers_disabled ){
 </span><span id="243" class="l"><a class="l" href="#243">243: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$cfg</span>[<span class="php-quote">'where'</span>][<span class="php-quote">'values'</span>]) &gt; <span class="php-num">0</span> ){
-</span><span id="244" class="l"><a class="l" href="#244">244: </a>          <span class="php-var">$cfg</span>[<span class="php-quote">'run'</span>] = <span class="php-var">$this</span>-&gt;query(<span class="php-var">$cfg</span>[<span class="php-quote">'sql'</span>], <span class="php-var">$cfg</span>[<span class="php-quote">'hash'</span>], <span class="php-var">$cfg</span>[<span class="php-quote">'where'</span>][<span class="php-quote">'values'</span>]);
+</span><span id="244" class="l"><a class="l" href="#244">244: </a>          <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;query(<span class="php-var">$cfg</span>[<span class="php-quote">'sql'</span>], <span class="php-var">$cfg</span>[<span class="php-quote">'hash'</span>], <span class="php-var">$cfg</span>[<span class="php-quote">'where'</span>][<span class="php-quote">'values'</span>]);
 </span><span id="245" class="l"><a class="l" href="#245">245: </a>        }
 </span><span id="246" class="l"><a class="l" href="#246">246: </a>        <span class="php-keyword1">else</span>{
-</span><span id="247" class="l"><a class="l" href="#247">247: </a>          <span class="php-var">$cfg</span>[<span class="php-quote">'run'</span>] = <span class="php-var">$this</span>-&gt;query(<span class="php-var">$cfg</span>[<span class="php-quote">'sql'</span>], <span class="php-var">$cfg</span>[<span class="php-quote">'hash'</span>]);
+</span><span id="247" class="l"><a class="l" href="#247">247: </a>          <span class="php-var">$r</span> = <span class="php-var">$this</span>-&gt;query(<span class="php-var">$cfg</span>[<span class="php-quote">'sql'</span>], <span class="php-var">$cfg</span>[<span class="php-quote">'hash'</span>]);
 </span><span id="248" class="l"><a class="l" href="#248">248: </a>        }
 </span><span id="249" class="l"><a class="l" href="#249">249: </a>      }
 </span><span id="250" class="l"><a class="l" href="#250">250: </a>      <span class="php-keyword1">else</span>{
@@ -463,8 +463,8 @@
 </span><span id="333" class="l"><a class="l" href="#333">333: </a>            }
 </span><span id="334" class="l"><a class="l" href="#334">334: </a>            <span class="php-keyword1">else</span> {
 </span><span id="335" class="l"><a class="l" href="#335">335: </a>              <span class="php-keyword1">die</span>(<span class="php-keyword2">var_dump</span>(
-</span><span id="336" class="l"><a class="l" href="#336">336: </a>                <span class="php-quote">&quot;Error! The column '</span><span class="php-var">$w</span><span class="php-quote">[0]' as mentioned in where doesn't exist in '&quot;</span>.
-</span><span id="337" class="l"><a class="l" href="#337">337: </a>                <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;, &quot;</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$tables_fields</span>)).<span class="php-quote">&quot;' table(s)&quot;</span>, <span class="php-var">$w</span>
+</span><span id="336" class="l"><a class="l" href="#336">336: </a>                <span class="php-quote">&quot;Error! The column '</span><span class="php-var">$v</span><span class="php-quote">[0]' as mentioned in where doesn't exist in '&quot;</span>.
+</span><span id="337" class="l"><a class="l" href="#337">337: </a>                <span class="php-keyword2">implode</span>(<span class="php-quote">&quot;, &quot;</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$tables_fields</span>)).<span class="php-quote">&quot;' table(s)&quot;</span>, <span class="php-var">$v</span>
 </span><span id="338" class="l"><a class="l" href="#338">338: </a>              ));
 </span><span id="339" class="l"><a class="l" href="#339">339: </a>            }
 </span><span id="340" class="l"><a class="l" href="#340">340: </a>          }
