@@ -8,7 +8,7 @@
 	<title>File db/connection.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?3810696508"></script>
+	<script type="text/javascript" src="elementlist.js?516067698"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -768,7 +768,7 @@
 </span></span><span id="638" class="l"><a class="l" href="#638"> 638: </a><span class="php-comment">   * @todo Thomas fais ton taf!!
 </span></span><span id="639" class="l"><a class="l" href="#639"> 639: </a><span class="php-comment">   * @return
 </span></span><span id="640" class="l"><a class="l" href="#640"> 640: </a><span class="php-comment">   */</span>
-</span><span id="641" class="l"><a class="l" href="#641"> 641: </a>  <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_make_hash" href="#_make_hash">make_hash</a>()
+</span><span id="641" class="l"><a class="l" href="#641"> 641: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_make_hash" href="#_make_hash">make_hash</a>()
 </span><span id="642" class="l"><a class="l" href="#642"> 642: </a>  {
 </span><span id="643" class="l"><a class="l" href="#643"> 643: </a>    <span class="php-var">$args</span> = <span class="php-keyword2">func_get_args</span>();
 </span><span id="644" class="l"><a class="l" href="#644"> 644: </a>    <span class="php-keyword1">if</span> ( (<span class="php-keyword2">count</span>(<span class="php-var">$args</span>) === <span class="php-num">1</span>) &amp;&amp; <span class="php-keyword2">is_array</span>(<span class="php-var">$args</span>[<span class="php-num">0</span>]) ){
@@ -1040,30 +1040,30 @@
 </span><span id="910" class="l"><a class="l" href="#910"> 910: </a>          }
 </span><span id="911" class="l"><a class="l" href="#911"> 911: </a>        }
 </span><span id="912" class="l"><a class="l" href="#912"> 912: </a>        <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;queries[<span class="php-var">$hash</span>]) ){
-</span><span id="913" class="l"><a class="l" href="#913"> 913: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$sequences</span> = <span class="php-var">$this</span>-&gt;parse_query(<span class="php-var">$statement</span>) ){
-</span><span id="914" class="l"><a class="l" href="#914"> 914: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$num_values</span> &gt; <span class="php-num">0</span> ){
-</span><span id="915" class="l"><a class="l" href="#915"> 915: </a>              <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%%&quot;</span>,<span class="php-quote">'%'</span>,<span class="php-var">$statement</span>);
+</span><span id="913" class="l"><a class="l" href="#913"> 913: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$sequences</span> = <span class="php-var">$this</span>-&gt;parse_query(<span class="php-var">$statement</span>) ) {
+</span><span id="914" class="l"><a class="l" href="#914"> 914: </a>            <span class="php-keyword1">if</span> (<span class="php-var">$num_values</span> &gt; <span class="php-num">0</span>) {
+</span><span id="915" class="l"><a class="l" href="#915"> 915: </a>              <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%%&quot;</span>, <span class="php-quote">'%'</span>, <span class="php-var">$statement</span>);
 </span><span id="916" class="l"><a class="l" href="#916"> 916: </a>              <span class="php-comment">/* Compatibility with sprintf basic expressions - to be enhanced */</span>
-</span><span id="917" class="l"><a class="l" href="#917"> 917: </a>              <span class="php-keyword1">if</span> ( <span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/(%[s|u|d])/'</span>,<span class="php-var">$statement</span>) ){
-</span><span id="918" class="l"><a class="l" href="#918"> 918: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;'%s'&quot;</span>,<span class="php-quote">'?'</span>,<span class="php-var">$statement</span>);
-</span><span id="919" class="l"><a class="l" href="#919"> 919: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%s&quot;</span>,<span class="php-quote">'?'</span>,<span class="php-var">$statement</span>);
-</span><span id="920" class="l"><a class="l" href="#920"> 920: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%d&quot;</span>,<span class="php-quote">'?'</span>,<span class="php-var">$statement</span>);
-</span><span id="921" class="l"><a class="l" href="#921"> 921: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%u&quot;</span>,<span class="php-quote">'?'</span>,<span class="php-var">$statement</span>);
+</span><span id="917" class="l"><a class="l" href="#917"> 917: </a>              <span class="php-keyword1">if</span> (<span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/(%[s|u|d])/'</span>, <span class="php-var">$statement</span>)) {
+</span><span id="918" class="l"><a class="l" href="#918"> 918: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;'%s'&quot;</span>, <span class="php-quote">'?'</span>, <span class="php-var">$statement</span>);
+</span><span id="919" class="l"><a class="l" href="#919"> 919: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%s&quot;</span>, <span class="php-quote">'?'</span>, <span class="php-var">$statement</span>);
+</span><span id="920" class="l"><a class="l" href="#920"> 920: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%d&quot;</span>, <span class="php-quote">'?'</span>, <span class="php-var">$statement</span>);
+</span><span id="921" class="l"><a class="l" href="#921"> 921: </a>                <span class="php-var">$statement</span> = <span class="php-keyword2">str_replace</span>(<span class="php-quote">&quot;%u&quot;</span>, <span class="php-quote">'?'</span>, <span class="php-var">$statement</span>);
 </span><span id="922" class="l"><a class="l" href="#922"> 922: </a>              }
 </span><span id="923" class="l"><a class="l" href="#923"> 923: </a>            }
 </span><span id="924" class="l"><a class="l" href="#924"> 924: </a>            <span class="php-comment">/* Or looking for question marks */</span>
-</span><span id="925" class="l"><a class="l" href="#925"> 925: </a>            <span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/(\?)/'</span>,<span class="php-var">$statement</span>,<span class="php-var">$exp</span>);
+</span><span id="925" class="l"><a class="l" href="#925"> 925: </a>            <span class="php-keyword2">preg_match_all</span>(<span class="php-quote">'/(\?)/'</span>, <span class="php-var">$statement</span>, <span class="php-var">$exp</span>);
 </span><span id="926" class="l"><a class="l" href="#926"> 926: </a>            <span class="php-var">$this</span>-&gt;add_query(
 </span><span id="927" class="l"><a class="l" href="#927"> 927: </a>              <span class="php-var">$hash</span>,
 </span><span id="928" class="l"><a class="l" href="#928"> 928: </a>              <span class="php-var">$statement</span>,
 </span><span id="929" class="l"><a class="l" href="#929"> 929: </a>              <span class="php-var">$sequences</span>,
 </span><span id="930" class="l"><a class="l" href="#930"> 930: </a>              <span class="php-keyword1">isset</span>(<span class="php-var">$exp</span>[<span class="php-num">1</span>]) &amp;&amp; <span class="php-keyword2">is_array</span>(<span class="php-var">$exp</span>[<span class="php-num">1</span>]) ? <span class="php-keyword2">count</span>(<span class="php-var">$exp</span>[<span class="php-num">1</span>]) : <span class="php-num">0</span>,
 </span><span id="931" class="l"><a class="l" href="#931"> 931: </a>              <span class="php-var">$driver_options</span>);
-</span><span id="932" class="l"><a class="l" href="#932"> 932: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$hash_sent</span>) ){
+</span><span id="932" class="l"><a class="l" href="#932"> 932: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$hash_sent</span>) ) {
 </span><span id="933" class="l"><a class="l" href="#933"> 933: </a>              <span class="php-var">$this</span>-&gt;queries[<span class="php-var">$hash_sent</span>] = <span class="php-var">$hash</span>;
 </span><span id="934" class="l"><a class="l" href="#934"> 934: </a>            }
 </span><span id="935" class="l"><a class="l" href="#935"> 935: </a>          }
-</span><span id="936" class="l"><a class="l" href="#936"> 936: </a>          <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;engine === <span class="php-quote">'sqlite'</span> &amp;&amp; <span class="php-keyword2">strpos</span>(<span class="php-var">$statement</span>, <span class="php-quote">'PRAGMA'</span>) === <span class="php-num">0</span> ){
+</span><span id="936" class="l"><a class="l" href="#936"> 936: </a>          <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( (<span class="php-var">$this</span>-&gt;engine === <span class="php-quote">'sqlite'</span>) &amp;&amp; <span class="php-keyword2">strpos</span>(<span class="php-var">$statement</span>, <span class="php-quote">'PRAGMA'</span>) === <span class="php-num">0</span> ){
 </span><span id="937" class="l"><a class="l" href="#937"> 937: </a>            <span class="php-var">$sequences</span> = [<span class="php-quote">'PRAGMA'</span> =&gt; <span class="php-var">$statement</span>];
 </span><span id="938" class="l"><a class="l" href="#938"> 938: </a>            <span class="php-var">$this</span>-&gt;add_query(
 </span><span id="939" class="l"><a class="l" href="#939"> 939: </a>              <span class="php-var">$hash</span>,
