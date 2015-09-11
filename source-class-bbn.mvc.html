@@ -442,21 +442,24 @@
 </span><span id="318" class="l"><a class="l" href="#318">318: </a>
 </span><span id="319" class="l"><a class="l" href="#319">319: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_prepath" href="#_set_prepath">set_prepath</a>(<span class="php-var">$path</span>){
 </span><span id="320" class="l"><a class="l" href="#320">320: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() ){
-</span><span id="321" class="l"><a class="l" href="#321">321: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;router-&gt;set_prepath(<span class="php-var">$path</span>) &amp;&amp; <span class="php-var">$this</span>-&gt;env-&gt;set_prepath(<span class="php-var">$path</span>) ){
-</span><span id="322" class="l"><a class="l" href="#322">322: </a>        <span class="php-var">$this</span>-&gt;params = <span class="php-var">$this</span>-&gt;get_params();
-</span><span id="323" class="l"><a class="l" href="#323">323: </a>        <span class="php-keyword1">return</span> <span class="php-num">1</span>;
-</span><span id="324" class="l"><a class="l" href="#324">324: </a>      }
-</span><span id="325" class="l"><a class="l" href="#325">325: </a>    }
-</span><span id="326" class="l"><a class="l" href="#326">326: </a>    <span class="php-keyword1">die</span>(<span class="php-quote">&quot;The set_prepath method cannot be used in this MVC&quot;</span>);
-</span><span id="327" class="l"><a class="l" href="#327">327: </a>  }
-</span><span id="328" class="l"><a class="l" href="#328">328: </a>
-</span><span id="329" class="l"><a class="l" href="#329">329: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_prepath" href="#_get_prepath">get_prepath</a>(){
-</span><span id="330" class="l"><a class="l" href="#330">330: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() ){
-</span><span id="331" class="l"><a class="l" href="#331">331: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;router-&gt;get_prepath();
-</span><span id="332" class="l"><a class="l" href="#332">332: </a>    }
-</span><span id="333" class="l"><a class="l" href="#333">333: </a>  }
-</span><span id="334" class="l"><a class="l" href="#334">334: </a>}
-</span><span id="335" class="l"><a class="l" href="#335">335: </a></span></code></pre>
+</span><span id="321" class="l"><a class="l" href="#321">321: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;router-&gt;get_prepath(<span class="php-keyword1">false</span>) === <span class="php-var">$path</span> ){
+</span><span id="322" class="l"><a class="l" href="#322">322: </a>        <span class="php-keyword1">return</span> <span class="php-num">1</span>;
+</span><span id="323" class="l"><a class="l" href="#323">323: </a>      }
+</span><span id="324" class="l"><a class="l" href="#324">324: </a>      <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;router-&gt;set_prepath(<span class="php-var">$path</span>) &amp;&amp; <span class="php-var">$this</span>-&gt;env-&gt;set_prepath(<span class="php-var">$path</span>) ){
+</span><span id="325" class="l"><a class="l" href="#325">325: </a>        <span class="php-var">$this</span>-&gt;params = <span class="php-var">$this</span>-&gt;get_params();
+</span><span id="326" class="l"><a class="l" href="#326">326: </a>        <span class="php-keyword1">return</span> <span class="php-num">1</span>;
+</span><span id="327" class="l"><a class="l" href="#327">327: </a>      }
+</span><span id="328" class="l"><a class="l" href="#328">328: </a>    }
+</span><span id="329" class="l"><a class="l" href="#329">329: </a>    <span class="php-keyword1">die</span>(<span class="php-quote">&quot;The set_prepath method cannot be used in this MVC&quot;</span>);
+</span><span id="330" class="l"><a class="l" href="#330">330: </a>  }
+</span><span id="331" class="l"><a class="l" href="#331">331: </a>
+</span><span id="332" class="l"><a class="l" href="#332">332: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_prepath" href="#_get_prepath">get_prepath</a>(){
+</span><span id="333" class="l"><a class="l" href="#333">333: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() ){
+</span><span id="334" class="l"><a class="l" href="#334">334: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;router-&gt;get_prepath();
+</span><span id="335" class="l"><a class="l" href="#335">335: </a>    }
+</span><span id="336" class="l"><a class="l" href="#336">336: </a>  }
+</span><span id="337" class="l"><a class="l" href="#337">337: </a>}
+</span><span id="338" class="l"><a class="l" href="#338">338: </a></span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
