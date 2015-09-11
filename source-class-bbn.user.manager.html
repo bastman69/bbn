@@ -8,7 +8,7 @@
 	<title>File user/manager.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?516067698"></script>
+	<script type="text/javascript" src="elementlist.js?3991141169"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -368,200 +368,201 @@
 </span><span id="245" class="l"><a class="l" href="#245">245: </a>        <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'users'</span>],
 </span><span id="246" class="l"><a class="l" href="#246">246: </a>        <span class="php-var">$cfg</span>,
 </span><span id="247" class="l"><a class="l" href="#247">247: </a>        [<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'id'</span>] =&gt; <span class="php-var">$id_user</span>]);
-</span><span id="248" class="l"><a class="l" href="#248">248: </a>      <span class="php-keyword1">return</span> <span class="php-var">$cfg</span>;
-</span><span id="249" class="l"><a class="l" href="#249">249: </a>    }
-</span><span id="250" class="l"><a class="l" href="#250">250: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
-</span><span id="251" class="l"><a class="l" href="#251">251: </a>    }
-</span><span id="252" class="l"><a class="l" href="#252">252: </a>  
-</span><span id="253" class="l"><a class="l" href="#253">253: </a>  <span class="php-comment">/**
-</span></span><span id="254" class="l"><a class="l" href="#254">254: </a><span class="php-comment">   * 
-</span></span><span id="255" class="l"><a class="l" href="#255">255: </a><span class="php-comment">   * @param int $id_user User ID
-</span></span><span id="256" class="l"><a class="l" href="#256">256: </a><span class="php-comment">   * @param int $exp Timestamp of the expiration date
-</span></span><span id="257" class="l"><a class="l" href="#257">257: </a><span class="php-comment">   * @return \bbn\user\manager
-</span></span><span id="258" class="l"><a class="l" href="#258">258: </a><span class="php-comment">   */</span>
-</span><span id="259" class="l"><a class="l" href="#259">259: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_make_hotlink" href="#_make_hotlink">make_hotlink</a>(<span class="php-var">$id_user</span>, <span class="php-var">$message</span>=<span class="php-quote">'hotlink'</span>, <span class="php-var">$exp</span>=<span class="php-keyword1">false</span>){
-</span><span id="260" class="l"><a class="l" href="#260">260: </a>    <span class="php-keyword1">if</span> ( !<span class="php-var">$this</span>-&gt;mailer ){
-</span><span id="261" class="l"><a class="l" href="#261">261: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;Impossible to make hotlinks without a proper mailer parameter&quot;</span>);
-</span><span id="262" class="l"><a class="l" href="#262">262: </a>    }
-</span><span id="263" class="l"><a class="l" href="#263">263: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>]) || <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'link'</span>]) ){
-</span><span id="264" class="l"><a class="l" href="#264">264: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;Impossible to make hotlinks without a link configured&quot;</span>);
-</span><span id="265" class="l"><a class="l" href="#265">265: </a>    }
-</span><span id="266" class="l"><a class="l" href="#266">266: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$usr</span> = <span class="php-var">$this</span>-&gt;get_user(<span class="php-var">$id_user</span>) ){
-</span><span id="267" class="l"><a class="l" href="#267">267: </a>      <span class="php-comment">// Expiration date</span>
-</span><span id="268" class="l"><a class="l" href="#268">268: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword2">is_int</span>(<span class="php-var">$exp</span>) || (<span class="php-var">$exp</span> &lt; <span class="php-num">1</span>) ){
-</span><span id="269" class="l"><a class="l" href="#269">269: </a>        <span class="php-var">$exp</span> = <span class="php-keyword2">time</span>() + <span class="php-var">$this</span>-&gt;hotlink_length;
-</span><span id="270" class="l"><a class="l" href="#270">270: </a>      }
-</span><span id="271" class="l"><a class="l" href="#271">271: </a>      <span class="php-var">$hl</span> =&amp; <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'hotlinks'</span>];
-</span><span id="272" class="l"><a class="l" href="#272">272: </a>      <span class="php-comment">// Expire existing valid hotlinks</span>
-</span><span id="273" class="l"><a class="l" href="#273">273: </a>      <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'hotlinks'</span>], [
-</span><span id="274" class="l"><a class="l" href="#274">274: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'expire'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)
-</span><span id="275" class="l"><a class="l" href="#275">275: </a>      ],[
-</span><span id="276" class="l"><a class="l" href="#276">276: </a>        [<span class="php-var">$hl</span>[<span class="php-quote">'id_user'</span>], <span class="php-quote">'='</span>, <span class="php-var">$id_user</span>],
-</span><span id="277" class="l"><a class="l" href="#277">277: </a>        [<span class="php-var">$hl</span>[<span class="php-quote">'expire'</span>], <span class="php-quote">'&gt;'</span>, <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)]
-</span><span id="278" class="l"><a class="l" href="#278">278: </a>      ]);
-</span><span id="279" class="l"><a class="l" href="#279">279: </a>      <span class="php-var">$magic</span> = <span class="php-var">$this</span>-&gt;usrcls-&gt;make_magic_string();
-</span><span id="280" class="l"><a class="l" href="#280">280: </a>      <span class="php-comment">// Create hotlink</span>
-</span><span id="281" class="l"><a class="l" href="#281">281: </a>      <span class="php-var">$this</span>-&gt;db-&gt;insert(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'hotlinks'</span>], [
-</span><span id="282" class="l"><a class="l" href="#282">282: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'magic_string'</span>] =&gt; <span class="php-var">$magic</span>[<span class="php-quote">'hash'</span>],
-</span><span id="283" class="l"><a class="l" href="#283">283: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$id_user</span>,
-</span><span id="284" class="l"><a class="l" href="#284">284: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'expire'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>, <span class="php-var">$exp</span>)
-</span><span id="285" class="l"><a class="l" href="#285">285: </a>      ]);
-</span><span id="286" class="l"><a class="l" href="#286">286: </a>      <span class="php-var">$id_link</span> = <span class="php-var">$this</span>-&gt;db-&gt;last_id();
-</span><span id="287" class="l"><a class="l" href="#287">287: </a>      <span class="php-var">$link</span> = <span class="php-quote">&quot;?id=</span><span class="php-var">$id_link</span><span class="php-quote">&amp;key=&quot;</span>.<span class="php-var">$magic</span>[<span class="php-quote">'key'</span>];
-</span><span id="288" class="l"><a class="l" href="#288">288: </a>      <span class="php-var">$this</span>-&gt;mailer-&gt;send([
-</span><span id="289" class="l"><a class="l" href="#289">289: </a>        <span class="php-quote">'to'</span> =&gt; <span class="php-var">$usr</span>[<span class="php-quote">'email'</span>],
-</span><span id="290" class="l"><a class="l" href="#290">290: </a>        <span class="php-quote">'subject'</span> =&gt; <span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'subject'</span>],
-</span><span id="291" class="l"><a class="l" href="#291">291: </a>        <span class="php-quote">'text'</span> =&gt; <span class="php-keyword2">sprintf</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'text'</span>],
-</span><span id="292" class="l"><a class="l" href="#292">292: </a>                <span class="php-keyword2">sprintf</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'link'</span>], <span class="php-var">$link</span>))
-</span><span id="293" class="l"><a class="l" href="#293">293: </a>      ]);
-</span><span id="294" class="l"><a class="l" href="#294">294: </a>    }
-</span><span id="295" class="l"><a class="l" href="#295">295: </a>    <span class="php-keyword1">else</span>{
-</span><span id="296" class="l"><a class="l" href="#296">296: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;User </span><span class="php-var">$id_user</span><span class="php-quote"> not found&quot;</span>);
-</span><span id="297" class="l"><a class="l" href="#297">297: </a>    }
-</span><span id="298" class="l"><a class="l" href="#298">298: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="299" class="l"><a class="l" href="#299">299: </a>  }
-</span><span id="300" class="l"><a class="l" href="#300">300: </a>  
-</span><span id="301" class="l"><a class="l" href="#301">301: </a>  <span class="php-comment">/**
-</span></span><span id="302" class="l"><a class="l" href="#302">302: </a><span class="php-comment">   * 
-</span></span><span id="303" class="l"><a class="l" href="#303">303: </a><span class="php-comment">   * @param int $id_user User ID
-</span></span><span id="304" class="l"><a class="l" href="#304">304: </a><span class="php-comment">   * @param int $id_group Group ID
-</span></span><span id="305" class="l"><a class="l" href="#305">305: </a><span class="php-comment">   * @return \bbn\user\manager
-</span></span><span id="306" class="l"><a class="l" href="#306">306: </a><span class="php-comment">   */</span>
-</span><span id="307" class="l"><a class="l" href="#307">307: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_unique_group" href="#_set_unique_group">set_unique_group</a>(<span class="php-var">$id_user</span>, <span class="php-var">$id_group</span>){
-</span><span id="308" class="l"><a class="l" href="#308">308: </a>    <span class="php-var">$this</span>-&gt;db-&gt;<span class="php-keyword2">delete</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'usergroups'</span>], [
-</span><span id="309" class="l"><a class="l" href="#309">309: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'usergroups'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$id_user</span>,
-</span><span id="310" class="l"><a class="l" href="#310">310: </a>    ]);
-</span><span id="311" class="l"><a class="l" href="#311">311: </a>    <span class="php-var">$this</span>-&gt;db-&gt;insert(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'usergroups'</span>], [
-</span><span id="312" class="l"><a class="l" href="#312">312: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'usergroups'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$id_user</span>,
-</span><span id="313" class="l"><a class="l" href="#313">313: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'usergroups'</span>][<span class="php-quote">'id_group'</span>] =&gt; <span class="php-var">$id_group</span>
-</span><span id="314" class="l"><a class="l" href="#314">314: </a>    ]);
-</span><span id="315" class="l"><a class="l" href="#315">315: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="316" class="l"><a class="l" href="#316">316: </a>  }
-</span><span id="317" class="l"><a class="l" href="#317">317: </a>  
-</span><span id="318" class="l"><a class="l" href="#318">318: </a>
-</span><span id="319" class="l"><a class="l" href="#319">319: </a>    <span class="php-comment">/**
-</span></span><span id="320" class="l"><a class="l" href="#320">320: </a><span class="php-comment">   * @param int $id_user User ID
-</span></span><span id="321" class="l"><a class="l" href="#321">321: </a><span class="php-comment">   * 
-</span></span><span id="322" class="l"><a class="l" href="#322">322: </a><span class="php-comment">   * @return \bbn\user\manager
-</span></span><span id="323" class="l"><a class="l" href="#323">323: </a><span class="php-comment">     */</span>
-</span><span id="324" class="l"><a class="l" href="#324">324: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_deactivate" href="#_deactivate">deactivate</a>(<span class="php-var">$id_user</span>){
-</span><span id="325" class="l"><a class="l" href="#325">325: </a>    <span class="php-var">$update</span> = [
-</span><span id="326" class="l"><a class="l" href="#326">326: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'status'</span>] =&gt; <span class="php-num">0</span>,
-</span><span id="327" class="l"><a class="l" href="#327">327: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'email'</span>] =&gt; <span class="php-keyword1">null</span>
-</span><span id="328" class="l"><a class="l" href="#328">328: </a>    ];
-</span><span id="329" class="l"><a class="l" href="#329">329: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'email'</span>] !== <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'login'</span>] ){
-</span><span id="330" class="l"><a class="l" href="#330">330: </a>      <span class="php-var">$update</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'login'</span>]] = <span class="php-keyword1">null</span>;
-</span><span id="331" class="l"><a class="l" href="#331">331: </a>    }
-</span><span id="332" class="l"><a class="l" href="#332">332: </a>
-</span><span id="333" class="l"><a class="l" href="#333">333: </a>    <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'users'</span>], <span class="php-var">$update</span>, [
-</span><span id="334" class="l"><a class="l" href="#334">334: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'id'</span>] =&gt; <span class="php-var">$id_user</span>
-</span><span id="335" class="l"><a class="l" href="#335">335: </a>    ]);
-</span><span id="336" class="l"><a class="l" href="#336">336: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="337" class="l"><a class="l" href="#337">337: </a>    }
-</span><span id="338" class="l"><a class="l" href="#338">338: </a>
-</span><span id="339" class="l"><a class="l" href="#339">339: </a>    <span class="php-comment">/**
-</span></span><span id="340" class="l"><a class="l" href="#340">340: </a><span class="php-comment">   * @param int $id_user User ID
-</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">   * 
-</span></span><span id="342" class="l"><a class="l" href="#342">342: </a><span class="php-comment">   * @return \bbn\user\manager
-</span></span><span id="343" class="l"><a class="l" href="#343">343: </a><span class="php-comment">     */</span>
-</span><span id="344" class="l"><a class="l" href="#344">344: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_reactivate" href="#_reactivate">reactivate</a>(<span class="php-var">$id_user</span>){
-</span><span id="345" class="l"><a class="l" href="#345">345: </a>    <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'users'</span>], [
-</span><span id="346" class="l"><a class="l" href="#346">346: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'status'</span>] =&gt; <span class="php-num">1</span>
-</span><span id="347" class="l"><a class="l" href="#347">347: </a>    ], [
-</span><span id="348" class="l"><a class="l" href="#348">348: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'id'</span>] =&gt; <span class="php-var">$id_user</span>
-</span><span id="349" class="l"><a class="l" href="#349">349: </a>    ]);
-</span><span id="350" class="l"><a class="l" href="#350">350: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
-</span><span id="351" class="l"><a class="l" href="#351">351: </a>    }
-</span><span id="352" class="l"><a class="l" href="#352">352: </a>
-</span><span id="353" class="l"><a class="l" href="#353">353: </a>    <span class="php-comment">/**
-</span></span><span id="354" class="l"><a class="l" href="#354">354: </a><span class="php-comment">     * @return void 
-</span></span><span id="355" class="l"><a class="l" href="#355">355: </a><span class="php-comment">     */</span>
-</span><span id="356" class="l"><a class="l" href="#356">356: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_create_tables" href="#_create_tables">create_tables</a>() {
-</span><span id="357" class="l"><a class="l" href="#357">357: </a>    <span class="php-comment">// @todo!!!</span>
-</span><span id="358" class="l"><a class="l" href="#358">358: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;
-</span></span><span id="359" class="l"><a class="l" href="#359">359: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (
-</span></span><span id="360" class="l"><a class="l" href="#360">360: </a><span class="php-quote">          </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote"> int(10) unsigned NOT NULL AUTO_INCREMENT,
-</span></span><span id="361" class="l"><a class="l" href="#361">361: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['email'])}</span><span class="php-quote"> varchar(100) NOT NULL,&quot;</span>.
-</span><span id="362" class="l"><a class="l" href="#362">362: </a>        ( <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'users'</span>][<span class="php-quote">'login'</span>] !== <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'users'</span>][<span class="php-quote">'email'</span>] ? <span class="php-quote">&quot;
-</span></span><span id="363" class="l"><a class="l" href="#363">363: </a><span class="php-quote">                </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['login'])}</span><span class="php-quote"> varchar(35) NOT NULL,&quot;</span> : <span class="php-quote">&quot;&quot;</span> ).<span class="php-quote">&quot;
-</span></span><span id="364" class="l"><a class="l" href="#364">364: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['cfg'])}</span><span class="php-quote"> text NOT NULL,
-</span></span><span id="365" class="l"><a class="l" href="#365">365: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">),
-</span></span><span id="366" class="l"><a class="l" href="#366">366: </a><span class="php-quote">        UNIQUE KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['email'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['email'])}</span><span class="php-quote">)
-</span></span><span id="367" class="l"><a class="l" href="#367">367: </a><span class="php-quote">      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
-</span></span><span id="368" class="l"><a class="l" href="#368">368: </a><span class="php-quote">
-</span></span><span id="369" class="l"><a class="l" href="#369">369: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['groups'])}</span><span class="php-quote"> (
-</span></span><span id="370" class="l"><a class="l" href="#370">370: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['id'])}</span><span class="php-quote"> int(10) unsigned NOT NULL AUTO_INCREMENT,
-</span></span><span id="371" class="l"><a class="l" href="#371">371: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['group'])}</span><span class="php-quote"> varchar(100) NOT NULL,
-</span></span><span id="372" class="l"><a class="l" href="#372">372: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['cfg'])}</span><span class="php-quote"> text NOT NULL,
-</span></span><span id="373" class="l"><a class="l" href="#373">373: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['id'])}</span><span class="php-quote">)
-</span></span><span id="374" class="l"><a class="l" href="#374">374: </a><span class="php-quote">      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
-</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-quote">
-</span></span><span id="376" class="l"><a class="l" href="#376">376: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['hotlinks'])}</span><span class="php-quote"> (
-</span></span><span id="377" class="l"><a class="l" href="#377">377: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id'])}</span><span class="php-quote"> int(10) unsigned NOT NULL AUTO_INCREMENT,
-</span></span><span id="378" class="l"><a class="l" href="#378">378: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['magic_string'])}</span><span class="php-quote"> varchar(64) NOT NULL,
-</span></span><span id="379" class="l"><a class="l" href="#379">379: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
-</span></span><span id="380" class="l"><a class="l" href="#380">380: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['expire'])}</span><span class="php-quote"> datetime NOT NULL,
-</span></span><span id="381" class="l"><a class="l" href="#381">381: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id'])}</span><span class="php-quote">),
-</span></span><span id="382" class="l"><a class="l" href="#382">382: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="383" class="l"><a class="l" href="#383">383: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-</span></span><span id="384" class="l"><a class="l" href="#384">384: </a><span class="php-quote">
-</span></span><span id="385" class="l"><a class="l" href="#385">385: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['passwords'])}</span><span class="php-quote"> (
-</span></span><span id="386" class="l"><a class="l" href="#386">386: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
-</span></span><span id="387" class="l"><a class="l" href="#387">387: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['pass'])}</span><span class="php-quote"> varchar(128) NOT NULL,
-</span></span><span id="388" class="l"><a class="l" href="#388">388: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['added'])}</span><span class="php-quote"> datetime NOT NULL,
-</span></span><span id="389" class="l"><a class="l" href="#389">389: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="390" class="l"><a class="l" href="#390">390: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-</span></span><span id="391" class="l"><a class="l" href="#391">391: </a><span class="php-quote">
-</span></span><span id="392" class="l"><a class="l" href="#392">392: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['sessions'])}</span><span class="php-quote"> (
-</span></span><span id="393" class="l"><a class="l" href="#393">393: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
-</span></span><span id="394" class="l"><a class="l" href="#394">394: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote"> varchar(128) NOT NULL,
-</span></span><span id="395" class="l"><a class="l" href="#395">395: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['ip_address'])}</span><span class="php-quote"> varchar(15),
-</span></span><span id="396" class="l"><a class="l" href="#396">396: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['user_agent'])}</span><span class="php-quote"> varchar(255),
-</span></span><span id="397" class="l"><a class="l" href="#397">397: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['auth'])}</span><span class="php-quote"> int(1) unsigned NOT NULL,
-</span></span><span id="398" class="l"><a class="l" href="#398">398: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['opened'])}</span><span class="php-quote"> int(1) unsigned NOT NULL,
-</span></span><span id="399" class="l"><a class="l" href="#399">399: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['last_activity'])}</span><span class="php-quote"> datetime NOT NULL,
-</span></span><span id="400" class="l"><a class="l" href="#400">400: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['cfg'])}</span><span class="php-quote"> text NOT NULL,
-</span></span><span id="401" class="l"><a class="l" href="#401">401: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote">, </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote">)
-</span></span><span id="402" class="l"><a class="l" href="#402">402: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote">),
-</span></span><span id="403" class="l"><a class="l" href="#403">403: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote">)
-</span></span><span id="404" class="l"><a class="l" href="#404">404: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-</span></span><span id="405" class="l"><a class="l" href="#405">405: </a><span class="php-quote">
-</span></span><span id="406" class="l"><a class="l" href="#406">406: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['usergroups'])}</span><span class="php-quote"> (
-</span></span><span id="407" class="l"><a class="l" href="#407">407: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
-</span></span><span id="408" class="l"><a class="l" href="#408">408: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
-</span></span><span id="409" class="l"><a class="l" href="#409">409: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote">, </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote">),
-</span></span><span id="410" class="l"><a class="l" href="#410">410: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote">),
-</span></span><span id="411" class="l"><a class="l" href="#411">411: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="412" class="l"><a class="l" href="#412">412: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-</span></span><span id="413" class="l"><a class="l" href="#413">413: </a><span class="php-quote">
+</span><span id="248" class="l"><a class="l" href="#248">248: </a>      <span class="php-keyword1">die</span>(\bbn\tools::dump(<span class="php-var">$this</span>-&gt;db));
+</span><span id="249" class="l"><a class="l" href="#249">249: </a>      <span class="php-keyword1">return</span> <span class="php-var">$cfg</span>;
+</span><span id="250" class="l"><a class="l" href="#250">250: </a>    }
+</span><span id="251" class="l"><a class="l" href="#251">251: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
+</span><span id="252" class="l"><a class="l" href="#252">252: </a>    }
+</span><span id="253" class="l"><a class="l" href="#253">253: </a>  
+</span><span id="254" class="l"><a class="l" href="#254">254: </a>  <span class="php-comment">/**
+</span></span><span id="255" class="l"><a class="l" href="#255">255: </a><span class="php-comment">   * 
+</span></span><span id="256" class="l"><a class="l" href="#256">256: </a><span class="php-comment">   * @param int $id_user User ID
+</span></span><span id="257" class="l"><a class="l" href="#257">257: </a><span class="php-comment">   * @param int $exp Timestamp of the expiration date
+</span></span><span id="258" class="l"><a class="l" href="#258">258: </a><span class="php-comment">   * @return \bbn\user\manager
+</span></span><span id="259" class="l"><a class="l" href="#259">259: </a><span class="php-comment">   */</span>
+</span><span id="260" class="l"><a class="l" href="#260">260: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_make_hotlink" href="#_make_hotlink">make_hotlink</a>(<span class="php-var">$id_user</span>, <span class="php-var">$message</span>=<span class="php-quote">'hotlink'</span>, <span class="php-var">$exp</span>=<span class="php-keyword1">false</span>){
+</span><span id="261" class="l"><a class="l" href="#261">261: </a>    <span class="php-keyword1">if</span> ( !<span class="php-var">$this</span>-&gt;mailer ){
+</span><span id="262" class="l"><a class="l" href="#262">262: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;Impossible to make hotlinks without a proper mailer parameter&quot;</span>);
+</span><span id="263" class="l"><a class="l" href="#263">263: </a>    }
+</span><span id="264" class="l"><a class="l" href="#264">264: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>]) || <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'link'</span>]) ){
+</span><span id="265" class="l"><a class="l" href="#265">265: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;Impossible to make hotlinks without a link configured&quot;</span>);
+</span><span id="266" class="l"><a class="l" href="#266">266: </a>    }
+</span><span id="267" class="l"><a class="l" href="#267">267: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$usr</span> = <span class="php-var">$this</span>-&gt;get_user(<span class="php-var">$id_user</span>) ){
+</span><span id="268" class="l"><a class="l" href="#268">268: </a>      <span class="php-comment">// Expiration date</span>
+</span><span id="269" class="l"><a class="l" href="#269">269: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword2">is_int</span>(<span class="php-var">$exp</span>) || (<span class="php-var">$exp</span> &lt; <span class="php-num">1</span>) ){
+</span><span id="270" class="l"><a class="l" href="#270">270: </a>        <span class="php-var">$exp</span> = <span class="php-keyword2">time</span>() + <span class="php-var">$this</span>-&gt;hotlink_length;
+</span><span id="271" class="l"><a class="l" href="#271">271: </a>      }
+</span><span id="272" class="l"><a class="l" href="#272">272: </a>      <span class="php-var">$hl</span> =&amp; <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'hotlinks'</span>];
+</span><span id="273" class="l"><a class="l" href="#273">273: </a>      <span class="php-comment">// Expire existing valid hotlinks</span>
+</span><span id="274" class="l"><a class="l" href="#274">274: </a>      <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'hotlinks'</span>], [
+</span><span id="275" class="l"><a class="l" href="#275">275: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'expire'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)
+</span><span id="276" class="l"><a class="l" href="#276">276: </a>      ],[
+</span><span id="277" class="l"><a class="l" href="#277">277: </a>        [<span class="php-var">$hl</span>[<span class="php-quote">'id_user'</span>], <span class="php-quote">'='</span>, <span class="php-var">$id_user</span>],
+</span><span id="278" class="l"><a class="l" href="#278">278: </a>        [<span class="php-var">$hl</span>[<span class="php-quote">'expire'</span>], <span class="php-quote">'&gt;'</span>, <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)]
+</span><span id="279" class="l"><a class="l" href="#279">279: </a>      ]);
+</span><span id="280" class="l"><a class="l" href="#280">280: </a>      <span class="php-var">$magic</span> = <span class="php-var">$this</span>-&gt;usrcls-&gt;make_magic_string();
+</span><span id="281" class="l"><a class="l" href="#281">281: </a>      <span class="php-comment">// Create hotlink</span>
+</span><span id="282" class="l"><a class="l" href="#282">282: </a>      <span class="php-var">$this</span>-&gt;db-&gt;insert(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'hotlinks'</span>], [
+</span><span id="283" class="l"><a class="l" href="#283">283: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'magic_string'</span>] =&gt; <span class="php-var">$magic</span>[<span class="php-quote">'hash'</span>],
+</span><span id="284" class="l"><a class="l" href="#284">284: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$id_user</span>,
+</span><span id="285" class="l"><a class="l" href="#285">285: </a>        <span class="php-var">$hl</span>[<span class="php-quote">'expire'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>, <span class="php-var">$exp</span>)
+</span><span id="286" class="l"><a class="l" href="#286">286: </a>      ]);
+</span><span id="287" class="l"><a class="l" href="#287">287: </a>      <span class="php-var">$id_link</span> = <span class="php-var">$this</span>-&gt;db-&gt;last_id();
+</span><span id="288" class="l"><a class="l" href="#288">288: </a>      <span class="php-var">$link</span> = <span class="php-quote">&quot;?id=</span><span class="php-var">$id_link</span><span class="php-quote">&amp;key=&quot;</span>.<span class="php-var">$magic</span>[<span class="php-quote">'key'</span>];
+</span><span id="289" class="l"><a class="l" href="#289">289: </a>      <span class="php-var">$this</span>-&gt;mailer-&gt;send([
+</span><span id="290" class="l"><a class="l" href="#290">290: </a>        <span class="php-quote">'to'</span> =&gt; <span class="php-var">$usr</span>[<span class="php-quote">'email'</span>],
+</span><span id="291" class="l"><a class="l" href="#291">291: </a>        <span class="php-quote">'subject'</span> =&gt; <span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'subject'</span>],
+</span><span id="292" class="l"><a class="l" href="#292">292: </a>        <span class="php-quote">'text'</span> =&gt; <span class="php-keyword2">sprintf</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'text'</span>],
+</span><span id="293" class="l"><a class="l" href="#293">293: </a>                <span class="php-keyword2">sprintf</span>(<span class="php-var">$this</span>-&gt;messages[<span class="php-var">$message</span>][<span class="php-quote">'link'</span>], <span class="php-var">$link</span>))
+</span><span id="294" class="l"><a class="l" href="#294">294: </a>      ]);
+</span><span id="295" class="l"><a class="l" href="#295">295: </a>    }
+</span><span id="296" class="l"><a class="l" href="#296">296: </a>    <span class="php-keyword1">else</span>{
+</span><span id="297" class="l"><a class="l" href="#297">297: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;User </span><span class="php-var">$id_user</span><span class="php-quote"> not found&quot;</span>);
+</span><span id="298" class="l"><a class="l" href="#298">298: </a>    }
+</span><span id="299" class="l"><a class="l" href="#299">299: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="300" class="l"><a class="l" href="#300">300: </a>  }
+</span><span id="301" class="l"><a class="l" href="#301">301: </a>  
+</span><span id="302" class="l"><a class="l" href="#302">302: </a>  <span class="php-comment">/**
+</span></span><span id="303" class="l"><a class="l" href="#303">303: </a><span class="php-comment">   * 
+</span></span><span id="304" class="l"><a class="l" href="#304">304: </a><span class="php-comment">   * @param int $id_user User ID
+</span></span><span id="305" class="l"><a class="l" href="#305">305: </a><span class="php-comment">   * @param int $id_group Group ID
+</span></span><span id="306" class="l"><a class="l" href="#306">306: </a><span class="php-comment">   * @return \bbn\user\manager
+</span></span><span id="307" class="l"><a class="l" href="#307">307: </a><span class="php-comment">   */</span>
+</span><span id="308" class="l"><a class="l" href="#308">308: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_unique_group" href="#_set_unique_group">set_unique_group</a>(<span class="php-var">$id_user</span>, <span class="php-var">$id_group</span>){
+</span><span id="309" class="l"><a class="l" href="#309">309: </a>    <span class="php-var">$this</span>-&gt;db-&gt;<span class="php-keyword2">delete</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'usergroups'</span>], [
+</span><span id="310" class="l"><a class="l" href="#310">310: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'usergroups'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$id_user</span>,
+</span><span id="311" class="l"><a class="l" href="#311">311: </a>    ]);
+</span><span id="312" class="l"><a class="l" href="#312">312: </a>    <span class="php-var">$this</span>-&gt;db-&gt;insert(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'usergroups'</span>], [
+</span><span id="313" class="l"><a class="l" href="#313">313: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'usergroups'</span>][<span class="php-quote">'id_user'</span>] =&gt; <span class="php-var">$id_user</span>,
+</span><span id="314" class="l"><a class="l" href="#314">314: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'usergroups'</span>][<span class="php-quote">'id_group'</span>] =&gt; <span class="php-var">$id_group</span>
+</span><span id="315" class="l"><a class="l" href="#315">315: </a>    ]);
+</span><span id="316" class="l"><a class="l" href="#316">316: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="317" class="l"><a class="l" href="#317">317: </a>  }
+</span><span id="318" class="l"><a class="l" href="#318">318: </a>  
+</span><span id="319" class="l"><a class="l" href="#319">319: </a>
+</span><span id="320" class="l"><a class="l" href="#320">320: </a>    <span class="php-comment">/**
+</span></span><span id="321" class="l"><a class="l" href="#321">321: </a><span class="php-comment">   * @param int $id_user User ID
+</span></span><span id="322" class="l"><a class="l" href="#322">322: </a><span class="php-comment">   * 
+</span></span><span id="323" class="l"><a class="l" href="#323">323: </a><span class="php-comment">   * @return \bbn\user\manager
+</span></span><span id="324" class="l"><a class="l" href="#324">324: </a><span class="php-comment">     */</span>
+</span><span id="325" class="l"><a class="l" href="#325">325: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_deactivate" href="#_deactivate">deactivate</a>(<span class="php-var">$id_user</span>){
+</span><span id="326" class="l"><a class="l" href="#326">326: </a>    <span class="php-var">$update</span> = [
+</span><span id="327" class="l"><a class="l" href="#327">327: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'status'</span>] =&gt; <span class="php-num">0</span>,
+</span><span id="328" class="l"><a class="l" href="#328">328: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'email'</span>] =&gt; <span class="php-keyword1">null</span>
+</span><span id="329" class="l"><a class="l" href="#329">329: </a>    ];
+</span><span id="330" class="l"><a class="l" href="#330">330: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'email'</span>] !== <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'login'</span>] ){
+</span><span id="331" class="l"><a class="l" href="#331">331: </a>      <span class="php-var">$update</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'login'</span>]] = <span class="php-keyword1">null</span>;
+</span><span id="332" class="l"><a class="l" href="#332">332: </a>    }
+</span><span id="333" class="l"><a class="l" href="#333">333: </a>
+</span><span id="334" class="l"><a class="l" href="#334">334: </a>    <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'users'</span>], <span class="php-var">$update</span>, [
+</span><span id="335" class="l"><a class="l" href="#335">335: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'id'</span>] =&gt; <span class="php-var">$id_user</span>
+</span><span id="336" class="l"><a class="l" href="#336">336: </a>    ]);
+</span><span id="337" class="l"><a class="l" href="#337">337: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="338" class="l"><a class="l" href="#338">338: </a>    }
+</span><span id="339" class="l"><a class="l" href="#339">339: </a>
+</span><span id="340" class="l"><a class="l" href="#340">340: </a>    <span class="php-comment">/**
+</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">   * @param int $id_user User ID
+</span></span><span id="342" class="l"><a class="l" href="#342">342: </a><span class="php-comment">   * 
+</span></span><span id="343" class="l"><a class="l" href="#343">343: </a><span class="php-comment">   * @return \bbn\user\manager
+</span></span><span id="344" class="l"><a class="l" href="#344">344: </a><span class="php-comment">     */</span>
+</span><span id="345" class="l"><a class="l" href="#345">345: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_reactivate" href="#_reactivate">reactivate</a>(<span class="php-var">$id_user</span>){
+</span><span id="346" class="l"><a class="l" href="#346">346: </a>    <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'users'</span>], [
+</span><span id="347" class="l"><a class="l" href="#347">347: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'status'</span>] =&gt; <span class="php-num">1</span>
+</span><span id="348" class="l"><a class="l" href="#348">348: </a>    ], [
+</span><span id="349" class="l"><a class="l" href="#349">349: </a>      <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>][<span class="php-quote">'id'</span>] =&gt; <span class="php-var">$id_user</span>
+</span><span id="350" class="l"><a class="l" href="#350">350: </a>    ]);
+</span><span id="351" class="l"><a class="l" href="#351">351: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
+</span><span id="352" class="l"><a class="l" href="#352">352: </a>    }
+</span><span id="353" class="l"><a class="l" href="#353">353: </a>
+</span><span id="354" class="l"><a class="l" href="#354">354: </a>    <span class="php-comment">/**
+</span></span><span id="355" class="l"><a class="l" href="#355">355: </a><span class="php-comment">     * @return void 
+</span></span><span id="356" class="l"><a class="l" href="#356">356: </a><span class="php-comment">     */</span>
+</span><span id="357" class="l"><a class="l" href="#357">357: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="_create_tables" href="#_create_tables">create_tables</a>() {
+</span><span id="358" class="l"><a class="l" href="#358">358: </a>    <span class="php-comment">// @todo!!!</span>
+</span><span id="359" class="l"><a class="l" href="#359">359: </a>    <span class="php-var">$sql</span> = <span class="php-quote">&quot;
+</span></span><span id="360" class="l"><a class="l" href="#360">360: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (
+</span></span><span id="361" class="l"><a class="l" href="#361">361: </a><span class="php-quote">          </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote"> int(10) unsigned NOT NULL AUTO_INCREMENT,
+</span></span><span id="362" class="l"><a class="l" href="#362">362: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['email'])}</span><span class="php-quote"> varchar(100) NOT NULL,&quot;</span>.
+</span><span id="363" class="l"><a class="l" href="#363">363: </a>        ( <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'users'</span>][<span class="php-quote">'login'</span>] !== <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'users'</span>][<span class="php-quote">'email'</span>] ? <span class="php-quote">&quot;
+</span></span><span id="364" class="l"><a class="l" href="#364">364: </a><span class="php-quote">                </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['login'])}</span><span class="php-quote"> varchar(35) NOT NULL,&quot;</span> : <span class="php-quote">&quot;&quot;</span> ).<span class="php-quote">&quot;
+</span></span><span id="365" class="l"><a class="l" href="#365">365: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['cfg'])}</span><span class="php-quote"> text NOT NULL,
+</span></span><span id="366" class="l"><a class="l" href="#366">366: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">),
+</span></span><span id="367" class="l"><a class="l" href="#367">367: </a><span class="php-quote">        UNIQUE KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['email'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['email'])}</span><span class="php-quote">)
+</span></span><span id="368" class="l"><a class="l" href="#368">368: </a><span class="php-quote">      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+</span></span><span id="369" class="l"><a class="l" href="#369">369: </a><span class="php-quote">
+</span></span><span id="370" class="l"><a class="l" href="#370">370: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['groups'])}</span><span class="php-quote"> (
+</span></span><span id="371" class="l"><a class="l" href="#371">371: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['id'])}</span><span class="php-quote"> int(10) unsigned NOT NULL AUTO_INCREMENT,
+</span></span><span id="372" class="l"><a class="l" href="#372">372: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['group'])}</span><span class="php-quote"> varchar(100) NOT NULL,
+</span></span><span id="373" class="l"><a class="l" href="#373">373: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['cfg'])}</span><span class="php-quote"> text NOT NULL,
+</span></span><span id="374" class="l"><a class="l" href="#374">374: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['id'])}</span><span class="php-quote">)
+</span></span><span id="375" class="l"><a class="l" href="#375">375: </a><span class="php-quote">      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+</span></span><span id="376" class="l"><a class="l" href="#376">376: </a><span class="php-quote">
+</span></span><span id="377" class="l"><a class="l" href="#377">377: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['hotlinks'])}</span><span class="php-quote"> (
+</span></span><span id="378" class="l"><a class="l" href="#378">378: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id'])}</span><span class="php-quote"> int(10) unsigned NOT NULL AUTO_INCREMENT,
+</span></span><span id="379" class="l"><a class="l" href="#379">379: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['magic_string'])}</span><span class="php-quote"> varchar(64) NOT NULL,
+</span></span><span id="380" class="l"><a class="l" href="#380">380: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
+</span></span><span id="381" class="l"><a class="l" href="#381">381: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['expire'])}</span><span class="php-quote"> datetime NOT NULL,
+</span></span><span id="382" class="l"><a class="l" href="#382">382: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id'])}</span><span class="php-quote">),
+</span></span><span id="383" class="l"><a class="l" href="#383">383: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="384" class="l"><a class="l" href="#384">384: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</span></span><span id="385" class="l"><a class="l" href="#385">385: </a><span class="php-quote">
+</span></span><span id="386" class="l"><a class="l" href="#386">386: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['passwords'])}</span><span class="php-quote"> (
+</span></span><span id="387" class="l"><a class="l" href="#387">387: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
+</span></span><span id="388" class="l"><a class="l" href="#388">388: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['pass'])}</span><span class="php-quote"> varchar(128) NOT NULL,
+</span></span><span id="389" class="l"><a class="l" href="#389">389: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['added'])}</span><span class="php-quote"> datetime NOT NULL,
+</span></span><span id="390" class="l"><a class="l" href="#390">390: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="391" class="l"><a class="l" href="#391">391: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</span></span><span id="392" class="l"><a class="l" href="#392">392: </a><span class="php-quote">
+</span></span><span id="393" class="l"><a class="l" href="#393">393: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['sessions'])}</span><span class="php-quote"> (
+</span></span><span id="394" class="l"><a class="l" href="#394">394: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
+</span></span><span id="395" class="l"><a class="l" href="#395">395: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote"> varchar(128) NOT NULL,
+</span></span><span id="396" class="l"><a class="l" href="#396">396: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['ip_address'])}</span><span class="php-quote"> varchar(15),
+</span></span><span id="397" class="l"><a class="l" href="#397">397: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['user_agent'])}</span><span class="php-quote"> varchar(255),
+</span></span><span id="398" class="l"><a class="l" href="#398">398: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['auth'])}</span><span class="php-quote"> int(1) unsigned NOT NULL,
+</span></span><span id="399" class="l"><a class="l" href="#399">399: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['opened'])}</span><span class="php-quote"> int(1) unsigned NOT NULL,
+</span></span><span id="400" class="l"><a class="l" href="#400">400: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['last_activity'])}</span><span class="php-quote"> datetime NOT NULL,
+</span></span><span id="401" class="l"><a class="l" href="#401">401: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['cfg'])}</span><span class="php-quote"> text NOT NULL,
+</span></span><span id="402" class="l"><a class="l" href="#402">402: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote">, </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote">)
+</span></span><span id="403" class="l"><a class="l" href="#403">403: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote">),
+</span></span><span id="404" class="l"><a class="l" href="#404">404: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['sess_id'])}</span><span class="php-quote">)
+</span></span><span id="405" class="l"><a class="l" href="#405">405: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</span></span><span id="406" class="l"><a class="l" href="#406">406: </a><span class="php-quote">
+</span></span><span id="407" class="l"><a class="l" href="#407">407: </a><span class="php-quote">      CREATE TABLE IF NOT EXISTS </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['usergroups'])}</span><span class="php-quote"> (
+</span></span><span id="408" class="l"><a class="l" href="#408">408: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
+</span></span><span id="409" class="l"><a class="l" href="#409">409: </a><span class="php-quote">        </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote"> int(10) unsigned NOT NULL,
+</span></span><span id="410" class="l"><a class="l" href="#410">410: </a><span class="php-quote">        PRIMARY KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote">, </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote">),
+</span></span><span id="411" class="l"><a class="l" href="#411">411: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote">),
+</span></span><span id="412" class="l"><a class="l" href="#412">412: </a><span class="php-quote">        KEY </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="413" class="l"><a class="l" href="#413">413: </a><span class="php-quote">      ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 </span></span><span id="414" class="l"><a class="l" href="#414">414: </a><span class="php-quote">
-</span></span><span id="415" class="l"><a class="l" href="#415">415: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['hotlinks'])}</span><span class="php-quote">
-</span></span><span id="416" class="l"><a class="l" href="#416">416: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="417" class="l"><a class="l" href="#417">417: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
-</span></span><span id="418" class="l"><a class="l" href="#418">418: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;
-</span></span><span id="419" class="l"><a class="l" href="#419">419: </a><span class="php-quote">
-</span></span><span id="420" class="l"><a class="l" href="#420">420: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['passwords'])}</span><span class="php-quote">
-</span></span><span id="421" class="l"><a class="l" href="#421">421: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="422" class="l"><a class="l" href="#422">422: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
-</span></span><span id="423" class="l"><a class="l" href="#423">423: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;
-</span></span><span id="424" class="l"><a class="l" href="#424">424: </a><span class="php-quote">
-</span></span><span id="425" class="l"><a class="l" href="#425">425: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['sessions'])}</span><span class="php-quote">
-</span></span><span id="426" class="l"><a class="l" href="#426">426: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="427" class="l"><a class="l" href="#427">427: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
-</span></span><span id="428" class="l"><a class="l" href="#428">428: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;
-</span></span><span id="429" class="l"><a class="l" href="#429">429: </a><span class="php-quote">
-</span></span><span id="430" class="l"><a class="l" href="#430">430: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['usergroups'])}</span><span class="php-quote">
-</span></span><span id="431" class="l"><a class="l" href="#431">431: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote">)
-</span></span><span id="432" class="l"><a class="l" href="#432">432: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['groups'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['id'])}</span><span class="php-quote">)
-</span></span><span id="433" class="l"><a class="l" href="#433">433: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION,
-</span></span><span id="434" class="l"><a class="l" href="#434">434: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote">)
-</span></span><span id="435" class="l"><a class="l" href="#435">435: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
-</span></span><span id="436" class="l"><a class="l" href="#436">436: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;&quot;</span>;
-</span><span id="437" class="l"><a class="l" href="#437">437: </a>    <span class="php-var">$db</span>-&gt;raw_query(<span class="php-var">$sql</span>);
-</span><span id="438" class="l"><a class="l" href="#438">438: </a>  }
-</span><span id="439" class="l"><a class="l" href="#439">439: </a>
-</span><span id="440" class="l"><a class="l" href="#440">440: </a>}
-</span><span id="441" class="l"><a class="l" href="#441">441: </a></span><span class="xlang">?&gt;</span></code></pre>
+</span></span><span id="415" class="l"><a class="l" href="#415">415: </a><span class="php-quote">
+</span></span><span id="416" class="l"><a class="l" href="#416">416: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['hotlinks'])}</span><span class="php-quote">
+</span></span><span id="417" class="l"><a class="l" href="#417">417: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['hotlinks']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="418" class="l"><a class="l" href="#418">418: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
+</span></span><span id="419" class="l"><a class="l" href="#419">419: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;
+</span></span><span id="420" class="l"><a class="l" href="#420">420: </a><span class="php-quote">
+</span></span><span id="421" class="l"><a class="l" href="#421">421: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['passwords'])}</span><span class="php-quote">
+</span></span><span id="422" class="l"><a class="l" href="#422">422: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['passwords']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="423" class="l"><a class="l" href="#423">423: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
+</span></span><span id="424" class="l"><a class="l" href="#424">424: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;
+</span></span><span id="425" class="l"><a class="l" href="#425">425: </a><span class="php-quote">
+</span></span><span id="426" class="l"><a class="l" href="#426">426: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['sessions'])}</span><span class="php-quote">
+</span></span><span id="427" class="l"><a class="l" href="#427">427: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['sessions']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="428" class="l"><a class="l" href="#428">428: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
+</span></span><span id="429" class="l"><a class="l" href="#429">429: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;
+</span></span><span id="430" class="l"><a class="l" href="#430">430: </a><span class="php-quote">
+</span></span><span id="431" class="l"><a class="l" href="#431">431: </a><span class="php-quote">      ALTER TABLE </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['usergroups'])}</span><span class="php-quote">
+</span></span><span id="432" class="l"><a class="l" href="#432">432: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_group'])}</span><span class="php-quote">)
+</span></span><span id="433" class="l"><a class="l" href="#433">433: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['groups'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['groups']['id'])}</span><span class="php-quote">)
+</span></span><span id="434" class="l"><a class="l" href="#434">434: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION,
+</span></span><span id="435" class="l"><a class="l" href="#435">435: </a><span class="php-quote">        ADD FOREIGN KEY (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['usergroups']['id_user'])}</span><span class="php-quote">)
+</span></span><span id="436" class="l"><a class="l" href="#436">436: </a><span class="php-quote">          REFERENCES </span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['tables']['users'])}</span><span class="php-quote"> (</span><span class="php-var">{$this-&gt;db-&gt;escape($this-&gt;cfg['users']['id'])}</span><span class="php-quote">)
+</span></span><span id="437" class="l"><a class="l" href="#437">437: </a><span class="php-quote">            ON DELETE CASCADE ON UPDATE NO ACTION;&quot;</span>;
+</span><span id="438" class="l"><a class="l" href="#438">438: </a>    <span class="php-var">$db</span>-&gt;raw_query(<span class="php-var">$sql</span>);
+</span><span id="439" class="l"><a class="l" href="#439">439: </a>  }
+</span><span id="440" class="l"><a class="l" href="#440">440: </a>
+</span><span id="441" class="l"><a class="l" href="#441">441: </a>}
+</span><span id="442" class="l"><a class="l" href="#442">442: </a></span><span class="xlang">?&gt;</span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
