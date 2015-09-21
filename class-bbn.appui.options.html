@@ -7,7 +7,7 @@
 	<title>Class bbn\appui\options | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?4027075201"></script>
+	<script type="text/javascript" src="elementlist.js?3251708153"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -141,7 +141,7 @@
 		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.appui.html">appui</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.appui.options.html#12-130" title="Go to source code">appui/options.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.appui.options.html#12-178" title="Go to source code">appui/options.php</a><br />
 	</div>
 
 
@@ -159,7 +159,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.appui.options.html#16-18" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#42-45" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span>, <span>array <var>$cfg</var> = []</span> )</code>
 
 		<div class="description short">
 			
@@ -188,7 +188,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_option">#</a>
-		<code><a href="source-class-bbn.appui.options.html#20-32" title="Go to source code">option</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#47-59" title="Go to source code">option</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -230,7 +230,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_title">#</a>
-		<code><a href="source-class-bbn.appui.options.html#34-42" title="Go to source code">title</a>( <span>integer <var>$id</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#61-69" title="Go to source code">title</a>( <span>integer <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -272,7 +272,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_options">#</a>
-		<code><a href="source-class-bbn.appui.options.html#44-71" title="Go to source code">options</a>( <span>string|integer <var>$cat</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#71-88" title="Go to source code">options</a>( <span>string|integer <var>$cat</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -316,7 +316,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_full_options">#</a>
-		<code><a href="source-class-bbn.appui.options.html#73-112" title="Go to source code">full_options</a>( <span>string|integer <var>$cat</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#90-114" title="Go to source code">full_options</a>( <span>string|integer <var>$cat</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			
@@ -350,6 +350,64 @@ leur <code>id</code><br />
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="set_value" id="_set_value">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_value">#</a>
+		<code><a href="source-class-bbn.appui.options.html#116-125" title="Go to source code">set_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$val</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_value" id="_get_value">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_value">#</a>
+		<code><a href="source-class-bbn.appui.options.html#127-144" title="Go to source code">get_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>&amp; $val</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="add" id="_add">
 
 		<td class="attributes"><code>
@@ -361,7 +419,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-bbn.appui.options.html#114-117" title="Go to source code">add</a>( <span>mixed <var>$cat</var></span>, <span>mixed <var>$titre</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#146-159" title="Go to source code">add</a>( <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -390,7 +448,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-bbn.appui.options.html#119-122" title="Go to source code">set</a>( <span>mixed <var>$fn</var></span>, <span>mixed <var>$cp</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#161-168" title="Go to source code">set</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -419,7 +477,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove">#</a>
-		<code><a href="source-class-bbn.appui.options.html#124-129" title="Go to source code">remove</a>( <span>mixed <var>$cat</var></span>, <span>mixed <var>$titre</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#170-177" title="Go to source code">remove</a>( <span>mixed <var>$id</var></span> )</code>
 
 		<div class="description short">
 			
@@ -452,6 +510,51 @@ leur <code>id</code><br />
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
+	<tr data-order="_defaults" id="$_defaults">
+		<td class="attributes"><code>
+			protected static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.appui.options.html#13-38" title="Go to source code"><var>$_defaults</var></a>
+		</td>
+		<td class="value"><code>[
+<span class="php-quote">'errors'</span> =&gt; [
+  <span class="php-num">0</span> =&gt; <span class="php-quote">'login failed'</span>,
+  <span class="php-num">2</span> =&gt; <span class="php-quote">'password sent'</span>,
+  <span class="php-num">3</span> =&gt; <span class="php-quote">'no email such as'</span>,
+  <span class="php-num">4</span> =&gt; <span class="php-quote">'too many attempts'</span>,
+  <span class="php-num">5</span> =&gt; <span class="php-quote">'impossible to create the user'</span>,
+  <span class="php-num">6</span> =&gt; <span class="php-quote">'wrong user and/or password'</span>,
+  <span class="php-num">7</span> =&gt; <span class="php-quote">'different passwords'</span>,
+  <span class="php-num">8</span> =&gt; <span class="php-quote">'less than 5 mn between emailing password'</span>,
+  <span class="php-num">9</span> =&gt; <span class="php-quote">'user already exists'</span>,
+  <span class="php-num">10</span> =&gt; <span class="php-quote">'problem during user creation'</span>
+],
+<span class="php-quote">'table'</span> =&gt; <span class="php-quote">'bbn_options'</span>,
+<span class="php-quote">'cols'</span> =&gt; [
+  <span class="php-quote">'id'</span> =&gt; <span class="php-quote">'id'</span>,
+  <span class="php-quote">'id_parent'</span> =&gt; <span class="php-quote">'id_parent'</span>,
+  <span class="php-quote">'title'</span> =&gt; <span class="php-quote">'title'</span>,
+  <span class="php-quote">'code'</span> =&gt; <span class="php-quote">'code'</span>,
+  <span class="php-quote">'value'</span> =&gt; <span class="php-quote">'value'</span>,
+  <span class="php-quote">'active'</span> =&gt; <span class="php-quote">'active'</span>
+]
+  ]</code></td>
+		<td class="description"><div>
+			<a href="#$_defaults" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="db" id="$db">
 		<td class="attributes"><code>
 			protected  
@@ -459,7 +562,7 @@ leur <code>id</code><br />
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.appui.options.html#14" title="Go to source code"><var>$db</var></a>
+				<a href="source-class-bbn.appui.options.html#40" title="Go to source code"><var>$db</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
