@@ -7,7 +7,7 @@
 	<title>Class bbn\appui\options | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2891478398"></script>
+	<script type="text/javascript" src="elementlist.js?259114967"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -141,7 +141,7 @@
 		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.appui.html">appui</a><br />
 		
 
-		<b>Located at</b> <a href="source-class-bbn.appui.options.html#12-362" title="Go to source code">appui/options.php</a><br />
+		<b>Located at</b> <a href="source-class-bbn.appui.options.html#12-377" title="Go to source code">appui/options.php</a><br />
 	</div>
 
 
@@ -405,6 +405,50 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="count" id="_count">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_count">#</a>
+		<code><a href="source-class-bbn.appui.options.html#130-142" title="Go to source code">count</a>( <span>string|integer <var>$cat</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Retourne la liste des options d'une catégorie indexée sur leur
+<code>id</code></p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Retourne la liste des options d'une catégorie indexée sur leur
+<code>id</code></p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cat</var></dt>
+					<dd><code>string|integer</code><br>$cat La catégorie, sous la forme de son <code>id</code>, ou de son nom</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>La liste des options indexée sur leur <code>id</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="get_query" id="_get_query">
 
 		<td class="attributes"><code>
@@ -416,7 +460,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_query">#</a>
-		<code><a href="source-class-bbn.appui.options.html#130-145" title="Go to source code">get_query</a>( )</code>
+		<code><a href="source-class-bbn.appui.options.html#144-159" title="Go to source code">get_query</a>( )</code>
 
 		<div class="description short">
 			
@@ -445,7 +489,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_full_options">#</a>
-		<code><a href="source-class-bbn.appui.options.html#147-182" title="Go to source code">full_options</a>( <span>string|integer <var>$cat</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#161-197" title="Go to source code">full_options</a>( <span>string|integer <var>$cat</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$start</var> = <span class="php-num">0</span></span>, <span>mixed <var>$limit</var> = <span class="php-num">2000</span></span> )</code>
 
 		<div class="description short">
 			
@@ -465,6 +509,10 @@ dans un tableau indexé sur leur <code>id</code></p>
 				<div class="list"><dl>
 					<dt><var>$cat</var></dt>
 					<dd><code>string|integer</code><br>$cat La catégorie, sous la forme de son <code>id</code>, ou de son nom</dd>
+					<dt><var>$start</var></dt>
+					<dd></dd>
+					<dt><var>$limit</var></dt>
+					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -490,7 +538,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_tree">#</a>
-		<code><a href="source-class-bbn.appui.options.html#184-214" title="Go to source code">tree</a>( <span>mixed <var>$cat</var></span>, <span>mixed <var>$length</var> = <span class="php-num">128</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#199-229" title="Go to source code">tree</a>( <span>mixed <var>$cat</var></span>, <span>mixed <var>$length</var> = <span class="php-num">128</span></span> )</code>
 
 		<div class="description short">
 			
@@ -519,7 +567,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_full_tree">#</a>
-		<code><a href="source-class-bbn.appui.options.html#216-258" title="Go to source code">full_tree</a>( <span>mixed <var>$cat</var></span>, <span>mixed <var>$length</var> = <span class="php-num">128</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#231-273" title="Go to source code">full_tree</a>( <span>mixed <var>$cat</var></span>, <span>mixed <var>$length</var> = <span class="php-num">128</span></span> )</code>
 
 		<div class="description short">
 			
@@ -548,7 +596,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set_value">#</a>
-		<code><a href="source-class-bbn.appui.options.html#260-269" title="Go to source code">set_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$val</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#275-284" title="Go to source code">set_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$val</var></span> )</code>
 
 		<div class="description short">
 			
@@ -577,7 +625,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get_value">#</a>
-		<code><a href="source-class-bbn.appui.options.html#271-289" title="Go to source code">get_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>&amp; $val</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#286-304" title="Go to source code">get_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>&amp; $val</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -606,7 +654,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-bbn.appui.options.html#291-326" title="Go to source code">add</a>( <span>mixed <var>$cfg</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#306-341" title="Go to source code">add</a>( <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -635,7 +683,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-bbn.appui.options.html#328-352" title="Go to source code">set</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$cfg</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#343-367" title="Go to source code">set</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$cfg</var></span> )</code>
 
 		<div class="description short">
 			
@@ -664,7 +712,7 @@ leur <code>id</code><br />
 
 		<td class="name"><div>
 		<a class="anchor" href="#_remove">#</a>
-		<code><a href="source-class-bbn.appui.options.html#354-361" title="Go to source code">remove</a>( <span>mixed <var>$id</var></span> )</code>
+		<code><a href="source-class-bbn.appui.options.html#369-376" title="Go to source code">remove</a>( <span>mixed <var>$id</var></span> )</code>
 
 		<div class="description short">
 			

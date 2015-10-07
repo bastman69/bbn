@@ -8,7 +8,7 @@
 	<title>File db/languages/mysql.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?2891478398"></script>
+	<script type="text/javascript" src="elementlist.js?259114967"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -621,10 +621,10 @@
 </span><span id="500" class="l"><a class="l" href="#500">500: </a>              <span class="php-var">$c</span> = <span class="php-var">$this</span>-&gt;col_full_name(<span class="php-var">$c</span>, <span class="php-var">$tab</span>[<span class="php-num">0</span>]);
 </span><span id="501" class="l"><a class="l" href="#501">501: </a>            }
 </span><span id="502" class="l"><a class="l" href="#502">502: </a>            <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$tab</span>) &gt; <span class="php-num">1</span> ){
-</span><span id="503" class="l"><a class="l" href="#503">503: </a>              <span class="php-keyword1">die</span>(<span class="php-quote">'Error! Duplicate field name, you must insert the fields with their fullname.'</span>);
+</span><span id="503" class="l"><a class="l" href="#503">503: </a>              <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">'Error! Duplicate field name, you must insert the fields with their fullname.'</span>);
 </span><span id="504" class="l"><a class="l" href="#504">504: </a>            }
 </span><span id="505" class="l"><a class="l" href="#505">505: </a>            <span class="php-keyword1">else</span> {
-</span><span id="506" class="l"><a class="l" href="#506">506: </a>              <span class="php-keyword1">die</span>(<span class="php-keyword2">var_dump</span>(<span class="php-quote">&quot;Error! The column '</span><span class="php-var">$c</span><span class="php-quote">' doesn't exist in '&quot;</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">&quot;, &quot;</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$tables_fields</span>)).<span class="php-quote">&quot;' table(s)&quot;</span>, <span class="php-var">$fields</span>));
+</span><span id="506" class="l"><a class="l" href="#506">506: </a>              <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">&quot;Error! The column '</span><span class="php-var">$c</span><span class="php-quote">' doesn't exist in '&quot;</span>.<span class="php-keyword2">implode</span>(<span class="php-quote">&quot;, &quot;</span>, <span class="php-keyword2">array_keys</span>(<span class="php-var">$tables_fields</span>)).<span class="php-quote">&quot;' table(s)&quot;</span>);
 </span><span id="507" class="l"><a class="l" href="#507">507: </a>            }
 </span><span id="508" class="l"><a class="l" href="#508">508: </a>          }
 </span><span id="509" class="l"><a class="l" href="#509">509: </a>          <span class="php-keyword1">if</span> ( !<span class="php-keyword2">is_numeric</span>(<span class="php-var">$k</span>) &amp;&amp; \bbn\str\text::check_name(<span class="php-var">$k</span>) &amp;&amp; (<span class="php-var">$k</span> !== <span class="php-var">$c</span>) ){
@@ -678,7 +678,7 @@
 </span><span id="557" class="l"><a class="l" href="#557">557: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$fields</span>) &gt; <span class="php-num">0</span> ){
 </span><span id="558" class="l"><a class="l" href="#558">558: </a>                <span class="php-keyword1">foreach</span> ( <span class="php-var">$fields</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> ){
 </span><span id="559" class="l"><a class="l" href="#559">559: </a>                    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$m</span>[<span class="php-quote">'fields'</span>][<span class="php-var">$k</span>]) ){
-</span><span id="560" class="l"><a class="l" href="#560">560: </a>                        <span class="php-keyword1">die</span>(<span class="php-keyword2">var_dump</span>(<span class="php-quote">&quot;Error in Insert query creation: the column </span><span class="php-var">$k</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>, <span class="php-var">$fields</span>));
+</span><span id="560" class="l"><a class="l" href="#560">560: </a>            <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">&quot;Error in Insert query creation: the column </span><span class="php-var">$k</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>);
 </span><span id="561" class="l"><a class="l" href="#561">561: </a>                    }
 </span><span id="562" class="l"><a class="l" href="#562">562: </a>                    <span class="php-keyword1">else</span>{
 </span><span id="563" class="l"><a class="l" href="#563">563: </a>                        <span class="php-var">$r</span> .= <span class="php-quote">&quot;`</span><span class="php-var">$k</span><span class="php-quote">`, &quot;</span>;
@@ -757,7 +757,7 @@
 </span><span id="636" class="l"><a class="l" href="#636">636: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$fields</span>) &gt; <span class="php-num">0</span> ){
 </span><span id="637" class="l"><a class="l" href="#637">637: </a>                <span class="php-keyword1">foreach</span> ( <span class="php-var">$fields</span> <span class="php-keyword1">as</span> <span class="php-var">$k</span> ){
 </span><span id="638" class="l"><a class="l" href="#638">638: </a>                    <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$m</span>[<span class="php-quote">'fields'</span>][<span class="php-var">$this</span>-&gt;db-&gt;csn(<span class="php-var">$k</span>)]) ){
-</span><span id="639" class="l"><a class="l" href="#639">639: </a>                        <span class="php-keyword1">die</span>(<span class="php-keyword2">var_dump</span>(<span class="php-quote">&quot;Error in Update query creation: the column </span><span class="php-var">$k</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>, <span class="php-var">$m</span>[<span class="php-quote">'fields'</span>]));
+</span><span id="639" class="l"><a class="l" href="#639">639: </a>            <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">&quot;Error in Update query creation: the column </span><span class="php-var">$k</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>);
 </span><span id="640" class="l"><a class="l" href="#640">640: </a>                    }
 </span><span id="641" class="l"><a class="l" href="#641">641: </a>                    <span class="php-keyword1">else</span>{
 </span><span id="642" class="l"><a class="l" href="#642">642: </a>                        <span class="php-var">$r</span> .= <span class="php-var">$this</span>-&gt;db-&gt;cfn(<span class="php-var">$k</span>, <span class="php-var">$table</span>, <span class="php-num">1</span>).<span class="php-quote">&quot; = ?,&quot;</span>.PHP_EOL;
@@ -809,7 +809,7 @@
 </span><span id="688" class="l"><a class="l" href="#688">688: </a>                <span class="php-var">$r</span> .= <span class="php-quote">'$db-&gt;query(&quot;'</span>;
 </span><span id="689" class="l"><a class="l" href="#689">689: </a>            }
 </span><span id="690" class="l"><a class="l" href="#690">690: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$m</span>[<span class="php-quote">'fields'</span>][<span class="php-var">$csn</span>]) ){
-</span><span id="691" class="l"><a class="l" href="#691">691: </a>        <span class="php-keyword1">die</span>(<span class="php-keyword2">var_dump</span>(<span class="php-quote">&quot;Error in collecting values: the column </span><span class="php-var">$field</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>, <span class="php-var">$m</span>));
+</span><span id="691" class="l"><a class="l" href="#691">691: </a>        <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">&quot;Error in collecting values: the column </span><span class="php-var">$field</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>);
 </span><span id="692" class="l"><a class="l" href="#692">692: </a>      }
 </span><span id="693" class="l"><a class="l" href="#693">693: </a>            <span class="php-var">$r</span> .= <span class="php-quote">&quot;SELECT DISTINCT </span><span class="php-var">$cfn</span><span class="php-quote"> FROM </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>.PHP_EOL.
 </span><span id="694" class="l"><a class="l" href="#694">694: </a>        <span class="php-var">$this</span>-&gt;db-&gt;get_where(<span class="php-var">$where</span>, <span class="php-var">$table</span>).PHP_EOL.
@@ -839,7 +839,7 @@
 </span><span id="718" class="l"><a class="l" href="#718">718: </a>                <span class="php-var">$r</span> .= <span class="php-quote">'$db-&gt;query(&quot;'</span>;
 </span><span id="719" class="l"><a class="l" href="#719">719: </a>            }
 </span><span id="720" class="l"><a class="l" href="#720">720: </a>      <span class="php-keyword1">if</span> ( !<span class="php-keyword1">isset</span>(<span class="php-var">$m</span>[<span class="php-quote">'fields'</span>][<span class="php-var">$field</span>]) ){
-</span><span id="721" class="l"><a class="l" href="#721">721: </a>        <span class="php-keyword1">die</span>(<span class="php-keyword2">var_dump</span>(<span class="php-quote">&quot;Error in values' count: the column </span><span class="php-var">$field</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>, <span class="php-var">$m</span>));
+</span><span id="721" class="l"><a class="l" href="#721">721: </a>        <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">&quot;Error in values' count: the column </span><span class="php-var">$field</span><span class="php-quote"> doesn't exist in </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>);
 </span><span id="722" class="l"><a class="l" href="#722">722: </a>      }
 </span><span id="723" class="l"><a class="l" href="#723">723: </a>            <span class="php-var">$r</span> .= <span class="php-quote">&quot;SELECT COUNT(*) AS num, `</span><span class="php-var">$field</span><span class="php-quote">` AS val FROM </span><span class="php-var">$table</span><span class="php-quote">&quot;</span>;
 </span><span id="724" class="l"><a class="l" href="#724">724: </a>            <span class="php-keyword1">if</span> ( <span class="php-keyword2">count</span>(<span class="php-var">$where</span>) &gt; <span class="php-num">0</span> ){
@@ -874,7 +874,7 @@
 </span><span id="753" class="l"><a class="l" href="#753">753: </a>    <span class="php-var">$iname</span> = text::encode_filename(<span class="php-var">$table</span>);
 </span><span id="754" class="l"><a class="l" href="#754">754: </a>    <span class="php-keyword1">foreach</span> ( <span class="php-var">$column</span> <span class="php-keyword1">as</span> <span class="php-var">$i</span> =&gt; <span class="php-var">$c</span> ){
 </span><span id="755" class="l"><a class="l" href="#755">755: </a>      <span class="php-keyword1">if</span> ( !text::check_name(<span class="php-var">$c</span>) ){
-</span><span id="756" class="l"><a class="l" href="#756">756: </a>        <span class="php-keyword1">die</span>(<span class="php-quote">&quot;Illegal column </span><span class="php-var">$c</span><span class="php-quote">&quot;</span>);
+</span><span id="756" class="l"><a class="l" href="#756">756: </a>        <span class="php-var">$this</span>-&gt;db-&gt;error(<span class="php-quote">&quot;Illegal column </span><span class="php-var">$c</span><span class="php-quote">&quot;</span>);
 </span><span id="757" class="l"><a class="l" href="#757">757: </a>      }
 </span><span id="758" class="l"><a class="l" href="#758">758: </a>      <span class="php-var">$iname</span> .= <span class="php-quote">'_'</span>.<span class="php-var">$c</span>;
 </span><span id="759" class="l"><a class="l" href="#759">759: </a>      <span class="php-var">$column</span>[<span class="php-var">$i</span>] = <span class="php-quote">&quot;`&quot;</span>.<span class="php-var">$column</span>[<span class="php-var">$i</span>].<span class="php-quote">&quot;`&quot;</span>;
