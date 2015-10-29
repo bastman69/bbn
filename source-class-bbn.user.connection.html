@@ -8,7 +8,7 @@
 	<title>File user/connection.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?93493951"></script>
+	<script type="text/javascript" src="elementlist.js?3365874078"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -134,7 +134,7 @@
 </span></span><span id="11" class="l"><a class="l" href="#11"> 11: </a><span class="php-comment"> * @copyright BBN Solutions
 </span></span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-comment"> * @since Apr 4, 2011, 23:23:55 +0000
 </span></span><span id="13" class="l"><a class="l" href="#13"> 13: </a><span class="php-comment"> * @category  Authentication
-</span></span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-comment"> * @license   http://www.opensource.org/licenses/lgpl-license.php LGPL
+</span></span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-comment"> * @license   http://opensource.org/licenses/MIT MIT
 </span></span><span id="15" class="l"><a class="l" href="#15"> 15: </a><span class="php-comment"> * @version 0.2r89
 </span></span><span id="16" class="l"><a class="l" href="#16"> 16: </a><span class="php-comment"> * @todo Groups and hotlinks features
 </span></span><span id="17" class="l"><a class="l" href="#17"> 17: </a><span class="php-comment"> * @todo Implement Cache for session requests' results?
@@ -217,7 +217,7 @@
 </span><span id="94" class="l"><a class="l" href="#94"> 94: </a>            ],
 </span><span id="95" class="l"><a class="l" href="#95"> 95: </a>            <span class="php-comment">/*
 </span></span><span id="96" class="l"><a class="l" href="#96"> 96: </a><span class="php-comment">             * Password saving encryption
-</span></span><span id="97" class="l"><a class="l" href="#97"> 97: </a><span class="php-comment">             * @var string 
+</span></span><span id="97" class="l"><a class="l" href="#97"> 97: </a><span class="php-comment">             * @var string
 </span></span><span id="98" class="l"><a class="l" href="#98"> 98: </a><span class="php-comment">             */</span>
 </span><span id="99" class="l"><a class="l" href="#99"> 99: </a>            <span class="php-quote">'encryption'</span> =&gt; <span class="php-quote">'sha1'</span>,
 </span><span id="100" class="l"><a class="l" href="#100">100: </a>            <span class="php-comment">/*
@@ -227,14 +227,14 @@
 </span><span id="104" class="l"><a class="l" href="#104">104: </a>            <span class="php-quote">'conditions'</span> =&gt; [],
 </span><span id="105" class="l"><a class="l" href="#105">105: </a>            <span class="php-comment">/*
 </span></span><span id="106" class="l"><a class="l" href="#106">106: </a><span class="php-comment">             * Additional fields to select from the users' table
-</span></span><span id="107" class="l"><a class="l" href="#107">107: </a><span class="php-comment">             * They will become property 
+</span></span><span id="107" class="l"><a class="l" href="#107">107: </a><span class="php-comment">             * They will become property
 </span></span><span id="108" class="l"><a class="l" href="#108">108: </a><span class="php-comment">             * Their names mustn't interfere with existing properties
-</span></span><span id="109" class="l"><a class="l" href="#109">109: </a><span class="php-comment">             * @var array 
+</span></span><span id="109" class="l"><a class="l" href="#109">109: </a><span class="php-comment">             * @var array
 </span></span><span id="110" class="l"><a class="l" href="#110">110: </a><span class="php-comment">             */</span>
 </span><span id="111" class="l"><a class="l" href="#111">111: </a>            <span class="php-quote">'additional_fields'</span> =&gt; [],
 </span><span id="112" class="l"><a class="l" href="#112">112: </a>            <span class="php-comment">/*
 </span></span><span id="113" class="l"><a class="l" href="#113">113: </a><span class="php-comment">             * The session name
-</span></span><span id="114" class="l"><a class="l" href="#114">114: </a><span class="php-comment">             * @var string 
+</span></span><span id="114" class="l"><a class="l" href="#114">114: </a><span class="php-comment">             * @var string
 </span></span><span id="115" class="l"><a class="l" href="#115">115: </a><span class="php-comment">             */</span>
 </span><span id="116" class="l"><a class="l" href="#116">116: </a>            <span class="php-quote">'sess_name'</span> =&gt; BBN_SESS_NAME,
 </span><span id="117" class="l"><a class="l" href="#117">117: </a>            <span class="php-comment">/*
@@ -244,17 +244,17 @@
 </span><span id="121" class="l"><a class="l" href="#121">121: </a>            <span class="php-quote">'sess_user'</span> =&gt; <span class="php-quote">'user'</span>,
 </span><span id="122" class="l"><a class="l" href="#122">122: </a>            <span class="php-comment">/*
 </span></span><span id="123" class="l"><a class="l" href="#123">123: </a><span class="php-comment">             * length in minutes of the session regeneration (can be doubled)
-</span></span><span id="124" class="l"><a class="l" href="#124">124: </a><span class="php-comment">             * @var integer 
+</span></span><span id="124" class="l"><a class="l" href="#124">124: </a><span class="php-comment">             * @var integer
 </span></span><span id="125" class="l"><a class="l" href="#125">125: </a><span class="php-comment">             */</span>
 </span><span id="126" class="l"><a class="l" href="#126">126: </a>            <span class="php-quote">'sess_length'</span> =&gt; <span class="php-num">5</span>,
 </span><span id="127" class="l"><a class="l" href="#127">127: </a>            <span class="php-comment">/*
 </span></span><span id="128" class="l"><a class="l" href="#128">128: </a><span class="php-comment">             * Number of times a user can try to log in in the period retry_length
-</span></span><span id="129" class="l"><a class="l" href="#129">129: </a><span class="php-comment">             * @var integer 
+</span></span><span id="129" class="l"><a class="l" href="#129">129: </a><span class="php-comment">             * @var integer
 </span></span><span id="130" class="l"><a class="l" href="#130">130: </a><span class="php-comment">             */</span>
 </span><span id="131" class="l"><a class="l" href="#131">131: </a>            <span class="php-quote">'max_attempts'</span> =&gt; <span class="php-num">5</span>,
 </span><span id="132" class="l"><a class="l" href="#132">132: </a>            <span class="php-comment">/*
 </span></span><span id="133" class="l"><a class="l" href="#133">133: </a><span class="php-comment">             * User ban's length in minutes after max attempts is reached
-</span></span><span id="134" class="l"><a class="l" href="#134">134: </a><span class="php-comment">             * @var integer 
+</span></span><span id="134" class="l"><a class="l" href="#134">134: </a><span class="php-comment">             * @var integer
 </span></span><span id="135" class="l"><a class="l" href="#135">135: </a><span class="php-comment">             */</span>
 </span><span id="136" class="l"><a class="l" href="#136">136: </a>            <span class="php-quote">'retry_length'</span> =&gt; <span class="php-num">5</span>,
 </span><span id="137" class="l"><a class="l" href="#137">137: </a>            <span class="php-comment">/*
@@ -268,7 +268,7 @@
 </span></span><span id="145" class="l"><a class="l" href="#145">145: </a><span class="php-comment">             */</span>
 </span><span id="146" class="l"><a class="l" href="#146">146: </a>            <span class="php-quote">'hotlinks'</span> =&gt; <span class="php-keyword1">false</span>
 </span><span id="147" class="l"><a class="l" href="#147">147: </a>          ];
-</span><span id="148" class="l"><a class="l" href="#148">148: </a>  
+</span><span id="148" class="l"><a class="l" href="#148">148: </a>
 </span><span id="149" class="l"><a class="l" href="#149">149: </a>    <span class="php-keyword1">protected</span>
 </span><span id="150" class="l"><a class="l" href="#150">150: </a>          <span class="php-comment">/** @var string */</span>
 </span><span id="151" class="l"><a class="l" href="#151">151: </a>          <span class="php-var">$error</span> = <span class="php-keyword1">null</span>,
@@ -296,7 +296,7 @@
 </span><span id="173" class="l"><a class="l" href="#173">173: </a>          <span class="php-var">$user_cfg</span>,
 </span><span id="174" class="l"><a class="l" href="#174">174: </a>          <span class="php-comment">/** @var array */</span>
 </span><span id="175" class="l"><a class="l" href="#175">175: </a>          <span class="php-var">$fields</span>;
-</span><span id="176" class="l"><a class="l" href="#176">176: </a>          
+</span><span id="176" class="l"><a class="l" href="#176">176: </a>
 </span><span id="177" class="l"><a class="l" href="#177">177: </a>
 </span><span id="178" class="l"><a class="l" href="#178">178: </a>    <span class="php-keyword1">public</span>
 </span><span id="179" class="l"><a class="l" href="#179">179: </a>          <span class="php-comment">/** @var \bbn\db\connection */</span>
@@ -312,12 +312,12 @@
 </span><span id="189" class="l"><a class="l" href="#189">189: </a>  {
 </span><span id="190" class="l"><a class="l" href="#190">190: </a>    <span class="php-keyword1">return</span> \bbn\str\text::genpwd(<span class="php-num">32</span>, <span class="php-num">16</span>);
 </span><span id="191" class="l"><a class="l" href="#191">191: </a>  }
-</span><span id="192" class="l"><a class="l" href="#192">192: </a>  
+</span><span id="192" class="l"><a class="l" href="#192">192: </a>
 </span><span id="193" class="l"><a class="l" href="#193">193: </a>    <span class="php-comment">/**
 </span></span><span id="194" class="l"><a class="l" href="#194">194: </a><span class="php-comment">   * Creates a magic string which will be used for hotlinks
 </span></span><span id="195" class="l"><a class="l" href="#195">195: </a><span class="php-comment">   * The hash is stored in the database
 </span></span><span id="196" class="l"><a class="l" href="#196">196: </a><span class="php-comment">   * The key is sent to the user
-</span></span><span id="197" class="l"><a class="l" href="#197">197: </a><span class="php-comment">   * 
+</span></span><span id="197" class="l"><a class="l" href="#197">197: </a><span class="php-comment">   *
 </span></span><span id="198" class="l"><a class="l" href="#198">198: </a><span class="php-comment">     * @return array
 </span></span><span id="199" class="l"><a class="l" href="#199">199: </a><span class="php-comment">     */</span>
 </span><span id="200" class="l"><a class="l" href="#200">200: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_make_magic_string" href="#_make_magic_string">make_magic_string</a>()
@@ -328,15 +328,15 @@
 </span><span id="205" class="l"><a class="l" href="#205">205: </a>      <span class="php-quote">'hash'</span> =&gt; <span class="php-keyword2">hash</span>(<span class="php-quote">'sha256'</span>, <span class="php-var">$key</span>)
 </span><span id="206" class="l"><a class="l" href="#206">206: </a>    ];
 </span><span id="207" class="l"><a class="l" href="#207">207: </a>  }
-</span><span id="208" class="l"><a class="l" href="#208">208: </a>  
+</span><span id="208" class="l"><a class="l" href="#208">208: </a>
 </span><span id="209" class="l"><a class="l" href="#209">209: </a>  <span class="php-keyword1">protected</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_is_magic_string" href="#_is_magic_string">is_magic_string</a>(<span class="php-var">$key</span>, <span class="php-var">$hash</span>)
 </span><span id="210" class="l"><a class="l" href="#210">210: </a>  {
 </span><span id="211" class="l"><a class="l" href="#211">211: </a>    <span class="php-keyword1">return</span> ( <span class="php-keyword2">hash</span>(<span class="php-quote">'sha256'</span>, <span class="php-var">$key</span>) === <span class="php-var">$hash</span> );
 </span><span id="212" class="l"><a class="l" href="#212">212: </a>  }
-</span><span id="213" class="l"><a class="l" href="#213">213: </a>  
-</span><span id="214" class="l"><a class="l" href="#214">214: </a>  
+</span><span id="213" class="l"><a class="l" href="#213">213: </a>
+</span><span id="214" class="l"><a class="l" href="#214">214: </a>
 </span><span id="215" class="l"><a class="l" href="#215">215: </a>    <span class="php-comment">/**
-</span></span><span id="216" class="l"><a class="l" href="#216">216: </a><span class="php-comment">     * @return string 
+</span></span><span id="216" class="l"><a class="l" href="#216">216: </a><span class="php-comment">     * @return string
 </span></span><span id="217" class="l"><a class="l" href="#217">217: </a><span class="php-comment">     */</span>
 </span><span id="218" class="l"><a class="l" href="#218">218: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_error" href="#_get_error">get_error</a>(){
 </span><span id="219" class="l"><a class="l" href="#219">219: </a>    <span class="php-keyword1">return</span> ( !<span class="php-keyword2">is_null</span>(<span class="php-var">$this</span>-&gt;error) &amp;&amp; <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'errors'</span>][<span class="php-var">$this</span>-&gt;error]) ) ?
@@ -365,12 +365,12 @@
 </span><span id="242" class="l"><a class="l" href="#242">242: </a>  }
 </span><span id="243" class="l"><a class="l" href="#243">243: </a>
 </span><span id="244" class="l"><a class="l" href="#244">244: </a>  <span class="php-comment">/**
-</span></span><span id="245" class="l"><a class="l" href="#245">245: </a><span class="php-comment">     * @return \bbn\user\connection 
+</span></span><span id="245" class="l"><a class="l" href="#245">245: </a><span class="php-comment">     * @return \bbn\user\connection
 </span></span><span id="246" class="l"><a class="l" href="#246">246: </a><span class="php-comment">     */</span>
 </span><span id="247" class="l"><a class="l" href="#247">247: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___construct" href="#___construct">__construct</a>(\bbn\db\connection <span class="php-var">$db</span>, <span class="php-keyword1">array</span> <span class="php-var">$cfg</span>, <span class="php-var">$credentials</span>=<span class="php-quote">''</span>)
 </span><span id="248" class="l"><a class="l" href="#248">248: </a>    {
 </span><span id="249" class="l"><a class="l" href="#249">249: </a>        <span class="php-var">$this</span>-&gt;db = <span class="php-var">$db</span>;
-</span><span id="250" class="l"><a class="l" href="#250">250: </a>        
+</span><span id="250" class="l"><a class="l" href="#250">250: </a>
 </span><span id="251" class="l"><a class="l" href="#251">251: </a>    <span class="php-var">$this</span>-&gt;user_agent = <span class="php-keyword1">isset</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'HTTP_USER_AGENT'</span>]) ? <span class="php-var">$_SERVER</span>[<span class="php-quote">'HTTP_USER_AGENT'</span>] : <span class="php-quote">''</span>;
 </span><span id="252" class="l"><a class="l" href="#252">252: </a>    <span class="php-var">$this</span>-&gt;ip_address = <span class="php-keyword1">isset</span>(<span class="php-var">$_SERVER</span>[<span class="php-quote">'REMOTE_ADDR'</span>]) ? <span class="php-var">$_SERVER</span>[<span class="php-quote">'REMOTE_ADDR'</span>] : <span class="php-quote">''</span>;
 </span><span id="253" class="l"><a class="l" href="#253">253: </a>
@@ -381,7 +381,7 @@
 </span><span id="258" class="l"><a class="l" href="#258">258: </a>        <span class="php-keyword1">die</span>(<span class="php-quote">&quot;Wrong configuration: the column's name </span><span class="php-var">$f</span><span class="php-quote"> is illegal!&quot;</span>);
 </span><span id="259" class="l"><a class="l" href="#259">259: </a>      }
 </span><span id="260" class="l"><a class="l" href="#260">260: </a>    }
-</span><span id="261" class="l"><a class="l" href="#261">261: </a>    
+</span><span id="261" class="l"><a class="l" href="#261">261: </a>
 </span><span id="262" class="l"><a class="l" href="#262">262: </a>    <span class="php-comment">/*
 </span></span><span id="263" class="l"><a class="l" href="#263">263: </a><span class="php-comment">     * The selection comprises the defined fields of the users table
 </span></span><span id="264" class="l"><a class="l" href="#264">264: </a><span class="php-comment">     * Plus a bunch of user-defined additional fields in the same table
@@ -389,12 +389,12 @@
 </span><span id="266" class="l"><a class="l" href="#266">266: </a>    <span class="php-var">$this</span>-&gt;fields = \bbn\tools::merge_arrays(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'users'</span>], <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'additional_fields'</span>]);
 </span><span id="267" class="l"><a class="l" href="#267">267: </a>
 </span><span id="268" class="l"><a class="l" href="#268">268: </a>    <span class="php-comment">// Case where the user logs in</span>
-</span><span id="269" class="l"><a class="l" href="#269">269: </a>    <span class="php-comment">// Allowing the use of a simple array [user, pass] </span>
+</span><span id="269" class="l"><a class="l" href="#269">269: </a>    <span class="php-comment">// Allowing the use of a simple array [user, pass]</span>
 </span><span id="270" class="l"><a class="l" href="#270">270: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$credentials</span>[<span class="php-num">0</span>], <span class="php-var">$credentials</span>[<span class="php-num">1</span>]) ) {
 </span><span id="271" class="l"><a class="l" href="#271">271: </a>      <span class="php-var">$credentials</span>[<span class="php-quote">'user'</span>] = <span class="php-var">$credentials</span>[<span class="php-num">0</span>];
 </span><span id="272" class="l"><a class="l" href="#272">272: </a>      <span class="php-var">$credentials</span>[<span class="php-quote">'pass'</span>] = <span class="php-var">$credentials</span>[<span class="php-num">1</span>];
 </span><span id="273" class="l"><a class="l" href="#273">273: </a>    }
-</span><span id="274" class="l"><a class="l" href="#274">274: </a>    
+</span><span id="274" class="l"><a class="l" href="#274">274: </a>
 </span><span id="275" class="l"><a class="l" href="#275">275: </a>    <span class="php-comment">// Expecting array with user and pass keys</span>
 </span><span id="276" class="l"><a class="l" href="#276">276: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$credentials</span>[<span class="php-quote">'user'</span>], <span class="php-var">$credentials</span>[<span class="php-quote">'pass'</span>]) ) {
 </span><span id="277" class="l"><a class="l" href="#277">277: </a>      <span class="php-var">$this</span>-&gt;_identify(<span class="php-var">$credentials</span>);
@@ -404,12 +404,12 @@
 </span><span id="281" class="l"><a class="l" href="#281">281: </a>        <span class="php-keyword1">else</span> {
 </span><span id="282" class="l"><a class="l" href="#282">282: </a>      <span class="php-var">$this</span>-&gt;check_session();
 </span><span id="283" class="l"><a class="l" href="#283">283: </a>        }
-</span><span id="284" class="l"><a class="l" href="#284">284: </a>    
+</span><span id="284" class="l"><a class="l" href="#284">284: </a>
 </span><span id="285" class="l"><a class="l" href="#285">285: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="286" class="l"><a class="l" href="#286">286: </a>    }
-</span><span id="287" class="l"><a class="l" href="#287">287: </a>  
+</span><span id="287" class="l"><a class="l" href="#287">287: </a>
 </span><span id="288" class="l"><a class="l" href="#288">288: </a>    <span class="php-comment">/**
-</span></span><span id="289" class="l"><a class="l" href="#289">289: </a><span class="php-comment">     * @return \bbn\user\connection 
+</span></span><span id="289" class="l"><a class="l" href="#289">289: </a><span class="php-comment">     * @return \bbn\user\connection
 </span></span><span id="290" class="l"><a class="l" href="#290">290: </a><span class="php-comment">     */</span>
 </span><span id="291" class="l"><a class="l" href="#291">291: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__init_session" href="#__init_session">_init_session</a>()
 </span><span id="292" class="l"><a class="l" href="#292">292: </a>  {
@@ -438,15 +438,15 @@
 </span><span id="315" class="l"><a class="l" href="#315">315: </a>      ];
 </span><span id="316" class="l"><a class="l" href="#316">316: </a>
 </span><span id="317" class="l"><a class="l" href="#317">317: </a>      <span class="php-var">$this</span>-&gt;save_session();
-</span><span id="318" class="l"><a class="l" href="#318">318: </a>      
+</span><span id="318" class="l"><a class="l" href="#318">318: </a>
 </span><span id="319" class="l"><a class="l" href="#319">319: </a>      <span class="php-var">$this</span>-&gt;auth = <span class="php-num">1</span>;
-</span><span id="320" class="l"><a class="l" href="#320">320: </a>      
+</span><span id="320" class="l"><a class="l" href="#320">320: </a>
 </span><span id="321" class="l"><a class="l" href="#321">321: </a>    }
 </span><span id="322" class="l"><a class="l" href="#322">322: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="323" class="l"><a class="l" href="#323">323: </a>  }
-</span><span id="324" class="l"><a class="l" href="#324">324: </a>  
+</span><span id="324" class="l"><a class="l" href="#324">324: </a>
 </span><span id="325" class="l"><a class="l" href="#325">325: </a>    <span class="php-comment">/**
-</span></span><span id="326" class="l"><a class="l" href="#326">326: </a><span class="php-comment">     * @return \bbn\user\connection 
+</span></span><span id="326" class="l"><a class="l" href="#326">326: </a><span class="php-comment">     * @return \bbn\user\connection
 </span></span><span id="327" class="l"><a class="l" href="#327">327: </a><span class="php-comment">     */</span>
 </span><span id="328" class="l"><a class="l" href="#328">328: </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__login" href="#__login">_login</a>()
 </span><span id="329" class="l"><a class="l" href="#329">329: </a>  {
@@ -459,9 +459,9 @@
 </span><span id="336" class="l"><a class="l" href="#336">336: </a>  <span class="php-comment">/**
 </span></span><span id="337" class="l"><a class="l" href="#337">337: </a><span class="php-comment">   * Gathers all the information about a user and puts it in the session
 </span></span><span id="338" class="l"><a class="l" href="#338">338: </a><span class="php-comment">   * The user's table data can be sent as argument if it has already been fetched
-</span></span><span id="339" class="l"><a class="l" href="#339">339: </a><span class="php-comment">   * 
+</span></span><span id="339" class="l"><a class="l" href="#339">339: </a><span class="php-comment">   *
 </span></span><span id="340" class="l"><a class="l" href="#340">340: </a><span class="php-comment">   * @param array $d The user's table data
-</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">   * 
+</span></span><span id="341" class="l"><a class="l" href="#341">341: </a><span class="php-comment">   *
 </span></span><span id="342" class="l"><a class="l" href="#342">342: </a><span class="php-comment">   * @return \bbn\user\connection
 </span></span><span id="343" class="l"><a class="l" href="#343">343: </a><span class="php-comment">   */</span>
 </span><span id="344" class="l"><a class="l" href="#344">344: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__user_info" href="#__user_info">_user_info</a>(<span class="php-keyword1">array</span> <span class="php-var">$d</span>=<span class="php-keyword1">null</span>){
@@ -555,9 +555,9 @@
 </span><span id="432" class="l"><a class="l" href="#432">432: </a>
 </span><span id="433" class="l"><a class="l" href="#433">433: </a>  <span class="php-comment">/**
 </span></span><span id="434" class="l"><a class="l" href="#434">434: </a><span class="php-comment">   * Checks if the user has the given permission
-</span></span><span id="435" class="l"><a class="l" href="#435">435: </a><span class="php-comment">   * 
+</span></span><span id="435" class="l"><a class="l" href="#435">435: </a><span class="php-comment">   *
 </span></span><span id="436" class="l"><a class="l" href="#436">436: </a><span class="php-comment">   * @param string $name The name of the permission
-</span></span><span id="437" class="l"><a class="l" href="#437">437: </a><span class="php-comment">   * 
+</span></span><span id="437" class="l"><a class="l" href="#437">437: </a><span class="php-comment">   *
 </span></span><span id="438" class="l"><a class="l" href="#438">438: </a><span class="php-comment">   * @return bool
 </span></span><span id="439" class="l"><a class="l" href="#439">439: </a><span class="php-comment">   */</span>
 </span><span id="440" class="l"><a class="l" href="#440">440: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_has_permission" href="#_has_permission">has_permission</a>(<span class="php-var">$name</span>, <span class="php-var">$check_admin</span>=<span class="php-num">1</span>){
@@ -569,12 +569,12 @@
 </span><span id="446" class="l"><a class="l" href="#446">446: </a>    }
 </span><span id="447" class="l"><a class="l" href="#447">447: </a>    <span class="php-keyword1">return</span> ( <span class="php-var">$check_admin</span> &amp;&amp; <span class="php-var">$this</span>-&gt;is_admin() );
 </span><span id="448" class="l"><a class="l" href="#448">448: </a>  }
-</span><span id="449" class="l"><a class="l" href="#449">449: </a>  
+</span><span id="449" class="l"><a class="l" href="#449">449: </a>
 </span><span id="450" class="l"><a class="l" href="#450">450: </a>  <span class="php-comment">/**
 </span></span><span id="451" class="l"><a class="l" href="#451">451: </a><span class="php-comment">   * Checks if the user has the given permission and dies otherwise
-</span></span><span id="452" class="l"><a class="l" href="#452">452: </a><span class="php-comment">   * 
+</span></span><span id="452" class="l"><a class="l" href="#452">452: </a><span class="php-comment">   *
 </span></span><span id="453" class="l"><a class="l" href="#453">453: </a><span class="php-comment">   * @param string $name The name of the permission
-</span></span><span id="454" class="l"><a class="l" href="#454">454: </a><span class="php-comment">   * 
+</span></span><span id="454" class="l"><a class="l" href="#454">454: </a><span class="php-comment">   *
 </span></span><span id="455" class="l"><a class="l" href="#455">455: </a><span class="php-comment">   * @return void
 </span></span><span id="456" class="l"><a class="l" href="#456">456: </a><span class="php-comment">   */</span>
 </span><span id="457" class="l"><a class="l" href="#457">457: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check_permission" href="#_check_permission">check_permission</a>(<span class="php-var">$name</span>, <span class="php-var">$check_admin</span>=<span class="php-num">1</span>){
@@ -585,12 +585,12 @@
 </span><span id="462" class="l"><a class="l" href="#462">462: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;You don't have the requested permission (</span><span class="php-var">$name</span><span class="php-quote">)&quot;</span>);
 </span><span id="463" class="l"><a class="l" href="#463">463: </a>    }
 </span><span id="464" class="l"><a class="l" href="#464">464: </a>  }
-</span><span id="465" class="l"><a class="l" href="#465">465: </a>  
+</span><span id="465" class="l"><a class="l" href="#465">465: </a>
 </span><span id="466" class="l"><a class="l" href="#466">466: </a>  <span class="php-comment">/**
-</span></span><span id="467" class="l"><a class="l" href="#467">467: </a><span class="php-comment">   * Changes the data in the user's table 
-</span></span><span id="468" class="l"><a class="l" href="#468">468: </a><span class="php-comment">   * 
+</span></span><span id="467" class="l"><a class="l" href="#467">467: </a><span class="php-comment">   * Changes the data in the user's table
+</span></span><span id="468" class="l"><a class="l" href="#468">468: </a><span class="php-comment">   *
 </span></span><span id="469" class="l"><a class="l" href="#469">469: </a><span class="php-comment">   * @param array $d The new data
-</span></span><span id="470" class="l"><a class="l" href="#470">470: </a><span class="php-comment">   * 
+</span></span><span id="470" class="l"><a class="l" href="#470">470: </a><span class="php-comment">   *
 </span></span><span id="471" class="l"><a class="l" href="#471">471: </a><span class="php-comment">   * @return bool
 </span></span><span id="472" class="l"><a class="l" href="#472">472: </a><span class="php-comment">   */</span>
 </span><span id="473" class="l"><a class="l" href="#473">473: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_update_info" href="#_update_info">update_info</a>(<span class="php-keyword1">array</span> <span class="php-var">$d</span>)
@@ -632,12 +632,12 @@
 </span><span id="509" class="l"><a class="l" href="#509">509: </a>    }
 </span><span id="510" class="l"><a class="l" href="#510">510: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="511" class="l"><a class="l" href="#511">511: </a>  }
-</span><span id="512" class="l"><a class="l" href="#512">512: </a>  
+</span><span id="512" class="l"><a class="l" href="#512">512: </a>
 </span><span id="513" class="l"><a class="l" href="#513">513: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__check_password" href="#__check_password">_check_password</a>(<span class="php-var">$pass_given</span>, <span class="php-var">$pass_stored</span>)
 </span><span id="514" class="l"><a class="l" href="#514">514: </a>  {
 </span><span id="515" class="l"><a class="l" href="#515">515: </a>    <span class="php-keyword1">return</span> (<span class="php-var">$this</span>-&gt;_crypt(<span class="php-var">$pass_given</span>) ===  <span class="php-var">$pass_stored</span>);
 </span><span id="516" class="l"><a class="l" href="#516">516: </a>  }
-</span><span id="517" class="l"><a class="l" href="#517">517: </a>  
+</span><span id="517" class="l"><a class="l" href="#517">517: </a>
 </span><span id="518" class="l"><a class="l" href="#518">518: </a>  <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> <a id="__crypt" href="#__crypt">_crypt</a>(<span class="php-var">$st</span>){
 </span><span id="519" class="l"><a class="l" href="#519">519: </a>    <span class="php-keyword1">if</span> ( !<span class="php-keyword2">function_exists</span>(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'encryption'</span>]) ){
 </span><span id="520" class="l"><a class="l" href="#520">520: </a>      <span class="php-keyword1">die</span>(<span class="php-quote">&quot;You need the PHP function </span><span class="php-var">{$this-&gt;cfg['encryption']}</span><span class="php-quote"> to have the user connection class working&quot;</span>);
@@ -673,7 +673,7 @@
 </span><span id="550" class="l"><a class="l" href="#550">550: </a>
 </span><span id="551" class="l"><a class="l" href="#551">551: </a>        <span class="php-var">$this</span>-&gt;id = <span class="php-var">$d</span>[<span class="php-quote">'id'</span>];
 </span><span id="552" class="l"><a class="l" href="#552">552: </a>        <span class="php-var">$this</span>-&gt;_user_info(<span class="php-var">$d</span>);
-</span><span id="553" class="l"><a class="l" href="#553">553: </a>        
+</span><span id="553" class="l"><a class="l" href="#553">553: </a>
 </span><span id="554" class="l"><a class="l" href="#554">554: </a>       <span class="php-comment">// Canceling authentication if num_attempts &gt; max_attempts</span>
 </span><span id="555" class="l"><a class="l" href="#555">555: </a>        <span class="php-keyword1">if</span> ( !<span class="php-var">$this</span>-&gt;check_attempts() ){
 </span><span id="556" class="l"><a class="l" href="#556">556: </a>          <span class="php-var">$this</span>-&gt;error = <span class="php-num">4</span>;
@@ -706,9 +706,9 @@
 </span><span id="583" class="l"><a class="l" href="#583">583: </a>    }
 </span><span id="584" class="l"><a class="l" href="#584">584: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="585" class="l"><a class="l" href="#585">585: </a>    }
-</span><span id="586" class="l"><a class="l" href="#586">586: </a>  
+</span><span id="586" class="l"><a class="l" href="#586">586: </a>
 </span><span id="587" class="l"><a class="l" href="#587">587: </a>    <span class="php-comment">/**
-</span></span><span id="588" class="l"><a class="l" href="#588">588: </a><span class="php-comment">     * @return \bbn\user\connection 
+</span></span><span id="588" class="l"><a class="l" href="#588">588: </a><span class="php-comment">     * @return \bbn\user\connection
 </span></span><span id="589" class="l"><a class="l" href="#589">589: </a><span class="php-comment">     */</span>
 </span><span id="590" class="l"><a class="l" href="#590">590: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_session" href="#_set_session">set_session</a>(<span class="php-var">$attr</span>){
 </span><span id="591" class="l"><a class="l" href="#591">591: </a>    <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]]) ){
@@ -739,14 +739,14 @@
 </span></span><span id="616" class="l"><a class="l" href="#616">616: </a><span class="php-comment">     * @return bool
 </span></span><span id="617" class="l"><a class="l" href="#617">617: </a><span class="php-comment">     */</span>
 </span><span id="618" class="l"><a class="l" href="#618">618: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_has_session" href="#_has_session">has_session</a>(<span class="php-var">$attr</span>){
-</span><span id="619" class="l"><a class="l" href="#619">619: </a>    <span class="php-keyword1">return</span> ( 
-</span><span id="620" class="l"><a class="l" href="#620">620: </a>            <span class="php-keyword2">is_string</span>(<span class="php-var">$attr</span>) &amp;&amp; 
+</span><span id="619" class="l"><a class="l" href="#619">619: </a>    <span class="php-keyword1">return</span> (
+</span><span id="620" class="l"><a class="l" href="#620">620: </a>            <span class="php-keyword2">is_string</span>(<span class="php-var">$attr</span>) &amp;&amp;
 </span><span id="621" class="l"><a class="l" href="#621">621: </a>            <span class="php-keyword1">isset</span>(<span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]][<span class="php-var">$attr</span>])
 </span><span id="622" class="l"><a class="l" href="#622">622: </a>           );
 </span><span id="623" class="l"><a class="l" href="#623">623: </a>  }
 </span><span id="624" class="l"><a class="l" href="#624">624: </a>
 </span><span id="625" class="l"><a class="l" href="#625">625: </a>  <span class="php-comment">/**
-</span></span><span id="626" class="l"><a class="l" href="#626">626: </a><span class="php-comment">     * @return \bbn\user\connection 
+</span></span><span id="626" class="l"><a class="l" href="#626">626: </a><span class="php-comment">     * @return \bbn\user\connection
 </span></span><span id="627" class="l"><a class="l" href="#627">627: </a><span class="php-comment">     */</span>
 </span><span id="628" class="l"><a class="l" href="#628">628: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_save_session" href="#_save_session">save_session</a>() {
 </span><span id="629" class="l"><a class="l" href="#629">629: </a>    <span class="php-var">$p</span> =&amp; <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'sessions'</span>];
@@ -764,7 +764,7 @@
 </span><span id="641" class="l"><a class="l" href="#641">641: </a>  }
 </span><span id="642" class="l"><a class="l" href="#642">642: </a>
 </span><span id="643" class="l"><a class="l" href="#643">643: </a>  <span class="php-comment">/**
-</span></span><span id="644" class="l"><a class="l" href="#644">644: </a><span class="php-comment">     * @return \bbn\user\connection 
+</span></span><span id="644" class="l"><a class="l" href="#644">644: </a><span class="php-comment">     * @return \bbn\user\connection
 </span></span><span id="645" class="l"><a class="l" href="#645">645: </a><span class="php-comment">     */</span>
 </span><span id="646" class="l"><a class="l" href="#646">646: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_close_session" href="#_close_session">close_session</a>() {
 </span><span id="647" class="l"><a class="l" href="#647">647: </a>    <span class="php-var">$p</span> =&amp; <span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'sessions'</span>];
@@ -786,7 +786,7 @@
 </span><span id="663" class="l"><a class="l" href="#663">663: </a>        <span class="php-var">$_SESSION</span>[<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_name'</span>]][<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'sess_user'</span>]] = [];
 </span><span id="664" class="l"><a class="l" href="#664">664: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="665" class="l"><a class="l" href="#665">665: </a>  }
-</span><span id="666" class="l"><a class="l" href="#666">666: </a>  
+</span><span id="666" class="l"><a class="l" href="#666">666: </a>
 </span><span id="667" class="l"><a class="l" href="#667">667: </a>  <span class="php-comment">/*
 </span></span><span id="668" class="l"><a class="l" href="#668">668: </a><span class="php-comment">   * @return bool
 </span></span><span id="669" class="l"><a class="l" href="#669">669: </a><span class="php-comment">   */</span>
@@ -800,7 +800,7 @@
 </span><span id="677" class="l"><a class="l" href="#677">677: </a>    }
 </span><span id="678" class="l"><a class="l" href="#678">678: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">true</span>;
 </span><span id="679" class="l"><a class="l" href="#679">679: </a>  }
-</span><span id="680" class="l"><a class="l" href="#680">680: </a>  
+</span><span id="680" class="l"><a class="l" href="#680">680: </a>
 </span><span id="681" class="l"><a class="l" href="#681">681: </a>  <span class="php-comment">/*
 </span></span><span id="682" class="l"><a class="l" href="#682">682: </a><span class="php-comment">   * return \bbn\user\connection
 </span></span><span id="683" class="l"><a class="l" href="#683">683: </a><span class="php-comment">   */</span>
@@ -814,7 +814,7 @@
 </span><span id="691" class="l"><a class="l" href="#691">691: </a>    }
 </span><span id="692" class="l"><a class="l" href="#692">692: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="693" class="l"><a class="l" href="#693">693: </a>  }
-</span><span id="694" class="l"><a class="l" href="#694">694: </a>  
+</span><span id="694" class="l"><a class="l" href="#694">694: </a>
 </span><span id="695" class="l"><a class="l" href="#695">695: </a>  <span class="php-comment">/*
 </span></span><span id="696" class="l"><a class="l" href="#696">696: </a><span class="php-comment">   * return \bbn\user\connection
 </span></span><span id="697" class="l"><a class="l" href="#697">697: </a><span class="php-comment">   */</span>
@@ -855,7 +855,7 @@
 </span><span id="732" class="l"><a class="l" href="#732">732: </a>    }
 </span><span id="733" class="l"><a class="l" href="#733">733: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>;
 </span><span id="734" class="l"><a class="l" href="#734">734: </a>  }
-</span><span id="735" class="l"><a class="l" href="#735">735: </a>  
+</span><span id="735" class="l"><a class="l" href="#735">735: </a>
 </span><span id="736" class="l"><a class="l" href="#736">736: </a>  <span class="php-comment">/*
 </span></span><span id="737" class="l"><a class="l" href="#737">737: </a><span class="php-comment">   * return \bbn\user\connection
 </span></span><span id="738" class="l"><a class="l" href="#738">738: </a><span class="php-comment">   */</span>
@@ -880,38 +880,38 @@
 </span><span id="757" class="l"><a class="l" href="#757">757: </a>    }
 </span><span id="758" class="l"><a class="l" href="#758">758: </a>
 </span><span id="759" class="l"><a class="l" href="#759">759: </a>    <span class="php-comment">/**
-</span></span><span id="760" class="l"><a class="l" href="#760">760: </a><span class="php-comment">     * @return bool 
+</span></span><span id="760" class="l"><a class="l" href="#760">760: </a><span class="php-comment">     * @return bool
 </span></span><span id="761" class="l"><a class="l" href="#761">761: </a><span class="php-comment">     */</span>
 </span><span id="762" class="l"><a class="l" href="#762">762: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_check_session" href="#_check_session">check_session</a>()
 </span><span id="763" class="l"><a class="l" href="#763">763: </a>    {
 </span><span id="764" class="l"><a class="l" href="#764">764: </a>    <span class="php-comment">// If this-&gt;id is set it means we've already looked it up</span>
 </span><span id="765" class="l"><a class="l" href="#765">765: </a>       <span class="php-comment">// \bbn\tools::hdump($this-&gt;sess_cfg, $this-&gt;has_session('fingerprint'), $this-&gt;get_print($this-&gt;get_session('fingerprint')), $this-&gt;sess_cfg['fingerprint']);</span>
 </span><span id="766" class="l"><a class="l" href="#766">766: </a>        <span class="php-keyword1">if</span> ( !<span class="php-var">$this</span>-&gt;id ) {
-</span><span id="767" class="l"><a class="l" href="#767">767: </a>      
+</span><span id="767" class="l"><a class="l" href="#767">767: </a>
 </span><span id="768" class="l"><a class="l" href="#768">768: </a>      <span class="php-comment">// The user ID must be in the session</span>
 </span><span id="769" class="l"><a class="l" href="#769">769: </a>            <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;has_session(<span class="php-quote">'id'</span>) ) {
 </span><span id="770" class="l"><a class="l" href="#770">770: </a>        <span class="php-var">$this</span>-&gt;id = <span class="php-var">$this</span>-&gt;get_session(<span class="php-quote">'id'</span>);
-</span><span id="771" class="l"><a class="l" href="#771">771: </a>        
+</span><span id="771" class="l"><a class="l" href="#771">771: </a>
 </span><span id="772" class="l"><a class="l" href="#772">772: </a>        <span class="php-var">$this</span>-&gt;_sess_info();
 </span><span id="773" class="l"><a class="l" href="#773">773: </a>
 </span><span id="774" class="l"><a class="l" href="#774">774: </a>        <span class="php-keyword1">if</span> ( <span class="php-keyword1">isset</span>(<span class="php-var">$this</span>-&gt;sess_cfg[<span class="php-quote">'fingerprint'</span>]) &amp;&amp; <span class="php-var">$this</span>-&gt;has_session(<span class="php-quote">'fingerprint'</span>) &amp;&amp;
 </span><span id="775" class="l"><a class="l" href="#775">775: </a>          (<span class="php-var">$this</span>-&gt;get_print(<span class="php-var">$this</span>-&gt;get_session(<span class="php-quote">'fingerprint'</span>)) === <span class="php-var">$this</span>-&gt;sess_cfg[<span class="php-quote">'fingerprint'</span>]) ){
 </span><span id="776" class="l"><a class="l" href="#776">776: </a>          <span class="php-var">$this</span>-&gt;auth = <span class="php-num">1</span>;
 </span><span id="777" class="l"><a class="l" href="#777">777: </a>          <span class="php-var">$this</span>-&gt;_user_info()-&gt;save_session();
-</span><span id="778" class="l"><a class="l" href="#778">778: </a>          
+</span><span id="778" class="l"><a class="l" href="#778">778: </a>
 </span><span id="779" class="l"><a class="l" href="#779">779: </a>        }
 </span><span id="780" class="l"><a class="l" href="#780">780: </a>            }
 </span><span id="781" class="l"><a class="l" href="#781">781: </a>        }
 </span><span id="782" class="l"><a class="l" href="#782">782: </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;auth;
 </span><span id="783" class="l"><a class="l" href="#783">783: </a>    }
-</span><span id="784" class="l"><a class="l" href="#784">784: </a>  
+</span><span id="784" class="l"><a class="l" href="#784">784: </a>
 </span><span id="785" class="l"><a class="l" href="#785">785: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_get_id" href="#_get_id">get_id</a>()
 </span><span id="786" class="l"><a class="l" href="#786">786: </a>  {
 </span><span id="787" class="l"><a class="l" href="#787">787: </a>    <span class="php-keyword1">if</span> ( <span class="php-var">$this</span>-&gt;check() ) {
 </span><span id="788" class="l"><a class="l" href="#788">788: </a>      <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;id;
 </span><span id="789" class="l"><a class="l" href="#789">789: </a>    }
 </span><span id="790" class="l"><a class="l" href="#790">790: </a>  }
-</span><span id="791" class="l"><a class="l" href="#791">791: </a>  
+</span><span id="791" class="l"><a class="l" href="#791">791: </a>
 </span><span id="792" class="l"><a class="l" href="#792">792: </a>  <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_expire_hotlink" href="#_expire_hotlink">expire_hotlink</a>(<span class="php-var">$id</span>){
 </span><span id="793" class="l"><a class="l" href="#793">793: </a>    <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;db-&gt;update(<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'tables'</span>][<span class="php-quote">'hotlinks'</span>],
 </span><span id="794" class="l"><a class="l" href="#794">794: </a>            [<span class="php-var">$this</span>-&gt;cfg[<span class="php-quote">'arch'</span>][<span class="php-quote">'hotlinks'</span>][<span class="php-quote">'expire'</span>] =&gt; <span class="php-keyword2">date</span>(<span class="php-quote">'Y-m-d H:i:s'</span>)],
@@ -936,7 +936,7 @@
 </span><span id="813" class="l"><a class="l" href="#813">813: </a>    }
 </span><span id="814" class="l"><a class="l" href="#814">814: </a>    <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="815" class="l"><a class="l" href="#815">815: </a>  }
-</span><span id="816" class="l"><a class="l" href="#816">816: </a>  
+</span><span id="816" class="l"><a class="l" href="#816">816: </a>
 </span><span id="817" class="l"><a class="l" href="#817">817: </a>    <span class="php-comment">/**
 </span></span><span id="818" class="l"><a class="l" href="#818">818: </a><span class="php-comment">     * @return boolean
 </span></span><span id="819" class="l"><a class="l" href="#819">819: </a><span class="php-comment">     */</span>
@@ -1011,7 +1011,7 @@
 </span><span id="888" class="l"><a class="l" href="#888">888: </a>  }
 </span><span id="889" class="l"><a class="l" href="#889">889: </a>
 </span><span id="890" class="l"><a class="l" href="#890">890: </a>    <span class="php-comment">/**
-</span></span><span id="891" class="l"><a class="l" href="#891">891: </a><span class="php-comment">     * @return void 
+</span></span><span id="891" class="l"><a class="l" href="#891">891: </a><span class="php-comment">     * @return void
 </span></span><span id="892" class="l"><a class="l" href="#892">892: </a><span class="php-comment">     */</span>
 </span><span id="893" class="l"><a class="l" href="#893">893: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_set_password" href="#_set_password">set_password</a>(<span class="php-var">$old_pass</span>, <span class="php-var">$new_pass</span>)
 </span><span id="894" class="l"><a class="l" href="#894">894: </a>    {
@@ -1029,7 +1029,7 @@
 </span><span id="906" class="l"><a class="l" href="#906">906: </a>    }
 </span><span id="907" class="l"><a class="l" href="#907">907: </a>
 </span><span id="908" class="l"><a class="l" href="#908">908: </a>    <span class="php-comment">/**
-</span></span><span id="909" class="l"><a class="l" href="#909">909: </a><span class="php-comment">     * @return boolean 
+</span></span><span id="909" class="l"><a class="l" href="#909">909: </a><span class="php-comment">     * @return boolean
 </span></span><span id="910" class="l"><a class="l" href="#910">910: </a><span class="php-comment">     */</span>
 </span><span id="911" class="l"><a class="l" href="#911">911: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_force_password" href="#_force_password">force_password</a>(<span class="php-var">$pass</span>)
 </span><span id="912" class="l"><a class="l" href="#912">912: </a>    {
@@ -1044,7 +1044,8 @@
 </span><span id="921" class="l"><a class="l" href="#921">921: </a>        <span class="php-keyword1">return</span> <span class="php-keyword1">false</span>;
 </span><span id="922" class="l"><a class="l" href="#922">922: </a>    }
 </span><span id="923" class="l"><a class="l" href="#923">923: </a>
-</span><span id="924" class="l"><a class="l" href="#924">924: </a></span>}</code></pre>
+</span><span id="924" class="l"><a class="l" href="#924">924: </a>}
+</span><span id="925" class="l"><a class="l" href="#925">925: </a></span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>

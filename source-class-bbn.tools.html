@@ -8,7 +8,7 @@
 	<title>File tools.php | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
-	<script type="text/javascript" src="elementlist.js?93493951"></script>
+	<script type="text/javascript" src="elementlist.js?3365874078"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -136,7 +136,7 @@
 </span></span><span id="12" class="l"><a class="l" href="#12"> 12: </a><span class="php-comment"> * @copyright BBN Solutions
 </span></span><span id="13" class="l"><a class="l" href="#13"> 13: </a><span class="php-comment"> * @since Apr 4, 2011, 23:23:55 +0000
 </span></span><span id="14" class="l"><a class="l" href="#14"> 14: </a><span class="php-comment"> * @category  MVC
-</span></span><span id="15" class="l"><a class="l" href="#15"> 15: </a><span class="php-comment"> * @license   http://www.opensource.org/licenses/lgpl-license.php LGPL
+</span></span><span id="15" class="l"><a class="l" href="#15"> 15: </a><span class="php-comment"> * @license   http://opensource.org/licenses/MIT MIT
 </span></span><span id="16" class="l"><a class="l" href="#16"> 16: </a><span class="php-comment"> * @version 0.2r89
 </span></span><span id="17" class="l"><a class="l" href="#17"> 17: </a><span class="php-comment"> * @todo Merge the output objects and combine JS strings.
 </span></span><span id="18" class="l"><a class="l" href="#18"> 18: </a><span class="php-comment"> * @todo Stop to rely only on sqlite and offer file-based or any db-based solution.
@@ -852,9 +852,39 @@
 </span><span id="728" class="l"><a class="l" href="#728">728: </a>    <span class="php-keyword1">return</span> <span class="php-quote">'&lt;div id=&quot;'</span>.<span class="php-var">$id</span>.<span class="php-quote">'&quot;&gt;&lt;/div&gt;&lt;script&gt;$(&quot;#'</span>.<span class="php-var">$id</span>.<span class="php-quote">'&quot;).kendoTreeView({dataSource: '</span>.
 </span><span id="729" class="l"><a class="l" href="#729">729: </a>      <span class="php-keyword2">json_encode</span>(self::get_tree(<span class="php-var">$ar</span>)).<span class="php-quote">'});&lt;/script&gt;'</span>;
 </span><span id="730" class="l"><a class="l" href="#730">730: </a>  }
-</span><span id="731" class="l"><a class="l" href="#731">731: </a>}
-</span><span id="732" class="l"><a class="l" href="#732">732: </a><span class="xlang">?&gt;</span>
-</span><span id="733" class="l"><a class="l" href="#733">733: </a></span></code></pre>
+</span><span id="731" class="l"><a class="l" href="#731">731: </a>
+</span><span id="732" class="l"><a class="l" href="#732">732: </a>    <span class="php-comment">/**
+</span></span><span id="733" class="l"><a class="l" href="#733">733: </a><span class="php-comment">    * Formats a line (passed as a fields  array) as CSV and returns the CSV as a string.
+</span></span><span id="734" class="l"><a class="l" href="#734">734: </a><span class="php-comment">    * Adapted from http://us3.php.net/manual/en/function.fputcsv.php#87120
+</span></span><span id="735" class="l"><a class="l" href="#735">735: </a><span class="php-comment">    */</span>
+</span><span id="736" class="l"><a class="l" href="#736">736: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> <a id="_to_csv" href="#_to_csv">to_csv</a>( <span class="php-keyword1">array</span> <span class="php-var">$data</span>, <span class="php-var">$delimiter</span> = <span class="php-quote">';'</span>, <span class="php-var">$enclosure</span> = <span class="php-quote">'&quot;'</span>, <span class="php-var">$separator</span> = PHP_EOL, <span class="php-var">$encloseAll</span> = <span class="php-keyword1">false</span>, <span class="php-var">$nullToMysqlNull</span> = <span class="php-keyword1">false</span> ) {
+</span><span id="737" class="l"><a class="l" href="#737">737: </a>    <span class="php-var">$delimiter_esc</span> = <span class="php-keyword2">preg_quote</span>(<span class="php-var">$delimiter</span>, <span class="php-quote">'/'</span>);
+</span><span id="738" class="l"><a class="l" href="#738">738: </a>    <span class="php-var">$enclosure_esc</span> = <span class="php-keyword2">preg_quote</span>(<span class="php-var">$enclosure</span>, <span class="php-quote">'/'</span>);
+</span><span id="739" class="l"><a class="l" href="#739">739: </a>
+</span><span id="740" class="l"><a class="l" href="#740">740: </a>        <span class="php-var">$lines</span> = [];
+</span><span id="741" class="l"><a class="l" href="#741">741: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$data</span> <span class="php-keyword1">as</span> <span class="php-var">$d</span> ){
+</span><span id="742" class="l"><a class="l" href="#742">742: </a>        <span class="php-var">$output</span> = [];
+</span><span id="743" class="l"><a class="l" href="#743">743: </a>        <span class="php-keyword1">foreach</span> ( <span class="php-var">$d</span> <span class="php-keyword1">as</span> <span class="php-var">$field</span> ) {
+</span><span id="744" class="l"><a class="l" href="#744">744: </a>          <span class="php-keyword1">if</span> (<span class="php-var">$field</span> === <span class="php-keyword1">null</span> &amp;&amp; <span class="php-var">$nullToMysqlNull</span>) {
+</span><span id="745" class="l"><a class="l" href="#745">745: </a>            <span class="php-var">$output</span>[] = <span class="php-quote">'NULL'</span>;
+</span><span id="746" class="l"><a class="l" href="#746">746: </a>            <span class="php-keyword1">continue</span>;
+</span><span id="747" class="l"><a class="l" href="#747">747: </a>          }
+</span><span id="748" class="l"><a class="l" href="#748">748: </a>
+</span><span id="749" class="l"><a class="l" href="#749">749: </a>          <span class="php-comment">// Enclose fields containing $delimiter, $enclosure or whitespace</span>
+</span><span id="750" class="l"><a class="l" href="#750">750: </a>          <span class="php-keyword1">if</span> ( <span class="php-var">$encloseAll</span> || <span class="php-keyword2">preg_match</span>( <span class="php-quote">&quot;/(?:</span><span class="php-var">$</span><span class="php-quote">{delimiter_esc}|</span><span class="php-var">$</span><span class="php-quote">{enclosure_esc}|\s)/&quot;</span>, <span class="php-var">$field</span> ) ) {
+</span><span id="751" class="l"><a class="l" href="#751">751: </a>            <span class="php-var">$output</span>[] = <span class="php-var">$enclosure</span> . <span class="php-keyword2">str_replace</span>(<span class="php-var">$enclosure</span>, <span class="php-var">$enclosure</span> . <span class="php-var">$enclosure</span>, <span class="php-var">$field</span>) . <span class="php-var">$enclosure</span>;
+</span><span id="752" class="l"><a class="l" href="#752">752: </a>          }
+</span><span id="753" class="l"><a class="l" href="#753">753: </a>          <span class="php-keyword1">else</span> {
+</span><span id="754" class="l"><a class="l" href="#754">754: </a>            <span class="php-var">$output</span>[] = <span class="php-var">$field</span>;
+</span><span id="755" class="l"><a class="l" href="#755">755: </a>          }
+</span><span id="756" class="l"><a class="l" href="#756">756: </a>        }
+</span><span id="757" class="l"><a class="l" href="#757">757: </a>            <span class="php-keyword2">array_push</span>(<span class="php-var">$lines</span>, <span class="php-keyword2">implode</span>( <span class="php-var">$delimiter</span>, <span class="php-var">$output</span> ));
+</span><span id="758" class="l"><a class="l" href="#758">758: </a>        }
+</span><span id="759" class="l"><a class="l" href="#759">759: </a>    <span class="php-keyword1">return</span> <span class="php-keyword2">implode</span>( <span class="php-var">$separator</span>, <span class="php-var">$lines</span> );
+</span><span id="760" class="l"><a class="l" href="#760">760: </a>    }
+</span><span id="761" class="l"><a class="l" href="#761">761: </a>}
+</span><span id="762" class="l"><a class="l" href="#762">762: </a><span class="xlang">?&gt;</span>
+</span><span id="763" class="l"><a class="l" href="#763">763: </a></span></code></pre>
 
 	<div id="footer">
 		nabab/bbn API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
