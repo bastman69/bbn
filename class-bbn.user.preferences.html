@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\user\appui | nabab/bbn</title>
+	<title>Class bbn\user\preferences | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?4274328993"></script>
@@ -67,12 +67,12 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-bbn.user.appui.html">appui</a></li>
+				<li><a href="class-bbn.user.appui.html">appui</a></li>
 				<li><a href="class-bbn.user.config.html">config</a></li>
 				<li><a href="class-bbn.user.connection.html" class="invalid">connection</a></li>
 				<li><a href="class-bbn.user.manager.html" class="invalid">manager</a></li>
 				<li><a href="class-bbn.user.permissions.html">permissions</a></li>
-				<li><a href="class-bbn.user.preferences.html">preferences</a></li>
+				<li class="active"><a href="class-bbn.user.preferences.html">preferences</a></li>
 				<li><a href="class-bbn.user.simple.html">simple</a></li>
 			</ul>
 
@@ -122,29 +122,15 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class appui</h1>
+	<h1>Class preferences</h1>
 
 
 	<div class="description">
 	
-<p>Class for appui authentication</p>
+<p>A permission system linked to options and user classes</p>
 
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-			<a href="class-bbn.user.connection.html"><span class="invalid">bbn\user\connection</span></a>
-			
-			
-			
-		</dd>
-		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by" />
-<b><span>bbn\user\appui</span></b>			
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -164,15 +150,17 @@
 				<b>Copyright:</b>
 				BBN Solutions<br />
 				<b>License:</b>
-				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<a href="http://opensource.org/licenses/MIT">MIT</a><br />
 				<b>Author:</b>
 				Thomas Nabet &lt;<a
 href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
 				<b>Version:</b>
-				0.2r89<br />
+				0.1<br />
 				<b>Since:</b>
-				Apr 4, 2011, 23:23:55 +0000<br />
-		<b>Located at</b> <a href="source-class-bbn.user.appui.html#6-330" title="Go to source code">user/appui.php</a><br />
+				Oct 28, 2015, 10:23:55 +0000<br />
+				<b>Todo:</b>
+				Groups and hotlinks features<br />
+		<b>Located at</b> <a href="source-class-bbn.user.preferences.html#7-178" title="Go to source code">user/preferences.php</a><br />
 	</div>
 
 
@@ -183,14 +171,14 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 		<td class="attributes"><code>
 			 public 
-			
+			<code><a href="class-bbn.user.permissions.html">bbn\user\permissions</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.user.appui.html#45-76" title="Go to source code">__construct</a>( <span>mixed <var>$cfg</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-bbn.user.preferences.html#46-53" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.appui.options.html">bbn\appui\options</a></code> <var>$opt</var></span>, <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span>, <span>array <var>$cfg</var> = []</span> )</code>
 
 		<div class="description short">
 			
@@ -201,6 +189,10 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.user.permissions.html">bbn\user\permissions</a></code></code><br />
+				</div>
 
 
 
@@ -208,36 +200,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="get_info" id="_get_info">
-
-		<td class="attributes"><code>
-			 private 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get_info">#</a>
-		<code><a href="source-class-bbn.user.appui.html#78-91" title="Go to source code">get_info</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="is_nabab" id="_is_nabab">
+	<tr data-order="set_value" id="_set_value">
 
 		<td class="attributes"><code>
 			 public 
@@ -247,8 +210,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_is_nabab">#</a>
-		<code><a href="source-class-bbn.user.appui.html#93-101" title="Go to source code">is_nabab</a>( )</code>
+		<a class="anchor" href="#_set_value">#</a>
+		<code><a href="source-class-bbn.user.preferences.html#55-69" title="Go to source code">set_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>$val</var></span> )</code>
 
 		<div class="description short">
 			
@@ -266,36 +229,7 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="refresh_info" id="_refresh_info">
-
-		<td class="attributes"><code>
-			 private 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_refresh_info">#</a>
-		<code><a href="source-class-bbn.user.appui.html#103-118" title="Go to source code">refresh_info</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_lang" id="_get_lang">
+	<tr data-order="get_value" id="_get_value">
 
 		<td class="attributes"><code>
 			 public 
@@ -305,8 +239,8 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_lang">#</a>
-		<code><a href="source-class-bbn.user.appui.html#120-126" title="Go to source code">get_lang</a>( )</code>
+		<a class="anchor" href="#_get_value">#</a>
+		<code><a href="source-class-bbn.user.preferences.html#71-93" title="Go to source code">get_value</a>( <span>mixed <var>$id</var></span>, <span>mixed <var>&amp; $val</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -324,28 +258,36 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="register" id="_register">
+	<tr data-order="get" id="_get">
 
 		<td class="attributes"><code>
 			 public 
-			
+			mixed
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_register">#</a>
-		<code><a href="source-class-bbn.user.appui.html#128-301" title="Go to source code">register</a>( )</code>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-bbn.user.preferences.html#95-121" title="Go to source code">get</a>( <span>mixed <var>$id_option</var></span>, <span>mixed <var>$id_user</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$id_group</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
+<p>Returns all the current user's permissions</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Returns all the current user's permissions</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
 
 
 
@@ -353,28 +295,36 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="has_site" id="_has_site">
+	<tr data-order="set" id="_set">
 
 		<td class="attributes"><code>
 			 public 
-			
+			mixed
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_has_site">#</a>
-		<code><a href="source-class-bbn.user.appui.html#303-311" title="Go to source code">has_site</a>( <span>mixed <var>$id</var></span> )</code>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-bbn.user.preferences.html#123-156" title="Go to source code">set</a>( <span>mixed <var>$id_option</var></span>, <span>array <var>$cfg</var></span>, <span>mixed <var>$id_user</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$id_group</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
+<p>Returns all the current user's permissions</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Returns all the current user's permissions</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
 
 
 
@@ -382,28 +332,36 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="change_last_site" id="_change_last_site">
+	<tr data-order="delete" id="_delete">
 
 		<td class="attributes"><code>
 			 public 
-			
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_change_last_site">#</a>
-		<code><a href="source-class-bbn.user.appui.html#313-328" title="Go to source code">change_last_site</a>( <span>mixed <var>$id</var></span> )</code>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-bbn.user.preferences.html#158-176" title="Go to source code">delete</a>( <span>mixed <var>$id_option</var></span>, <span>mixed <var>$id_user</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$id_group</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
+<p>Returns all the current user's permissions</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Returns all the current user's permissions</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
 
 
 
@@ -426,64 +384,30 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="nabab" id="$nabab">
+	<tr data-order="_defaults" id="$_defaults">
 		<td class="attributes"><code>
-			private static 
-			integer
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.user.appui.html#19-22" title="Go to source code"><var>$nabab</var></a>
-		</td>
-		<td class="value"><code><span class="php-num">1</span></code></td>
-		<td class="description"><div>
-			<a href="#$nabab" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="admin_account" id="$admin_account">
-		<td class="attributes"><code>
-			private static 
-			integer
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.user.appui.html#24-27" title="Go to source code"><var>$admin_account</var></a>
-		</td>
-		<td class="value"><code><span class="php-num">573052</span></code></td>
-		<td class="description"><div>
-			<a href="#$admin_account" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="infos" id="$infos">
-		<td class="attributes"><code>
-			private  
+			protected static 
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.appui.html#29-32" title="Go to source code"><var>$infos</var></a>
+				<a href="source-class-bbn.user.preferences.html#21-36" title="Go to source code"><var>$_defaults</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="value"><code>[
+		<span class="php-quote">'errors'</span> =&gt; [
+		],
+		<span class="php-quote">'table'</span> =&gt; <span class="php-quote">'bbn_user_options'</span>,
+		<span class="php-quote">'cols'</span> =&gt; [
+				<span class="php-quote">'id'</span> =&gt; <span class="php-quote">'id'</span>,
+				<span class="php-quote">'id_option'</span> =&gt; <span class="php-quote">'id_option'</span>,
+				<span class="php-quote">'id_user'</span> =&gt; <span class="php-quote">'id_user'</span>,
+				<span class="php-quote">'id_group'</span> =&gt; <span class="php-quote">'id_group'</span>,
+				<span class="php-quote">'value'</span> =&gt; <span class="php-quote">'value'</span>,
+				<span class="php-quote">'active'</span> =&gt; <span class="php-quote">'active'</span>
+		]
+]</code></td>
 		<td class="description"><div>
-			<a href="#$infos" class="anchor">#</a>
+			<a href="#$_defaults" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -495,18 +419,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="privilege" id="$privilege">
+	<tr data-order="opt" id="$opt">
 		<td class="attributes"><code>
-			public  
-			mixed
+			protected  
+			<code><a href="class-bbn.appui.options.html">bbn\appui\options</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.appui.html#34-37" title="Go to source code"><var>$privilege</var></a>
+				<a href="source-class-bbn.user.preferences.html#37-40" title="Go to source code"><var>$opt</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$privilege" class="anchor">#</a>
+			<a href="#$opt" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -518,18 +442,41 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="id_account" id="$id_account">
+	<tr data-order="db" id="$db">
 		<td class="attributes"><code>
-			public  
-			mixed
+			protected  
+			<code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.user.appui.html#39-42" title="Go to source code"><var>$id_account</var></a>
+				<a href="source-class-bbn.user.preferences.html#41-42" title="Go to source code"><var>$db</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$id_account" class="anchor">#</a>
+			<a href="#$db" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="cfg" id="$cfg">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.preferences.html#43-44" title="Go to source code"><var>$cfg</var></a>
+		</td>
+		<td class="value"><code>[]</code></td>
+		<td class="description"><div>
+			<a href="#$cfg" class="anchor">#</a>
 
 			<div class="description short">
 				

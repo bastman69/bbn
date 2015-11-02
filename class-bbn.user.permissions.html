@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class bbn\api\paybox | nabab/bbn</title>
+	<title>Class bbn\user\permissions | nabab/bbn</title>
 
 	<script type="text/javascript" src="resources/combined.js?823466903"></script>
 	<script type="text/javascript" src="elementlist.js?4274328993"></script>
@@ -23,7 +23,7 @@
 			<ul>
 				<li class="active"><a href="namespace-bbn.html">bbn<span></span></a>
 						<ul>
-				<li class="active"><a href="namespace-bbn.api.html">api<span></span></a>
+				<li><a href="namespace-bbn.api.html">api<span></span></a>
 						<ul>
 				<li><a href="namespace-bbn.api.kendo.html">kendo<span></span></a>
 						<ul>
@@ -49,7 +49,7 @@
 						</li>
 				<li><a href="namespace-bbn.time.html">time</a>
 						</li>
-				<li><a href="namespace-bbn.user.html">user</a>
+				<li class="active"><a href="namespace-bbn.user.html">user</a>
 						</li>
 				<li><a href="namespace-bbn.util.html">util</a>
 						</li>
@@ -67,7 +67,13 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-bbn.api.paybox.html">paybox</a></li>
+				<li><a href="class-bbn.user.appui.html">appui</a></li>
+				<li><a href="class-bbn.user.config.html">config</a></li>
+				<li><a href="class-bbn.user.connection.html" class="invalid">connection</a></li>
+				<li><a href="class-bbn.user.manager.html" class="invalid">manager</a></li>
+				<li class="active"><a href="class-bbn.user.permissions.html">permissions</a></li>
+				<li><a href="class-bbn.user.preferences.html">preferences</a></li>
+				<li><a href="class-bbn.user.simple.html">simple</a></li>
 			</ul>
 
 
@@ -95,7 +101,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-bbn.api.html" title="Summary of bbn\api"><span>Namespace</span></a>
+				<a href="namespace-bbn.user.html" title="Summary of bbn\user"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -116,12 +122,12 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class paybox</h1>
+	<h1>Class permissions</h1>
 
 
 	<div class="description">
 	
-<p>A class for Paybox</p>
+<p>A permission system linked to options and user classes</p>
 
 	</div>
 
@@ -136,41 +142,101 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.api.html">api</a><br />
+		<b>Namespace:</b> <a href="namespace-bbn.html">bbn</a>\<a href="namespace-bbn.user.html">user</a><br />
 		
 
 				<b>Category:</b>
-				Utilities<br />
+				Authentication<br />
 				<b>Copyright:</b>
 				BBN Solutions<br />
 				<b>License:</b>
-				<a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a><br />
+				<a href="http://opensource.org/licenses/MIT">MIT</a><br />
 				<b>Author:</b>
 				Thomas Nabet &lt;<a
 href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&gt;<br />
 				<b>Version:</b>
-				0.2r89 &amp; @todo Change make_love_with_me to \bbn\str\text::clean<br />
+				0.1<br />
 				<b>Since:</b>
-				Apr 4, 2011, 23:23:55 +0000<br />
-		<b>Located at</b> <a href="source-class-bbn.api.paybox.html#6-121" title="Go to source code">api/paybox.php</a><br />
+				Oct 28, 2015, 10:23:55 +0000<br />
+				<b>Todo:</b>
+				Groups and hotlinks features<br />
+		<b>Located at</b> <a href="source-class-bbn.user.permissions.html#7-109" title="Go to source code">user/permissions.php</a><br />
 	</div>
 
 
 
 	<table class="summary" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="_init" id="__init">
+
+		<td class="attributes"><code>
+			 private static
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__init">#</a>
+		<code><a href="source-class-bbn.user.permissions.html#63-68" title="Go to source code">_init</a>( <span><code><a href="class-bbn.user.permissions.html">bbn\user\permissions</a></code> <var>$perm</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_check" id="__check">
+
+		<td class="attributes"><code>
+			 private 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__check">#</a>
+		<code><a href="source-class-bbn.user.permissions.html#70-73" title="Go to source code">_check</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
-			
+			<code><a href="class-bbn.user.permissions.html">bbn\user\permissions</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-bbn.api.paybox.html#36-74" title="Go to source code">__construct</a>( <span>array <var>$cfg</var></span>, <span>mixed <var>$price</var></span>, <span>mixed <var>$email</var></span>, <span>mixed <var>$ref</var></span>, <span>mixed <var>$currency</var> = <span class="php-quote">'EUR'</span></span> )</code>
+		<code><a href="source-class-bbn.user.permissions.html#75-81" title="Go to source code">__construct</a>( <span><code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code> <var>$db</var></span>, <span><code><a href="class-bbn.appui.options.html">bbn\appui\options</a></code> <var>$opt</var></span> )</code>
 
 		<div class="description short">
 			
@@ -181,6 +247,10 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-bbn.user.permissions.html">bbn\user\permissions</a></code></code><br />
+				</div>
 
 
 
@@ -188,86 +258,73 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="check_server" id="_check_server">
-
-		<td class="attributes"><code>
-			 private 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_check_server">#</a>
-		<code><a href="source-class-bbn.api.paybox.html#76-97" title="Go to source code">check_server</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="process" id="_process">
-
-		<td class="attributes"><code>
-			 private 
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_process">#</a>
-		<code><a href="source-class-bbn.api.paybox.html#98-105" title="Go to source code">process</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get_form" id="_get_form">
+	<tr data-order="get" id="_get">
 
 		<td class="attributes"><code>
 			 public 
-			
+			mixed
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_get_form">#</a>
-		<code><a href="source-class-bbn.api.paybox.html#106-120" title="Go to source code">get_form</a>( <span>mixed <var>$button_title</var> = <span class="php-quote">'Paiement Paybox'</span></span> )</code>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-bbn.user.permissions.html#83-98" title="Go to source code">get</a>( <span>mixed <var>$code</var></span> )</code>
 
 		<div class="description short">
 			
+<p>Returns all the current user's permissions</p>
+
 		</div>
 
 		<div class="description detailed hidden">
 			
+<p>Returns all the current user's permissions</p>
 
 
 
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has" id="_has">
+
+		<td class="attributes"><code>
+			 public 
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has">#</a>
+		<code><a href="source-class-bbn.user.permissions.html#100-107" title="Go to source code">has</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$id</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns all the current user's permissions</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns all the current user's permissions</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br />
+				</div>
 
 
 
@@ -290,18 +347,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 
 	<table class="summary" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="servers" id="$servers">
+	<tr data-order="is_init" id="$is_init">
 		<td class="attributes"><code>
 			private static 
-			string
+			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#20-24" title="Go to source code"><var>$servers</var></a>
+				<a href="source-class-bbn.user.permissions.html#21-24" title="Go to source code"><var>$is_init</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-quote">'tpeweb.paybox.com'</span>, <span class="php-quote">'tpeweb1.paybox.com'</span>)</code></td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
 		<td class="description"><div>
-			<a href="#$servers" class="anchor">#</a>
+			<a href="#$is_init" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -313,18 +370,47 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="url_reponse" id="$url_reponse">
+	<tr data-order="root" id="$root">
 		<td class="attributes"><code>
 			private static 
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#25-26" title="Go to source code"><var>$root</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$root" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>the ID of the root option for the permission (it should have the option's
+root as id_parent and bbn_permissions as code</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>the ID of the root option for the permission (it should have the option's
+root as id_parent and bbn_permissions as code</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="error" id="$error">
+		<td class="attributes"><code>
+			protected  
 			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#26" title="Go to source code"><var>$url_reponse</var></a>
+				<a href="source-class-bbn.user.permissions.html#27-30" title="Go to source code"><var>$error</var></a>
 		</td>
-		<td class="value"><code><span class="php-quote">'http://www.atlantica.fr/paybox'</span></code></td>
+		<td class="value"><code><span class="php-keyword1">null</span></code></td>
 		<td class="description"><div>
-			<a href="#$url_reponse" class="anchor">#</a>
+			<a href="#$error" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -336,44 +422,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="url" id="$url">
+	<tr data-order="groups" id="$groups">
 		<td class="attributes"><code>
-			private static 
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#27" title="Go to source code"><var>$url</var></a>
-		</td>
-		<td class="value"><code><span class="php-quote">'/cgi/MYchoix_pagepaiement.cgi'</span></code></td>
-		<td class="description"><div>
-			<a href="#$url" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="currencies" id="$currencies">
-		<td class="attributes"><code>
-			private static 
+			protected  
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#28-31" title="Go to source code"><var>$currencies</var></a>
+				<a href="source-class-bbn.user.permissions.html#31-32" title="Go to source code"><var>$groups</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>(
-		<span class="php-quote">'EUR'</span> =&gt; <span class="php-quote">'978'</span>,
-		<span class="php-quote">'USD'</span> =&gt; <span class="php-quote">'840'</span>,
-		<span class="php-quote">'CFA'</span> =&gt; <span class="php-quote">'952'</span>)</code></td>
+		<td class="value"><code>[]</code></td>
 		<td class="description"><div>
-			<a href="#$currencies" class="anchor">#</a>
+			<a href="#$groups" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -385,18 +445,156 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="encryptions" id="$encryptions">
+	<tr data-order="permissions" id="$permissions">
 		<td class="attributes"><code>
-			private static 
+			protected  
 			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#32" title="Go to source code"><var>$encryptions</var></a>
+				<a href="source-class-bbn.user.permissions.html#33-34" title="Go to source code"><var>$permissions</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">array</span>(<span class="php-quote">'SHA512'</span>,<span class="php-quote">'SHA256'</span>,<span class="php-quote">'RIPEMD160'</span>,<span class="php-quote">'SHA224'</span>,<span class="php-quote">'SHA384'</span>)</code></td>
+		<td class="value"><code>[]</code></td>
 		<td class="description"><div>
-			<a href="#$encryptions" class="anchor">#</a>
+			<a href="#$permissions" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="user_agent" id="$user_agent">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#35-36" title="Go to source code"><var>$user_agent</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$user_agent" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="ip_address" id="$ip_address">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#37-38" title="Go to source code"><var>$ip_address</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$ip_address" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="auth" id="$auth">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#39-40" title="Go to source code"><var>$auth</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="description"><div>
+			<a href="#$auth" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="sql" id="$sql">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#41-42" title="Go to source code"><var>$sql</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$sql" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="id" id="$id">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#43-44" title="Go to source code"><var>$id</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$id" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="alert" id="$alert">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#45-46" title="Go to source code"><var>$alert</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$alert" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -410,14 +608,14 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 	</tr>
 	<tr data-order="cfg" id="$cfg">
 		<td class="attributes"><code>
-			private  
-			mixed
+			protected  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$cfg</var></a>
+				<a href="source-class-bbn.user.permissions.html#47-48" title="Go to source code"><var>$cfg</var></a>
 		</td>
-		<td class="value"><code></code></td>
+		<td class="value"><code>[]</code></td>
 		<td class="description"><div>
 			<a href="#$cfg" class="anchor">#</a>
 
@@ -431,18 +629,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="server" id="$server">
+	<tr data-order="sess_cfg" id="$sess_cfg">
 		<td class="attributes"><code>
-			private  
-			mixed
+			protected  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$server</var></a>
+				<a href="source-class-bbn.user.permissions.html#49-50" title="Go to source code"><var>$sess_cfg</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$server" class="anchor">#</a>
+			<a href="#$sess_cfg" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -454,18 +652,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="price" id="$price">
+	<tr data-order="user_cfg" id="$user_cfg">
 		<td class="attributes"><code>
-			private  
-			mixed
+			protected  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$price</var></a>
+				<a href="source-class-bbn.user.permissions.html#51-52" title="Go to source code"><var>$user_cfg</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$price" class="anchor">#</a>
+			<a href="#$user_cfg" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -477,18 +675,18 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="enc" id="$enc">
+	<tr data-order="fields" id="$fields">
 		<td class="attributes"><code>
-			private  
-			mixed
+			protected  
+			array
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$enc</var></a>
+				<a href="source-class-bbn.user.permissions.html#53-54" title="Go to source code"><var>$fields</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$enc" class="anchor">#</a>
+			<a href="#$fields" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -500,248 +698,41 @@ href="mailto:thomas.nabet&#64;gmail.com">thomas.nabet&#64;<!-- -->gmail.com</a>&
 			</div>
 		</div></td>
 	</tr>
-	<tr data-order="time" id="$time">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$time</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$time" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="form" id="$form">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$form</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$form" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="params" id="$params">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$params</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$params" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="query" id="$query">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$query</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$query" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="binkey" id="$binkey">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$binkey</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$binkey" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="currency" id="$currency">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$currency</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$currency" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="hmac" id="$hmac">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$hmac</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$hmac" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="email" id="$email">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$email</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$email" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="ref" id="$ref">
-		<td class="attributes"><code>
-			private  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$ref</var></a>
-		</td>
-		<td class="value"><code></code></td>
-		<td class="description"><div>
-			<a href="#$ref" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="processed" id="$processed">
-		<td class="attributes"><code>
-			private  
-			boolean
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#33" title="Go to source code"><var>$processed</var></a>
-		</td>
-		<td class="value"><code><span class="php-keyword1">false</span></code></td>
-		<td class="description"><div>
-			<a href="#$processed" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="online" id="$online">
+	<tr data-order="db" id="$db">
 		<td class="attributes"><code>
 			public  
-			boolean
+			<code><a href="class-bbn.db.connection.html">bbn\db\connection</a></code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-bbn.api.paybox.html#34" title="Go to source code"><var>$online</var></a>
+				<a href="source-class-bbn.user.permissions.html#56-59" title="Go to source code"><var>$db</var></a>
 		</td>
-		<td class="value"><code><span class="php-keyword1">false</span></code></td>
+		<td class="value"><code></code></td>
 		<td class="description"><div>
-			<a href="#$online" class="anchor">#</a>
+			<a href="#$db" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="prev_time" id="$prev_time">
+		<td class="attributes"><code>
+			public  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-bbn.user.permissions.html#60-61" title="Go to source code"><var>$prev_time</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$prev_time" class="anchor">#</a>
 
 			<div class="description short">
 				
